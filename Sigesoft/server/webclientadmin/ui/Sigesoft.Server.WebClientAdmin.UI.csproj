@@ -62,7 +62,7 @@
       <HintPath>..\..\..\..\ExternalLibraries\FineUI.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\..\HoloSaludAntiguo\Sigesoft\common\bin\Debug\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
