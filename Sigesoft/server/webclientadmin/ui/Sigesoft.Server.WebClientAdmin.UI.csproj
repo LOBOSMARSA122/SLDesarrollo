@@ -44,10 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bytescout.Spreadsheet">
-      <HintPath>..\..\..\..\..\..\Compartida\Debug\Bytescout.Spreadsheet.dll</HintPath>
-    </Reference>
-    <Reference Include="Controls">
-      <HintPath>..\..\..\..\..\HoloSaludAntiguo\Sigesoft\common\bin\Debug\Controls.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\Bytescout.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine">
       <HintPath>c:\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
@@ -65,20 +62,20 @@
     <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="FineUI, Version=3.2.6.0, Culture=neutral, PublicKeyToken=0ff1835d01c384a9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\SLSigesoftClinicaInternacional\server\webclientadmin\ui\bin\FineUI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\FineUI.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\..\HoloSaludAntiguo\Sigesoft\common\bin\Debug\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\RepSIGSO_v1.0_Postgres\dev\externallibraries\Web\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PdfViewer">
-      <HintPath>..\..\..\..\..\HoloSaludAntiguo\Sigesoft\common\bin\Debug\PdfViewer.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\PdfViewer.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData">

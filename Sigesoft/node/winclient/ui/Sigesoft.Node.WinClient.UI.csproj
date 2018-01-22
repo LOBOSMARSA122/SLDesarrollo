@@ -64,11 +64,8 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime">
-      <HintPath>..\..\..\..\..\..\Compartida\Debug\Antlr3.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Controls">
-      <HintPath>..\..\..\..\..\..\Compartida\Debug\Controls.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\Controls.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <Private>False</Private>
@@ -81,9 +78,6 @@
     </Reference>
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <Private>False</Private>
-    </Reference>
-    <Reference Include="FineUI">
-      <HintPath>..\..\..\..\..\..\Compartida\Debug\FineUI.dll</HintPath>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
       <Private>True</Private>
@@ -126,9 +120,6 @@
     <Reference Include="Infragistics4.Win.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
       <Private>True</Private>
     </Reference>
-    <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\..\..\Compartida\Debug\itextsharp.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -141,19 +132,13 @@
     <Reference Include="Microsoft.TeamFoundation.Diff, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="NCalc">
-      <HintPath>..\..\..\..\..\..\Compartida\Debug\NCalc.dll</HintPath>
-    </Reference>
-    <Reference Include="PdfViewer">
-      <HintPath>..\..\..\..\..\..\Compartida\Debug\PdfViewer.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ScrapperReniecSunat">
-      <HintPath>C:\Users\OMEGANET\Desktop\ScrapperReniecSunat.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\ScrapperReniecSunat.dll</HintPath>
     </Reference>
     <Reference Include="SigPlusNET">
-      <HintPath>..\..\..\..\..\..\Compartida\Debug\SigPlusNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\SigPlusNET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -179,7 +164,7 @@
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UIAutomationTypes" />
     <Reference Include="WebCam_Capture">
-      <HintPath>..\..\..\..\..\..\Compartida\Debug\WebCam_Capture.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\WebCam_Capture.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
