@@ -652,7 +652,7 @@
             this.btnCargoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargoFactura.ForeColor = System.Drawing.Color.Black;
             this.btnCargoFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargoFactura.Location = new System.Drawing.Point(1139, 455);
+            this.btnCargoFactura.Location = new System.Drawing.Point(1139, 420);
             this.btnCargoFactura.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargoFactura.Name = "btnCargoFactura";
             this.btnCargoFactura.Size = new System.Drawing.Size(85, 36);
