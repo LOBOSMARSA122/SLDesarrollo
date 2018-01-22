@@ -139,6 +139,7 @@
     </Reference>
     <Reference Include="SigPlusNET">
       <HintPath>..\..\..\..\ExternalLibraries\SigPlusNET.dll</HintPath>
+
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
