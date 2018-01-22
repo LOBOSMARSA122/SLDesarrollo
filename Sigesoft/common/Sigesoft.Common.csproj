@@ -42,6 +42,7 @@
     </Reference>
     <Reference Include="NCalc">
       <HintPath>..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\NCalc.dll</HintPath>
+
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Reference Include="Bytescout.Spreadsheet">
       <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\Bytescout.Spreadsheet.dll</HintPath>
+
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine">
       <HintPath>c:\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
@@ -63,6 +64,7 @@
     <Reference Include="FineUI, Version=3.2.6.0, Culture=neutral, PublicKeyToken=0ff1835d01c384a9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\FineUI.dll</HintPath>
+
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\itextsharp.dll</HintPath>
@@ -76,6 +78,7 @@
     </Reference>
     <Reference Include="PdfViewer">
       <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\PdfViewer.dll</HintPath>
+
     </Reference>
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData">

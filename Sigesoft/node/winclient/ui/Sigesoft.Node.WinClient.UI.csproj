@@ -66,6 +66,7 @@
   <ItemGroup>
     <Reference Include="Controls">
       <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\Controls.dll</HintPath>
+
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <Private>False</Private>
@@ -139,6 +140,7 @@
     </Reference>
     <Reference Include="SigPlusNET">
       <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\SigPlusNET.dll</HintPath>
+
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -165,6 +167,7 @@
     <Reference Include="UIAutomationTypes" />
     <Reference Include="WebCam_Capture">
       <HintPath>..\..\..\..\..\..\..\SLSigesoftClinicaInternacional\ExternalLibraries\WebCam_Capture.dll</HintPath>
+
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
