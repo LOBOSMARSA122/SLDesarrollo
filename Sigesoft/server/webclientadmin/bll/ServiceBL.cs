@@ -390,6 +390,10 @@ namespace Sigesoft.Server.WebClientAdmin.BLL
                                      equals new { ItemId = J4.i_ParameterId, groupId = J4.i_GroupId } into J4_join
                            from J4 in J4_join.DefaultIfEmpty()
 
+                           join et in dbContext.systemparameter on new { a = D.i_EsoTypeId.Value, b = 118 }
+                                             equals new { a = et.i_ParameterId, b = et.i_GroupId } into et_join  // TIPO ESO [ESOA,ESOR,ETC]
+                           from et in et_join.DefaultIfEmpty()
+
                            where F.i_IsDeleted == 0  && F.i_StatusLiquidation ==2
                            //&& F.i_ServiceStatusId == (int)Common.ServiceStatus.Culminado
                           
@@ -404,7 +408,7 @@ namespace Sigesoft.Server.WebClientAdmin.BLL
                                v_ProtocolId = F.v_ProtocolId,
                                v_HCL = F.v_ServiceId,
                                v_AptitudeStatusName = J4.v_Value1,
-                               v_ProtocolName = D.v_Name,
+                               v_ProtocolName = et.v_Value1,
                                EmpresaCliente = E.v_Name,
                                v_CustomerOrganizationId = E.v_OrganizationId,
                                Dni = H.v_DocNumber,
@@ -4257,7 +4261,14 @@ namespace Sigesoft.Server.WebClientAdmin.BLL
 
                 if (psrtConsultorioId != "-1")
                 {
-                    sql = sql.FindAll(p => p.ExamenDxId == psrtConsultorioId);
+                    if (psrtConsultorioId == "N002-ME000000005" || psrtConsultorioId == "N009-ME000000325")
+                    {
+                        sql = sql.FindAll(p => p.ExamenDxId == "N002-ME000000005" || p.ExamenDxId == "N009-ME000000325");
+                    }
+                    else
+                    {
+                        sql = sql.FindAll(p => p.ExamenDxId == psrtConsultorioId);
+                    }
                 }
 
                 if (pstrGrupoEtario != "-1")
@@ -4396,7 +4407,14 @@ namespace Sigesoft.Server.WebClientAdmin.BLL
 
                 if (psrtConsultorioId != "-1")
                 {
-                    sql = sql.FindAll(p => p.ExamenDxId == psrtConsultorioId);
+                    if (psrtConsultorioId == "N002-ME000000005" || psrtConsultorioId == "N009-ME000000325")
+                    {
+                        sql = sql.FindAll(p => p.ExamenDxId == "N002-ME000000005" || p.ExamenDxId == "N009-ME000000325");
+                    }
+                    else
+                    {
+                        sql = sql.FindAll(p => p.ExamenDxId == psrtConsultorioId);
+                    }
                 }
 
                 if (pstrGrupoEtario != "-1")
