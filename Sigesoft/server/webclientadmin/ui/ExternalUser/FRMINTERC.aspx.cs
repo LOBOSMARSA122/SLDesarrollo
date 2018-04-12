@@ -27,7 +27,7 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
 
             LinkButton objLinkButton = new LinkButton();
             objLinkButton.ID = ListaServicios[0].IdServicio;
-            objLinkButton.Text = ListaServicios[0].Paciente;
+            objLinkButton.Text = ListaServicios[0].Paciente + "Interconsulta";
            
             //objLinkButton.Text = Session["IdServicio"].ToString() + ".pdf";
             objLinkButton.Click += new EventHandler(link_Click);
