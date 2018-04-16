@@ -248,6 +248,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCartaCotizacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\dsCertificadoCosapi.cs">
+      <DependentUpon>dsCertificadoCosapi.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dataset\dsCertificadoCosapi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCertificadoCosapi.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\dsCuestionarioAutoeva.cs">
       <DependentUpon>dsCuestionarioAutoeva.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -1221,6 +1230,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crCertificadoAptitud2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crCertificadoCosapi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crCertificadoCosapi.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\crFichaAudiometriaAudiomax02.cs">
@@ -3068,6 +3083,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crCertificadoAptitud2.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crCertificadoCosapi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crCertificadoCosapi.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\crFichaAudiometriaAudiomax02.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crFichaAudiometriaAudiomax02.cs</LastGenOutput>
@@ -4084,6 +4103,17 @@
     </None>
     <None Include="Dataset\dsCartaCotizacion.xss">
       <DependentUpon>dsCartaCotizacion.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\dsCertificadoCosapi.xsc">
+      <DependentUpon>dsCertificadoCosapi.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\dsCertificadoCosapi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCertificadoCosapi.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\dsCertificadoCosapi.xss">
+      <DependentUpon>dsCertificadoCosapi.xsd</DependentUpon>
     </None>
     <None Include="Dataset\dsCuestionarioAutoeva.xsc">
       <DependentUpon>dsCuestionarioAutoeva.xsd</DependentUpon>
