@@ -1011,6 +1011,13 @@ namespace Sigesoft.Node.WinClient.UI.Reports
 
         }
 
+        private void GenerateInformeMedicoOcupacional(string pathFile)
+        {
+            var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
+            ReportPDF.CreateInformeMedicoOcupacional(filiationData,pathFile);
+        }
+        
+
         private void CreateFichaMedicaTrabajador3(string pathFile)
         {
             var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
@@ -3669,6 +3676,16 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     GenerateInformeMedicoTrabajador(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.INFORME_FICHA_MEDICA_TRABAJADOR)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
                     break;
+
+
+                //case Constants.INFORME_FICHA_MEDICA_TRABAJADOR: SEGUIR
+                //    var DatosServicio = _serviceBL.GetServiceShort(_serviceId);
+                //   var ruta1 = Common.Utils.GetApplicationConfigValue("InformeTrab1").ToString();
+                //   GenerateInformeMedicoOcupacional(string.Format("{0}.pdf", Path.Combine(ruta1, DatosServicio.Empresa + "-" + DatosServicio.Paciente + "-" + Constants.INFORME_FICHA_MEDICA_TRABAJADOR + "-" + DatosServicio.FechaServicio.Value.ToString("dd MMMM,  yyyy"))));
+                //   GenerateInformeMedicoOcupacional(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.INFORME_FICHA_MEDICA_TRABAJADOR)));
+                //    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
+                //    break;
+                    
                 case Constants.INFORME_FICHA_MEDICA_TRABAJADOR_2:
                     var DatosServicio1 = _serviceBL.GetServiceShort(_serviceId);
                     var ruta2 = Common.Utils.GetApplicationConfigValue("InformeTrab2").ToString();
