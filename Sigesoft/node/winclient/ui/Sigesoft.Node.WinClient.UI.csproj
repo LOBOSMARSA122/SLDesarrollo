@@ -139,7 +139,6 @@
     </Reference>
     <Reference Include="SigPlusNET">
       <HintPath>..\..\..\..\ExternalLibraries\SigPlusNET.dll</HintPath>
-
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -1215,6 +1214,11 @@
     </Compile>
     <Compile Include="Operations\Popups\frmSelectSignature.Designer.cs">
       <DependentUpon>frmSelectSignature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\crCertificadoAptitud2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crCertificadoAptitud2.rpt</DependentUpon>
     </Compile>
     <Compile Include="Reports\crFichaAudiometriaAudiomax02.cs">
       <DependentUpon>crFichaAudiometriaAudiomax02.rpt</DependentUpon>
@@ -3056,6 +3060,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Operations\Popups\frmSelectSignature.resx">
       <DependentUpon>frmSelectSignature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crCertificadoAptitud2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crCertificadoAptitud2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\crFichaAudiometriaAudiomax02.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
