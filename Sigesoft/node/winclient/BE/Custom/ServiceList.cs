@@ -448,7 +448,7 @@ namespace Sigesoft.Node.WinClient.BE
        public decimal r_Costo { get; set; }
        public string v_AreaId { get; set; }
        public string v_Motive { get; set; }
-
+       public string v_Name { get; set; }
        public string v_GroupOccupationId { get; set; }
        
    }

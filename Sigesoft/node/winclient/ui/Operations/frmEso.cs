@@ -7060,6 +7060,9 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         }
 
+       
+
+
         private void btnReceta_Click(object sender, EventArgs e)
         {
             //grdTotalDiagnosticos.DataSource = _tmpTotalDiagnosticByServiceIdList;

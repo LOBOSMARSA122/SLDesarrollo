@@ -13,7 +13,7 @@ using Sigesoft.Node.WinClient.BE;
 namespace NetPdf
 {
     public class ReportPDF
-    {         
+    {
 
         #region Medical Report EPS
 
@@ -717,10 +717,10 @@ namespace NetPdf
 
 
         #endregion
-    
+
         #region Report For The Worker
 
-        public static void CreateMedicalReportForTheWorker(PacientList filiationData, List<PersonMedicalHistoryList> personMedicalHistory, List<NoxiousHabitsList> noxiousHabit, List<FamilyMedicalAntecedentsList> familyMedicalAntecedent, ServiceList anamnesis, List<ServiceComponentList> serviceComponent, List<DiagnosticRepositoryList> diagnosticRepository, string customerOrganizationName, organizationDto infoEmpresaPropietaria,string filePDF)
+        public static void CreateMedicalReportForTheWorker(PacientList filiationData, List<PersonMedicalHistoryList> personMedicalHistory, List<NoxiousHabitsList> noxiousHabit, List<FamilyMedicalAntecedentsList> familyMedicalAntecedent, ServiceList anamnesis, List<ServiceComponentList> serviceComponent, List<DiagnosticRepositoryList> diagnosticRepository, string customerOrganizationName, organizationDto infoEmpresaPropietaria, string filePDF)
         {
             // step 1: creation of a document-object
             Document document = new Document();
@@ -760,7 +760,7 @@ namespace NetPdf
                 #endregion
 
 
-     #region Declaration Tables
+                #region Declaration Tables
                 var subTitleBackGroundColor = new BaseColor(System.Drawing.Color.White);
                 string include = string.Empty;
                 //List<PdfPCell> cells = null;
@@ -802,7 +802,7 @@ namespace NetPdf
                 //PdfPCell cell = null;
 
                 #endregion
-      
+
 
                 #region Title
                 List<PdfPCell> cells = null;
@@ -846,7 +846,7 @@ namespace NetPdf
                 document.Add(table);
 
                 #endregion
-                
+
                 #region Filiación del trabajador
 
                 PdfPCell cellPhoto = null;
@@ -966,7 +966,7 @@ namespace NetPdf
                                                    
                 };
 
-                columnWidths = new float[] { 33f, 33f,33f };
+                columnWidths = new float[] { 33f, 33f, 33f };
 
                 table = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, "III. EVALUACIÓN MÉDICA", fontTitleTableNegro);
 
@@ -1007,7 +1007,7 @@ namespace NetPdf
 
                 if (filterDiagnosticRepository != null && filterDiagnosticRepository.Count > 0)
                 {
-                    columnWidths = new float[] { 0.7f, 23.6f};
+                    columnWidths = new float[] { 0.7f, 23.6f };
                     include = "i_Item,Valor1";
 
                     foreach (var item in filterDiagnosticRepository)
@@ -1033,7 +1033,7 @@ namespace NetPdf
                             oListaComun.i_Item = "";
                             Listacomun.Add(oListaComun);
                         }
-                      
+
 
                         int Contador = 1;
                         foreach (var Reco in item.Recomendations)
@@ -1041,7 +1041,7 @@ namespace NetPdf
                             oListaComun = new ListaComun();
 
                             oListaComun.Valor1 = Reco.v_RecommendationName;
-                            oListaComun.i_Item = Contador.ToString(); 
+                            oListaComun.i_Item = Contador.ToString();
                             Listacomun.Add(oListaComun);
                             Contador++;
                         }
@@ -1059,7 +1059,7 @@ namespace NetPdf
                         {
                             oListaComun = new ListaComun();
                             oListaComun.Valor1 = Rest.v_RestrictionName;
-                            oListaComun.i_Item = Contador1.ToString(); 
+                            oListaComun.i_Item = Contador1.ToString();
                             Listacomun.Add(oListaComun);
                             Contador1++;
                         }
@@ -1088,10 +1088,10 @@ namespace NetPdf
                 //// Salto de linea
                 //document.Add(new Paragraph("\r\n"));
 
-           
+
 
                 #region Firma y sello Médico
-               
+
                 table = new PdfPTable(2);
                 table.HorizontalAlignment = Element.ALIGN_RIGHT;
                 table.WidthPercentage = 40;
@@ -1105,16 +1105,16 @@ namespace NetPdf
                     cellFirma = new PdfPCell(HandlingItextSharp.GetImage(filiationData.FirmaDoctorAuditor, null, null, 120, 45));
                 else
                     cellFirma = new PdfPCell(new Phrase(" ", fontColumnValue));
-                                        
+
                 cellFirma.HorizontalAlignment = Element.ALIGN_CENTER;
                 cellFirma.VerticalAlignment = Element.ALIGN_MIDDLE;
                 cellFirma.FixedHeight = 50F;
 
-                cell = new PdfPCell(new Phrase("FIRMA Y SELLO MÉDICO", fontColumnValue));                                                  
+                cell = new PdfPCell(new Phrase("FIRMA Y SELLO MÉDICO", fontColumnValue));
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
                 cell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                                                  
-                table.AddCell(cell);             
+
+                table.AddCell(cell);
                 table.AddCell(cellFirma);
 
                 document.Add(table);
@@ -1412,7 +1412,7 @@ namespace NetPdf
                             if (mamografiaResultEval != null)
                                 if (!string.IsNullOrEmpty(mamografiaResultEval.v_Value1))
                                     mamografiaResultEvalX = mamografiaResultEval.v_Value1;
-                        }                                                    
+                        }
 
                     }
 
@@ -1428,7 +1428,7 @@ namespace NetPdf
 
                     table = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths);
                     document.Add(table);
-                              
+
                     #endregion
 
                     #region Hallazgos y recomendaciones
@@ -1501,7 +1501,7 @@ namespace NetPdf
                     #endregion
 
                 }
-                                            
+
                 #endregion
 
                 // step 5: we close the document
@@ -1676,7 +1676,7 @@ namespace NetPdf
                     #region AUDIOMETRIA
 
                     cells = new List<PdfPCell>();
-                     
+
                     // Subtitulo  ******************
                     cell = new PdfPCell(new Phrase(serviceComponent.v_ComponentName + ": ", fontSubTitle))
                     {
@@ -2067,7 +2067,7 @@ namespace NetPdf
                     #endregion
 
                     break;
-       
+
                 case Sigesoft.Common.Constants.INFORME_LABORATORIO_ID:
 
                     #region LABORATORIO
@@ -2091,7 +2091,7 @@ namespace NetPdf
 
                         //cells.Add(new PdfPCell(new Phrase(string.IsNullOrEmpty(descripcion.v_Value1) ? "NO SE HAN REGISTRADO DATOS." : descripcion.v_Value1, fontColumnValue)));
 
-                        var dxLab = diagnosticRepository.FindAll(p => p.i_CategoryId==1);//          .Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ODONTOGRAMA_CONCLUSIONES_DESCRIPCION_ID);
+                        var dxLab = diagnosticRepository.FindAll(p => p.i_CategoryId == 1);//          .Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ODONTOGRAMA_CONCLUSIONES_DESCRIPCION_ID);
 
                         var join = string.Join(", ", dxLab.Select(p => p.v_DiseasesName));
 
@@ -2139,7 +2139,7 @@ namespace NetPdf
                         cells.Add(new PdfPCell(new Phrase("NO SE HAN REGISTRADO DATOS.", fontColumnValue)));
                     }
 
-                    columnWidths = new float[] { 20f,80f };
+                    columnWidths = new float[] { 20f, 80f };
                     table = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths);
 
                     #endregion
@@ -2147,7 +2147,7 @@ namespace NetPdf
                     break;
 
                 case Sigesoft.Common.Constants.PERFIL_LIPIDICO:
-                       #region COLESTEROL Y/O TRIGLICERIDOS
+                    #region COLESTEROL Y/O TRIGLICERIDOS
 
                     cells = new List<PdfPCell>();
 
@@ -2166,7 +2166,7 @@ namespace NetPdf
                     {
                         var descripcionColesterol = serviceComponent.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.COLESTEROL_TOTAL);
 
-                        cells.Add(new PdfPCell(new Phrase(string.IsNullOrEmpty(descripcionColesterol.v_Value1) ? "" : "COLESTEROL: "+ descripcionColesterol.v_Value1 + " (mg/dl)", fontColumnValue)));
+                        cells.Add(new PdfPCell(new Phrase(string.IsNullOrEmpty(descripcionColesterol.v_Value1) ? "" : "COLESTEROL: " + descripcionColesterol.v_Value1 + " (mg/dl)", fontColumnValue)));
 
                         var descripcionTriglicerido = serviceComponent.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.TRIGLICERIDOS);
 
@@ -2259,7 +2259,7 @@ namespace NetPdf
 
                 case Sigesoft.Common.Constants.TGO_ID:
                     #region TGO_ID
-                     cells = new List<PdfPCell>();
+                    cells = new List<PdfPCell>();
 
                     // Subtitulo  ******************
                     cell = new PdfPCell(new Phrase(serviceComponent.v_ComponentName + ": ", fontSubTitle))
@@ -2279,7 +2279,7 @@ namespace NetPdf
                         var tgo = serviceComponent.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.TGO_BIOQUIMICA_TGO);
 
                         cells.Add(new PdfPCell(new Phrase(string.IsNullOrEmpty(tgo.v_Value1) ? "NO SE HAN REGISTRADO DATOS." : tgo.v_Value1 + " (U/l)", fontColumnValue)));
-                        
+
 
                     }
                     else
@@ -2296,7 +2296,7 @@ namespace NetPdf
                 case Sigesoft.Common.Constants.TGP_ID:
                     #region TGP_ID
 
-                     cells = new List<PdfPCell>();
+                    cells = new List<PdfPCell>();
 
                     // Subtitulo  ******************
                     cell = new PdfPCell(new Phrase(serviceComponent.v_ComponentName + ": ", fontSubTitle))
@@ -2314,7 +2314,7 @@ namespace NetPdf
 
                         var tgp = serviceComponent.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.TGP_BIOQUIMICA_TGP);
 
-                        cells.Add(new PdfPCell(new Phrase(string.IsNullOrEmpty(tgp.v_Value1) ? "NO SE HAN REGISTRADO DATOS." :  tgp.v_Value1 + " (U/l)", fontColumnValue)));
+                        cells.Add(new PdfPCell(new Phrase(string.IsNullOrEmpty(tgp.v_Value1) ? "NO SE HAN REGISTRADO DATOS." : tgp.v_Value1 + " (U/l)", fontColumnValue)));
 
                     }
                     else
@@ -2357,7 +2357,7 @@ namespace NetPdf
                         cells.Add(new PdfPCell(new Phrase("NO SE HAN REGISTRADO DATOS.", fontColumnValue)));
                     }
 
-                    columnWidths = new float[] { 15f,85f  };
+                    columnWidths = new float[] { 15f, 85f };
                     table = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths);
 
                     #endregion
@@ -2402,7 +2402,7 @@ namespace NetPdf
 
                     break;
 
-             
+
                 case Sigesoft.Common.Constants.ODONTOGRAMA_ID:
 
                     #region ODONTOGRAMA
@@ -2756,19 +2756,19 @@ namespace NetPdf
                         var descripcion = serviceComponent.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == "N009-MF000001282");
 
                         cells.Add(new PdfPCell(new Phrase(string.IsNullOrEmpty(descripcion.v_Value1) ? "NO SE HAN REGISTRADO DATOS." : descripcion.v_Value1 + " gr. %", fontColumnValue)));
-                                             
+
                     }
                     else
                     {
                         cells.Add(new PdfPCell(new Phrase("NO SE HAN REGISTRADO DATOS.", fontColumnValue)));
                     }
-                                       
+
                     columnWidths = new float[] { 15f, 85f, };
                     table = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths);
 
 
 
-              
+
 
                     // Subtitulo  ******************
                     cell = new PdfPCell(new Phrase("HEMATOCRITO" + ": ", fontSubTitle))
@@ -2787,13 +2787,13 @@ namespace NetPdf
                         var descripcion1 = serviceComponent.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == "N009-MF000001280");
 
                         cells.Add(new PdfPCell(new Phrase(string.IsNullOrEmpty(descripcion1.v_Value1) ? "NO SE HAN REGISTRADO DATOS." : descripcion1.v_Value1 + " %", fontColumnValue)));
-                                             
+
                     }
                     else
                     {
                         cells.Add(new PdfPCell(new Phrase("NO SE HAN REGISTRADO DATOS.", fontColumnValue)));
                     }
-                                       
+
                     columnWidths = new float[] { 15f, 85f };
                     table = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths);
 
@@ -2805,8 +2805,8 @@ namespace NetPdf
 
 
                     #endregion
-                    
-                    break;      
+
+                    break;
 
 
                 case "N009-ME000000046":
@@ -2859,15 +2859,15 @@ namespace NetPdf
 
         public static void CreateAnexo7C(ServiceList DataService,
                                          PacientList filiationData,
-                                        List<ServiceComponentList> serviceComponent, 
-                                        List<PersonMedicalHistoryList> listaPersonMedicalHistory, 
-                                        List<FamilyMedicalAntecedentsList> listaPatologicosFamiliares, 
-                                        List<NoxiousHabitsList> listaHabitoNocivos, 
-                                        byte[] CuadroVacio, 
+                                        List<ServiceComponentList> serviceComponent,
+                                        List<PersonMedicalHistoryList> listaPersonMedicalHistory,
+                                        List<FamilyMedicalAntecedentsList> listaPatologicosFamiliares,
+                                        List<NoxiousHabitsList> listaHabitoNocivos,
+                                        byte[] CuadroVacio,
                                         byte[] CuadroCheck,
                                         byte[] Pulmones,
-                                        string PiezasCaries, 
-                                        string PiezasAusentes, 
+                                        string PiezasCaries,
+                                        string PiezasAusentes,
                                         List<ServiceComponentFieldValuesList> Audiometria,
                                         List<DiagnosticRepositoryList> diagnosticRepository,
                                         organizationDto infoEmpresaPropietaria,
@@ -2926,12 +2926,12 @@ namespace NetPdf
             //document.Add(headerTbl);
 
             //#endregion
-            
+
             //#region Title
 
             //Paragraph cTitle = new Paragraph("ANEXO 16", fontTitle1);
             //cTitle.Alignment = Element.ALIGN_CENTER;
-            
+
             //document.Add(cTitle);
 
             //#endregion
@@ -2951,6 +2951,7 @@ namespace NetPdf
             PdfPCell cell = null;
 
             #endregion
+
             #region Title
 
             PdfPCell CellLogo = null;
@@ -2994,22 +2995,22 @@ namespace NetPdf
 
             #endregion
 
-     
+
 
             document.Add(new Paragraph("\r\n"));
 
             #region Cabecera Reporte
 
-            PdfPCell cellConCheck = null;          
+            PdfPCell cellConCheck = null;
             cellConCheck = new PdfPCell(HandlingItextSharp.GetImage(CuadroCheck));
 
             PdfPCell cellSinCheck = null;
             cellSinCheck = new PdfPCell(HandlingItextSharp.GetImage(CuadroVacio));
-                   
+
 
             PdfPCell PreOcupacional = cellSinCheck, Periodica = cellSinCheck, Retiro = cellSinCheck, Otros = cellSinCheck;
-            string Empresa = "", Contratista="";
-            if (DataService !=null)
+            string Empresa = "", Contratista = "";
+            if (DataService != null)
             {
                 if (DataService.i_EsoTypeId == (int)Sigesoft.Common.TypeESO.PreOcupacional)
                 {
@@ -3039,7 +3040,7 @@ namespace NetPdf
                     Contratista = DataService.EmpresaEmpleadora;
                 }
             }
-          
+
 
 
             cells = new List<PdfPCell>()
@@ -3100,7 +3101,7 @@ namespace NetPdf
             PdfPCell cellFirmaTrabajador = null;
             PdfPCell cellFirmaDoctor = null;
             PdfPCell cellHuellaTrabajador = null;
-            if (DataService !=null)
+            if (DataService != null)
             {
                 if (DataService.FirmaTrabajador != null)
                     cellFirmaTrabajador = new PdfPCell(HandlingItextSharp.GetImage(DataService.FirmaTrabajador, null, null, 120, 45));
@@ -3111,7 +3112,7 @@ namespace NetPdf
                 cellFirmaTrabajador.Rowspan = 8;
                 cellFirmaTrabajador.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                 cellFirmaTrabajador.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
-               
+
 
                 //Foto del Doctor
 
@@ -3126,7 +3127,7 @@ namespace NetPdf
 
 
                 //Huella 
-                
+
                 if (DataService.HuellaTrabajador != null)
                     cellHuellaTrabajador = new PdfPCell(HandlingItextSharp.GetImage(DataService.HuellaTrabajador, null, null, 20, 40));
                 else
@@ -3137,14 +3138,14 @@ namespace NetPdf
                 cellHuellaTrabajador.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                 cellHuellaTrabajador.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
             }
-           
+
 
             //Pulmones 
             //PdfPCell cellPulmones = null;
 
             PdfPCell cellPulmones = null;
-            cellPulmones = new PdfPCell(HandlingItextSharp.GetImage(Pulmones,15f));
-           
+            cellPulmones = new PdfPCell(HandlingItextSharp.GetImage(Pulmones, 15f));
+
             cellPulmones.Colspan = 2;
             cellPulmones.Rowspan = 4;
             cellPulmones.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
@@ -3156,7 +3157,7 @@ namespace NetPdf
                   Entre3501a4000 = cellSinCheck, Entre2501a3000 = cellSinCheck,
                   Entre4001a4500 = cellSinCheck, Mas4501 = cellSinCheck;
 
-            if (DataService !=null)
+            if (DataService != null)
             {
                 if (DataService.i_PlaceWorkId == (int)Sigesoft.Common.LugarTrabajo.Superfice)
                 {
@@ -3255,7 +3256,7 @@ namespace NetPdf
             PdfPCell Masculino = cellSinCheck, Femenino = cellSinCheck,
                     Soltero = cellSinCheck, Conviviente = cellSinCheck, Viudo = cellSinCheck, Casado = cellSinCheck, Divorciado = cellSinCheck,
                     Analfabeto = cellSinCheck, PrimariaCompleta = cellSinCheck, SecundariaCompleta = cellSinCheck, Tecnico = cellSinCheck, PrimariaImcompleta = cellSinCheck, SecundariaIncompleta = cellSinCheck, Universitario = cellSinCheck;
-            
+
             //Genero
             if (DataService.i_SexTypeId == (int)Sigesoft.Common.Gender.MASCULINO)
             {
@@ -3387,21 +3388,21 @@ namespace NetPdf
                     VidSegmentaria = cellSinCheck, Solventes = cellSinCheck, Posturas = cellSinCheck, PVD = cellSinCheck,
                     VidTotal = cellSinCheck, MetalesPesados = cellSinCheck, Turnos = cellSinCheck, OtrosEPPS = cellSinCheck;
 
-         
+
             string Describir = "";
 
-            string ValorCabeza = "", ValorCuello = "", ValorBoca="", ValorReflejosPupilares="" , ValorNariz="";
+            string ValorCabeza = "", ValorCuello = "", ValorBoca = "", ValorReflejosPupilares = "", ValorNariz = "";
 
-        
+
 
             #region Examen Fisco (7C)
             ServiceComponentList find7C = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EXAMEN_FISICO_7C_ID);
-            PdfPCell ValorPulmonesNormal = cellSinCheck, ValorPulmonesAnormal = cellSinCheck;           
+            PdfPCell ValorPulmonesNormal = cellSinCheck, ValorPulmonesAnormal = cellSinCheck;
             PdfPCell ValorTactoRectalNormal = cellSinCheck, ValorTactoRectalAnormal = cellSinCheck, ValorTactoRectalSinRealizar = cellSinCheck;
             string ValorPulmonDescripcion = "", ValorTactoRectalDescripcion = "";
-            
-            string ValorMiembrosInferiores = "", ValorMiembrosSuperiores="", ValorReflejosOsteoTendinosos="", ValorMarcha="", ValorColumna="", ValorAbdomen="",
-                    ValorAnilloInguinales="", ValorHernias="", ValorVarice="", ValorGenitales="", ValorGangleos="";
+
+            string ValorMiembrosInferiores = "", ValorMiembrosSuperiores = "", ValorReflejosOsteoTendinosos = "", ValorMarcha = "", ValorColumna = "", ValorAbdomen = "",
+                    ValorAnilloInguinales = "", ValorHernias = "", ValorVarice = "", ValorGenitales = "", ValorGangleos = "";
 
 
             if (find7C != null)
@@ -3497,7 +3498,7 @@ namespace NetPdf
                 {
                     ValorAnilloInguinales = AnilloInguinales.v_Value1;
                 }
-                
+
                 var MiembrosInferiores = find7C.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.EXAMEN_FISICO_7C_EXAMEN_FISICO_MIEMBROS_INFERIORES_DESCRIPCION);
                 if (MiembrosInferiores != null)
                 {
@@ -3717,12 +3718,12 @@ namespace NetPdf
                 if (Reflejos != null)
                 {
                     ValorReflejosPupilares = Reflejos.v_Value1;
-                }  
+                }
             #endregion
-           
-                           
+
+
             }
-          
+
             cells = new List<PdfPCell>()
                   {
                     //filaMobogenie3.0,Released Now!
@@ -3934,58 +3935,58 @@ namespace NetPdf
             #endregion
 
             #region Funciones Vitales
-            
-              ServiceComponentList findFuncionesVitales = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.FUNCIONES_VITALES_ID);
-              string ValorTemperatura = "", ValorFRespiratoria="", ValorFCardiaca="", ValorSatO2="", ValorPAS="", ValorPAD="";
-              if (findFuncionesVitales != null)
-              {                 
-                  var Temperatura = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_TEMPERATURA_ID);
-                  if (Temperatura != null)
-                  {
-                      if (Temperatura.v_Value1 != null) ValorTemperatura = Temperatura.v_Value1;
-                  }
 
-                  var FRespiratoria = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_FREC_RESPIRATORIA_ID);
-                  if (FRespiratoria != null)
-                  {
-                      if (FRespiratoria.v_Value1 != null) ValorFRespiratoria = FRespiratoria.v_Value1;
-                  }
+            ServiceComponentList findFuncionesVitales = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.FUNCIONES_VITALES_ID);
+            string ValorTemperatura = "", ValorFRespiratoria = "", ValorFCardiaca = "", ValorSatO2 = "", ValorPAS = "", ValorPAD = "";
+            if (findFuncionesVitales != null)
+            {
+                var Temperatura = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_TEMPERATURA_ID);
+                if (Temperatura != null)
+                {
+                    if (Temperatura.v_Value1 != null) ValorTemperatura = Temperatura.v_Value1;
+                }
 
-                  var FCardiaca = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_FREC_CARDIACA_ID);
-                  if (FCardiaca != null)
-                  {
-                      if (FCardiaca.v_Value1 != null) ValorFCardiaca = FCardiaca.v_Value1;
-                  }
+                var FRespiratoria = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_FREC_RESPIRATORIA_ID);
+                if (FRespiratoria != null)
+                {
+                    if (FRespiratoria.v_Value1 != null) ValorFRespiratoria = FRespiratoria.v_Value1;
+                }
 
-                  var SatO2 = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_SAT_O2_ID);
-                  if (SatO2 != null)
-                  {
-                      if (SatO2.v_Value1 != null) ValorSatO2 = SatO2.v_Value1;
-                  }
+                var FCardiaca = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_FREC_CARDIACA_ID);
+                if (FCardiaca != null)
+                {
+                    if (FCardiaca.v_Value1 != null) ValorFCardiaca = FCardiaca.v_Value1;
+                }
 
-                  var PAS = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_PAS_ID);
-                  if (PAS != null)
-                  {
-                      if (PAS.v_Value1 != null) ValorPAS = PAS.v_Value1;
-                  }
+                var SatO2 = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_SAT_O2_ID);
+                if (SatO2 != null)
+                {
+                    if (SatO2.v_Value1 != null) ValorSatO2 = SatO2.v_Value1;
+                }
 
-                  var PAD = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_PAD_ID);
-                  if (PAD != null)
-                  {
-                      if (PAD.v_Value1 != null) ValorPAD = PAD.v_Value1;
-                  }
+                var PAS = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_PAS_ID);
+                if (PAS != null)
+                {
+                    if (PAS.v_Value1 != null) ValorPAS = PAS.v_Value1;
+                }
+
+                var PAD = findFuncionesVitales.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FUNCIONES_VITALES_PAD_ID);
+                if (PAD != null)
+                {
+                    if (PAD.v_Value1 != null) ValorPAD = PAD.v_Value1;
+                }
 
 
-              }
+            }
             #endregion
 
             #region Espirometria
 
 
-            string ValorCVF = "", ValorFEV1 = "", ValorFEV1_FVC = "", ValorFEF25_75 = "", ValorResultadoABS = "",ValorObservacionABS = "",ValorConclusionABS = "";
+            string ValorCVF = "", ValorFEV1 = "", ValorFEV1_FVC = "", ValorFEF25_75 = "", ValorResultadoABS = "", ValorObservacionABS = "", ValorConclusionABS = "";
 
             ServiceComponentList findEspirometria = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ESPIROMETRIA_ID);
-         
+
             if (findEspirometria != null)
             {
                 var CVF = findEspirometria.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ESPIROMETRIA_FUNCION_RESPIRATORIA_ABS_CVF);
@@ -4046,7 +4047,7 @@ namespace NetPdf
                     if (Temperatura.v_Value1 != null) ValorTemperatura = Temperatura.v_Value1;
                 }
             }
-            
+
             #endregion
 
             #region Habitos Noscivos
@@ -4061,12 +4062,12 @@ namespace NetPdf
             foreach (var item in listaHabitoNocivos)
             {
 
-                if (item.i_TypeHabitsId ==(int)Sigesoft.Common.TypeHabit.Alcohol)
+                if (item.i_TypeHabitsId == (int)Sigesoft.Common.TypeHabit.Alcohol)
                 {
                     if (item.v_FrecuenciaHabito.Trim().ToUpper() == "NUNCA" || item.v_FrecuenciaHabito.Trim().ToUpper() == "NADA" || item.v_FrecuenciaHabito.Trim().ToUpper() == "NO")
                     {
                         AlcoholNada = cellConCheck;
-                        
+
                     }
                     else if (item.v_FrecuenciaHabito.Trim().ToUpper() == "POCO")
                     {
@@ -4126,23 +4127,23 @@ namespace NetPdf
 
                 if (item.i_TypeHabitsId == (int)Sigesoft.Common.TypeHabit.ActividadFisica)
                 {
-                    ActividadFisicaDes = item.v_FrecuenciaHabito;                
+                    ActividadFisicaDes = item.v_FrecuenciaHabito;
                 }
 
             }
 
             string dxIMC = string.Empty;
-            var antropometria = diagnosticRepository.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ANTROPOMETRIA_ID 
+            var antropometria = diagnosticRepository.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ANTROPOMETRIA_ID
                                                             && p.v_ComponentFieldsId == Sigesoft.Common.Constants.ANTROPOMETRIA_IMC_ID);
 
             if (antropometria != null)
             {
                 dxIMC = antropometria.v_DiseasesName;
             }
-            
+
             #endregion
-            
-          
+
+
             cells = new List<PdfPCell>()
                  {
                     new PdfPCell(new Phrase("HÁBITOS", fontColumnValue)){Border = PdfPCell.LEFT_BORDER,HorizontalAlignment = PdfPCell.ALIGN_CENTER},
@@ -4225,7 +4226,7 @@ namespace NetPdf
                       new PdfPCell(new Phrase("CABEZA", fontColumnValue)),
                        new PdfPCell(new Phrase(ValorCabeza, fontColumnValue))
                  };
-            columnWidths = new float[] { 15f,85f };
+            columnWidths = new float[] { 15f, 85f };
 
             filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, "", fontTitleTable);
 
@@ -4233,14 +4234,14 @@ namespace NetPdf
             #endregion
 
             #region Cuella y Nariz
-             cells = new List<PdfPCell>()
+            cells = new List<PdfPCell>()
                  {
                       new PdfPCell(new Phrase("CUELLO", fontColumnValue)),
                        new PdfPCell(new Phrase(ValorCuello, fontColumnValue)),
                         new PdfPCell(new Phrase("NARIZ", fontColumnValue)),
                        new PdfPCell(new Phrase(ValorNariz, fontColumnValue))
                  };
-            columnWidths = new float[] { 15f,35f,10f,40f };
+            columnWidths = new float[] { 15f, 35f, 10f, 40f };
 
             filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, "", fontTitleTable);
 
@@ -4306,7 +4307,7 @@ namespace NetPdf
                 {
                     if (OI_VC_CC.v_Value1 != null) ValorOI_VC_CC = OI_VC_CC.v_Value1;
                 }
-                                
+
                 var OD_VL_SC = findOftalmologia.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.OFTALMOLOGIA_SC_LEJOS_OJO_DERECHO_ID);
                 if (OD_VL_SC != null)
                 {
@@ -4324,7 +4325,7 @@ namespace NetPdf
                 {
                     if (OD_VL_CC.v_Value1 != null) ValorOD_VL_CC = OD_VL_CC.v_Value1;
                 }
-                
+
                 var OI_VL_CC = findOftalmologia.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.OFTALMOLOGIA_CC_LEJOS_OJO_IZQUIERDO_ID);
                 if (OI_VL_CC != null)
                 {
@@ -4333,10 +4334,10 @@ namespace NetPdf
 
                 if (DxCateodiaOftalmologia != null)
                 {
-                    ValorDxOftalmologia = string.Join(", ", DxCateodiaOftalmologia.Select(p => p.v_DiseasesName));   
-               
+                    ValorDxOftalmologia = string.Join(", ", DxCateodiaOftalmologia.Select(p => p.v_DiseasesName));
+
                 }
-                
+
                 //if (findOftalmologia.DiagnosticRepository != null)
                 //{
                 //    ValorDxOftalmologia = string.Join(", ", findOftalmologia.DiagnosticRepository.Select(p => p.v_DiseasesName));
@@ -4378,7 +4379,7 @@ namespace NetPdf
                 {
                     ValorDiscromatopsia = "NO APLICA";
                 }
-               
+
 
 
             }
@@ -4433,13 +4434,13 @@ namespace NetPdf
             #region Audiometria
             //ServiceComponentList findAudiometria = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.AUDIOMETRIA_ID);
             //var xxx = findAudiometria.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.UserControlAudimetria);
-           
-            string ValorOtoscopiaOI = "", ValorOtoscopiaOD ="";
+
+            string ValorOtoscopiaOI = "", ValorOtoscopiaOD = "";
 
             string ValorVA_OD_500 = "", ValorVA_OD_1000 = "", ValorVA_OD_2000 = "", ValorVA_OD_3000 = "", ValorVA_OD_4000 = "", ValorVA_OD_6000 = "", ValorVA_OD_8000 = "",
                     ValorVA_OI_500 = "", ValorVA_OI_1000 = "", ValorVA_OI_2000 = "", ValorVA_OI_3000 = "", ValorVA_OI_4000 = "", ValorVA_OI_6000 = "", ValorVA_OI_8000 = "";
 
-          
+
 
             var VA_OD_500 = Audiometria.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.txt_VA_OD_500);
             if (VA_OD_500 != null)
@@ -4528,7 +4529,7 @@ namespace NetPdf
             {
                 if (VA_OI_8000.v_Value1 != null) ValorVA_OI_8000 = VA_OI_8000.v_Value1;
             }
-            
+
             var OtoscopiaOD = Audiometria.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.AUDIOMETRIA_OTOSCOPIA_OD);
             if (OtoscopiaOD != null)
             {
@@ -4637,21 +4638,21 @@ namespace NetPdf
                 if (VO_OI_8000.v_Value1 != null) ValorVO_OI_8000 = VO_OI_8000.v_Value1;
             }
 
-           
+
 
             #endregion
 
             document.NewPage();
             #region Title
 
-             CellLogo = null;
+            CellLogo = null;
             cells = new List<PdfPCell>();
-             cellPhoto1 = null;
+            cellPhoto1 = null;
 
             //if (filiationData.b_Photo != null)
             //    cellPhoto1 = new PdfPCell(HandlingItextSharp.GetImage(filiationData.b_Photo, 23F)) { HorizontalAlignment = PdfPCell.ALIGN_RIGHT };
             //else
-                cellPhoto1 = new PdfPCell(new Phrase(" ", fontColumnValue)) { HorizontalAlignment = PdfPCell.ALIGN_RIGHT };
+            cellPhoto1 = new PdfPCell(new Phrase(" ", fontColumnValue)) { HorizontalAlignment = PdfPCell.ALIGN_RIGHT };
 
             if (infoEmpresaPropietaria.b_Image != null)
             {
@@ -4664,7 +4665,7 @@ namespace NetPdf
 
             columnWidths = new float[] { 100f };
 
-             cellsTit = new List<PdfPCell>()
+            cellsTit = new List<PdfPCell>()
             { 
 
                 new PdfPCell(new Phrase("ANEXO 16", fontTitle1))
@@ -4972,7 +4973,7 @@ namespace NetPdf
                     new PdfPCell(new Phrase("COLUMNA VERTEBRAL", fontColumnValueBold)){Colspan=2, HorizontalAlignment = PdfPCell.ALIGN_RIGHT}  ,
                     new PdfPCell(new Phrase( ValorColumna, fontColumnValue)){Colspan=5, HorizontalAlignment = PdfPCell.ALIGN_LEFT}    , 
                  };
-            columnWidths = new float[] { 15f, 10f, 5f,10f,5f,10f,45f };
+            columnWidths = new float[] { 15f, 10f, 5f, 10f, 5f, 10f, 45f };
 
             filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, "", fontTitleTable);
 
@@ -5017,11 +5018,11 @@ namespace NetPdf
             #region Anillos
 
             #region Psicologia
-            string ValorAreaCognitiva = "" ,ValorAreaEmocional="", ValorConclusionPsicologia="";
+            string ValorAreaCognitiva = "", ValorAreaEmocional = "", ValorConclusionPsicologia = "";
             string ConcatenadoPsicologia = "";
 
             ServiceComponentList findPsicologia = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.PSICOLOGIA_ID);
-            if (findPsicologia !=null)
+            if (findPsicologia != null)
             {
                 var AreaCognitiva = findPsicologia.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PSICOLOGIA_AREA_COGNITIVA_ID);
                 if (AreaCognitiva != null)
@@ -5048,9 +5049,9 @@ namespace NetPdf
                     ConcatenadoPsicologia.Substring(0, ConcatenadoPsicologia.Length - 3);
                 }
             }
-            
-           
-            
+
+
+
             #endregion
             cells = new List<PdfPCell>()
                  {
@@ -5075,7 +5076,7 @@ namespace NetPdf
                   
 
                  };
-            columnWidths = new float[] { 10f,20f,10f,20f,10f,20f };
+            columnWidths = new float[] { 10f, 20f, 10f, 20f, 10f, 20f };
 
             filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, "", fontTitleTable);
 
@@ -5090,11 +5091,11 @@ namespace NetPdf
 
             var findOIT = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.OIT_ID);
 
-         
 
-            string ValorVertices = "", ValorCamposPulmonares="", ValorHilos="", ValorDiafragmaticos="", ValorCardiofrenicos="", ValorMediastinos=""
-                    , ValorSiluetaCardiaca="", ValorConclusionesRx="",
-                    ValorNroRx = "", ValorFechaToma = "", ValorCalidad = "", NroPlacaRx ="";
+
+            string ValorVertices = "", ValorCamposPulmonares = "", ValorHilos = "", ValorDiafragmaticos = "", ValorCardiofrenicos = "", ValorMediastinos = ""
+                    , ValorSiluetaCardiaca = "", ValorConclusionesRx = "",
+                    ValorNroRx = "", ValorFechaToma = "", ValorCalidad = "", NroPlacaRx = "";
 
             PdfPCell Cero = cellSinCheck, UnoCero = cellSinCheck, Uno = cellSinCheck, Dos = cellSinCheck, Tres = cellSinCheck, Cuatro = cellSinCheck;
             PdfPCell ABC = cellSinCheck;
@@ -5130,7 +5131,7 @@ namespace NetPdf
             if (findOIT != null)
             {
                 var CONCLUSIONES_OIT_DESCRIPCION_ID = findOIT.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.RX_CONCLUSIONES_OIT_DESCRIPCION_ID);
-               
+
 
                 //if (CONCLUSIONES_OIT_DESCRIPCION_ID != null)
                 //{
@@ -5138,7 +5139,7 @@ namespace NetPdf
                 //}
 
                 var ValorRX_NEUMOCONIOSIS_CHECK = findOIT.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.RX_NEUMOCONIOSIS_CHECK);
-                
+
                 if (ValorRX_NEUMOCONIOSIS_CHECK != null)
                 {
                     if (ValorRX_NEUMOCONIOSIS_CHECK.v_Value1 == "1")
@@ -5198,7 +5199,7 @@ namespace NetPdf
 
 
                 //var Valor_Con_Neumoconiosis = findOIT.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.RX_CONCLUSIONES_OIT_ID);
-                
+
                 //if (Valor_Con_Neumoconiosis != null)
                 //{
                 //    if (Valor_Con_Neumoconiosis.v_Value1 == "2")
@@ -5383,7 +5384,7 @@ namespace NetPdf
                 }
 
 
-               
+
             }
             var DxRx = diagnosticRepository.FindAll(p => p.i_CategoryId == 6);
             //var ConclusionesRx = findRayosX.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.RX_CONCLUSIONES_RADIOGRAFICAS_DESCRIPCION_ID);
@@ -5422,41 +5423,41 @@ namespace NetPdf
             string ValorHemoglobina2 = "", ValorHematocrito2 = "";
             var Resultado_HEMOGRAMA_COMPLETO_HEMOGLOBINA = "";
             var Resultado_HEMOGRAMA_COMPLETO_HEMATOCRITO = "";
-      
-               
-                if (oHEMOGRAMA_COMPLETO_ID != null)
+
+
+            if (oHEMOGRAMA_COMPLETO_ID != null)
+            {
+                var Value_HEMOGRAMA_COMPLETO_HEMOGLOBINA = oHEMOGRAMA_COMPLETO_ID.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.HEMOGRAMA_COMPLETO_HEMOGLOBINA);
+
+                if (Value_HEMOGRAMA_COMPLETO_HEMOGLOBINA != null)
                 {
-                    var Value_HEMOGRAMA_COMPLETO_HEMOGLOBINA = oHEMOGRAMA_COMPLETO_ID.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.HEMOGRAMA_COMPLETO_HEMOGLOBINA);
-                   
-                        if (Value_HEMOGRAMA_COMPLETO_HEMOGLOBINA != null)
-                        {
-                            Resultado_HEMOGRAMA_COMPLETO_HEMOGLOBINA = Value_HEMOGRAMA_COMPLETO_HEMOGLOBINA.v_Value1;
-                        }
+                    Resultado_HEMOGRAMA_COMPLETO_HEMOGLOBINA = Value_HEMOGRAMA_COMPLETO_HEMOGLOBINA.v_Value1;
+                }
 
-                        var Value_HEMOGRAMA_COMPLETO_HEMATOCRITO = oHEMOGRAMA_COMPLETO_ID.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.HEMOGRAMA_COMPLETO_HEMATOCRITO);
+                var Value_HEMOGRAMA_COMPLETO_HEMATOCRITO = oHEMOGRAMA_COMPLETO_ID.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.HEMOGRAMA_COMPLETO_HEMATOCRITO);
 
-                        if (Value_HEMOGRAMA_COMPLETO_HEMATOCRITO != null)
-                        {
-                            Resultado_HEMOGRAMA_COMPLETO_HEMATOCRITO = Value_HEMOGRAMA_COMPLETO_HEMATOCRITO.v_Value1;
-                        }
-
-
-                        ValorHemoglobina1 = Resultado_HEMOGRAMA_COMPLETO_HEMOGLOBINA + " / " + Resultado_HEMOGRAMA_COMPLETO_HEMATOCRITO;
+                if (Value_HEMOGRAMA_COMPLETO_HEMATOCRITO != null)
+                {
+                    Resultado_HEMOGRAMA_COMPLETO_HEMATOCRITO = Value_HEMOGRAMA_COMPLETO_HEMATOCRITO.v_Value1;
                 }
 
 
-                if (oLABORATORIO_HEMOGLOBINA_ID != null || oLABORATORIO_HEMATOCRITO_ID != null)
-                {
-
-                    var Value_HEMOGLOBINA_ID = oLABORATORIO_HEMOGLOBINA_ID.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.HEMOGLOBINA_ID);
-                    var Value_HEMATOCRITO_ID = oLABORATORIO_HEMATOCRITO_ID.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.HEMATOCRITO_ID);
+                ValorHemoglobina1 = Resultado_HEMOGRAMA_COMPLETO_HEMOGLOBINA + " / " + Resultado_HEMOGRAMA_COMPLETO_HEMATOCRITO;
+            }
 
 
+            if (oLABORATORIO_HEMOGLOBINA_ID != null || oLABORATORIO_HEMATOCRITO_ID != null)
+            {
 
-                    ValorHemoglobina2 = Value_HEMOGLOBINA_ID.v_Value1 + " / " + Value_HEMATOCRITO_ID.v_Value1;
+                var Value_HEMOGLOBINA_ID = oLABORATORIO_HEMOGLOBINA_ID.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.HEMOGLOBINA_ID);
+                var Value_HEMATOCRITO_ID = oLABORATORIO_HEMATOCRITO_ID.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.HEMATOCRITO_ID);
 
-                }
-         
+
+
+                ValorHemoglobina2 = Value_HEMOGLOBINA_ID.v_Value1 + " / " + Value_HEMATOCRITO_ID.v_Value1;
+
+            }
+
 
 
 
@@ -5498,7 +5499,7 @@ namespace NetPdf
             //                Resultado_HEMOGRAMA_COMPLETO_HEMATOCRITO = Value_HEMOGRAMA_COMPLETO_HEMATOCRITO.v_Value1;
             //            }
             //        }
-                  
+
 
 
             //        ValorHematocrito1 = Hematocrito.v_Value1 + " " + Resultado_HEMOGRAMA_COMPLETO_HEMATOCRITO;
@@ -5506,92 +5507,92 @@ namespace NetPdf
             //}
 
 
-              if (findLaboratorioGrupoSanguineo !=null)
-              {
-                  var ValorSangreO = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.GRUPO_SANGUINEO_ID);
-                  if (ValorSangreO != null)
-                  {
-                      if (ValorSangreO.v_Value1 == "1")
-                      {
-                          SangreO = cellConCheck;
-                      }
+            if (findLaboratorioGrupoSanguineo != null)
+            {
+                var ValorSangreO = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.GRUPO_SANGUINEO_ID);
+                if (ValorSangreO != null)
+                {
+                    if (ValorSangreO.v_Value1 == "1")
+                    {
+                        SangreO = cellConCheck;
+                    }
 
-                  }
+                }
 
-                  var ValorSangreA = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.GRUPO_SANGUINEO_ID);
-                  if (ValorSangreA != null)
-                  {
-                      if (ValorSangreA.v_Value1 == "2")
-                      {
-                          SangreA = cellConCheck;
-                      }
+                var ValorSangreA = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.GRUPO_SANGUINEO_ID);
+                if (ValorSangreA != null)
+                {
+                    if (ValorSangreA.v_Value1 == "2")
+                    {
+                        SangreA = cellConCheck;
+                    }
 
-                  }
+                }
 
-                  var ValorSangreB = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.GRUPO_SANGUINEO_ID);
-                  if (ValorSangreB != null)
-                  {
-                      if (ValorSangreB.v_Value1 == "3")
-                      {
-                          SangreB = cellConCheck;
-                      }
+                var ValorSangreB = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.GRUPO_SANGUINEO_ID);
+                if (ValorSangreB != null)
+                {
+                    if (ValorSangreB.v_Value1 == "3")
+                    {
+                        SangreB = cellConCheck;
+                    }
 
-                  }
+                }
 
-                  var ValorSangreAB = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.GRUPO_SANGUINEO_ID);
-                  if (ValorSangreAB != null)
-                  {
-                      if (ValorSangreAB.v_Value1 == "4")
-                      {
-                          SangreAB = cellConCheck;
-                      }
+                var ValorSangreAB = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.GRUPO_SANGUINEO_ID);
+                if (ValorSangreAB != null)
+                {
+                    if (ValorSangreAB.v_Value1 == "4")
+                    {
+                        SangreAB = cellConCheck;
+                    }
 
-                  }
+                }
 
-                  var Factor_rh_Positivo = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FACTOR_SANGUINEO_ID);
-                  if (Factor_rh_Positivo != null)
-                  {
-                      if (Factor_rh_Positivo.v_Value1 == "1")
-                      {
-                          rhPositivo  = cellConCheck;
-                      }
-                      else if (Factor_rh_Positivo.v_Value1 == "2")
-                      {
-                          rhNegativo = cellConCheck;
-                      }
-
-
-                  }
+                var Factor_rh_Positivo = findLaboratorioGrupoSanguineo.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.FACTOR_SANGUINEO_ID);
+                if (Factor_rh_Positivo != null)
+                {
+                    if (Factor_rh_Positivo.v_Value1 == "1")
+                    {
+                        rhPositivo = cellConCheck;
+                    }
+                    else if (Factor_rh_Positivo.v_Value1 == "2")
+                    {
+                        rhNegativo = cellConCheck;
+                    }
 
 
+                }
 
-              }
-              if (findLaboratorio != null)
-              {
-                  var ValorVDRL = findLaboratorio.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.LABORATORIO_VDRL_ID);
-                  if (ValorVDRL != null)
-                  {
 
-                      VDRLValor = ValorVDRL.v_Value1;
-                      //if (ValorVDRL.v_Value1 == "1")
-                      //{
-                      //    ReaccionPositivo = cellConCheck;
-                      //}
-                      //else if (ValorVDRL.v_Value1 == "2")
-                      //{
-                      //    ReaccionNegativo= cellConCheck;
-                      //}
-                  }
-                  else
-                  {
-                      VDRLValor = "NO REALIZADO";
-                  }
 
-              }
-              else
-              {
-                  VDRLValor = "NO APLICA";
-              }
+            }
+            if (findLaboratorio != null)
+            {
+                var ValorVDRL = findLaboratorio.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.LABORATORIO_VDRL_ID);
+                if (ValorVDRL != null)
+                {
+
+                    VDRLValor = ValorVDRL.v_Value1;
+                    //if (ValorVDRL.v_Value1 == "1")
+                    //{
+                    //    ReaccionPositivo = cellConCheck;
+                    //}
+                    //else if (ValorVDRL.v_Value1 == "2")
+                    //{
+                    //    ReaccionNegativo= cellConCheck;
+                    //}
+                }
+                else
+                {
+                    VDRLValor = "NO REALIZADO";
+                }
+
+            }
+            else
+            {
+                VDRLValor = "NO APLICA";
+            }
 
             #endregion
 
@@ -5641,7 +5642,7 @@ namespace NetPdf
                       new PdfPCell(new Phrase("SÍMBOLOS", fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_RIGHT},
                       new PdfPCell(new Phrase("", fontColumnValue)){Colspan=5,HorizontalAlignment = PdfPCell.ALIGN_LEFT},
                  };
-            columnWidths = new float[] { 10f,10f,20f,20f,20f,20f };
+            columnWidths = new float[] { 10f, 10f, 20f, 20f, 20f, 20f };
 
             filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, "", fontTitleTable);
 
@@ -5658,7 +5659,7 @@ namespace NetPdf
             if (diagnosticRepository != null && diagnosticRepository.Count > 0)
             {
                 //PdfPCell cellDx = null;
-                
+
                 columnWidths = new float[] { 25f };
                 include = "v_RecommendationName";
 
@@ -5675,7 +5676,7 @@ namespace NetPdf
                         cell = new PdfPCell(new Phrase(item.v_DiseasesName, fontColumnValue)) { Border = PdfPCell.NO_BORDER, HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE };
                         cells.Add(cell);
                     }
-                  
+
                     // Crear tabla de recomendaciones para insertarla en la celda que corresponde
                     var tableDx = HandlingItextSharp.GenerateTableFromList(item.Recomendations, columnWidths, include, fontColumnValue, 0);
                     cell = new PdfPCell(tableDx);
@@ -5706,14 +5707,14 @@ namespace NetPdf
                     //Columna Restricciones
                     cell = new PdfPCell(new Phrase(item.v_RestrictionName, fontColumnValue)) { HorizontalAlignment = Element.ALIGN_LEFT, VerticalAlignment = Element.ALIGN_MIDDLE };
                     cells.Add(cell);
-                   
+
                 }
-                columnWidths = new float[] { 100f};
+                columnWidths = new float[] { 100f };
             }
             else
             {
                 cells.Add(new PdfPCell(new Phrase("NINGUNA", fontColumnValue)) { Colspan = 8, HorizontalAlignment = PdfPCell.ALIGN_LEFT });
-                columnWidths = new float[] {100f};
+                columnWidths = new float[] { 100f };
 
             }
             columnHeaders = new string[] { "" };
@@ -5870,7 +5871,7 @@ namespace NetPdf
             document.Add(filiationWorker);
 
             #endregion
-    
+
             document.Close();
 
             //RunFile(filePDF);
@@ -6056,10 +6057,10 @@ namespace NetPdf
 
                 #region Habitos Nocivos
 
-                cells = new List<PdfPCell>();                                           
+                cells = new List<PdfPCell>();
 
                 if (noxiousHabit.Count == 0)
-                {                  
+                {
                     cells.Add(new PdfPCell(new Phrase("No Aplica Hábitos Nocivos a la Atención.")));
                     columnWidths = new float[] { 100f };
                 }
@@ -6067,17 +6068,17 @@ namespace NetPdf
                 {
                     foreach (var habito in noxiousHabit)
                     {
-                        cells.Add(new PdfPCell(new Phrase(habito.v_NoxiousHabitsName + ": " + habito.v_Frequency, fontColumnValue))); 
+                        cells.Add(new PdfPCell(new Phrase(habito.v_NoxiousHabitsName + ": " + habito.v_Frequency, fontColumnValue)));
                     }
 
                     columnWidths = new float[noxiousHabit.Count];
 
                     for (int i = 0; i < noxiousHabit.Count; i++)
-                    {                      
+                    {
                         columnWidths[i] = 25;
-                    }                
+                    }
                 }
-            
+
                 table = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, "III. HÁBITOS NOCIVOS", fontTitleTableNegro);
                 document.Add(table);
 
@@ -6143,7 +6144,7 @@ namespace NetPdf
                 // Subtitulo  ******************
                 cell = new PdfPCell(new Phrase("FUNCIONES BIOLÓGICAS: ", fontSubTitleNegroNegrita))
                 {
-                   
+
                     BackgroundColor = subTitleBackGroundColor,
                     HorizontalAlignment = Element.ALIGN_LEFT,
                 };
@@ -6152,11 +6153,11 @@ namespace NetPdf
                 //*****************************************
 
                 var funcionesBiologicas = string.IsNullOrEmpty(anamnesis.v_Findings) ? "Sin Alteración" : anamnesis.v_Findings;
-                     
+
                 cells.Add(new PdfPCell(new Phrase(funcionesBiologicas, fontColumnValue)));
-                 
+
                 columnWidths = new float[] { 100f };
-              
+
                 table = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths);
                 document.Add(table);
 
@@ -6170,8 +6171,8 @@ namespace NetPdf
                 OjoAnexo = "", OidoX = "", Oido = "", NarizX = "", Nariz = "", BocaX = "", Boca = "", FaringeX = "",
                 Faringe = "", CuelloX = "", Cuello = "", ApaRespiratorioX = "", ApaRespiratorio = "", ApaCardioVascularX = "",
                 ApaCardioVascular = "", ApaDigestivoX = "", ApaDigestivo = "", ApaGenitoUrinarioX = "", ApaGenitoUrinario = "",
-                ApaLocomotorX = "", ApaLocomotor = "",MarchaX = "", Marcha = "", ColumnaX = "", Columna = "", SuperioresX = "",
-                Superiores = "", InferioresX = "", Inferiores = "", SistemaLinfaticoX = "",SistemaLinfatico = "",
+                ApaLocomotorX = "", ApaLocomotor = "", MarchaX = "", Marcha = "", ColumnaX = "", Columna = "", SuperioresX = "",
+                Superiores = "", InferioresX = "", Inferiores = "", SistemaLinfaticoX = "", SistemaLinfatico = "",
                 SistemaNerviosoX = "", SistemaNervioso = "";
 
                 if (examenFisico != null)
@@ -6179,7 +6180,7 @@ namespace NetPdf
                     #region logica de variables
 
                     if (examenFisico.ServiceComponentFields.Count > 0)
-                    {                     
+                    {
                         Estoscopia = examenFisico.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.EXAMEN_FISICO_ECTOSCOPIA_GENERAL_DESCRIPCION_ID).v_Value1;
 
                         Estado_Mental = examenFisico.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.EXAMEN_FISICO_ESTADO_METAL_DESCRIPCION_ID).v_Value1;
@@ -6351,10 +6352,10 @@ namespace NetPdf
                     #endregion
 
                 }
-               
+
                 #region TABLA Examen fisico
-		 
-	         
+
+
                 cells = new List<PdfPCell>()
                {
                 //fila                                                
@@ -6553,7 +6554,7 @@ namespace NetPdf
                             cell = new PdfPCell(new Phrase(item.v_DiseasesName, fontColumnValue)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE };
                             cells.Add(cell);
                         }
-                    
+
                         // Crear tabla de recomendaciones para insertarla en la celda que corresponde
                         table = HandlingItextSharp.GenerateTableFromList(item.Recomendations, columnWidths, include, fontColumnValue);
                         cell = new PdfPCell(table);
@@ -6572,7 +6573,7 @@ namespace NetPdf
 
                 document.Add(table);
 
-                #endregion          
+                #endregion
 
                 #region Firma
 
@@ -6661,7 +6662,7 @@ namespace NetPdf
                 document.Add(table);
 
                 #endregion
-            
+
                 // step 5: we close the document
                 document.Close();
                 writer.Close();
@@ -6835,48 +6836,470 @@ namespace NetPdf
             Process proceso = Process.Start(filePDF);
             proceso.WaitForExit();
             proceso.Close();
-         
+
         }
 
         #endregion
 
         #region Informe Médico Ocupacional
 
+        public static void CreateInformeMedicoOcupacional(ServiceList DataService,
+                                         PacientList filiationData,
+                                        List<ServiceComponentList> serviceComponent,
+                                        List<PersonMedicalHistoryList> listaPersonMedicalHistory,
+                                        List<FamilyMedicalAntecedentsList> listaPatologicosFamiliares,
+                                        List<NoxiousHabitsList> listaHabitoNocivos,
+                                        byte[] CuadroVacio,
+                                        byte[] CuadroCheck,
+                                        byte[] Pulmones,
+                                        string PiezasCaries,
+                                        string PiezasAusentes,
+                                        List<ServiceComponentFieldValuesList> Audiometria,
+                                        List<DiagnosticRepositoryList> diagnosticRepository,
+                                        organizationDto infoEmpresaPropietaria,
 
-        public static void CreateInformeMedicoOcupacional(PacientList filiationData,string filePDF)
+                                        string filePDF)
         {
             Document document = new Document();
             document.SetPageSize(iTextSharp.text.PageSize.A4);
-            try
-            {
-                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePDF, FileMode.Create));
-                pdfPage page = new pdfPage();
-                writer.PageEvent = page;
-                document.Open();
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePDF, FileMode.Create));
 
-                #region Fonts
-                Font fontTitle1 = FontFactory.GetFont("Calibri", 10, iTextSharp.text.Font.NORMAL, new BaseColor(System.Drawing.Color.Black));
-                Font fontTitle2 = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.NORMAL, new BaseColor(System.Drawing.Color.Black));
-                Font fontTitleTable = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.White));
-                Font fontTitleTableNegro = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.Black));
-                Font fontSubTitle = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.White));
-                Font fontColumnValue = FontFactory.GetFont("Calibri", 6, iTextSharp.text.Font.NORMAL, new BaseColor(System.Drawing.Color.Black));
+            pdfPage page = new pdfPage();
+            writer.PageEvent = page;
+
+            document.Open();
+
+            #region Fonts
+
+            Font fontTitle1 = FontFactory.GetFont("Calibri", 10, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.Black));
+            fontTitle1.SetStyle(Font.UNDERLINE);
+            Font fontTitle2 = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.NORMAL, new BaseColor(System.Drawing.Color.Black));
+            Font fontTitleTable = FontFactory.GetFont("Calibri", 6, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.Black));
+            Font fontTitleTableNegro = FontFactory.GetFont("Calibri", 6, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.Black));
+            Font fontSubTitle = FontFactory.GetFont("Calibri", 6, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.White));
+            Font fontSubTitleNegroNegrita = FontFactory.GetFont("Calibri", 6, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.Black));
+
+            Font fontColumnValue = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.NORMAL, new BaseColor(System.Drawing.Color.Black));
+            Font fontColumnValueBold = FontFactory.GetFont("Calibri", 6, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.Black));
+
+            #endregion
+
+            #region Declaration Tables
+            var subTitleBackGroundColor = new BaseColor(System.Drawing.Color.White);
+            string include = string.Empty;
+            List<PdfPCell> cells = null;
+            float[] columnWidths = null;
+            string[] columnHeaders = null;
+
+
+            PdfPTable filiationWorker = new PdfPTable(8);
+
+            PdfPTable table = null;
+
+            PdfPCell cell = null;
+
+            #endregion
+
+            #region Title
+
+            PdfPCell CellLogo = null;
+
+            if (infoEmpresaPropietaria.b_Image != null)
+            {
+                CellLogo = new PdfPCell(HandlingItextSharp.GetImage(infoEmpresaPropietaria.b_Image, 20F)) { HorizontalAlignment = PdfPCell.ALIGN_LEFT };
+            }
+            else
+            {
+                CellLogo = new PdfPCell(new Phrase(" ", fontColumnValue)) { HorizontalAlignment = PdfPCell.ALIGN_LEFT };
+            }
+
+
+            cells = new List<PdfPCell>()
+                   {      
+                    //fila 
+                    new PdfPCell(CellLogo){Rowspan =2, Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    new PdfPCell(new Phrase("INFORME MÉDICO OCUPACIONAL", fontTitle1)){ Border = PdfPCell.NO_BORDER ,HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    new PdfPCell(new Phrase("N° H.C", fontColumnValueBold)){ Border = PdfPCell.NO_BORDER ,HorizontalAlignment=PdfPCell.ALIGN_CENTER}, 
+                    new PdfPCell(new Phrase(DataService.v_ServiceId.ToString(), fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    
+                   };
+
+            columnWidths = new float[] { 20f, 50f, 15f, 15f };
+
+            table = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, null, fontTitleTable);
+            document.Add(table);
+
+            #endregion
+
+            document.Add(new Paragraph("\r\n"));
+
+            #region Datos Persona
+
+            cells = new List<PdfPCell>()
+                  {
+                    //fila 1
+                    new PdfPCell(new Phrase("APELLIDO Y NOMBRE", fontColumnValueBold)) { Border = PdfPCell.NO_BORDER},              
+                    new PdfPCell(new Phrase(DataService==null ? "" :DataService.v_Pacient, fontColumnValue)) { Border = PdfPCell.NO_BORDER},    
+                    new PdfPCell(new Phrase("DNI", fontColumnValueBold)){Border = PdfPCell.NO_BORDER,   HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase(DataService.v_DocNumber, fontColumnValue)){HorizontalAlignment = PdfPCell.ALIGN_CENTER},                       
+                   
+                    //Fila2 
+                    new PdfPCell(new Phrase("EMPRESA", fontColumnValueBold)){Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},
+                    new PdfPCell(new Phrase(DataService.EmpresaEmpleadora, fontColumnValue)){ Border = PdfPCell.NO_BORDER},     
+                    new PdfPCell(new Phrase("EDAD", fontColumnValueBold)){Border = PdfPCell.NO_BORDER,   HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                    new PdfPCell(new Phrase(DataService.i_Edad.ToString(), fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER}, 
+                    //Fila3
+                    new PdfPCell(new Phrase("PROYECTO/SEDE-CLIENTE", fontColumnValueBold)){ Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                    //new PdfPCell(new Phrase(DataService==null ? "" :DataService.v_ProtocolName.ToString(), fontColumnValue)) ,    
+                    new PdfPCell(new Phrase(" ", fontColumnValue)){Colspan =3, Border = PdfPCell.NO_BORDER,   HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila4
+                    new PdfPCell(new Phrase("PUESTO DE TRABAJO", fontColumnValueBold)){Border = PdfPCell.NO_BORDER,   HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase(DataService==null ? "" :DataService.v_CurrentOccupation.ToString(), fontColumnValue)){Colspan =3, Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila5
+                    new PdfPCell(new Phrase("ANTECEDENTES O PREEXISTENCIA", fontColumnValueBold)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("Concatenar antecendentes", fontColumnValue)){Colspan =3,Border = PdfPCell.NO_BORDER,    HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila2 
+                    new PdfPCell(new Phrase("ALERGIAS", fontColumnValueBold)){Border = PdfPCell.NO_BORDER,    HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("Alergia", fontColumnValue)){Colspan =3, Border = PdfPCell.NO_BORDER,   HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                  };
+
+            columnWidths = new float[] { 30f, 45f, 10f, 15f };
+
+            filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, null, fontTitleTable);
+
+            document.Add(filiationWorker);
+            #endregion
+
+            #region Tipo de Examen
+
+            PdfPCell cellConCheck = null;
+            cellConCheck = new PdfPCell(HandlingItextSharp.GetImage(CuadroCheck));
+
+            PdfPCell cellSinCheck = null;
+            cellSinCheck = new PdfPCell(HandlingItextSharp.GetImage(CuadroVacio));
+            PdfPCell PreOcupacional = cellSinCheck, Periodica = cellSinCheck, Retiro = cellSinCheck;
+            string  Otros = "";
+
+            if (DataService != null)
+            {
+                if (DataService.i_EsoTypeId == (int)Sigesoft.Common.TypeESO.PreOcupacional)
+                {
+                    PreOcupacional = cellConCheck;
+                }
+                else if (DataService.i_EsoTypeId == (int)Sigesoft.Common.TypeESO.PeriodicoAnual)
+                {
+                    Periodica = cellConCheck;
+                }
+                else if (DataService.i_EsoTypeId == (int)Sigesoft.Common.TypeESO.Retiro)
+                {
+                    Retiro = cellConCheck;
+                }
+                else
+                {
+                    Otros = " ";
+                }
+            }
+                cells = new List<PdfPCell>()
+                  {
+                    
+                    new PdfPCell(new Phrase("TIPO DE EXAMEN", fontColumnValueBold)){  Border = PdfPCell.NO_BORDER},              
+                    new PdfPCell(new Phrase("Preocupacional", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(PreOcupacional){Border = PdfPCell.RIGHT_BORDER, HorizontalAlignment=PdfPCell.ALIGN_CENTER, VerticalAlignment=PdfPCell.ALIGN_CENTER },
+                    new PdfPCell(new Phrase("Periódico", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_LEFT},      
+                    new PdfPCell(Periodica){Border = PdfPCell.RIGHT_BORDER, HorizontalAlignment=PdfPCell.ALIGN_CENTER, VerticalAlignment=PdfPCell.ALIGN_CENTER },   
+                    new PdfPCell(new Phrase("Retiro", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_LEFT},      
+                    new PdfPCell(Retiro){Border = PdfPCell.RIGHT_BORDER, HorizontalAlignment=PdfPCell.ALIGN_CENTER, VerticalAlignment=PdfPCell.ALIGN_CENTER },
+                    new PdfPCell(new Phrase("Otros(Especifique)", fontColumnValue)){Border= PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},      
+                    new PdfPCell(new Phrase(Otros, fontColumnValue)){Border = PdfPCell.RIGHT_BORDER, HorizontalAlignment=PdfPCell.ALIGN_CENTER, VerticalAlignment=PdfPCell.ALIGN_CENTER },
+                    
+                  };
+
+                columnWidths = new float[] { 15f, 10f, 10f, 10f, 10f, 5f, 10f, 15f, 15f };
+
+                filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, PdfPCell.NO_BORDER, null, fontTitleTable);
+
+                document.Add(filiationWorker);
+            #endregion
+
+            #region Evaluacion Medica
+
+                cells = new List<PdfPCell>()
+                  {
+                    //Fila1
+                    new PdfPCell(new Phrase("EVALUACIÓN MÉDICA", fontColumnValueBold)){ Rowspan = 2, Border = PdfPCell.NO_BORDER},              
+                    new PdfPCell(new Phrase("Hemoglobina(Hb)", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("Peso(Kg)", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("Talla(mt)", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("IMG(Kg/m2)", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("P.A(mmHg)", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("Perimetro Abd.(cm)", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER}, 
+                    new PdfPCell(new Phrase("Grupo sanguineo y Factor Rh", fontColumnValue)){  HorizontalAlignment=PdfPCell.ALIGN_CENTER, VerticalAlignment=PdfPCell.ALIGN_CENTER },      
+                    //Fila2
+                    new PdfPCell(new Phrase("Valor1", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("Valor2", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("Valor3", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("Valor4", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("Valor5", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("Valor6", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER}, 
+                    new PdfPCell(new Phrase("Valor8", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    
+                  };
+
+                columnWidths = new float[] { 15f, 15f, 10f, 10f, 10f, 10f, 15f, 15f };
+
+                filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, null, fontTitleTable);
+
+                document.Add(filiationWorker);
+                #endregion
+
+            #region Datos de Examen Clinico
+
+                cells = new List<PdfPCell>()
+                  {
+                    //Fila1
+                    new PdfPCell(new Phrase("Clínico", fontColumnValue)){ Border = PdfPCell.NO_BORDER},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 7, Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila2
+                    new PdfPCell(new Phrase("Musculoesquelético", fontColumnValue)){Border = PdfPCell.NO_BORDER,HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 7, Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                   //Fila3
+                    new PdfPCell(new Phrase("Psicológico", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 7, Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila4
+                    new PdfPCell(new Phrase("Odontológia", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 7,Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila5
+                    new PdfPCell(new Phrase("Oftalmológia", fontColumnValue)){  Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("Agudeza visual: ", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("V. de lejos OD S/C ", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("Estereopsis : ", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("Ishihara : ", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    //Fila6
+                    new PdfPCell(new Phrase("Espirometría", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 7, Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila7
+                    new PdfPCell(new Phrase("RX Tórax", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 5,Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                     new PdfPCell(new Phrase("Según OIT : ", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER}, 
+                   //Fila8
+                    new PdfPCell(new Phrase("Audiometría", fontColumnValue)){Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 7, Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila9
+                    new PdfPCell(new Phrase("Electrocardiograma", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 7, Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila10
+                    new PdfPCell(new Phrase("Psicosensometrico", fontColumnValue)){ Border = PdfPCell.NO_BORDER,HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 7, Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //Fila11
+                    new PdfPCell(new Phrase("Otros(solo alterados)", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("dato nulo", fontColumnValue)){Colspan = 7,Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                   
+                  };
+
+                columnWidths = new float[] { 15f, 15f, 12f, 20f, 10f, 10f, 8f, 10f };
+
+                filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, null, fontTitleTable);
+
+                document.Add(filiationWorker);
+                #endregion
+
+            #region    Laboratorio
+
+                cells = new List<PdfPCell>()
+                  {
+                   //fila0
+                    new PdfPCell(new Phrase("LABORATORIO:", fontColumnValueBold)){ Colspan = 10, Border = PdfPCell.NO_BORDER},
+                    //fila1
+                    new PdfPCell(new Phrase("Glucosa", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){Border = PdfPCell.RIGHT_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("Valor", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("mg/dl", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("Hemograma", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                    new PdfPCell(new Phrase("", fontColumnValue)){  Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("DX concatenado", fontColumnValue)){ Colspan = 3,  HorizontalAlignment = PdfPCell.ALIGN_CENTER}, 
+                    //fila2
+                    new PdfPCell(new Phrase("Colesterol Total", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("Valor", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("mg/dl", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("Examen de orina", fontColumnValue)){Colspan = 2, Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                    new PdfPCell(new Phrase("DX concatenado", fontColumnValue)){Colspan = 3,  HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    //fila3
+                    new PdfPCell(new Phrase("Colesterol HDL", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("Valor", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("mg/dl", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("TGP", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("DX concatenado", fontColumnValue)){Colspan = 3, HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    //fila4
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("GGTP", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("DX concatenado", fontColumnValue)){Colspan = 3,  HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    //fila5
+                   new PdfPCell(new Phrase("Colesterol LDL", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("Valor", fontColumnValue)){HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("mg/dl", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("Toxicologico", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("Cocaina  " + " POSITOVO", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    new PdfPCell(new Phrase("Marihuana  " + " NEGATIVO", fontColumnValue)){Colspan = 2, HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    //fila6
+                    new PdfPCell(new Phrase("Colesterol VLDL", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("Valor", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("mg/dl", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("Creatina", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("valor", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    new PdfPCell(new Phrase("mg/dl", fontColumnValue)){ Colspan = 2, HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    //fila7
+                    new PdfPCell(new Phrase("Trigliceridos", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("Valor", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("mg/dl", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},      
+                    new PdfPCell(new Phrase("Otros(solo alterados)", fontColumnValue)){Colspan = 2, Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT}, 
+                    new PdfPCell(new Phrase("otros comentarios", fontColumnValue)){Colspan = 3,  HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                  };
+
+                columnWidths = new float[] { 15f, 10f, 10f, 10f, 10f, 10f, 10f, 10f, 7f, 8f };
+
+                filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, null, fontTitleTable);
+
+                document.Add(filiationWorker);
+                #endregion
+
+            #region Aptitud Espcifica
+
+                cells = new List<PdfPCell>()
+                  {
+                    //fila
+                    new PdfPCell(new Phrase("APTITUDES ESPECIFICAS:", fontColumnValueBold)){Colspan = 5, Border = PdfPCell.NO_BORDER},
+                    //fila1
+                    new PdfPCell(new Phrase("Trabajador en altura geografica mayor a 2500 msnm", fontColumnValue)){ Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("APTO", fontColumnValue)){Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},    
+                    new PdfPCell(new Phrase("NO APTO", fontColumnValue)){ Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //fila2
+                    new PdfPCell(new Phrase("Trabajos en altura estructural mayor a 1.8 m", fontColumnValue)){ Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("APTO", fontColumnValue)){ Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){  Border = PdfPCell.NO_BORDER,HorizontalAlignment = PdfPCell.ALIGN_LEFT},    
+                    new PdfPCell(new Phrase("NO APTO", fontColumnValue)){ Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},   
+                    //fila3
+                    new PdfPCell(new Phrase("Trabajos en altura estructural mayor a 15 m", fontColumnValue)){Border = PdfPCell.NO_BORDER,   HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("APTO", fontColumnValue)){Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},    
+                    new PdfPCell(new Phrase("NO APTO", fontColumnValue)){ Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    //fila4
+                    new PdfPCell(new Phrase("Trabajos con suficiencia Quimica", fontColumnValue)){Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("APTO", fontColumnValue)){ Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},    
+                    new PdfPCell(new Phrase("NO APTO", fontColumnValue)){Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_LEFT},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},   
+                      
+                    
+                  };
+
+                columnWidths = new float[] { 40f, 15F, 15f, 15f, 15f };
+
+                filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, "", fontTitleTable);
+
+                document.Add(filiationWorker);
+                #endregion
+
+            #region Aptitud
+
+                PdfPCell Apto = cellSinCheck, NoApto = cellSinCheck, AptoConRestriccion = cellSinCheck;
+           
+
+                if (DataService != null)
+                {
+                    if (DataService.i_EsoTypeId == (int)Sigesoft.Common.AptitudeStatus.Apto)
+                    {
+                        Apto = cellConCheck;
+                    }
+                    else if (DataService.i_EsoTypeId == (int)Sigesoft.Common.AptitudeStatus.NoApto)
+                    {
+                        NoApto = cellConCheck;
+                    }
+                    else if (DataService.i_EsoTypeId == (int)Sigesoft.Common.AptitudeStatus.AptRestriccion)
+                    {
+                        AptoConRestriccion = cellConCheck;
+                    }
+                    
+                }
+                cells = new List<PdfPCell>()
+                  {
+                    //fila
+                    new PdfPCell(new Phrase("APTO", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},              
+                     new PdfPCell(Apto){Border = PdfPCell.RIGHT_BORDER, HorizontalAlignment=PdfPCell.ALIGN_CENTER, VerticalAlignment=PdfPCell.ALIGN_CENTER }, 
+                    new PdfPCell(new Phrase("APTO CON RESTRICIONES", fontColumnValue)){ Border = PdfPCell.LEFT_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                     new PdfPCell(NoApto){Border = PdfPCell.RIGHT_BORDER, HorizontalAlignment=PdfPCell.ALIGN_CENTER, VerticalAlignment=PdfPCell.ALIGN_CENTER },      
+                    new PdfPCell(new Phrase("NO APTO", fontColumnValue)){ Border = PdfPCell.LEFT_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},    
+                     new PdfPCell(AptoConRestriccion){Border = PdfPCell.RIGHT_BORDER, HorizontalAlignment=PdfPCell.ALIGN_CENTER, VerticalAlignment=PdfPCell.ALIGN_CENTER },
+                    //fila1
+                    new PdfPCell(new Phrase("Motivo(Especificar)", fontColumnValue)){Colspan = 5, Border = PdfPCell.LEFT_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},              
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.LEFT_BORDER, HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    //fila2
+                    new PdfPCell(new Phrase("Resticciones", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER}, 
+                      new PdfPCell(new Phrase(DataService.Restriccion, fontColumnValue)){Colspan = 5,  HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                  };
+
+                columnWidths = new float[] { 15f, 10f, 25f, 10f, 20f, 20f };
+
+                filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, PdfPCell.NO_BORDER, null, fontTitleTable);
+
+                document.Add(filiationWorker);
+                #endregion
+
+            #region Fin
+
+                cells = new List<PdfPCell>()
+                  {
+                    //fila
+                    new PdfPCell(new Phrase("FECHA EXAMEN", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("", fontColumnValue)){  HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("", fontColumnValue)){ Border = PdfPCell.NO_BORDER,  HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    //fila1
+                    new PdfPCell(new Phrase("FECHA CADUCIDAD", fontColumnValue)){Border = PdfPCell.NO_BORDER, HorizontalAlignment = PdfPCell.ALIGN_LEFT},              
+                    new PdfPCell(new Phrase("", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},  
+                    new PdfPCell(new Phrase("Firma y sello del medico ocupacional responsable según DEGESA", fontColumnValue)){ HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                    
+                  };
+
+                columnWidths = new float[] { 25f, 25f, 50f };
+
+                filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, PdfPCell.NO_BORDER, null, fontTitleTable);
+
+                document.Add(filiationWorker);
                 #endregion
 
 
                 document.Close();
-
-                RunFile(filePDF);
-
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
 
         #endregion
 
+
+        
     }
 }
