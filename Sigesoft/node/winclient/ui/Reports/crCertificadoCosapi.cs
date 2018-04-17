@@ -16,14 +16,14 @@ namespace Sigesoft.Node.WinClient.UI.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crCargoHistoria : ReportClass {
+    public class crCertificadoCosapi : ReportClass {
         
-        public crCargoHistoria() {
+        public crCertificadoCosapi() {
         }
         
         public override string ResourceName {
             get {
-                return "crCargoHistoria.rpt";
+                return "crCertificadoCosapi.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports {
         
         public override string FullResourceName {
             get {
-                return "Sigesoft.Node.WinClient.UI.Reports.crCargoHistoria.rpt";
+                return "Sigesoft.Node.WinClient.UI.Reports.crCertificadoCosapi.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Sigesoft.Node.WinClient.UI.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrCargoHistoria : Component, ICachedReport {
+    public class CachedcrCertificadoCosapi : Component, ICachedReport {
         
-        public CachedcrCargoHistoria() {
+        public CachedcrCertificadoCosapi() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crCargoHistoria rpt = new crCargoHistoria();
+            crCertificadoCosapi rpt = new crCertificadoCosapi();
             rpt.Site = this.Site;
             return rpt;
         }

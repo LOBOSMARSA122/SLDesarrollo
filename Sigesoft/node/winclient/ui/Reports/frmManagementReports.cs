@@ -118,8 +118,8 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                      serviceComponents.Add(new ServiceComponentList { Orden = 6, v_ComponentName = "ANEXO 7C", v_ComponentId = Constants.INFORME_ANEXO_7C });
                  }
                  serviceComponents.Add(new ServiceComponentList { Orden = 7, v_ComponentName = "HISTORIA OCUPACIONAL", v_ComponentId = Constants.INFORME_HISTORIA_OCUPACIONAL });
-                 serviceComponents.Add(new ServiceComponentList { Orden = 7, v_ComponentName = "ESPIRO PDF", v_ComponentId = Constants.ESPIRO_PRUEBA });
-            
+                 serviceComponents.Add(new ServiceComponentList { Orden = 8, v_ComponentName = "ESPIRO PDF", v_ComponentId = Constants.ESPIRO_PRUEBA });
+                 serviceComponents.Add(new ServiceComponentList { Orden = 9, v_ComponentName = "CERTIFICADO COSAPIL", v_ComponentId = Constants.CERTIFICADO_COSAPI });
             }
 
             foreach (var item in serviceComponents)
@@ -366,6 +366,8 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                 ConsolidadoReportes.Add(new ServiceComponentList { Orden = 6, v_ComponentName = "ANEXO 7C", v_ComponentId = Constants.INFORME_ANEXO_7C });
             }
             ConsolidadoReportes.Add(new ServiceComponentList { Orden = 7, v_ComponentName = "HISTORIA OCUPACIONAL", v_ComponentId = Constants.INFORME_HISTORIA_OCUPACIONAL });
+
+            ConsolidadoReportes.Add(new ServiceComponentList { Orden = 8, v_ComponentName = "CERTIFICADOCOSAPI", v_ComponentId = Constants.CERTIFICADO_COSAPI });
             
             //var ResultadoBioquimico1 = serviceComponents11.FindAll(p => ExamenBioquimica1.Contains(p.v_ComponentId)).ToList();
             //if (ResultadoBioquimico1.Count() != 0)
@@ -557,6 +559,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
             
             serviceComponents.Insert(0, new ServiceComponentList { v_ComponentName = "Certificado de Aptitud", v_ComponentId = Constants.INFORME_CERTIFICADO_APTITUD });
             serviceComponents.Insert(1, new ServiceComponentList { v_ComponentName = "Historia Ocupacional", v_ComponentId = Constants.INFORME_HISTORIA_OCUPACIONAL });
+            serviceComponents.Insert(1, new ServiceComponentList { v_ComponentName = "CERTIFICADO COSAPI", v_ComponentId = Constants.CERTIFICADO_COSAPI });
         
             // Si la prueba de RX esta entonces tambien insertar <Informe Radiografico OIT>
             var findRX = serviceComponents.Find(p => p.v_ComponentId == Constants.RX_TORAX_ID);
@@ -2090,6 +2093,27 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                         rp.ExportOptions.DestinationOptions = objDiskOpt;
                         rp.Export();
                         rp.Close();
+                    break;
+
+                case Constants.CERTIFICADO_COSAPI:
+
+                    var CERTIFICADO_COSAPI = new ServiceBL().GetCertificadoCosapi(_serviceId);
+
+                    dsGetRepo = new DataSet();
+                    DataTable dtCERTIFICADO_COSAPI = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(CERTIFICADO_COSAPI);
+                    dtCERTIFICADO_COSAPI.TableName = "CertificadoCosapi";
+                    dsGetRepo.Tables.Add(dtCERTIFICADO_COSAPI);
+                    rp = new Reports.crCertificadoCosapi();
+                    rp.SetDataSource(dsGetRepo);
+
+                    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    objDiskOpt = new DiskFileDestinationOptions();
+                    objDiskOpt.DiskFileName = ruta + serviceId + "-" + Constants.CERTIFICADO_COSAPI + ".pdf";
+                    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
+                    rp.ExportOptions.DestinationOptions = objDiskOpt;
+                    rp.Export();
+                    rp.Close();
                     break;
                 case Constants.ALTURA_7D_ID:
 
