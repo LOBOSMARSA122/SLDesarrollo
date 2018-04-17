@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sigesoft.Node.WinClient.BE
 {
-   public class ServiceList
+    public class ServiceList
     {
 
         public string v_ServiceId { get; set; }
@@ -17,21 +17,21 @@ namespace Sigesoft.Node.WinClient.BE
         public string v_MasterServiceName { get; set; }
         public int? i_ServiceStatusId { get; set; }
         public string v_ServiceStatusName { get; set; }
-        public int? i_AptitudeStatusId{ get; set; }
-        public DateTime? d_ServiceDate{ get; set; }
-        public DateTime? d_GlobalExpirationDate{ get; set; }
+        public int? i_AptitudeStatusId { get; set; }
+        public DateTime? d_ServiceDate { get; set; }
+        public DateTime? d_GlobalExpirationDate { get; set; }
         public DateTime? d_ObsExpirationDate { get; set; }
-        public int? i_FlagAgentId{ get; set; }
+        public int? i_FlagAgentId { get; set; }
         public String v_OrganizationId { get; set; }
         public DateTime d_DateTimeCalendar { get; set; }
         public string v_OrganizationName { get; set; }
         public string v_LocationName { get; set; }
         public string v_GenderName { get; set; }
-        public int? i_HasSymptomId { get; set; } 
+        public int? i_HasSymptomId { get; set; }
 
         public string v_ServiceTypeName { get; set; }
         public string v_LocationId { get; set; }
-        public string v_MainSymptom { get; set; }   
+        public string v_MainSymptom { get; set; }
         public int? i_TimeOfDisease { get; set; }
         public int? i_TimeOfDiseaseTypeId { get; set; }
         public string v_Story { get; set; }
@@ -52,7 +52,7 @@ namespace Sigesoft.Node.WinClient.BE
         public string v_GeneralRecomendations { get; set; }
         public int? i_DestinationMedicationId { get; set; }
         public int? i_TransportMedicationId { get; set; }
-        public DateTime? d_StartDateRestriction { get; set; }   
+        public DateTime? d_StartDateRestriction { get; set; }
         public DateTime? d_EndDateRestriction { get; set; }
         public DateTime? d_BirthDate { get; set; }
 
@@ -67,9 +67,9 @@ namespace Sigesoft.Node.WinClient.BE
         public DateTime? d_UpdateDate { get; set; }
 
         public string v_ProtocolName { get; set; }
-        public int i_PersonId { get; set; }     
-        public string v_FirstName { get; set; }    
-        public string v_FirstLastName { get; set; }    
+        public int i_PersonId { get; set; }
+        public string v_FirstName { get; set; }
+        public string v_FirstLastName { get; set; }
         public string v_SecondLastName { get; set; }
         public string v_GroupOcupationName { get; set; }
         public string v_EsoTypeName { get; set; }
@@ -79,20 +79,17 @@ namespace Sigesoft.Node.WinClient.BE
         public string v_PacientDocument { get; set; }
         public int? i_SexTypeId { get; set; }
         public string v_AptitudeStatusName { get; set; }
-
         public byte[] b_PersonImage { get; set; }
-
         public Nullable<Int32> i_HazInterconsultationId { get; set; }
         public DateTime? d_NextAppointment { get; set; }
         public int? i_SendToTracking { get; set; }
-             
         public string v_DocTypeName { get; set; }
         public string v_DocNumber { get; set; }
 
         public string i_Age { get; set; }
         public int Year { get; set; }
         public string CostoProtocolo { get; set; }
-        public float? CostoTotalProtocolo { get; set; }  
+        public float? CostoTotalProtocolo { get; set; }
         public DateTime FechaNacimiento { get; set; }
 
         public string v_CurrentOccupation { get; set; }
@@ -118,9 +115,9 @@ namespace Sigesoft.Node.WinClient.BE
         public string v_ResultadosPAP { get; set; }
         public string v_FechaUltimaMamo { get; set; }
         public string v_ResultadoMamo { get; set; }
-    
-    
-       // //////
+
+
+        // //////
 
         public string v_CustomerOrganizationName { get; set; }
         public string v_CustomerOrganizationId { get; set; }
@@ -271,10 +268,10 @@ namespace Sigesoft.Node.WinClient.BE
         public int i_AltitudeWorkId { get; set; }
 
         public string v_EmergencyPhone { get; set; }
-       
-       public int i_MaritalStatusId { get; set; }
 
-       public int i_LevelOfId { get; set; }
+        public int i_MaritalStatusId { get; set; }
+
+        public int i_LevelOfId { get; set; }
         //public string v_NamePacient { get; set; }
         //public string v_Surnames { get; set; }
         //public string DireccionPaciente { get; set; }
@@ -428,30 +425,30 @@ namespace Sigesoft.Node.WinClient.BE
 
         public string v_DiagnosticRepositoryId { get; set; }
 
-       public Boolean Seleccion { get; set; }
+        public Boolean Seleccion { get; set; }
 
-       public string NombreUsuarioGraba { get; set; }
+        public string NombreUsuarioGraba { get; set; }
 
-       public int? i_NroHermanos { get; set; }
-       public string v_TipoExamen { get; set; }
+        public int? i_NroHermanos { get; set; }
+        public string v_TipoExamen { get; set; }
 
-       public DateTime? d_InsertDateMedicalAnalyst { get; set; }
-       public DateTime? d_InsertDateOccupationalMedical { get; set; }
-       public DateTime? d_UpdateDateMedicalAnalyst { get; set; }
-       public DateTime? d_UpdateDateOccupationalMedical { get; set; }
+        public DateTime? d_InsertDateMedicalAnalyst { get; set; }
+        public DateTime? d_InsertDateOccupationalMedical { get; set; }
+        public DateTime? d_UpdateDateMedicalAnalyst { get; set; }
+        public DateTime? d_UpdateDateOccupationalMedical { get; set; }
 
-       public int? i_InsertUserOccupationalMedicalId { get; set; }
-       public int? i_ModalityOfInsurance { get; set; }
-       public int? i_ServiceTypeOfInsurance { get; set; }
-       public int? i_UpdateUserMedicalAnalystId { get; set; }
-       public int? i_UpdateUserOccupationalMedicaltId { get; set; }
-       public decimal r_Costo { get; set; }
-       public string v_AreaId { get; set; }
-       public string v_Motive { get; set; }
-       public string v_Name { get; set; }
-       public string v_GroupOccupationId { get; set; }
-       
-   }
+        public int? i_InsertUserOccupationalMedicalId { get; set; }
+        public int? i_ModalityOfInsurance { get; set; }
+        public int? i_ServiceTypeOfInsurance { get; set; }
+        public int? i_UpdateUserMedicalAnalystId { get; set; }
+        public int? i_UpdateUserOccupationalMedicaltId { get; set; }
+        public decimal r_Costo { get; set; }
+        public string v_AreaId { get; set; }
+        public string v_Motive { get; set; }
+        public string v_Name { get; set; }
+        public string v_GroupOccupationId { get; set; }
+
+    }
 
 
 }
