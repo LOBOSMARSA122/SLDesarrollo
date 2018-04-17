@@ -1219,6 +1219,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crCertificadoAptitud2.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\crFichaAudiometriaAudiomax02.cs">
       <DependentUpon>crFichaAudiometriaAudiomax02.rpt</DependentUpon>
