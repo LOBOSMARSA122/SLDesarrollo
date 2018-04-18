@@ -1833,6 +1833,50 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     rp.Close();
                     break;
 
+                case Constants.FICHA_DETENCION:
+                    var fichaDetencion = new ServiceBL().GetReporteFichaDetencionSas(_serviceId, Constants.FICHA_DETENCION);
+
+                    dsGetRepo = new DataSet();
+                    var dtFichaDetencionId = BLL.Utils.ConvertToDatatable(fichaDetencion);
+                    dtFichaDetencionId.TableName = "dtFichaDetencion";
+                    dsGetRepo.Tables.Add(dtFichaDetencionId);
+                    rp = new crFichaDetencionSas();
+                    rp.SetDataSource(dsGetRepo);
+
+                    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    objDiskOpt = new DiskFileDestinationOptions
+                    {
+                        DiskFileName = ruta + serviceId + "-" + Constants.FICHA_DETENCION + ".pdf"
+                    };
+                    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
+                    rp.ExportOptions.DestinationOptions = objDiskOpt;
+                    rp.Export();
+                    rp.Close();
+                    break;
+
+                case Constants.ESPACIOS_CONFINADO:
+                    var espaciosConfinados = new ServiceBL().GetReporteEspaciosConfinados(_serviceId, Constants.ESPACIOS_CONFINADO);
+
+                    dsGetRepo = new DataSet();
+                    var dtEspaciosConfinados = BLL.Utils.ConvertToDatatable(espaciosConfinados);
+                    dtEspaciosConfinados.TableName = "dtEspaciosConfinados";
+                    dsGetRepo.Tables.Add(dtEspaciosConfinados);
+                    rp = new crEspaciosConfinados();
+                    rp.SetDataSource(dsGetRepo);
+
+                    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    objDiskOpt = new DiskFileDestinationOptions
+                    {
+                        DiskFileName = ruta + serviceId + "-" + Constants.ESPACIOS_CONFINADO + ".pdf"
+                    };
+                    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
+                    rp.ExportOptions.DestinationOptions = objDiskOpt;
+                    rp.Export();
+                    rp.Close();
+                    break;
+
                 case Constants.CONSENTIMIENTO_INFORMADO:
                     var CONSENTIMIENTO_INFORMADO = new PacientBL().GetReportConsentimiento(_serviceId);
 

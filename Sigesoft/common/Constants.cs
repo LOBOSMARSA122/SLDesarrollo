@@ -4077,6 +4077,9 @@ namespace Sigesoft.Common
         #endregion
         #endregion
 
+        public const string FICHA_DETENCION = "N009-ME000000395";
+        public const string ESPACIOS_CONFINADO = "N009-ME000000394";
+
     }
 
   

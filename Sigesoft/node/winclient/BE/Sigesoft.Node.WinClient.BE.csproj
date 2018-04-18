@@ -166,6 +166,8 @@
     <Compile Include="Custom\ReporteCuestionarioIstas.cs" />
     <Compile Include="Custom\ReporteDisal.cs" />
     <Compile Include="Custom\ReporteEnvioDx.cs" />
+    <Compile Include="Custom\ReporteEspaciosConfinados.cs" />
+    <Compile Include="Custom\ReporteFichaDetencionSas.cs" />
     <Compile Include="Custom\ReporteFobiasocial01.cs" />
     <Compile Include="Custom\ReporteFobiasocial02.cs" />
     <Compile Include="Custom\ReporteFobiasocialAdmin.cs" />
