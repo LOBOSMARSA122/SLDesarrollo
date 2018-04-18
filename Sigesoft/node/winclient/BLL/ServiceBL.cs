@@ -6940,6 +6940,25 @@ namespace Sigesoft.Node.WinClient.BLL
             return string.Join(", ", qry.Select(p => p.v_DiseasesName));
         }
 
+        private string ConcatenatePersonMedicalHistory (string pstrPersonId)
+        {
+            SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+            var qry = (from A in dbContext.personmedicalhistory
+                    
+                       join D in dbContext.diseases on new { a = A.v_DiseasesId }
+                                                               equals new { a = D.v_DiseasesId } into D_join
+                       from D in D_join.DefaultIfEmpty()
+                       where A.v_PersonId == pstrPersonId &&
+                       A.i_IsDeleted == 0 
+                       select new
+                       {
+                           v_DiseasesName = D.v_Name
+                       }).ToList();
+
+            return string.Join(", ", qry.Select(p => p.v_DiseasesName));
+        }
+
         #endregion
 
         #region Permisos x examenes componentes
@@ -27197,6 +27216,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                  select new ReporteEspaciosConfinados
                                  {
                                      ServiceId = ser.v_ServiceId,
+                                     PersonId = per.v_PersonId,
                                      ServiceComponentId = serCom.v_ServiceComponentId,
                                      FechaServicio = ser.d_ServiceDate.Value,
                                      Nombres = per.v_FirstName,
@@ -27228,6 +27248,7 @@ namespace Sigesoft.Node.WinClient.BLL
                            select new ReporteEspaciosConfinados
                            {
                                ServiceId = a.ServiceId,
+                               PersonId = a.PersonId,
                                ServiceComponentId = a.ServiceComponentId,
                                FechaServicio = a.FechaServicio,
                                Nombres = a.Nombres,
@@ -27249,17 +27270,17 @@ namespace Sigesoft.Node.WinClient.BLL
                                HuellaTrabajador = a.HuellaTrabajador,
                                FirmaUsuarioGraba = a.FirmaUsuarioGraba,
 
-                               AntecedentesImportancia ="",
-                               Peso = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003").v_Value1,
+                               AntecedentesImportancia = ConcatenatePersonMedicalHistory(a.PersonId),
+                               Peso = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003").v_Value1,
                                Talla = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000007") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000007").v_Value1,
                                Imc = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000009") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000009").v_Value1,
                                PerimetroCinturaCadera1 = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000010") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N009-MF000000010").v_Value1,
                                PerimetroCinturaCadera2 = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000011") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N009-MF000000011").v_Value1,
                                Icc = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000012") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N009-MF000000012").v_Value1, 
-                               Pa1 = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001").v_Value1,
-                               Pa2 = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000002") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000002").v_Value1,
-                               So2 = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006").v_Value1,
-                               Fc = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003").v_Value1,
+                               Pa1 = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001").v_Value1,
+                               Pa2 = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000002") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000002").v_Value1,
+                               So2 = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006").v_Value1,
+                               Fc = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003").v_Value1,
                                PerimetroToraxico = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N002-MF000002821") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002821").v_Value1,
 
 

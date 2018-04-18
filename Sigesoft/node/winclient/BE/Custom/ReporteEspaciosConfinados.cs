@@ -8,6 +8,7 @@ namespace Sigesoft.Node.WinClient.BE
     public class ReporteEspaciosConfinados
     {
         public string ServiceId { get; set; }
+        public string PersonId { get; set; }
         public string ServiceComponentId { get; set; }
         public DateTime? FechaServicio { get; set; }
         public string Nombres { get; set; }
