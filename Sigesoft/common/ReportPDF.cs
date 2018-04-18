@@ -6838,9 +6838,45 @@ namespace NetPdf
          
         }
 
-        #endregion   
+        #endregion
 
-        //
+        #region Informe Médico Ocupacional
+
+
+        public static void CreateInformeMedicoOcupacional(PacientList filiationData,string filePDF)
+        {
+            Document document = new Document();
+            document.SetPageSize(iTextSharp.text.PageSize.A4);
+            try
+            {
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePDF, FileMode.Create));
+                pdfPage page = new pdfPage();
+                writer.PageEvent = page;
+                document.Open();
+
+                #region Fonts
+                Font fontTitle1 = FontFactory.GetFont("Calibri", 10, iTextSharp.text.Font.NORMAL, new BaseColor(System.Drawing.Color.Black));
+                Font fontTitle2 = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.NORMAL, new BaseColor(System.Drawing.Color.Black));
+                Font fontTitleTable = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.White));
+                Font fontTitleTableNegro = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.Black));
+                Font fontSubTitle = FontFactory.GetFont("Calibri", 7, iTextSharp.text.Font.BOLD, new BaseColor(System.Drawing.Color.White));
+                Font fontColumnValue = FontFactory.GetFont("Calibri", 6, iTextSharp.text.Font.NORMAL, new BaseColor(System.Drawing.Color.Black));
+                #endregion
+
+
+                document.Close();
+
+                RunFile(filePDF);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        #endregion
 
     }
 }

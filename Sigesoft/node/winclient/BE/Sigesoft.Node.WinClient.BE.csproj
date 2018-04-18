@@ -57,6 +57,7 @@
     <Compile Include="Custom\Categoria.cs" />
     <Compile Include="Custom\CategoriaResultados.cs" />
     <Compile Include="Custom\CebeceraReporte.cs" />
+    <Compile Include="Custom\CertificadoCosapi.cs" />
     <Compile Include="Custom\Class1.cs" />
     <Compile Include="Custom\CodigoEmpresaList.cs" />
     <Compile Include="Custom\ComisionVendedorList.cs" />

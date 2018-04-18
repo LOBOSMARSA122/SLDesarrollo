@@ -965,7 +965,7 @@ namespace Sigesoft.Common
         public const string INFORME_FICHA_MEDICA_TRABAJADOR_CI = "FMT_CI";
         public const string HISTORIA_CLINICA = "HIST_CLI";
         public const string ESPIRO_PRUEBA = "ESPIROPRUEBA";
-
+        public const string CERTIFICADO_COSAPI = "CERTIFIC_COSAPI";
         #endregion
 
     
@@ -2747,7 +2747,7 @@ namespace Sigesoft.Common
 
         public const string ADJUNTOS_PSICOLOGIA = "N009-ME000000082";
 
-        //
+       
         #region Perfil Lipidico
         public const string PERFIL_LIPIDICO = "N009-ME000000114";
 

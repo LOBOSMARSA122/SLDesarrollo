@@ -12428,6 +12428,106 @@ namespace Sigesoft.Node.WinClient.BLL
             }
 
         }
+        public List<CertificadoCosapi> GetCertificadoCosapi(string pstrServiceId)
+        {
+            
+            var isDeleted = 0;
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = (from S in dbContext.service
+                             join C in dbContext.diagnosticrepository on S.v_ServiceId equals C.v_ServiceId into C_join
+                             from C in C_join.DefaultIfEmpty()  // ESO
+                             join D in dbContext.person on S.v_PersonId equals D.v_PersonId
+                             join J in dbContext.systemparameter on new { a = D.i_SexTypeId.Value, b = 100 }equals new { a = J.i_ParameterId, b = J.i_GroupId }  // GENERO
+                             join E in dbContext.protocol on S.v_ProtocolId equals E.v_ProtocolId
+                             join O in dbContext.organization on E.v_EmployerOrganizationId equals O.v_OrganizationId                            
+                             join H1 in dbContext.systemparameter on new { a = D.i_BloodGroupId.Value, b = 154 }
+                                             equals new { a = H1.i_ParameterId, b = H1.i_GroupId } into H1_join
+                             from H1 in H1_join.DefaultIfEmpty()
+                             join H2 in dbContext.systemparameter on new { a = D.i_BloodFactorId.Value, b = 155 }
+                                                                             equals new { a = H2.i_ParameterId, b = H2.i_GroupId } into H2_join
+                             from H2 in H2_join.DefaultIfEmpty()
+                             join D1 in dbContext.diseases on C.v_DiseasesId equals D1.v_DiseasesId into D1_join
+                             from D1 in D1_join.DefaultIfEmpty()  // Diagnosticos
+
+                             
+                             // Usuario Medico Evaluador / Medico Aprobador ****************************
+                             join me in dbContext.systemuser on S.i_UpdateUserOccupationalMedicaltId equals me.i_SystemUserId into me_join
+                             from me in me_join.DefaultIfEmpty()
+
+                             join pme in dbContext.professional on me.v_PersonId equals pme.v_PersonId into pme_join
+                             from pme in pme_join.DefaultIfEmpty()
+
+                             join Z in dbContext.person on me.v_PersonId equals Z.v_PersonId
+
+                             where (C.v_ServiceId == pstrServiceId) &&
+                                   (C.i_IsDeleted == isDeleted) &&
+                                   (C.i_FinalQualificationId == (int)FinalQualification.Definitivo ||
+                                   C.i_FinalQualificationId == (int)FinalQualification.Presuntivo)
+
+
+                             select new CertificadoCosapi
+                             {
+                                 Service_Id = C.v_ServiceId,
+                                 d_BirthDate = D.d_Birthdate,
+                                 ProtocoloNombre = E.v_Name,
+                                 Dni = D.v_DocNumber,
+                                 EmpresaCliente =  O.v_Name,
+                                 Genero = D.i_SexTypeId.Value,
+                                 GrupoSanguineo = H1.v_Value1 + " - " + H2.v_Value1,
+                                 TipoExamen = E.i_EsoTypeId.Value,
+                                 PuestoTrabajo  = D.v_CurrentOccupation,
+                                 FechaExamen = S.d_ServiceDate,
+                                 FechaCaducidad= S.d_GlobalExpirationDate,
+                                 NombreCompleto = D.v_FirstLastName + " " + D.v_SecondLastName + " " + D.v_FirstName,
+                                 Aptitud = S.i_AptitudeStatusId,
+                                 Recomendacion = D1.v_Name,
+                                 NombreAuditor = Z.v_FirstLastName  + " " + Z.v_SecondLastName + " " + Z.v_FirstName,
+                                 FirmaAuditor = pme.b_SignatureImage,
+                                 NumeroCMP = pme.v_ProfessionalCode,
+                             });
+
+                var MedicalCenter = GetInfoMedicalCenter();
+                var valores = ValoresComponente(pstrServiceId, Constants.ALTURA_ESTRUCTURAL_ID);
+                var valor = ValoresComponente(pstrServiceId, Constants.ALTURA_7D_ID);
+                var q = (from a in query.ToList()
+                         select new CertificadoCosapi
+                         {
+                             LogoClinica = MedicalCenter.b_Image,
+                             Service_Id = a.Service_Id,
+                             GrupoSanguineo = a.GrupoSanguineo,
+                             NombreCompleto  = a.NombreCompleto,
+                             Dni = a.Dni,
+                             Edad = a.d_BirthDate == null ? (int?)null : DateTime.Today.AddTicks(-a.d_BirthDate.Value.Ticks).Year - 1,
+                             Genero = a.Genero,
+                             TipoExamen = a.TipoExamen,
+                             EmpresaCliente = a.EmpresaCliente,
+                             ProtocoloNombre = a.ProtocoloNombre,
+                             PuestoTrabajo = a.PuestoTrabajo,
+                             FechaExamen = a.FechaExamen,
+                             FechaCaducidad = a.FechaCaducidad,
+                             Aptitud = a.Aptitud,
+                             Restricciones = ConcatenateRestrictionByServiceConcatecDx(a.Service_Id) == "" ? "Ninguno" : ConcatenateRestrictionByServiceConcatecDx(a.Service_Id),
+                             Recomendacion = a.Recomendacion == "RECOMENDACIONES" ? "" : a.Recomendacion,
+                             NombreAuditor = a.NombreAuditor,
+                             FirmaAuditor = a.FirmaAuditor,
+                             NumeroCMP = a.NumeroCMP,
+                             AlturaEstruturalApto = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000000039") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000000039").v_Value1,
+                             AltitudGeograficoApto = valor.Count == 0 ? string.Empty : valor.Find(p => p.v_ComponentFieldId == "N002-MF000000323") == null ? "" : valor.Find(p => p.v_ComponentFieldId == "N002-MF000000323").v_Value1,
+                             
+
+                         }).ToList();
+
+
+                return q;
+            } 
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
 
         public List<DiagnosticRepositoryList> GetAptitudeCertificate(ref OperationResult pobjOperationResult, string pstrServiceId)

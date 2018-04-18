@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCertificadoCosapi" targetNamespace="http://tempuri.org/dsCertificadoCosapi.xsd" xmlns:mstns="http://tempuri.org/dsCertificadoCosapi.xsd" xmlns="http://tempuri.org/dsCertificadoCosapi.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCertificadoCosapi" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCertificadoCosapi" msprop:Generator_UserDSName="dsCertificadoCosapi">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CertificadoCosapi" msprop:Generator_TableClassName="CertificadoCosapiDataTable" msprop:Generator_TableVarName="tableCertificadoCosapi" msprop:Generator_RowChangedName="CertificadoCosapiRowChanged" msprop:Generator_TablePropName="CertificadoCosapi" msprop:Generator_RowDeletingName="CertificadoCosapiRowDeleting" msprop:Generator_RowChangingName="CertificadoCosapiRowChanging" msprop:Generator_RowEvHandlerName="CertificadoCosapiRowChangeEventHandler" msprop:Generator_RowDeletedName="CertificadoCosapiRowDeleted" msprop:Generator_RowClassName="CertificadoCosapiRow" msprop:Generator_UserTableName="CertificadoCosapi" msprop:Generator_RowEvArgName="CertificadoCosapiRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LogoClinica" msprop:Generator_ColumnVarNameInTable="columnLogoClinica" msprop:Generator_ColumnPropNameInRow="LogoClinica" msprop:Generator_ColumnPropNameInTable="LogoClinicaColumn" msprop:Generator_UserColumnName="LogoClinica" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Service_Id" msprop:Generator_ColumnVarNameInTable="columnService_Id" msprop:Generator_ColumnPropNameInRow="Service_Id" msprop:Generator_ColumnPropNameInTable="Service_IdColumn" msprop:Generator_UserColumnName="Service_Id" type="xs:string" minOccurs="0" />
+              <xs:element name="GrupoSanguineo" msprop:Generator_ColumnVarNameInTable="columnGrupoSanguineo" msprop:Generator_ColumnPropNameInRow="GrupoSanguineo" msprop:Generator_ColumnPropNameInTable="GrupoSanguineoColumn" msprop:Generator_UserColumnName="GrupoSanguineo" type="xs:string" minOccurs="0" />
+              <xs:element name="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_UserColumnName="NombreCompleto" type="xs:string" minOccurs="0" />
+              <xs:element name="Dni" msprop:Generator_ColumnVarNameInTable="columnDni" msprop:Generator_ColumnPropNameInRow="Dni" msprop:Generator_ColumnPropNameInTable="DniColumn" msprop:Generator_UserColumnName="Dni" type="xs:string" minOccurs="0" />
+              <xs:element name="Edad" msprop:Generator_ColumnVarNameInTable="columnEdad" msprop:Generator_ColumnPropNameInRow="Edad" msprop:Generator_ColumnPropNameInTable="EdadColumn" msprop:Generator_UserColumnName="Edad" type="xs:string" minOccurs="0" />
+              <xs:element name="Genero" msprop:Generator_ColumnVarNameInTable="columnGenero" msprop:Generator_ColumnPropNameInRow="Genero" msprop:Generator_ColumnPropNameInTable="GeneroColumn" msprop:Generator_UserColumnName="Genero" type="xs:int" minOccurs="0" />
+              <xs:element name="TipoExamen" msprop:Generator_ColumnVarNameInTable="columnTipoExamen" msprop:Generator_ColumnPropNameInRow="TipoExamen" msprop:Generator_ColumnPropNameInTable="TipoExamenColumn" msprop:Generator_UserColumnName="TipoExamen" type="xs:int" minOccurs="0" />
+              <xs:element name="EmpresaCliente" msprop:Generator_ColumnVarNameInTable="columnEmpresaCliente" msprop:Generator_ColumnPropNameInRow="EmpresaCliente" msprop:Generator_ColumnPropNameInTable="EmpresaClienteColumn" msprop:Generator_UserColumnName="EmpresaCliente" type="xs:string" minOccurs="0" />
+              <xs:element name="ProtocoloNombre" msprop:Generator_ColumnVarNameInTable="columnProtocoloNombre" msprop:Generator_ColumnPropNameInRow="ProtocoloNombre" msprop:Generator_ColumnPropNameInTable="ProtocoloNombreColumn" msprop:Generator_UserColumnName="ProtocoloNombre" type="xs:string" minOccurs="0" />
+              <xs:element name="PuestoTrabajo" msprop:Generator_ColumnVarNameInTable="columnPuestoTrabajo" msprop:Generator_ColumnPropNameInRow="PuestoTrabajo" msprop:Generator_ColumnPropNameInTable="PuestoTrabajoColumn" msprop:Generator_UserColumnName="PuestoTrabajo" type="xs:string" minOccurs="0" />
+              <xs:element name="FirmaAuditor" msprop:Generator_ColumnVarNameInTable="columnFirmaAuditor" msprop:Generator_ColumnPropNameInRow="FirmaAuditor" msprop:Generator_ColumnPropNameInTable="FirmaAuditorColumn" msprop:Generator_UserColumnName="FirmaAuditor" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="NombreAuditor" msprop:Generator_ColumnVarNameInTable="columnNombreAuditor" msprop:Generator_ColumnPropNameInRow="NombreAuditor" msprop:Generator_ColumnPropNameInTable="NombreAuditorColumn" msprop:Generator_UserColumnName="NombreAuditor" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaExamen" msprop:Generator_ColumnVarNameInTable="columnFechaExamen" msprop:Generator_ColumnPropNameInRow="FechaExamen" msprop:Generator_ColumnPropNameInTable="FechaExamenColumn" msprop:Generator_UserColumnName="FechaExamen" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaCaducidad" msprop:Generator_ColumnVarNameInTable="columnFechaCaducidad" msprop:Generator_ColumnPropNameInRow="FechaCaducidad" msprop:Generator_ColumnPropNameInTable="FechaCaducidadColumn" msprop:Generator_UserColumnName="FechaCaducidad" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroCMP" msprop:Generator_ColumnVarNameInTable="columnNumeroCMP" msprop:Generator_ColumnPropNameInRow="NumeroCMP" msprop:Generator_ColumnPropNameInTable="NumeroCMPColumn" msprop:Generator_UserColumnName="NumeroCMP" type="xs:string" minOccurs="0" />
+              <xs:element name="Restricciones" msprop:Generator_ColumnVarNameInTable="columnRestricciones" msprop:Generator_ColumnPropNameInRow="Restricciones" msprop:Generator_ColumnPropNameInTable="RestriccionesColumn" msprop:Generator_UserColumnName="Restricciones" type="xs:string" minOccurs="0" />
+              <xs:element name="Aptitud" msprop:Generator_ColumnVarNameInTable="columnAptitud" msprop:Generator_ColumnPropNameInRow="Aptitud" msprop:Generator_ColumnPropNameInTable="AptitudColumn" msprop:Generator_UserColumnName="Aptitud" type="xs:int" minOccurs="0" />
+              <xs:element name="Recomendacion" msprop:Generator_ColumnVarNameInTable="columnRecomendacion" msprop:Generator_ColumnPropNameInRow="Recomendacion" msprop:Generator_ColumnPropNameInTable="RecomendacionColumn" msprop:Generator_UserColumnName="Recomendacion" type="xs:string" minOccurs="0" />
+              <xs:element name="AlturaEstruturalApto" msprop:Generator_ColumnVarNameInTable="columnAlturaEstruturalApto" msprop:Generator_ColumnPropNameInRow="AlturaEstruturalApto" msprop:Generator_ColumnPropNameInTable="AlturaEstruturalAptoColumn" msprop:Generator_UserColumnName="AlturaEstruturalApto" type="xs:string" minOccurs="0" />
+              <xs:element name="AltitudGeograficoApto" msprop:Generator_ColumnVarNameInTable="columnAltitudGeograficoApto" msprop:Generator_ColumnPropNameInRow="AltitudGeograficoApto" msprop:Generator_ColumnPropNameInTable="AltitudGeograficoAptoColumn" msprop:Generator_UserColumnName="AltitudGeograficoApto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
