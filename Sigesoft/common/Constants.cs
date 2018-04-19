@@ -966,6 +966,7 @@ namespace Sigesoft.Common
         public const string HISTORIA_CLINICA = "HIST_CLI";
         public const string ESPIRO_PRUEBA = "ESPIROPRUEBA";
         public const string CERTIFICADO_COSAPI = "CERTIFIC_COSAPI";
+        public const string INFORME_MEDICO_OCUPACIONAL = "INFOR_MED_OCUP";
         #endregion
 
     
@@ -4075,6 +4076,9 @@ namespace Sigesoft.Common
 
         #endregion
         #endregion
+
+        public const string FICHA_DETENCION = "N009-ME000000395";
+        public const string ESPACIOS_CONFINADO = "N009-ME000000394";
 
     }
 

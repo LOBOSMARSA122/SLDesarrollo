@@ -280,6 +280,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCuestionario_Istas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dataset\dsEspaciosConfinados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEspaciosConfinados.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\dsFobiasocial02.cs">
       <DependentUpon>dsFobiasocial02.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -1238,6 +1243,12 @@
       <DependentUpon>crCertificadoCosapi.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\crEspaciosConfinados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEspaciosConfinados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\crFichaAudiometriaAudiomax02.cs">
       <DependentUpon>crFichaAudiometriaAudiomax02.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1290,6 +1301,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crCuestionarioAutoeva.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crFichaDetencionSas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crFichaDetencionSas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\crPruebaEspiro.cs">
@@ -1567,6 +1584,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>crOftalmologia_S_J.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dataset\dsFichaDetencion.cs">
+      <DependentUpon>dsFichaDetencion.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dataset\dsFichaDetencion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFichaDetencion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reports\Factura2.cs">
       <AutoGen>True</AutoGen>
@@ -3087,6 +3113,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crCertificadoCosapi.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crEspaciosConfinados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEspaciosConfinados.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\crFichaAudiometriaAudiomax02.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crFichaAudiometriaAudiomax02.cs</LastGenOutput>
@@ -3118,6 +3148,10 @@
     <EmbeddedResource Include="Reports\crConsolidadoCargoHistorias.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crConsolidadoCargoHistorias.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crFichaDetencionSas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crFichaDetencionSas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\crPruebaEspiro.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -4148,6 +4182,17 @@
     <None Include="Dataset\dsCuestionario_Istas.xss">
       <DependentUpon>dsCuestionario_Istas.xsd</DependentUpon>
     </None>
+    <None Include="Dataset\dsEspaciosConfinados.xsc">
+      <DependentUpon>dsEspaciosConfinados.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\dsEspaciosConfinados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEspaciosConfinados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\dsEspaciosConfinados.xss">
+      <DependentUpon>dsEspaciosConfinados.xsd</DependentUpon>
+    </None>
     <None Include="Dataset\dsFobiasocial02.xsc">
       <DependentUpon>dsFobiasocial02.xsd</DependentUpon>
     </None>
@@ -5065,6 +5110,17 @@
     <Content Include="Backgrounds\FOTO-20.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Dataset\dsFichaDetencion.xsc">
+      <DependentUpon>dsFichaDetencion.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\dsFichaDetencion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFichaDetencion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\dsFichaDetencion.xss">
+      <DependentUpon>dsFichaDetencion.xsd</DependentUpon>
+    </None>
     <None Include="Resources\flechaRoja.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

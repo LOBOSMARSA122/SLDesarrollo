@@ -120,6 +120,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                  serviceComponents.Add(new ServiceComponentList { Orden = 7, v_ComponentName = "HISTORIA OCUPACIONAL", v_ComponentId = Constants.INFORME_HISTORIA_OCUPACIONAL });
                  serviceComponents.Add(new ServiceComponentList { Orden = 8, v_ComponentName = "ESPIRO PDF", v_ComponentId = Constants.ESPIRO_PRUEBA });
                  serviceComponents.Add(new ServiceComponentList { Orden = 9, v_ComponentName = "CERTIFICADO COSAPIL", v_ComponentId = Constants.CERTIFICADO_COSAPI });
+                 serviceComponents.Add(new ServiceComponentList { Orden = 6, v_ComponentName = "INFORME MEDICO OCUPACIONAL", v_ComponentId = Constants.INFORME_MEDICO_OCUPACIONAL });
             }
 
             foreach (var item in serviceComponents)
@@ -841,6 +842,10 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     GenerateAnexo7C(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, Constants.INFORME_ANEXO_7C)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, componentId)));
                     break;
+                case Constants.INFORME_MEDICO_OCUPACIONAL:
+                    GenerateInformeMedicoOcupacional(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, Constants.INFORME_MEDICO_OCUPACIONAL)));
+                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, componentId)));
+                    break;
                 case Constants.INFORME_CLINICO:
                     GenerateInformeExamenClinico(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, Constants.INFORME_CLINICO)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, componentId)));
@@ -853,10 +858,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     GenerateExamenesEspecialesReport(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, Constants.INFORME_EXAMENES_ESPECIALES)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, componentId)));
                     break;
-                case Constants.INFORME_MEDICO_RESUMEN:
-                    GenerateInformeMedicoResumen(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, Constants.INFORME_MEDICO_RESUMEN)));
-                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, componentId)));
-                    break;
+                
                 case Constants.INFORME_CERTIFICADO_APTITUD_COMPLETO:
                     GenerateCertificadoAptitudCompleto(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, Constants.INFORME_CERTIFICADO_APTITUD_COMPLETO)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, componentId)));
@@ -902,6 +904,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                 case Constants.INFORME_ANEXO_7C:
                     GenerateAnexo7C(saveFileDialog1.FileName);
                     break;
+               
                 case Constants.INFORME_CLINICO:
                     GenerateInformeExamenClinico(saveFileDialog1.FileName);
                     break;
@@ -912,9 +915,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                 case Constants.INFORME_EXAMENES_ESPECIALES:
                     GenerateExamenesEspecialesReport(saveFileDialog1.FileName);
                     break;
-                case Constants.INFORME_MEDICO_RESUMEN:
-                    GenerateInformeMedicoResumen(saveFileDialog1.FileName);
-                    break;
+
                 case Constants.INFORME_CERTIFICADO_APTITUD_COMPLETO:
                     GenerateCertificadoAptitudCompleto(saveFileDialog1.FileName);
                     break;
@@ -1014,11 +1015,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
 
         }
 
-        private void GenerateInformeMedicoOcupacional(string pathFile)
-        {
-            var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
-            ReportPDF.CreateInformeMedicoOcupacional(filiationData,pathFile);
-        }
+       
         
 
         private void CreateFichaMedicaTrabajador3(string pathFile)
@@ -1052,6 +1049,31 @@ namespace Sigesoft.Node.WinClient.UI.Reports
             var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
 
             ReportPDF.CreateAnexo7C(_DataService,filiationData, _Valores, _listMedicoPersonales,
+                                    _listaPatologicosFamiliares, _listaHabitoNocivos,
+                                    CuadroVacio, CuadroCheck, Pulmones, _PiezasCaries,
+                                    _PiezasAusentes, Audiometria, diagnosticRepository, MedicalCenter,
+                                    pathFile);
+
+        }
+        private void GenerateInformeMedicoOcupacional(string pathFile)
+        {
+            var _DataService = _serviceBL.GetServiceReport(_serviceId);
+            var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
+            var _listMedicoPersonales = _historyBL.GetPersonMedicalHistoryReport(_pacientId);
+            var _listaPatologicosFamiliares = _historyBL.GetFamilyMedicalAntecedentsReport(_pacientId);
+            var _Valores = _serviceBL.GetServiceComponentsReport(_serviceId);
+            var _listaHabitoNocivos = _historyBL.GetNoxiousHabitsReport(_pacientId);
+            var _PiezasCaries = _serviceBL.GetCantidadCaries(_serviceId, Constants.ODONTOGRAMA_ID, Constants.ODONTOGRAMA_PIEZAS_CARIES_ID);
+            var _PiezasAusentes = _serviceBL.GetCantidadAusentes(_serviceId, Constants.ODONTOGRAMA_ID, Constants.ODONTOGRAMA_PIEZAS_AUSENTES_ID);
+            var CuadroVacio = Common.Utils.BitmapToByteArray(Resources.CuadradoVacio);
+            var CuadroCheck = Common.Utils.BitmapToByteArray(Resources.CuadradoCheck);
+            var Pulmones = Common.Utils.BitmapToByteArray(Resources.MisPulmones);
+            var Audiometria = _serviceBL.ValoresComponenteOdontogramaValue1(_serviceId, Constants.AUDIOMETRIA_ID);
+            var diagnosticRepository = _serviceBL.GetServiceComponentConclusionesDxServiceIdReport(_serviceId);
+
+            var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
+
+            ReportPDF.CreateInformeMedicoOcupacional(_DataService, filiationData, _Valores, _listMedicoPersonales,
                                     _listaPatologicosFamiliares, _listaHabitoNocivos,
                                     CuadroVacio, CuadroCheck, Pulmones, _PiezasCaries,
                                     _PiezasAusentes, Audiometria, diagnosticRepository, MedicalCenter,
@@ -1105,41 +1127,6 @@ namespace Sigesoft.Node.WinClient.UI.Reports
             ExamenesEspecialesReport.CreateLaboratorioReport(filiationData, serviceComponents, MedicalCenter, pathFile);
         }
 
-        private void GenerateInformeMedicoResumen(string pathFile)
-        {
-            var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
-            var filiationData = _pacientBL.GetPacientReportEPSFirmaMedicoOcupacional(_serviceId);
-            var serviceComponents = _serviceBL.GetServiceComponentsReport_(_serviceId);
-            var RecoAudio = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.AUDIOMETRIA_ID);
-            var RecoElectro = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.ELECTROCARDIOGRAMA_ID);
-            var RecoEspiro = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.ESPIROMETRIA_ID);
-            var RecoNeuro = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.EVAL_NEUROLOGICA_ID);
-
-            var RecoAltEst = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.ALTURA_ESTRUCTURAL_ID);
-            var RecoActFis = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.CUESTIONARIO_ACTIVIDAD_FISICA);
-            var RecoCustNor = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.C_N_ID);
-            var RecoAlt7D = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.ALTURA_7D_ID);
-            var RecoExaFis = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.EXAMEN_FISICO_ID);
-            var RecoExaFis7C = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.EXAMEN_FISICO_7C_ID);
-            var RecoOsteoMus1 = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.OSTEO_MUSCULAR_ID_1);
-            var RecoTamDer = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.TAMIZAJE_DERMATOLOGIO_ID);
-            var RecoOdon = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.ODONTOGRAMA_ID);
-            var RecoPsico = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.PSICOLOGIA_ID);
-            var RecoRx = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.RX_TORAX_ID);
-            var RecoOit = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.OIT_ID);
-            var RecoOft = _serviceBL.GetListRecommendationByServiceIdAndComponent(_serviceId, Constants.OFTALMOLOGIA_ID);
-
-
-            var Restricciton = _serviceBL.GetRestrictionByServiceId(_serviceId);
-            var Aptitud = _serviceBL.DevolverAptitud(_serviceId);
-
-            InformeMedicoOcupacional.CreateInformeMedicoOcupacional(filiationData, serviceComponents, MedicalCenter, pathFile, 
-                RecoAudio,
-                RecoElectro,
-                RecoEspiro,
-                RecoNeuro, RecoAltEst, RecoActFis, RecoCustNor, RecoAlt7D, RecoExaFis, RecoExaFis7C, RecoOsteoMus1, RecoTamDer, RecoOdon,
-                RecoPsico, RecoRx, RecoOit,RecoOft, Restricciton,Aptitud);
-        }
 
         private void GenerateCertificadoAptitudCompleto(string pathFile)
         {
@@ -1840,6 +1827,50 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     objDiskOpt = new DiskFileDestinationOptions();
                     //objDiskOpt.DiskFileName = Application.StartupPath + @"\TempMerge\" + Constants.CONSENTIMIENTO_INFORMADO + ".pdf";
                     objDiskOpt.DiskFileName = ruta + serviceId + "-" + Constants.TOXICOLOGICO_ID + ".pdf";
+                    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
+                    rp.ExportOptions.DestinationOptions = objDiskOpt;
+                    rp.Export();
+                    rp.Close();
+                    break;
+
+                case Constants.FICHA_DETENCION:
+                    var fichaDetencion = new ServiceBL().GetReporteFichaDetencionSas(_serviceId, Constants.FICHA_DETENCION);
+
+                    dsGetRepo = new DataSet();
+                    var dtFichaDetencionId = BLL.Utils.ConvertToDatatable(fichaDetencion);
+                    dtFichaDetencionId.TableName = "dtFichaDetencion";
+                    dsGetRepo.Tables.Add(dtFichaDetencionId);
+                    rp = new crFichaDetencionSas();
+                    rp.SetDataSource(dsGetRepo);
+
+                    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    objDiskOpt = new DiskFileDestinationOptions
+                    {
+                        DiskFileName = ruta + serviceId + "-" + Constants.FICHA_DETENCION + ".pdf"
+                    };
+                    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
+                    rp.ExportOptions.DestinationOptions = objDiskOpt;
+                    rp.Export();
+                    rp.Close();
+                    break;
+
+                case Constants.ESPACIOS_CONFINADO:
+                    var espaciosConfinados = new ServiceBL().GetReporteEspaciosConfinados(_serviceId, Constants.ESPACIOS_CONFINADO);
+
+                    dsGetRepo = new DataSet();
+                    var dtEspaciosConfinados = BLL.Utils.ConvertToDatatable(espaciosConfinados);
+                    dtEspaciosConfinados.TableName = "dtEspaciosConfinados";
+                    dsGetRepo.Tables.Add(dtEspaciosConfinados);
+                    rp = new crEspaciosConfinados();
+                    rp.SetDataSource(dsGetRepo);
+
+                    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    objDiskOpt = new DiskFileDestinationOptions
+                    {
+                        DiskFileName = ruta + serviceId + "-" + Constants.ESPACIOS_CONFINADO + ".pdf"
+                    };
                     _filesNameToMerge.Add(objDiskOpt.DiskFileName);
                     rp.ExportOptions.DestinationOptions = objDiskOpt;
                     rp.Export();
@@ -3702,13 +3733,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     break;
 
 
-                //case Constants.INFORME_FICHA_MEDICA_TRABAJADOR: SEGUIR
-                //    var DatosServicio = _serviceBL.GetServiceShort(_serviceId);
-                //   var ruta1 = Common.Utils.GetApplicationConfigValue("InformeTrab1").ToString();
-                //   GenerateInformeMedicoOcupacional(string.Format("{0}.pdf", Path.Combine(ruta1, DatosServicio.Empresa + "-" + DatosServicio.Paciente + "-" + Constants.INFORME_FICHA_MEDICA_TRABAJADOR + "-" + DatosServicio.FechaServicio.Value.ToString("dd MMMM,  yyyy"))));
-                //   GenerateInformeMedicoOcupacional(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.INFORME_FICHA_MEDICA_TRABAJADOR)));
-                //    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
-                //    break;
+                
                     
                 case Constants.INFORME_FICHA_MEDICA_TRABAJADOR_2:
                     var DatosServicio1 = _serviceBL.GetServiceShort(_serviceId);
@@ -3731,6 +3756,10 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     GenerateAnexo7C(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.INFORME_ANEXO_7C)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
                     break;
+                case Constants.INFORME_MEDICO_OCUPACIONAL:
+                    GenerateInformeMedicoOcupacional(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, Constants.INFORME_MEDICO_OCUPACIONAL)));
+                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(_tempSourcePath, componentId)));
+                    break;
                 case Constants.INFORME_CLINICO:
                     GenerateInformeExamenClinico(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.INFORME_CLINICO)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
@@ -3743,10 +3772,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     GenerateExamenesEspecialesReport(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.INFORME_EXAMENES_ESPECIALES)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
                     break;
-                case Constants.INFORME_MEDICO_RESUMEN:
-                    GenerateInformeMedicoResumen(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.INFORME_MEDICO_RESUMEN)));
-                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
-                    break;
+               
                 case Constants.INFORME_CERTIFICADO_APTITUD_COMPLETO:
                     GenerateCertificadoAptitudCompleto(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.INFORME_CERTIFICADO_APTITUD_COMPLETO)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));

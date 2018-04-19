@@ -6940,6 +6940,25 @@ namespace Sigesoft.Node.WinClient.BLL
             return string.Join(", ", qry.Select(p => p.v_DiseasesName));
         }
 
+        private string ConcatenatePersonMedicalHistory (string pstrPersonId)
+        {
+            SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+            var qry = (from A in dbContext.personmedicalhistory
+                    
+                       join D in dbContext.diseases on new { a = A.v_DiseasesId }
+                                                               equals new { a = D.v_DiseasesId } into D_join
+                       from D in D_join.DefaultIfEmpty()
+                       where A.v_PersonId == pstrPersonId &&
+                       A.i_IsDeleted == 0 
+                       select new
+                       {
+                           v_DiseasesName = D.v_Name
+                       }).ToList();
+
+            return string.Join(", ", qry.Select(p => p.v_DiseasesName));
+        }
+
         #endregion
 
         #region Permisos x examenes componentes
@@ -27045,5 +27064,256 @@ namespace Sigesoft.Node.WinClient.BLL
         }
 
         #endregion
+
+
+        public List<ReporteFichaDetencionSas> GetReporteFichaDetencionSas(string pstrServiceId, string pstrComponentId)
+        {
+            //mon.IsActive = true;
+            var groupUbigeo = 113;
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var servicios = (from ser in dbContext.service
+                                 join serCom in dbContext.servicecomponent on ser.v_ServiceId equals serCom.v_ServiceId
+                                 join per in dbContext.person on ser.v_PersonId equals per.v_PersonId
+                                 join doc in dbContext.datahierarchy on new { a = per.i_DocTypeId.Value, b = 106 } equals new { a = doc.i_ItemId, b = doc.i_GroupId } into doc_join
+                                 from doc in doc_join.DefaultIfEmpty()
+                                 join prot in dbContext.protocol on ser.v_ProtocolId equals prot.v_ProtocolId
+                                 join empCli in dbContext.organization on prot.v_CustomerOrganizationId equals empCli.v_OrganizationId
+                                 join empTrab in dbContext.organization on prot.v_WorkingOrganizationId equals empTrab.v_OrganizationId
+                                 join empEmp in dbContext.organization on prot.v_EmployerOrganizationId equals empEmp.v_OrganizationId
+                                 join gen in dbContext.systemparameter on new { a = per.i_DocTypeId.Value, b = 100 } equals new { a = gen.i_ParameterId, b = gen.i_GroupId } into gen_join
+                                 from gen in gen_join.DefaultIfEmpty()
+                                 join me in dbContext.systemuser on serCom.i_ApprovedUpdateUserId equals me.i_SystemUserId into me_join
+                                 from me in me_join.DefaultIfEmpty()
+                                 join pme in dbContext.professional on me.v_PersonId equals pme.v_PersonId into pme_join
+                                 from pme in pme_join.DefaultIfEmpty()
+                                 where ser.v_ServiceId == pstrServiceId
+                                 select new ReporteFichaDetencionSas
+                                 {
+                                     ServiceId = ser.v_ServiceId,
+                                     ServiceComponentId = serCom.v_ServiceComponentId,
+                                     FechaServicio = ser.d_ServiceDate.Value,
+                                     Nombres = per.v_FirstName,
+                                     ApellidoPaterno = per.v_FirstLastName,
+                                     ApellidoMaterno = per.v_SecondLastName,
+                                     NombreCompleto = per.v_FirstLastName + " " + per.v_SecondLastName + " " + per.v_FirstName,
+                                     FechaNacimiento = per.d_Birthdate.Value,
+                                     //Edad = "",
+                                     TipoDocumentoId = per.i_DocTypeId.Value,
+                                     TipoDocumento = doc.v_Value1,
+                                     NroDocumento = per.v_DocNumber,
+                                     EmpresaCliente = empCli.v_Name,
+                                     EmpresaTrabajo = empTrab.v_Name,
+                                     EmpresaEmpleadora = empEmp.v_Name,
+                                     Puesto = per.v_CurrentOccupation,
+                                     GeneroId = per.i_SexTypeId.Value,
+                                     Genero = gen.v_Value1,
+                                     FirmaTrabajador = per.b_RubricImage,
+                                     HuellaTrabajador = per.b_FingerPrintImage,
+                                     FirmaUsuarioGraba = pme.b_SignatureImage,
+                                 }).ToList();
+
+
+                var MedicalCenter = GetInfoMedicalCenter();
+                var valores = ValoresComponente(pstrServiceId, pstrComponentId);
+                var Fv = ValoresComponente(pstrServiceId, "N002-ME000000001");
+                var antro = ValoresComponente(pstrServiceId, "N002-ME000000001");
+                var sql = (from a in servicios.ToList()
+                           select new ReporteFichaDetencionSas
+                           {
+                               ServiceId = a.ServiceId,
+                               ServiceComponentId = a.ServiceComponentId,
+                               FechaServicio = a.FechaServicio,
+                               Nombres = a.Nombres,
+                               ApellidoPaterno = a.ApellidoPaterno,
+                               ApellidoMaterno = a.ApellidoMaterno,
+                               NombreCompleto = a.NombreCompleto,
+                               FechaNacimiento = a.FechaNacimiento,
+                               Edad = GetAge(a.FechaNacimiento.Value),
+                               TipoDocumentoId = a.TipoDocumentoId,
+                               TipoDocumento = a.TipoDocumento,
+                               NroDocumento = a.NroDocumento,
+                               EmpresaCliente = a.EmpresaCliente,
+                               EmpresaTrabajo = a.EmpresaTrabajo,
+                               EmpresaEmpleadora = a.EmpresaEmpleadora,
+                               Puesto = a.Puesto,
+                               GeneroId = a.GeneroId,
+                               Genero = a.Genero,
+                               FirmaTrabajador = a.FirmaTrabajador,
+                               HuellaTrabajador = a.HuellaTrabajador,
+                               FirmaUsuarioGraba = a.FirmaUsuarioGraba,
+
+                                TipoLicencia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002839") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002839").v_Value1,
+                                NroLicencia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840").v_Value1,
+                                TrabajaNoche = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002841") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002841").v_Value1,
+                                NroDiasTrabajoDescanso = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002842") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002842").v_Value1,
+
+                                Apnea = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002843") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002843").v_Value1,
+                                ApneaSi = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002844") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002844").v_Value1,
+                                HipertensionArterial = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002845") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002845").v_Value1,
+                                HipertensionArterialSi = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002846") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002846").v_Value1,
+                                ChoqueVehiculo = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002847") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002847").v_Value1,
+                                ChoqueVehiculoSomnolencia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002861") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002861").v_Value1,
+
+                                Ronca = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002848") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002848").v_Value1,
+                                RoncaSi = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002849") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002849").v_Value1,
+                                PausasSuenio = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002850") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002850").v_Value1,
+                                PausasSuenioSi = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002851") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002851").v_Value1,
+                                Fatiga = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002852") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002852").v_Value1,
+                                FatigaSi = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002853") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002853").v_Value1,
+
+                                Peso = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003").v_Value1,
+                               Talla = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000007") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000007").v_Value1,
+                                Imc = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000009") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000009").v_Value1,
+                               CircunferenciaCuello = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840").v_Value1,
+                                
+                                So2 = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006").v_Value1,
+                                Pa1 = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001").v_Value1,
+                                Pa2 = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000002") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000002").v_Value1,
+                                ClasificacionMallampati = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002856") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002856").v_Value1,
+                                ConclusionEvaluacion = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002857") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002857").v_Value1,
+                                Aptitud = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002858") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002858").v_Value1,
+                                VigenciaDesde = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002859") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002859").v_Value1,
+                                VigenciaHasta = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002860") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002860").v_Value1,
+                            
+                            
+                           }).ToList();
+
+                return sql;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+            public List<ReporteEspaciosConfinados> GetReporteEspaciosConfinados(string pstrServiceId, string pstrComponentId)
+        {
+            //mon.IsActive = true;
+            var groupUbigeo = 113;
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var servicios = (from ser in dbContext.service
+                                 join serCom in dbContext.servicecomponent on ser.v_ServiceId equals serCom.v_ServiceId
+                                 join per in dbContext.person on ser.v_PersonId equals per.v_PersonId
+                                 join doc in dbContext.datahierarchy on new { a = per.i_DocTypeId.Value, b = 106 } equals new { a = doc.i_ItemId, b = doc.i_GroupId } into doc_join
+                                 from doc in doc_join.DefaultIfEmpty()
+                                 join prot in dbContext.protocol on ser.v_ProtocolId equals prot.v_ProtocolId
+                                 join empCli in dbContext.organization on prot.v_CustomerOrganizationId equals empCli.v_OrganizationId
+                                 join empTrab in dbContext.organization on prot.v_WorkingOrganizationId equals empTrab.v_OrganizationId
+                                 join empEmp in dbContext.organization on prot.v_EmployerOrganizationId equals empEmp.v_OrganizationId
+                                 join gen in dbContext.systemparameter on new { a = per.i_DocTypeId.Value, b = 100 } equals new { a = gen.i_ParameterId, b = gen.i_GroupId } into gen_join
+                                 from gen in gen_join.DefaultIfEmpty()
+                                 join me in dbContext.systemuser on serCom.i_ApprovedUpdateUserId equals me.i_SystemUserId into me_join
+                                 from me in me_join.DefaultIfEmpty()
+                                 join pme in dbContext.professional on me.v_PersonId equals pme.v_PersonId into pme_join
+                                 from pme in pme_join.DefaultIfEmpty()
+                                 where ser.v_ServiceId == pstrServiceId
+                                 select new ReporteEspaciosConfinados
+                                 {
+                                     ServiceId = ser.v_ServiceId,
+                                     PersonId = per.v_PersonId,
+                                     ServiceComponentId = serCom.v_ServiceComponentId,
+                                     FechaServicio = ser.d_ServiceDate.Value,
+                                     Nombres = per.v_FirstName,
+                                     ApellidoPaterno = per.v_FirstLastName,
+                                     ApellidoMaterno = per.v_SecondLastName,
+                                     NombreCompleto = per.v_FirstLastName + " " + per.v_SecondLastName + " " + per.v_FirstName,
+                                     FechaNacimiento = per.d_Birthdate.Value,
+                                     //Edad = "",
+                                     TipoDocumentoId = per.i_DocTypeId.Value,
+                                     TipoDocumento = doc.v_Value1,
+                                     NroDocumento = per.v_DocNumber,
+                                     EmpresaCliente = empCli.v_Name,
+                                     EmpresaTrabajo = empTrab.v_Name,
+                                     EmpresaEmpleadora = empEmp.v_Name,
+                                     Puesto = per.v_CurrentOccupation,
+                                     GeneroId = per.i_SexTypeId.Value,
+                                     Genero = gen.v_Value1,
+                                     FirmaTrabajador = per.b_RubricImage,
+                                     HuellaTrabajador = per.b_FingerPrintImage,
+                                     FirmaUsuarioGraba = pme.b_SignatureImage,
+                                 }).ToList();
+
+
+                var MedicalCenter = GetInfoMedicalCenter();
+                var valores = ValoresComponente(pstrServiceId, pstrComponentId);
+                var fv = ValoresComponente(pstrServiceId, "N002-ME000000001");
+                var antro = ValoresComponente(pstrServiceId, "N002-ME000000001");
+                var sql = (from a in servicios.ToList()
+                           select new ReporteEspaciosConfinados
+                           {
+                               ServiceId = a.ServiceId,
+                               PersonId = a.PersonId,
+                               ServiceComponentId = a.ServiceComponentId,
+                               FechaServicio = a.FechaServicio,
+                               Nombres = a.Nombres,
+                               ApellidoPaterno = a.ApellidoPaterno,
+                               ApellidoMaterno = a.ApellidoMaterno,
+                               NombreCompleto = a.NombreCompleto,
+                               FechaNacimiento = a.FechaNacimiento,
+                               Edad = GetAge(a.FechaNacimiento.Value),
+                               TipoDocumentoId = a.TipoDocumentoId,
+                               TipoDocumento = a.TipoDocumento,
+                               NroDocumento = a.NroDocumento,
+                               EmpresaCliente = a.EmpresaCliente,
+                               EmpresaTrabajo = a.EmpresaTrabajo,
+                               EmpresaEmpleadora = a.EmpresaEmpleadora,
+                               Puesto = a.Puesto,
+                               GeneroId = a.GeneroId,
+                               Genero = a.Genero,
+                               FirmaTrabajador = a.FirmaTrabajador,
+                               HuellaTrabajador = a.HuellaTrabajador,
+                               FirmaUsuarioGraba = a.FirmaUsuarioGraba,
+
+                               AntecedentesImportancia = ConcatenatePersonMedicalHistory(a.PersonId),
+                               Peso = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003").v_Value1,
+                               Talla = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000007") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000007").v_Value1,
+                               Imc = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000009") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000009").v_Value1,
+                               PerimetroCinturaCadera1 = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000010") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N009-MF000000010").v_Value1,
+                               PerimetroCinturaCadera2 = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000011") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N009-MF000000011").v_Value1,
+                               Icc = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000012") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N009-MF000000012").v_Value1, 
+                               Pa1 = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001").v_Value1,
+                               Pa2 = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000002") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000002").v_Value1,
+                               So2 = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006").v_Value1,
+                               Fc = fv.Count == 0 ? string.Empty : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003") == null ? "" : fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003").v_Value1,
+                               PerimetroToraxico = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N002-MF000002821") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002821").v_Value1,
+
+
+                               EvaCardioClinica = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002822") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002822").v_Value1,
+                               EvaCardioClinicaAnomalia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002823") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002823").v_Value1,
+                               EvaCardioEkg = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002824") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002824").v_Value1,
+                               EvaCardioEkgAnomalia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002825") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002825").v_Value1,
+
+                               EvaPulmonarClinica = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002826") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002826").v_Value1,
+                               EvaPulmonarClinicaAnomalia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002827") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002827").v_Value1,
+                               EvaPulmonarEspirometria = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002828") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002828").v_Value1,
+                               EvaPulmonarEspirometriaAnomalia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002829") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002829").v_Value1,
+                               EvaPulmonarRx = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002830") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002830").v_Value1,
+                               EvaPulmonarRxAnomalia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002831") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002831").v_Value1,
+
+                               EvaNeurologicaClinica = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002832") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002832").v_Value1,
+                               EvaNeurologicaClinicaAnomalia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002833") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002833").v_Value1,
+
+                               ResultadoClaustrophobia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002834") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002834").v_Value1,
+
+                               ConclusionesRecomendaciones = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002835") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002835").v_Value1,
+
+                               Aptitud = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002836") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002836").v_Value1,
+                               VigenciaDesde = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002837") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002837").v_Value1,
+                               VigenciaHasta = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002838") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002838").v_Value1,
+                           }).ToList();
+
+                return sql;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
