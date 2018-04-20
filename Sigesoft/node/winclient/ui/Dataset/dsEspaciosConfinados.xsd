@@ -68,6 +68,8 @@
               <xs:element name="Aptitud" msprop:Generator_ColumnVarNameInTable="columnAptitud" msprop:Generator_ColumnPropNameInRow="Aptitud" msprop:Generator_ColumnPropNameInTable="AptitudColumn" msprop:Generator_UserColumnName="Aptitud" type="xs:string" minOccurs="0" />
               <xs:element name="VigenciaDesde" msprop:Generator_ColumnVarNameInTable="columnVigenciaDesde" msprop:Generator_ColumnPropNameInRow="VigenciaDesde" msprop:Generator_ColumnPropNameInTable="VigenciaDesdeColumn" msprop:Generator_UserColumnName="VigenciaDesde" type="xs:string" minOccurs="0" />
               <xs:element name="VigenciaHasta" msprop:Generator_ColumnVarNameInTable="columnVigenciaHasta" msprop:Generator_ColumnPropNameInRow="VigenciaHasta" msprop:Generator_ColumnPropNameInTable="VigenciaHastaColumn" msprop:Generator_UserColumnName="VigenciaHasta" type="xs:string" minOccurs="0" />
+              <xs:element name="b_Logo" msprop:Generator_ColumnVarNameInTable="columnb_Logo" msprop:Generator_ColumnPropNameInRow="b_Logo" msprop:Generator_ColumnPropNameInTable="b_LogoColumn" msprop:Generator_UserColumnName="b_Logo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="ProtocoloNombre" msprop:Generator_ColumnVarNameInTable="columnProtocoloNombre" msprop:Generator_ColumnPropNameInRow="ProtocoloNombre" msprop:Generator_ColumnPropNameInTable="ProtocoloNombreColumn" msprop:Generator_UserColumnName="ProtocoloNombre" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -5110,6 +5110,7 @@
     <Content Include="Backgrounds\FOTO-20.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\mallampati.png" />
     <None Include="Dataset\dsFichaDetencion.xsc">
       <DependentUpon>dsFichaDetencion.xsd</DependentUpon>
     </None>
