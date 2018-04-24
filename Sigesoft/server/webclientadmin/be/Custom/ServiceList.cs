@@ -51,6 +51,7 @@ namespace Sigesoft.Server.WebClientAdmin.BE
         public int? i_ServiceComponentStatusId { get; set; }
         public bool AtSchool { get; set; }
         public int? i_SendToTracking { get; set; }
+        public string Apellidos { get; set; }
         
     }
 }

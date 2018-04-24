@@ -110,7 +110,7 @@
             </x:GroupPanel>
             <x:Grid ID="grdData" ShowBorder="true" ShowHeader="false" runat="server" 
              EnableRowNumber="True" EnableRowNumberPaging="true" AutoHeight="true" RowNumberWidth="40" AjaxLoadingType="Default"
-            EnableMouseOverColor="true" ShowGridHeader="true"   DataKeyNames="v_ServiceId,v_IdTrabajador,EmpresaCliente,v_Trabajador,Dni,i_SendToTracking" 
+            EnableMouseOverColor="true" ShowGridHeader="true"   DataKeyNames="v_ServiceId,v_IdTrabajador,EmpresaCliente,v_Trabajador,Dni,i_SendToTracking,Apellidos" 
             EnableTextSelection="true" EnableAlternateRowColor="true" EnableCheckBoxSelect="true" BoxFlex="2" BoxMargin="5" 
             OnRowCommand="grdData_RowCommand"  OnRowClick="grdData_RowClick" EnableRowClick="true">
                 <Toolbars>
@@ -127,7 +127,7 @@
                 <Columns>
                     <x:WindowField ColumnID="myWindowField" Width="25px" WindowID="Window1" HeaderText=""
                         Icon="attach" ToolTip="Archivos Adjuntos" DataTextFormatString="{0}" 
-                        DataIFrameUrlFields="Dni" DataIFrameUrlFormatString="FRM031I.aspx?Dni={0}" 
+                        DataIFrameUrlFields="Dni,Apellidos" DataIFrameUrlFormatString="FRM031I.aspx?Dni={0}&&Apellidos={1}" 
                         DataWindowTitleField="v_Value1" DataWindowTitleFormatString="Archivos Adjuntos" />
                     <x:boundfield Width="140px" DataField="v_ServiceId" DataFormatString="{0}" HeaderText="Id Atencion" />
                     <x:boundfield Width="270px" DataField="v_Trabajador" DataFormatString="{0}" HeaderText="Trabajador" />

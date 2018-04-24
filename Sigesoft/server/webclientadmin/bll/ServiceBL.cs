@@ -412,8 +412,8 @@ namespace Sigesoft.Server.WebClientAdmin.BLL
                                EmpresaCliente = E.v_Name,
                                v_CustomerOrganizationId = E.v_OrganizationId,
                                Dni = H.v_DocNumber,
-                               i_SendToTracking = F.i_SendToTracking.Value
-                              
+                               i_SendToTracking = F.i_SendToTracking.Value,
+                                Apellidos = H.v_FirstLastName + " " + H.v_SecondLastName
                            };
 
              
@@ -449,7 +449,8 @@ namespace Sigesoft.Server.WebClientAdmin.BLL
                                  v_CustomerOrganizationId = A.v_CustomerOrganizationId,
                                  //v_Restricction = x,
                                  Dni = A.Dni,
-                                 i_SendToTracking = A.i_SendToTracking
+                                 i_SendToTracking = A.i_SendToTracking,
+                                 Apellidos = A.Apellidos
                              }).ToList();
 
 

@@ -22,6 +22,8 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
             {
                 if (Request.QueryString["Dni"] != null)
                     Session["Dni"] = Request.QueryString["Dni"].ToString();
+                if (Request.QueryString["Apellidos"] != null)
+                    Session["Apellidos"] = Request.QueryString["Apellidos"].ToString();
             }
 
             FileInfo[] files = null;
@@ -59,6 +61,42 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
             foreach (var item in files)
             {
                 if (item.ToString().Substring(0, 8) == Session["Dni"].ToString())
+                {
+                    LinkButton objLinkButton = new LinkButton();
+
+                    objLinkButton.ID = item.Name;
+                    objLinkButton.Text = item.Name;
+
+                    objLinkButton.Click += new EventHandler(link_Click);
+
+                    DivControls.Controls.Add(objLinkButton);
+                    DivControls.Controls.Add(new LiteralControl("<br>"));
+                }
+                if (item.ToString().ToUpper() == Session["Apellidos"].ToString() + "-3.PDF")
+                {
+                    LinkButton objLinkButton = new LinkButton();
+
+                    objLinkButton.ID = item.Name;
+                    objLinkButton.Text = item.Name;
+
+                    objLinkButton.Click += new EventHandler(link_Click);
+
+                    DivControls.Controls.Add(objLinkButton);
+                    DivControls.Controls.Add(new LiteralControl("<br>"));
+                }
+                if (item.ToString().ToUpper() == Session["Apellidos"].ToString() + "-1.PDF")
+                {
+                    LinkButton objLinkButton = new LinkButton();
+
+                    objLinkButton.ID = item.Name;
+                    objLinkButton.Text = item.Name;
+
+                    objLinkButton.Click += new EventHandler(link_Click);
+
+                    DivControls.Controls.Add(objLinkButton);
+                    DivControls.Controls.Add(new LiteralControl("<br>"));
+                }
+                if (item.ToString().ToUpper() == Session["Apellidos"].ToString() + "-2.PDF")
                 {
                     LinkButton objLinkButton = new LinkButton();
 
