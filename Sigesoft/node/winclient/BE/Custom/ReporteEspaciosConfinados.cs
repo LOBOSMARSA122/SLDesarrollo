@@ -12,6 +12,7 @@ namespace Sigesoft.Node.WinClient.BE
         public string ServiceComponentId { get; set; }
         public DateTime? FechaServicio { get; set; }
         public string Nombres { get; set; }
+        public string ProtocoloNombre { get; set; }
         public string ApellidoPaterno { get; set; }
         public string ApellidoMaterno { get; set; }
         public string NombreCompleto { get; set; }
@@ -34,7 +35,7 @@ namespace Sigesoft.Node.WinClient.BE
         public byte[] HuellaTrabajador { get; set; }
         public byte[] FirmaUsuarioGraba { get; set; }
         public byte[] FirmaMedicina { get; set; }
-      
+        public byte[] b_Logo { get; set; }
 
         public string AntecedentesImportancia { get; set; }
         public string Peso { get; set; }
