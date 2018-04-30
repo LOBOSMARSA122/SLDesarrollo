@@ -1571,6 +1571,18 @@ namespace Sigesoft.Server.WebClientAdmin.UI.Consultorios
             Alert.ShowInTop("El archivo subió correctamente", MessageBoxIcon.Information);
         }
 
+        protected void FileInforme_FileSelected(object sender, EventArgs e)
+        {
+            string Ruta = WebConfigurationManager.AppSettings["ImgRxInforme"];
+            string Dni = Session["DniTrabajador"].ToString();
+            string Fecha = Session["FechaServicio"].ToString();
+            string Consultorio = "ConsultorioRX";
+            string Ext = FileInforme.FileName.Substring(FileInforme.FileName.Length - 3, 3);
+            FileInforme.SaveAs(Ruta + Dni + "-" + Fecha + "-" + Consultorio + "." + Ext);
+            Alert.ShowInTop("El archivo subió correctamente", MessageBoxIcon.Information);
+        }
+        
+
         protected void fileDocOIT_FileSelected(object sender, EventArgs e)
         {
             string Ruta = WebConfigurationManager.AppSettings["ImgOITOrigen"].ToString();
