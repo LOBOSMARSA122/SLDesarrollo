@@ -17,7 +17,7 @@ using System.Web.Configuration;
 
 namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
 {
-    public partial class FRMFMT1 : System.Web.UI.Page
+    public partial class FRM031K : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

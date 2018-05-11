@@ -10,7 +10,7 @@
 namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser {
     
     
-    public partial class FRMFMT1 {
+    public partial class FRM031K {
         
         /// <summary>
         /// form1 control.

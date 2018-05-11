@@ -87,6 +87,12 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
         protected void btnFilter_Click(object sender, EventArgs e)
         {
 
+            if (ddlProtocolo.SelectedValue == "-1")
+            {
+                Alert.ShowInTop("Por favor seleccionar un protocolo");
+                return;
+            }
+
             // Get the filters from the UI
             List<string> Filters = new List<string>();
             if (ddlTipoESO.SelectedValue.ToString() != "-1") Filters.Add("i_TypeEsoId==" + ddlTipoESO.SelectedValue);
@@ -124,6 +130,10 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
             {
                 btnNewCertificado.Enabled = (bool)Session["CertificadoAptitud"];
                 btnNewFichaOcupacional.Enabled = (bool)Session["FichaOcupacional"];
+
+                btnExAltura.Enabled = (bool)Session["ExamenAltura"];
+                btnFMT1.Enabled = (bool)Session["FMT1"];
+                btnInterConsulta.Enabled = (bool)Session["Interconsultas"];
                 //btnFMT1.Enabled = (bool)Session["CertificadoAptitud"];
                 if (selectedCount > 1)
                 {
@@ -131,14 +141,16 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
                     btnNewCertificado.Enabled = false;
                     btnFMT1.Enabled = false;
                     btnInterConsulta.Enabled = false;
-
+                    btnExAltura.Enabled = false;
                 }
                 else
                 {
                     btnNewFichaOcupacional.Enabled = (bool)Session["FichaOcupacional"];
                     btnNewCertificado.Enabled = (bool)Session["CertificadoAptitud"];
-                    btnFMT1.Enabled = (bool)Session["CertificadoAptitud"];
-                    btnInterConsulta.Enabled = (bool)Session["CertificadoAptitud"];
+                    
+                    btnExAltura.Enabled = (bool)Session["ExamenAltura"];
+                    btnFMT1.Enabled = (bool)Session["FMT1"];
+                    btnInterConsulta.Enabled = (bool)Session["Interconsultas"];
                     //Session["CertificadoAptitud"] = true;
                     //Session["FichaOcupacional"] = true;
                 }
@@ -150,6 +162,8 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
                 btnFMT1.Enabled = false;
                 btnNewFichaOcupacional.Enabled = false;
                 btnInterConsulta.Enabled = false;
+                btnExAltura.Enabled = false;
+
             }
 
             if (grdData.SelectedRowIndexArray.Length == 0)
