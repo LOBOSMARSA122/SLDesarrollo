@@ -19,43 +19,43 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
 {
     public partial class FRMFMT1 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
 
-            List<MyListWeb> ListaServicios = (List<MyListWeb>)Session["objLista"];
+        //    List<MyListWeb> ListaServicios = (List<MyListWeb>)Session["objLista"];
 
-            LinkButton objLinkButton = new LinkButton();
-            objLinkButton.ID = ListaServicios[0].IdServicio;
-            objLinkButton.Text = ListaServicios[0].Paciente + "Informe";
-            //objLinkButton.Text = Session["IdServicio"].ToString() + ".pdf";
-            objLinkButton.Click += new EventHandler(link_Click);
+        //    LinkButton objLinkButton = new LinkButton();
+        //    objLinkButton.ID = ListaServicios[0].IdServicio;
+        //    objLinkButton.Text = ListaServicios[0].Paciente + "Informe";
+        //    //objLinkButton.Text = Session["IdServicio"].ToString() + ".pdf";
+        //    objLinkButton.Click += new EventHandler(link_Click);
 
-            DivControls.Controls.Add(objLinkButton);
-            DivControls.Controls.Add(new LiteralControl("<br>"));
-        }
+        //    DivControls.Controls.Add(objLinkButton);
+        //    DivControls.Controls.Add(new LiteralControl("<br>"));
+        //}
 
-        private void link_Click(object sender, System.EventArgs e)
-        {
-            string rutaReportes = WebConfigurationManager.AppSettings["rutaReportes"];
+        //private void link_Click(object sender, System.EventArgs e)
+        //{
+        //    string rutaReportes = WebConfigurationManager.AppSettings["rutaReportes"];
 
-            OperationResult objOperationResult = new OperationResult();
-            LinkButton senderCtrl = (LinkButton)sender;
-            string path;
+        //    OperationResult objOperationResult = new OperationResult();
+        //    LinkButton senderCtrl = (LinkButton)sender;
+        //    string path;
 
-            path = rutaReportes + senderCtrl.ID.ToString() + "-FMT.pdf";
+        //    path = rutaReportes + senderCtrl.ID.ToString() + "-FMT.pdf";
 
-            Download(senderCtrl.Text, path);
-        }
+        //    Download(senderCtrl.Text, path);
+        //}
 
-        public static void Download(string sFileName, string sFilePath)
-        {
-            HttpContext.Current.Response.ContentType = "APPLICATION/OCTET-STREAM";
-            String Header = "Attachment; Filename=" + sFileName + ".pdf";
-            HttpContext.Current.Response.AppendHeader("Content-Disposition", Header);
-            System.IO.FileInfo Dfile = new System.IO.FileInfo(sFilePath);
-            HttpContext.Current.Response.WriteFile(Dfile.FullName);
-            HttpContext.Current.Response.End();
-        }      
+        //public static void Download(string sFileName, string sFilePath)
+        //{
+        //    HttpContext.Current.Response.ContentType = "APPLICATION/OCTET-STREAM";
+        //    String Header = "Attachment; Filename=" + sFileName + ".pdf";
+        //    HttpContext.Current.Response.AppendHeader("Content-Disposition", Header);
+        //    System.IO.FileInfo Dfile = new System.IO.FileInfo(sFilePath);
+        //    HttpContext.Current.Response.WriteFile(Dfile.FullName);
+        //    HttpContext.Current.Response.End();
+        //}      
 
     }
 }

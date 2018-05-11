@@ -30,6 +30,7 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
                 dpFechaFin.SelectedDate = DateTime.Now;// DateTime.Parse("25/07/2014");
                 LoadComboBox();
                 btnNewCertificado.OnClientClick = winEdit1.GetSaveStateReference(hfRefresh.ClientID) + winEdit1.GetShowReference("../ExternalUser/FRM031J.aspx");
+                btnExAltura.OnClientClick = winEdit1.GetSaveStateReference(hfRefresh.ClientID) + winEdit1.GetShowReference("../ExternalUser/FRM031K.aspx");
                 btnNewFichaOcupacional.OnClientClick = winEdit2.GetSaveStateReference(hfRefresh.ClientID) + winEdit2.GetShowReference("../ExternalUser/FRM031H.aspx");
                 btnFMT1.OnClientClick = Window2.GetSaveStateReference(hfRefresh.ClientID) + Window2.GetShowReference("../ExternalUser/FRMFMT1.aspx");
                 btnInterConsulta.OnClientClick = Window2.GetSaveStateReference(hfRefresh.ClientID) + Window2.GetShowReference("../ExternalUser/FRMINTERC.aspx");
