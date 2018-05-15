@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FRM031K.aspx.cs" Inherits="Sigesoft.Server.WebClientAdmin.UI.ExternalUser.FRMFMT1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FRM031K.aspx.cs" Inherits="Sigesoft.Server.WebClientAdmin.UI.ExternalUser.FRM031K" %>
 
 <!DOCTYPE html>
 

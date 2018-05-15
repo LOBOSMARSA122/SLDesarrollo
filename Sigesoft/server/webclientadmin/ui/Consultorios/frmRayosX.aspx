@@ -284,7 +284,7 @@
                             <Toolbars>
                                 <x:Toolbar ID="Toolbar4" runat="server">
                                     <Items>
-                                        <x:Button ID="btnGrabarRayosX" Text="Grabar Rayos X" Icon="SystemSave" runat="server" OnClick="btnGrabarRayosX_Click" AjaxLoadingType="Mask" Visible="False"></x:Button>                                   
+                                        <x:Button ID="btnGrabarRayosX" Text="Grabar Rayos X" Icon="SystemSave" runat="server" OnClick="btnGrabarRayosX_Click" AjaxLoadingType="Mask" Visible="true"></x:Button>                                   
                                         <x:FileUpload runat="server" ID="fileDocRX" EmptyText="Por favor seleccione un archivo" Width="300" Height="25"
                                         Label="Seleccionar Archivo" ButtonIcon="SystemSearch" OnFileSelected="fileDocRX_FileSelected" AutoPostBack="true" ButtonText="Subir Placa" Readonly="False">
                                         </x:FileUpload>
@@ -297,7 +297,7 @@
                                          <x:Button ID="btnDescargarRX" runat="server" Text="Descargar Adjuntos" Icon="ArrowDown" Visible="False"></x:Button>
                                         <x:Label ID="Label746" runat="server" Text="....." ShowLabel="false" Visible="False"></x:Label>
                                         <x:Label ID="llll" runat="server" Text="Firma Usuario" ShowLabel="false" Visible="False"></x:Label>
-                                        <x:DropDownList ID="ddlUsuarioGrabar" runat="server" Visible="False"></x:DropDownList>
+                                        <x:DropDownList ID="ddlUsuarioGrabar" runat="server" Visible="true"></x:DropDownList>
                                         <x:Button ID="btnReporteRX" Text="Ver Reporte" Icon="PageWhiteText" runat="server" Enabled="true" Visible="False"></x:Button>
                                     </Items>
                                 </x:Toolbar>
@@ -385,7 +385,7 @@
                                 </Items>
                               </x:Panel>
                             <x:Panel ID="Panel1" Title="DESCRIPCIÓN" EnableBackgroundColor="true" Height="40px" runat="server"
-                                BodyPadding="5px" ShowBorder="true" ShowHeader="true" Visible="False">
+                                BodyPadding="5px" ShowBorder="true" ShowHeader="true" Visible="true">
                                 <Items>
                                     <x:Form ID="Form2" runat="server" EnableBackgroundColor="true" ShowBorder="False" ShowHeader="False" LabelWidth="40px" LabelAlign="Left" >
                                         <Rows>
