@@ -26,7 +26,7 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
 
             LinkButton objLinkButton = new LinkButton();
             objLinkButton.ID = ListaServicios[0].IdServicio;
-            objLinkButton.Text = ListaServicios[0].Paciente + "Test Altura";
+            objLinkButton.Text = ListaServicios[0].Paciente + " -312";
             //objLinkButton.Text = Session["IdServicio"].ToString() + ".pdf";
             objLinkButton.Click += new EventHandler(link_Click);
 
@@ -42,7 +42,7 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
             LinkButton senderCtrl = (LinkButton)sender;
             string path;
 
-            path = rutaReportes + senderCtrl.ID.ToString() + "-N009-ME000000015.pdf";
+            path = rutaReportes + senderCtrl.ID.ToString() + "-312.pdf";
 
             Download(senderCtrl.Text, path);
         }

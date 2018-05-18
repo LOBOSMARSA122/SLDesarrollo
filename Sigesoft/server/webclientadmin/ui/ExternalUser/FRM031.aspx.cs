@@ -89,8 +89,8 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
 
             if (ddlProtocolo.SelectedValue == "-1")
             {
-                Alert.ShowInTop("Por favor seleccionar un protocolo");
-                return;
+                //Alert.ShowInTop("Por favor seleccionar un protocolo");
+                //return;
             }
 
             // Get the filters from the UI

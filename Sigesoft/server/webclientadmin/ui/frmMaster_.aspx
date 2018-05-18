@@ -131,7 +131,7 @@
                     </x:Accordion>
                 </Items>
             </x:Region>
-            <x:Region ID="Region3" ShowHeader="false" EnableIFrame="true" IFrameUrl="~/images/classy_fabric.png" 
+            <x:Region ID="Region3" ShowHeader="false" EnableIFrame="true" IFrameUrl="~/images/master.png" 
                 IFrameName="main" Margins="0 0 0 0" Position="Center" runat="server">
             </x:Region>
         </Regions>
