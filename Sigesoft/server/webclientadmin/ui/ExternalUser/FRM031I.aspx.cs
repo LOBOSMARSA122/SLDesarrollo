@@ -24,6 +24,15 @@ namespace Sigesoft.Server.WebClientAdmin.UI.ExternalUser
                     Session["Dni"] = Request.QueryString["Dni"].ToString();
                 if (Request.QueryString["Apellidos"] != null)
                     Session["Apellidos"] = Request.QueryString["Apellidos"].ToString();
+
+                if (!(bool)Session["ArchivosAdjuntos"])
+                {
+                    //FineUI.PageContext.RegisterStartupScript(FineUI.ActiveWindow.GetHidePostBackReference()); 
+                    Label lbl1 = new Label();
+                    lbl1.Text = "No tiene permiso para descargar Adjuntos";
+                    lbl1.ID = "lb1";
+                    DivControls.Controls.Add(lbl1);
+                }
             }
 
             FileInfo[] files = null;

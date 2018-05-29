@@ -84,7 +84,7 @@ namespace Sigesoft.Server.WebClientAdmin.UI
                 Session["ExamenAltura"] = (objAuthorizationList.Find(p => p.I_ApplicationHierarchyId == 199) != null ? true : false);
                 Session["FMT1"] = (objAuthorizationList.Find(p => p.I_ApplicationHierarchyId == 200) != null ? true : false);
                 Session["Interconsultas"] = (objAuthorizationList.Find(p => p.I_ApplicationHierarchyId == 201) != null ? true : false);
-
+                Session["ArchivosAdjuntos"] = (objAuthorizationList.Find(p => p.I_ApplicationHierarchyId == 202) != null ? true : false);
 
                 objAuthorizationList = objAuthorizationList.FindAll(p => p.I_ApplicationHierarchyTypeId == (int)AppHierarchyType.PantallaOpcionDeMenu || p.I_ApplicationHierarchyTypeId == (int)AppHierarchyType.AgrupadorDeMenu);
             }
