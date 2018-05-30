@@ -3455,7 +3455,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/22/2018 09:03:47</publishTime>
     </File>
     <File Include="bin/AxInterop.ZKFPEngXControl.dll">
-      <publishTime>05/17/2018 10:35:16</publishTime>
+      <publishTime>05/29/2018 14:14:49</publishTime>
     </File>
     <File Include="bin/Backgrounds/FOTO-01.jpg">
       <publishTime>01/22/2018 10:23:08</publishTime>
@@ -3662,7 +3662,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/22/2018 10:23:12</publishTime>
     </File>
     <File Include="bin/Interop.ZKFPEngXControl.dll">
-      <publishTime>05/17/2018 10:35:16</publishTime>
+      <publishTime>05/29/2018 14:14:49</publishTime>
     </File>
     <File Include="bin/Ionic.Zip.Reduced.dll">
       <publishTime>01/22/2018 09:03:47</publishTime>
@@ -3944,58 +3944,58 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/22/2018 09:03:47</publishTime>
     </File>
     <File Include="bin/Sigesoft.Common.dll">
-      <publishTime>05/17/2018 10:34:53</publishTime>
+      <publishTime>05/29/2018 14:14:24</publishTime>
     </File>
     <File Include="bin/Sigesoft.Common.pdb">
-      <publishTime>05/17/2018 10:34:53</publishTime>
+      <publishTime>05/29/2018 14:14:24</publishTime>
     </File>
     <File Include="bin/Sigesoft.Node.WinClient.BE.dll">
-      <publishTime>05/17/2018 10:34:50</publishTime>
+      <publishTime>05/29/2018 14:14:22</publishTime>
     </File>
     <File Include="bin/Sigesoft.Node.WinClient.BE.pdb">
-      <publishTime>05/17/2018 10:34:50</publishTime>
+      <publishTime>05/29/2018 14:14:22</publishTime>
     </File>
     <File Include="bin/Sigesoft.Node.WinClient.BLL.dll">
-      <publishTime>05/17/2018 10:35:15</publishTime>
+      <publishTime>05/29/2018 14:14:47</publishTime>
     </File>
     <File Include="bin/Sigesoft.Node.WinClient.BLL.pdb">
-      <publishTime>05/17/2018 10:35:15</publishTime>
+      <publishTime>05/29/2018 14:14:47</publishTime>
     </File>
     <File Include="bin/Sigesoft.Node.WinClient.DAL.MSSQL.dll">
-      <publishTime>05/17/2018 10:34:55</publishTime>
+      <publishTime>05/29/2018 14:14:27</publishTime>
     </File>
     <File Include="bin/Sigesoft.Node.WinClient.DAL.MSSQL.pdb">
-      <publishTime>05/17/2018 10:34:55</publishTime>
+      <publishTime>05/29/2018 14:14:27</publishTime>
     </File>
     <File Include="bin/Sigesoft.Node.WinClient.UI.exe">
-      <publishTime>05/17/2018 10:35:28</publishTime>
+      <publishTime>05/29/2018 14:15:01</publishTime>
     </File>
     <File Include="bin/Sigesoft.Node.WinClient.UI.pdb">
-      <publishTime>05/17/2018 10:35:27</publishTime>
+      <publishTime>05/29/2018 14:15:01</publishTime>
     </File>
     <File Include="bin/Sigesoft.Server.WebClientAdmin.BE.dll">
-      <publishTime>05/17/2018 10:34:50</publishTime>
+      <publishTime>05/29/2018 14:14:22</publishTime>
     </File>
     <File Include="bin/Sigesoft.Server.WebClientAdmin.BE.pdb">
-      <publishTime>05/17/2018 10:34:50</publishTime>
+      <publishTime>05/29/2018 14:14:22</publishTime>
     </File>
     <File Include="bin/Sigesoft.Server.WebClientAdmin.BLL.dll">
-      <publishTime>05/17/2018 10:35:00</publishTime>
+      <publishTime>05/29/2018 14:14:32</publishTime>
     </File>
     <File Include="bin/Sigesoft.Server.WebClientAdmin.BLL.pdb">
-      <publishTime>05/17/2018 10:35:00</publishTime>
+      <publishTime>05/29/2018 14:14:32</publishTime>
     </File>
     <File Include="bin/Sigesoft.Server.WebClientAdmin.DAL.MSSQL.dll">
-      <publishTime>05/17/2018 10:34:53</publishTime>
+      <publishTime>05/29/2018 14:14:24</publishTime>
     </File>
     <File Include="bin/Sigesoft.Server.WebClientAdmin.DAL.MSSQL.pdb">
-      <publishTime>05/17/2018 10:34:53</publishTime>
+      <publishTime>05/29/2018 14:14:24</publishTime>
     </File>
     <File Include="bin/Sigesoft.Server.WebClientAdmin.UI.dll">
-      <publishTime>05/17/2018 10:35:36</publishTime>
+      <publishTime>05/29/2018 14:15:09</publishTime>
     </File>
     <File Include="bin/Sigesoft.Server.WebClientAdmin.UI.pdb">
-      <publishTime>05/17/2018 10:35:35</publishTime>
+      <publishTime>05/29/2018 14:15:09</publishTime>
     </File>
     <File Include="bin/SigPlusNET.dll">
       <publishTime>01/22/2018 09:03:47</publishTime>
@@ -9797,7 +9797,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/22/2018 10:23:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/10/2018 19:57:55</publishTime>
+      <publishTime>05/22/2018 19:13:17</publishTime>
     </File>
   </ItemGroup>
 </Project>

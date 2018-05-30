@@ -117,7 +117,7 @@
                     <x:Toolbar ID="Toolbar1" runat="server">
                         <Items>
                             <x:Button ID="btnNewCertificado" Text="Certificado" Icon="PageWhiteText" runat="server" Enabled="false"></x:Button>
-                             <x:Button ID="btnExAltura" Text="Anexo 312" Icon="PageWhiteText" runat="server" Enabled="false"></x:Button>
+                             <x:Button ID="btnExAltura" Text="Test de Altura" Icon="PageWhiteText" runat="server" Enabled="false"></x:Button>
                             <x:Button ID="btnNewFichaOcupacional" Text="Ficha Ocupacional" Icon="clipboard" runat="server" Enabled="false" ></x:Button>
                             <x:Button ID="btnNewExamenes" Text="Examenes" Icon="PageWhiteStack" runat="server" Enabled="false" Visible="false"></x:Button>
                             <x:Button ID="btnFMT1" Text="Informe Médico" Icon="FilmAdd" runat="server" Enabled="false" ></x:Button>
