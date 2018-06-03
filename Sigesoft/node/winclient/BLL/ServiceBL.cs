@@ -27145,7 +27145,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                FirmaTrabajador = a.FirmaTrabajador,
                                HuellaTrabajador = a.HuellaTrabajador,
                                FirmaUsuarioGraba = a.FirmaUsuarioGraba,
-                               b_Logo = MedicalCenter.b_Image,
+                                b_Logo = MedicalCenter.b_Image,
                                 TipoLicencia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002839") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002839").v_Value1,
                                 NroLicencia = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840").v_Value1,
                                 TrabajaNoche = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002841") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002841").v_Value1,
@@ -27168,7 +27168,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                 Peso = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000003").v_Value1,
                                 Talla = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000007") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000007").v_Value1,
                                 Imc = antro.Count == 0 ? string.Empty : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000009") == null ? "" : antro.Find(p => p.v_ComponentFieldId == "N002-MF000000009").v_Value1,
-                               CircunferenciaCuello = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840").v_Value1,
+                                CircunferenciaCuello = valores.Count == 0 ? string.Empty : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840") == null ? "" : valores.Find(p => p.v_ComponentFieldId == "N009-MF000002840").v_Value1,
                                 
                                 So2 = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000006").v_Value1,
                                 Pa1 = Fv.Count == 0 ? string.Empty : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001") == null ? "" : Fv.Find(p => p.v_ComponentFieldId == "N002-MF000000001").v_Value1,
