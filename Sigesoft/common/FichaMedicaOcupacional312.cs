@@ -2495,7 +2495,6 @@ namespace NetPdf
 
             #endregion
 
-
             document.Close();
             writer.Close();
             writer.Dispose();

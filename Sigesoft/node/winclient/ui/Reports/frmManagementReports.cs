@@ -744,6 +744,11 @@ namespace Sigesoft.Node.WinClient.UI.Reports
             var Restricciton = _serviceBL.GetRestrictionByServiceId(_serviceId);
             var Aptitud = _serviceBL.DevolverAptitud(_serviceId);
 
+            var _listAtecedentesOcupacionales = _historyBL.GetHistoryReport(_pacientId);
+            var _listaPatologicosFamiliares = _historyBL.GetFamilyMedicalAntecedentsReport(_pacientId);
+            var _listMedicoPersonales = _historyBL.GetPersonMedicalHistoryReport(_pacientId);
+            var _listaHabitoNocivos = _historyBL.GetNoxiousHabitsReport(_pacientId);
+
             InformeMedicoOcupacional_Cosapi.CreateInformeMedicoOcupacional_Cosapi(_DataService,
                 filiationData, diagnosticRepository, serviceComponents, MedicalCenter,
                 datosP,
@@ -752,7 +757,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                 RecoElectro,
                 RecoEspiro,
                 RecoNeuro, RecoAltEst, RecoActFis, RecoCustNor, RecoAlt7D, RecoExaFis, RecoExaFis7C, RecoOsteoMus1, RecoTamDer, RecoOdon,
-                RecoPsico, RecoRx, RecoOit, RecoOft, Restricciton, Aptitud);
+                RecoPsico, RecoRx, RecoOit, RecoOft, Restricciton, Aptitud, _listAtecedentesOcupacionales, _listaPatologicosFamiliares, _listMedicoPersonales, _listaHabitoNocivos);
         }
         private void GenerateCertificadoAptitudMedicoOcupacional_Cosapi(string pathFile)
         {
@@ -779,8 +784,9 @@ namespace Sigesoft.Node.WinClient.UI.Reports
             var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
             var serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
             var datosP = _pacientBL.DevolverDatosPaciente(_serviceId);
+            var _DataService = _serviceBL.GetServiceReport(_serviceId);
 
-            INFORME_SAS_REPORT.CreateReportSAS(filiationData, serviceComponents, MedicalCenter, datosP, pathFile);
+            INFORME_SAS_REPORT.CreateReportSAS(filiationData,_DataService, serviceComponents, MedicalCenter, datosP, pathFile);
         }
         private void GenerateCertificadoSuficienciaMedicaTC(string pathFile)
         {
@@ -788,8 +794,8 @@ namespace Sigesoft.Node.WinClient.UI.Reports
             var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
             var serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
             var datosP = _pacientBL.DevolverDatosPaciente(_serviceId);
-
-            CERTIFICADO_SUFICIENCIA_MEDICA_TC.CreateCertificadoSuficienciaTC(filiationData, serviceComponents, MedicalCenter, datosP, pathFile);
+            var _DataService = _serviceBL.GetServiceReport(_serviceId);
+            CERTIFICADO_SUFICIENCIA_MEDICA_TC.CreateCertificadoSuficienciaTC(filiationData,_DataService, serviceComponents, MedicalCenter, datosP, pathFile);
         }
         #endregion
 

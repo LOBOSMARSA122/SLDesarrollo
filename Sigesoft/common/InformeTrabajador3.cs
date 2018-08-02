@@ -366,7 +366,6 @@ namespace NetPdf
                 cells.Add(new PdfPCell(new Phrase(hbValor == null ? string.Empty : hbValor.v_Value1, fontColumnValue)) { HorizontalAlignment = Element.ALIGN_CENTER });
                 cells.Add(new PdfPCell(new Phrase(dxHB == null ? "NORMAL" : dxHB.v_DiseasesName, fontColumnValue)) { HorizontalAlignment = Element.ALIGN_CENTER });
                 cells.Add(new PdfPCell(new Phrase(RecoHB == null ? "CONTROL ANUAL" : string.Join(", ", RecoHB.Select(p => p.v_RecommendationName)), fontColumnValue)) { HorizontalAlignment = Element.ALIGN_CENTER });
-          
             }
 
             if (xHTO != null)
