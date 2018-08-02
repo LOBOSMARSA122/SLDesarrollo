@@ -564,8 +564,8 @@ namespace Sigesoft.Common
 
         #region GLUCOSA
 
-       
-        
+
+        public const string GLUCOSA_GLUCOSA_VALOR_RESULTADO_ID = "N009-MF000000261";
         public const string GLUCOSA_GLUCOSA_VALOR_DESEABLE_ID = "N009-MF000000418";
 
         #endregion
@@ -968,8 +968,104 @@ namespace Sigesoft.Common
         public const string CERTIFICADO_COSAPI = "CERTIFIC_COSAPI";
         public const string INFORME_MEDICO_OCUPACIONAL = "INFOR_MED_OCUP";
         #endregion
+       
 
-    
+        #region COSAPI
+
+        public const string INFORME_MEDICO_OCUPACIONAL_COSAPI = "IMO-COSAPI";
+        public const string CERTIFICADO_APTITUD_MEDICO_COSAPI = "CAM-COSAPI";
+
+
+        #region FICHA DETECCIÓN S.A.S.
+        public const string FICHA_SAS_ID = "N009-ME000000435";
+
+        public const string FICHA_SAS_TIPO_LICENCIA = "N009-MF000003295";
+        public const string FICHA_SAS_N_LICENCIA = "N009-MF000003296";
+        public const string FICHA_SAS_TRABAJA_NOCHE = "N009-MF000003297";
+        public const string FICHA_SAS_N_DIAS_TRABAJO_DESCANSO = "N009-MF000003298";
+
+        public const string FICHA_SAS_APNEA_SUEÑO_DIAGNOSTICADA = "N009-MF000003299";
+        public const string FICHA_SAS_ULTIMO_CONTROL = "N009-MF000003300";
+        public const string FICHA_SAS_HTA = "N009-MF000003301";
+        public const string FICHA_SAS_OBSERVACION_HTA = "N009-MF000003337"; //
+        public const string FICHA_SAS_RONCA_DORMIR = "N009-MF000003302";
+        public const string FICHA_SAS_OBSERVACION_RONQUIDO = "N009-MF000003338"; //
+        public const string FICHA_SAS_ANTECEDENTE_CHOQUE = "N009-MF000003303";
+        public const string FICHA_SAS_CHOQUE_SOMNOLENCIA = "N009-MF000003304";
+        public const string FICHA_SAS_PAUSAS_RESPIRACION_SUEÑO = "N009-MF000003305";
+        public const string FICHA_SAS_OBSERVACION_RESPIRACION = "N009-MF000003339"; //
+        public const string FICHA_SAS_FATIGA_DIA = "N009-MF000003306";
+        public const string FICHA_SAS_OBSERVACION_FATIGA = "N009-MF000003340"; //
+
+        public const string FICHA_SAS_MAYOR_10 = "N009-MF000003307";
+        public const string FICHA_SAS_MENOR_10 = "N009-MF000003308";
+        public const string FICHA_SAS_PUNTUACION = "N009-MF000003309";
+
+        public const string FICHA_SAS_CIRCUNFERENCIA_CUELLO = "N009-MF000003310";
+        public const string FICHA_SAS_NORMAL = "N009-MF000003311";
+
+        public const string FICHA_SAS_I = "N009-MF000003314";
+        public const string FICHA_SAS_II = "N009-MF000003315";
+        public const string FICHA_SAS_III = "N009-MF000003316";
+        public const string FICHA_SAS_IV = "N009-MF000003317";
+
+        public const string FICHA_SAS_RIESGO_ALTO = "N009-MF000003318";
+
+        public const string FICHA_SAS_PUNTAJE_EPWORTH_MAY_10 = "N009-MF000003319";
+        public const string FICHA_SAS_ANTECEDENTES_ACCIDENTE_VEHICULAR = "N009-MF000003320";
+        public const string FICHA_SAS_MALLAMPATI_CLSE_III = "N009-MF000003321";
+        public const string FICHA_SAS_ANTECEDENTES_SAS = "N009-MF000003322";
+
+        public const string FICHA_SAS_RIESGO_MEDIO = "N009-MF000003323";
+
+        public const string FICHA_SAS_HISTORIA_HIGIENE_SUEÑO = "N009-MF000003324";
+        public const string FICHA_SAS_OBESIDAD_GRADO_II = "N009-MF000003325";
+        public const string FICHA_SAS_CIRCUNFERENCIA_CUELLO_ANORMAL = "N009-MF000003326";
+        public const string FICHA_SAS_HTA_DIAGNOSTICO_NUEVO = "N009-MF000003327";
+
+        public const string FICHA_SAS_RIESGO_BAJO = "N009-MF000003328";
+
+        public const string FICHA_SAS_APTO = "N009-MF000003329";
+        public const string FICHA_SAS_OBSERVADO = "N009-MF000003331";
+        public const string FICHA_SAS_NO_APTO = "N009-MF000003333";
+        public const string FICHA_SAS_VIGENCIA_DESDE = "N009-MF000003335";
+        public const string FICHA_SAS_VIGENCIA_HASTA = "N009-MF000003336";
+        #endregion
+
+        #region SUFICIENCIA MEDICA - TRABAJOS EN ESPACIOS CONFINADOS
+        public const string FICHA_SUFICIENCIA_MEDICA_ID = "N009-ME000000436";
+
+        public const string FICHA_SUFICIENCIA_MEDICA_DESCRIPCION = "N009-MF000003341";
+
+        public const string FICHA_SUFICIENCIA_MEDICA_P_T_INSPIRACION = "N009-MF000003342";
+        public const string FICHA_SUFICIENCIA_MEDICA_P_T_ESPIRACION = "N009-MF000003343";
+
+        public const string FICHA_SUFICIENCIA_MEDICA_EVALUACION_CLINICA_EC = "N009-MF000003345";
+        public const string FICHA_SUFICIENCIA_MEDICA_PRECISAR_ANOMALIA = "N009-MF000003346";
+        public const string FICHA_SUFICIENCIA_MEDICA_EKG_EC = "N009-MF000003347";
+        public const string FICHA_SUFICIENCIA_MEDICA_PRECISAR_ANOMALIA_EKG = "N009-MF000003348";
+
+        public const string FICHA_SUFICIENCIA_MEDICA_EVALUACION_CLINICA_EP = "N009-MF000003349";
+        public const string FICHA_SUFICIENCIA_MEDICA_PRECISAR_ANOMALIA_EC = "N009-MF000003350";
+        public const string FICHA_SUFICIENCIA_MEDICA_ESPIROMETRIA_EP = "N009-MF000003351";
+        public const string FICHA_SUFICIENCIA_MEDICA_PRECISAR_ANOMALIA_E = "N009-MF000003352";
+        public const string FICHA_SUFICIENCIA_MEDICA_RADIOGRAFIA_TORAX_EP = "N009-MF000003353";
+        public const string FICHA_SUFICIENCIA_MEDICA_PRECISAR_ANOMALIA_RT = "N009-MF000003354";
+
+        public const string FICHA_SUFICIENCIA_MEDICA_EVALUACION_CLINICA_EN = "N009-MF000003355";
+        public const string FICHA_SUFICIENCIA_MEDICA_PRECISAR_ANOMALIA_EP = "N009-MF000003356";
+
+        public const string FICHA_SUFICIENCIA_MEDICA_RESULTADO_EVALUACION = "N009-MF000003357";
+
+        public const string FICHA_SUFICIENCIA_MEDICA_DESCRIPCION_C = "N009-MF000003358";
+
+        public const string FICHA_SUFICIENCIA_MEDICA_APTO = "N009-MF000003359";
+        public const string FICHA_SUFICIENCIA_MEDICA_NO_APTO = "N009-MF000003360";
+        public const string FICHA_SUFICIENCIA_MEDICA_DESDE = "N009-MF000003361";
+        public const string FICHA_SUFICIENCIA_MEDICA_HASTA = "N009-MF000003362";
+        #endregion
+
+        #endregion
 
         #region EXAMEN_FISICO
         
@@ -1184,6 +1280,11 @@ namespace Sigesoft.Common
         public const string OFTALMOLOGIA_SOLDADURA_ID = "N009-MF000000181";
         public const string OFTALMOLOGIA_CATARATAS_ID = "N009-MF000000182";
         public const string OFTALMOLOGIA_OTROS_ESPECIFICAR_ID = "N009-MF000000710";
+
+        //
+        public const string OFTALMOLOGIA_TEST_ESTEREOPSIS_A = "N002-MF000000226";
+        //
+
         public const string OFTALMOLOGIA_AE_LEJOS_OJO_DERECHO_ID = "N002-MF000000226";
         public const string OFTALMOLOGIA_SC_CERCA_OJO_IZQUIERDO_ID = "N002-MF000000227";
         public const string OFTALMOLOGIA_AE_LEJOS_OJO_IZQUIERDO_ID = "N002-MF000000228";

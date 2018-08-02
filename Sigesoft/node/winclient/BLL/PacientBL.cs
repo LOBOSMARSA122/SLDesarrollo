@@ -5204,13 +5204,65 @@ namespace Sigesoft.Node.WinClient.BLL
                 SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
                 var objEntity = (from a in dbContext.service
                                  join b in dbContext.person on a.v_PersonId equals b.v_PersonId
+
                                  join c in dbContext.systemparameter on new { a = b.i_SexTypeId.Value, b = 100 }
-                                             equals new { a = c.i_ParameterId, b = c.i_GroupId }  // GENERO
+                                    equals new { a = c.i_ParameterId, b = c.i_GroupId }  // GENERO
                                  join d in dbContext.protocol on a.v_ProtocolId equals d.v_ProtocolId
+
+
+                                 join E in dbContext.datahierarchy on new { a = b.i_DepartmentId.Value, b = 113 }
+                                                       equals new { a = E.i_ItemId, b = E.i_GroupId } into E_join
+                                 from E in E_join.DefaultIfEmpty()
+
+                                 join F in dbContext.datahierarchy on new { a = b.i_ProvinceId.Value, b = 113 }
+                                                       equals new { a = F.i_ItemId, b = F.i_GroupId } into F_join
+                                 from F in F_join.DefaultIfEmpty()
+
+                                 join G in dbContext.datahierarchy on new { a = b.i_DistrictId.Value, b = 113 }
+                                                       equals new { a = G.i_ItemId, b = G.i_GroupId } into G_join
+                                 from G in G_join.DefaultIfEmpty()
+
+                                 join H in dbContext.person on a.v_PersonId equals H.v_PersonId into H_join
+                                 from H in H_join.DefaultIfEmpty()
+
+                                 join I in dbContext.datahierarchy on new { a = H.i_DepartmentId.Value, b = 113 }
+                                                       equals new { a = I.i_ItemId, b = I.i_GroupId } into I_join
+                                 from I in I_join.DefaultIfEmpty()
+
+                                 join J in dbContext.datahierarchy on new { a = H.i_ProvinceId.Value, b = 113 }
+                                                       equals new { a = J.i_ItemId, b = J.i_GroupId } into J_join
+                                 from J in J_join.DefaultIfEmpty()
+
+                                 join K in dbContext.datahierarchy on new { a = H.i_DistrictId.Value, b = 113 }
+                                                       equals new { a = K.i_ItemId, b = K.i_GroupId } into K_join
+                                 from K in K_join.DefaultIfEmpty()
+
+                                 join M in dbContext.systemparameter on new { a = H.i_MaritalStatusId.Value, b = 101 }
+                                              equals new { a = M.i_ParameterId, b = M.i_GroupId } into M_join
+                                 from M in M_join.DefaultIfEmpty()
+
+                                 join N in dbContext.datahierarchy on new { a = H.i_LevelOfId.Value, b = 108 }
+                                                 equals new { a = N.i_ItemId, b = N.i_GroupId } into N_join
+                                 from N in N_join.DefaultIfEmpty()
+
+                                 join P in dbContext.systemparameter on new { a = b.i_BloodGroupId.Value, b = 154 }
+                                                 equals new { a = P.i_ParameterId, b = P.i_GroupId } into P_join
+                                 from P in P_join.DefaultIfEmpty()
+
+                                 join Q in dbContext.systemparameter on new { a = b.i_BloodFactorId.Value, b = 155 }
+                                                 equals new { a = Q.i_ParameterId, b = Q.i_GroupId } into Q_join
+                                 from Q in Q_join.DefaultIfEmpty()
+
+                                 join r in dbContext.servicecomponent on a.v_ServiceId equals r.v_ServiceId
+
                                  // Empresa / Sede Cliente ******************************************************
                                  join oc in dbContext.organization on new { a = d.v_CustomerOrganizationId }
                                          equals new { a = oc.v_OrganizationId } into oc_join
                                  from oc in oc_join.DefaultIfEmpty()
+
+                                 join z in dbContext.organization on new { a = d.v_EmployerOrganizationId }
+                                         equals new { a = z.v_OrganizationId } into z_join
+                                 from z in z_join.DefaultIfEmpty()
 
                                  join lc in dbContext.location on new { a = d.v_CustomerOrganizationId, b = d.v_CustomerLocationId }
                                        equals new { a = lc.v_OrganizationId, b = lc.v_LocationId } into lc_join
@@ -5234,6 +5286,28 @@ namespace Sigesoft.Node.WinClient.BLL
                                  {
                                      Trabajador = b.v_FirstLastName + " " + b.v_SecondLastName + " " + b.v_FirstName,
                                      d_Birthdate = b.d_Birthdate.Value,
+                                     //
+                                     v_PersonId = b.v_PersonId,
+
+                                     v_FirstLastName = b.v_FirstLastName,
+                                     v_SecondLastName = b.v_SecondLastName,
+                                     v_FirstName = b.v_FirstName,
+                                     v_BirthPlace = b.v_BirthPlace,
+                                     v_DepartamentName = I.v_Value1,
+                                     v_ProvinceName = J.v_Value1,
+                                     v_DistrictName = K.v_Value1,
+                                     v_AdressLocation = b.v_AdressLocation,
+                                     v_MaritalStatus = M.v_Value1,
+                                     v_BloodGroupName = P.v_Value1,
+                                     v_BloodFactorName = Q.v_Value1,
+                                     v_IdService = a.v_ServiceId,
+                                     v_OrganitationName = oc.v_Name,
+                                     i_NumberLivingChildren = b.i_NumberLivingChildren,
+                                     FechaCaducidad = a.d_GlobalExpirationDate,
+                                     i_DocTypeId = b.i_DocTypeId,
+                                     v_OwnerName = b.v_OwnerName,
+
+                                     //
                                      Genero = c.v_Value1,
                                      i_SexTypeId = b.i_SexTypeId,
                                      v_DocNumber = b.v_DocNumber,
@@ -5260,12 +5334,32 @@ namespace Sigesoft.Node.WinClient.BLL
                                 ).ToList();
                 var DatosMedicoMedicinaEvaluador = ObtenerDatosMedicoMedicina(pstrServiceId, Constants.EXAMEN_FISICO_ID, Constants.EXAMEN_FISICO_7C_ID);
                 //var DatosMedicoMedicinaAuditor = ObtenerDatosMedicoMedicinaAuditor(pstrServiceId, Constants.EXAMEN_FISICO_ID, Constants.EXAMEN_FISICO_7C_ID);
-                
+
                 var result = (from a in objEntity
                               select new Sigesoft.Node.WinClient.BE.PacientList
                               {
                                   Trabajador = a.Trabajador,
                                   d_Birthdate = a.d_Birthdate,
+                                  //
+                                  v_PersonId = a.v_PersonId,
+                                  v_FirstLastName = a.v_FirstLastName,
+                                  v_SecondLastName = a.v_SecondLastName,
+                                  v_FirstName = a.v_FirstName,
+                                  v_BirthPlace = a.v_BirthPlace,
+                                  v_DepartamentName = a.v_DepartamentName,
+                                  v_ProvinceName = a.v_ProvinceName,
+                                  v_DistrictName = a.v_DistrictName,
+                                  v_MaritalStatus = a.v_MaritalStatus,
+                                  v_BloodGroupName = a.v_BloodGroupName,
+                                  v_BloodFactorName = a.v_BloodFactorName,
+                                  v_AdressLocation = a.v_AdressLocation,
+                                  v_IdService = a.v_IdService,
+                                  v_OrganitationName = a.v_OrganitationName,
+                                  i_NumberLivingChildren = a.i_NumberLivingChildren,
+                                  FechaCaducidad = a.FechaCaducidad,
+                                  i_DocTypeId = a.i_DocTypeId,
+                                  v_OwnerName = a.v_OwnerName,
+                                  //
                                   Edad = GetAge(a.d_Birthdate.Value),
                                   Genero = a.Genero,
                                   i_SexTypeId = a.i_SexTypeId,
@@ -5289,10 +5383,12 @@ namespace Sigesoft.Node.WinClient.BLL
                                   v_Mac = a.v_Mac,
                                   v_Story = a.v_Story,
                                   Aptitud = a.Aptitud,
-                                  b_FirmaEvaluador = DatosMedicoMedicinaEvaluador== null?null:DatosMedicoMedicinaEvaluador.FirmaMedicoMedicina,
+                                  b_FirmaEvaluador = DatosMedicoMedicinaEvaluador == null ? null : DatosMedicoMedicinaEvaluador.FirmaMedicoMedicina,
                                   b_FirmaAuditor = a.b_FirmaAuditor
                               }
                             ).FirstOrDefault();
+
+
                 return result;
             }
             catch (Exception)
