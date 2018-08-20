@@ -2792,36 +2792,15 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     rp.Export();
                     rp.Close();
                     break;
-                //case Constants.ESPIROMETRIA_ID:
-
-                //var ESPIROMETRIA_ID = new ServiceBL().GetReportCuestionarioEspirometria(_serviceId, Constants.ESPIROMETRIA_ID);
-
-                //    dsGetRepo = new DataSet();
-                //    DataTable dt_ESPIROMETRIA_ID = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(ESPIROMETRIA_ID);
-                //    dt_ESPIROMETRIA_ID.TableName = "dtCuestionarioEspirometria";
-                //    dsGetRepo.Tables.Add(dt_ESPIROMETRIA_ID);
-                //    rp = new Reports.crCuestionarioEspirometria();                     
-                //    rp.SetDataSource(dsGetRepo);
-                //    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                //    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                //    objDiskOpt = new DiskFileDestinationOptions();
-                //    //objDiskOpt.DiskFileName = Application.StartupPath + @"\TempMerge\" + Constants.ESPIROMETRIA_ID + ".pdf";
-                //    objDiskOpt.DiskFileName = ruta + serviceId + "-" + Constants.ESPIROMETRIA_ID + ".pdf";
-                //    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
-                //    rp.ExportOptions.DestinationOptions = objDiskOpt;
-                //    rp.Export();
-                //    rp.Close();
-                //    break;
-
                 case Constants.ESPIROMETRIA_ID:
 
-                    var ESPIROMETRIA_ID = new ServiceBL().GetReportPruebaEspiro(_serviceId, Constants.ESPIROMETRIA_ID);
+                    var ESPIROMETRIA_ID = new ServiceBL().GetReportCuestionarioEspirometria(_serviceId, Constants.ESPIROMETRIA_ID);
 
                     dsGetRepo = new DataSet();
                     DataTable dt_ESPIROMETRIA_ID = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(ESPIROMETRIA_ID);
-                    dt_ESPIROMETRIA_ID.TableName = "dtPruebaEspiro";
+                    dt_ESPIROMETRIA_ID.TableName = "dtCuestionarioEspirometria";
                     dsGetRepo.Tables.Add(dt_ESPIROMETRIA_ID);
-                    rp = new Reports.crPruebaEspiro();
+                    rp = new Reports.crCuestionarioEspirometria();
                     rp.SetDataSource(dsGetRepo);
                     rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                     rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
@@ -2833,6 +2812,27 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     rp.Export();
                     rp.Close();
                     break;
+
+                //case Constants.ESPIROMETRIA_ID:
+
+                //    var ESPIROMETRIA_ID = new ServiceBL().GetReportPruebaEspiro(_serviceId, Constants.ESPIROMETRIA_ID);
+
+                //    dsGetRepo = new DataSet();
+                //    DataTable dt_ESPIROMETRIA_ID = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(ESPIROMETRIA_ID);
+                //    dt_ESPIROMETRIA_ID.TableName = "dtPruebaEspiro";
+                //    dsGetRepo.Tables.Add(dt_ESPIROMETRIA_ID);
+                //    rp = new Reports.crPruebaEspiro();
+                //    rp.SetDataSource(dsGetRepo);
+                //    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                //    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                //    objDiskOpt = new DiskFileDestinationOptions();
+                //    //objDiskOpt.DiskFileName = Application.StartupPath + @"\TempMerge\" + Constants.ESPIROMETRIA_ID + ".pdf";
+                //    objDiskOpt.DiskFileName = ruta + serviceId + "-" + Constants.ESPIROMETRIA_ID + ".pdf";
+                //    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
+                //    rp.ExportOptions.DestinationOptions = objDiskOpt;
+                //    rp.Export();
+                //    rp.Close();
+                //    break;
 
                 case Constants.EVALUACION_PSICOLABORAL:
                     var EVALUACION_PSICOLABORAL = new ServiceBL().GetReportEvaluacionPsicolaborlaPersonal(_serviceId, Constants.EVALUACION_PSICOLABORAL);
