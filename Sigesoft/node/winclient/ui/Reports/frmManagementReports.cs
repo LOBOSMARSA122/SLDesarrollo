@@ -797,6 +797,17 @@ namespace Sigesoft.Node.WinClient.UI.Reports
             var _DataService = _serviceBL.GetServiceReport(_serviceId);
             CERTIFICADO_SUFICIENCIA_MEDICA_TC.CreateCertificadoSuficienciaTC(filiationData,_DataService, serviceComponents, MedicalCenter, datosP, pathFile);
         }
+
+        private void GenerateTestAuditAlcoholismo(string pathFile)
+        {
+            var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
+            var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
+            var serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
+            var datosP = _pacientBL.DevolverDatosPaciente(_serviceId);
+            var _DataService = _serviceBL.GetServiceReport(_serviceId);
+
+            Test_Audit_Alcoholismo.CreateTestAuditAlcoholismo(filiationData, _DataService, serviceComponents, MedicalCenter, datosP, pathFile);
+        }
         #endregion
 
         private void chklChekedAll(CheckedListBox chkl, bool checkedState)
@@ -3925,6 +3936,10 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     break;
                 case Constants.FICHA_SUFICIENCIA_MEDICA_ID:
                     GenerateCertificadoSuficienciaMedicaTC(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.FICHA_SUFICIENCIA_MEDICA_ID)));
+                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
+                    break;
+                case Constants.TEST_AUDIT_ALCOHOLISMO_ID:
+                    GenerateTestAuditAlcoholismo(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.TEST_AUDIT_ALCOHOLISMO_ID)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
                     break;
                 //default:

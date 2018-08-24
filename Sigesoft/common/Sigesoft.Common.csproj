@@ -103,6 +103,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="ReportPDF.cs" />
+    <Compile Include="Test_Audit_Alcoholismo.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>

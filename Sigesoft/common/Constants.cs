@@ -15,6 +15,81 @@ namespace Sigesoft.Common
         public const int HEIGHT_MAX_SIZE_IMAGE = 7000;
         public const int COLUMNAS_POR_CONTROL = 3;
 
+        #region TEST AUDIT-ALCOHOLISMO
+        public const string TEST_AUDIT_ALCOHOLISMO_ID = "N009-ME000000439";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_LOCALIDAD = "N009-MF000003390";
+        public const string TEST_AUDIT_ALCOHOLISMO_MUNICIPIO = "N009-MF000003391";
+        public const string TEST_AUDIT_ALCOHOLISMO_INSTITUCION = "N009-MF000003392";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_1_1 = "N009-MF000003393";
+        public const string TEST_AUDIT_ALCOHOLISMO_1_2 = "N009-MF000003394";
+        public const string TEST_AUDIT_ALCOHOLISMO_1_3 = "N009-MF000003395";
+        public const string TEST_AUDIT_ALCOHOLISMO_1_4 = "N009-MF000003396";
+        public const string TEST_AUDIT_ALCOHOLISMO_1_5 = "N009-MF000003397";
+        public const string TEST_AUDIT_ALCOHOLISMO_1_P = "N009-MF000003398";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_2_1 = "N009-MF000003399";
+        public const string TEST_AUDIT_ALCOHOLISMO_2_2 = "N009-MF000003400";
+        public const string TEST_AUDIT_ALCOHOLISMO_2_3 = "N009-MF000003401";
+        public const string TEST_AUDIT_ALCOHOLISMO_2_4 = "N009-MF000003402";
+        public const string TEST_AUDIT_ALCOHOLISMO_2_5 = "N009-MF000003403";
+        public const string TEST_AUDIT_ALCOHOLISMO_2_P = "N009-MF000003404";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_3_1 = "N009-MF000003405";
+        public const string TEST_AUDIT_ALCOHOLISMO_3_2 = "N009-MF000003406";
+        public const string TEST_AUDIT_ALCOHOLISMO_3_3 = "N009-MF000003407";
+        public const string TEST_AUDIT_ALCOHOLISMO_3_4 = "N009-MF000003408";
+        public const string TEST_AUDIT_ALCOHOLISMO_3_5 = "N009-MF000003408";
+        public const string TEST_AUDIT_ALCOHOLISMO_3_P = "N009-MF000003410";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_4_1 = "N009-MF000003411";
+        public const string TEST_AUDIT_ALCOHOLISMO_4_2 = "N009-MF000003412";
+        public const string TEST_AUDIT_ALCOHOLISMO_4_3 = "N009-MF000003413";
+        public const string TEST_AUDIT_ALCOHOLISMO_4_4 = "N009-MF000003414";
+        public const string TEST_AUDIT_ALCOHOLISMO_4_5 = "N009-MF000003415";
+        public const string TEST_AUDIT_ALCOHOLISMO_4_P = "N009-MF000003416";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_5_1 = "N009-MF000003417";
+        public const string TEST_AUDIT_ALCOHOLISMO_5_2 = "N009-MF000003418";
+        public const string TEST_AUDIT_ALCOHOLISMO_5_3 = "N009-MF000003419";
+        public const string TEST_AUDIT_ALCOHOLISMO_5_4 = "N009-MF000003420";
+        public const string TEST_AUDIT_ALCOHOLISMO_5_5 = "N009-MF000003421";
+        public const string TEST_AUDIT_ALCOHOLISMO_5_P = "N009-MF000003422";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_6_1 = "N009-MF000003423";
+        public const string TEST_AUDIT_ALCOHOLISMO_6_2 = "N009-MF000003424";
+        public const string TEST_AUDIT_ALCOHOLISMO_6_3 = "N009-MF000003425";
+        public const string TEST_AUDIT_ALCOHOLISMO_6_4 = "N009-MF000003426";
+        public const string TEST_AUDIT_ALCOHOLISMO_6_5 = "N009-MF000003427";
+        public const string TEST_AUDIT_ALCOHOLISMO_6_P = "N009-MF000003428";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_7_1 = "N009-MF000003429";
+        public const string TEST_AUDIT_ALCOHOLISMO_7_2 = "N009-MF000003430";
+        public const string TEST_AUDIT_ALCOHOLISMO_7_3 = "N009-MF000003431";
+        public const string TEST_AUDIT_ALCOHOLISMO_7_4 = "N009-MF000003432";
+        public const string TEST_AUDIT_ALCOHOLISMO_7_5 = "N009-MF000003433";
+        public const string TEST_AUDIT_ALCOHOLISMO_7_P = "N009-MF000003434";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_8_1 = "N009-MF000003435";
+        public const string TEST_AUDIT_ALCOHOLISMO_8_2 = "N009-MF000003436";
+        public const string TEST_AUDIT_ALCOHOLISMO_8_3 = "N009-MF000003437";
+        public const string TEST_AUDIT_ALCOHOLISMO_8_4 = "N009-MF000003438";
+        public const string TEST_AUDIT_ALCOHOLISMO_8_5 = "N009-MF000003439";
+        public const string TEST_AUDIT_ALCOHOLISMO_8_P = "N009-MF000003440";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_9_1 = "N009-MF000003441";
+        public const string TEST_AUDIT_ALCOHOLISMO_9_3 = "N009-MF000003442";
+        public const string TEST_AUDIT_ALCOHOLISMO_9_5 = "N009-MF000003443";
+        public const string TEST_AUDIT_ALCOHOLISMO_9_P = "N009-MF000003444";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_10_1 = "N009-MF000003445";
+        public const string TEST_AUDIT_ALCOHOLISMO_10_3 = "N009-MF000003446";
+        public const string TEST_AUDIT_ALCOHOLISMO_10_5 = "N009-MF000003447";
+        public const string TEST_AUDIT_ALCOHOLISMO_10_P = "N009-MF000003448";
+
+        public const string TEST_AUDIT_ALCOHOLISMO_Total = "N009-MF000003449";
+        #endregion
 
         #region PETRINOVIC
         public const string PETRINOVIC_ID = "N009-ME000000098";
