@@ -100,7 +100,7 @@ namespace NetPdf
             ServiceComponentList autorizacion = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.DECLARACION_JURADA_ANTECEDENTES_PERSONALES_ID);
 
             var tamaño_cuerpo = 22f;
-            var tamaño_celda = 15f;
+            var tamaño_celda = 18f;
           
             #region Contenido
             cells = new List<PdfPCell>()
