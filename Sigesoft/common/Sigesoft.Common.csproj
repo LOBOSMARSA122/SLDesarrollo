@@ -70,6 +70,7 @@
     <Compile Include="CustomDtos\TableInfoDto.cs" />
     <Compile Include="DeclaracionJuradaAntecedentesPersonales.cs" />
     <Compile Include="DynamicLinq.cs" />
+    <Compile Include="EntregaExamenMedicoOcipacional.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="CustomDtos\KeyValueDTO.cs" />
     <Compile Include="CustomDtos\OperationResult.cs" />
