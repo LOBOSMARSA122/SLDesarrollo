@@ -82,7 +82,7 @@ namespace NetPdf
             {
                 iTextSharp.text.Image imagenEmpresa = iTextSharp.text.Image.GetInstance(HandlingItextSharp.GetImage(infoEmpresa.b_Image));
                 imagenEmpresa.ScalePercent(25);
-                imagenEmpresa.SetAbsolutePosition(40, 785);
+                imagenEmpresa.SetAbsolutePosition(40, 780);
                 document.Add(imagenEmpresa);
             }
             //iTextSharp.text.Image imagenMinsa = iTextSharp.text.Image.GetInstance("C:/Banner/Minsa.png");
@@ -376,7 +376,7 @@ namespace NetPdf
             #region Creando celdas de tipo Imagen y validando nulls
             PdfPCell cellFirmaTrabajador = null;
             PdfPCell cellHuellaTrabajador = null;
-            PdfPCell cellFirma = null;
+            PdfPCell cellFirmaMedico = null;
 
             // Firma del trabajador ***************************************************
 
@@ -399,25 +399,23 @@ namespace NetPdf
             cellHuellaTrabajador.VerticalAlignment = Element.ALIGN_MIDDLE;
             cellHuellaTrabajador.FixedHeight = 50F;
             // Firma del doctor Auditor **************************************************
-            if (DataService != null)
-            {
-                if (DataService.FirmaMedicoMedicina != null)
-                    cellFirma = new PdfPCell(HandlingItextSharp.GetImage(DataService.FirmaMedicoMedicina, null, null, 120, 50)) { HorizontalAlignment = PdfPCell.ALIGN_CENTER };
-            }
-            else
-                cellFirma = new PdfPCell(new Phrase(" ", fontColumnValue));
 
-            cellFirma.HorizontalAlignment = Element.ALIGN_CENTER;
-            cellFirma.VerticalAlignment = Element.ALIGN_MIDDLE;
-            cellFirma.FixedHeight = 50F;
+            if (DataService.FirmaMedicoMedicina != null)
+                cellFirmaMedico = new PdfPCell(HandlingItextSharp.GetImage(DataService.FirmaMedicoMedicina, null, null, 100, 40));
+            else
+                cellFirmaMedico = new PdfPCell(new Phrase(" ", fontColumnValue));
+
+            cellFirmaMedico.HorizontalAlignment = Element.ALIGN_CENTER;
+            cellFirmaMedico.VerticalAlignment = Element.ALIGN_MIDDLE;
+            cellFirmaMedico.FixedHeight = 50F;
             #endregion
 
             cells = new List<PdfPCell>()
             {
                 new PdfPCell(cellFirmaTrabajador){HorizontalAlignment = PdfPCell.ALIGN_CENTER},
                 new PdfPCell(cellHuellaTrabajador){HorizontalAlignment = PdfPCell.ALIGN_CENTER},
-                new PdfPCell(new Phrase("FIRMA Y SELLO DEL MÉDICO", fontColumnValue1)) {Rowspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = tamaño_celda},    
-                new PdfPCell(cellFirma){Rowspan=3, HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                //new PdfPCell(new Phrase("FIRMA Y SELLO DEL MÉDICO", fontColumnValue1)) {Rowspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = tamaño_celda},    
+                //new PdfPCell(cellFirmaMedico){Rowspan=3, HorizontalAlignment = PdfPCell.ALIGN_CENTER},
  
                 new PdfPCell(new Phrase("FIRMA DEL EXAMINADO", fontColumnValue1)) { HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = 12f},    
                 new PdfPCell(new Phrase("HUELLA DEL EXAMINADO", fontColumnValue1)) { HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = 12f},    
@@ -425,7 +423,7 @@ namespace NetPdf
                 new PdfPCell(new Phrase("CON LA CUAL DECLARA QUE LA INFORMACIÓN DECLARADA ES VERAZ", fontColumnValue1)) {Colspan=2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda},    
 
             };
-            columnWidths = new float[] { 25f, 25f, 25f, 25f };
+            columnWidths = new float[] { 50f, 50f };
 
             filiationWorker = HandlingItextSharp.GenerateTableFromCells(cells, columnWidths, null, fontTitleTable);
 
