@@ -90,7 +90,7 @@ namespace NetPdf
             {
                 iTextSharp.text.Image imagenEmpresa = iTextSharp.text.Image.GetInstance(HandlingItextSharp.GetImage(filiationData.logoCliente));
                 imagenEmpresa.ScalePercent(20);
-                imagenEmpresa.SetAbsolutePosition(40, 805);
+                imagenEmpresa.SetAbsolutePosition(40, 795);
                 document.Add(imagenEmpresa);
             }
             //iTextSharp.text.Image imagenMinsa = iTextSharp.text.Image.GetInstance("C:/Banner/Minsa.png");
