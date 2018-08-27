@@ -78,21 +78,21 @@ namespace NetPdf
 
             cells = new List<PdfPCell>();
 
-            //if (infoEmpresa.b_Image != null)
-            //{
-            //    iTextSharp.text.Image imagenEmpresa = iTextSharp.text.Image.GetInstance(HandlingItextSharp.GetImage(infoEmpresa.b_Image));
-            //    imagenEmpresa.ScalePercent(25);
-            //    imagenEmpresa.SetAbsolutePosition(40, 785);
-            //    document.Add(imagenEmpresa);
-            //}
-
-            if (filiationData.logoCliente != null)
+            if (infoEmpresa.b_Image != null)
             {
-                iTextSharp.text.Image imagenEmpresa = iTextSharp.text.Image.GetInstance(HandlingItextSharp.GetImage(filiationData.logoCliente));
-                imagenEmpresa.ScalePercent(20);
-                imagenEmpresa.SetAbsolutePosition(40, 805);
+                iTextSharp.text.Image imagenEmpresa = iTextSharp.text.Image.GetInstance(HandlingItextSharp.GetImage(infoEmpresa.b_Image));
+                imagenEmpresa.ScalePercent(25);
+                imagenEmpresa.SetAbsolutePosition(40, 785);
                 document.Add(imagenEmpresa);
             }
+
+            //if (filiationData.logoCliente != null)
+            //{
+            //    iTextSharp.text.Image imagenEmpresa = iTextSharp.text.Image.GetInstance(HandlingItextSharp.GetImage(filiationData.logoCliente));
+            //    imagenEmpresa.ScalePercent(20);
+            //    imagenEmpresa.SetAbsolutePosition(40, 795);
+            //    document.Add(imagenEmpresa);
+            //}
             //iTextSharp.text.Image imagenMinsa = iTextSharp.text.Image.GetInstance("C:/Banner/Minsa.png");
             //imagenMinsa.ScalePercent(10);
             //imagenMinsa.SetAbsolutePosition(400, 785);
