@@ -229,6 +229,7 @@ namespace Sigesoft.Node.WinClient.BE
 
         public byte[] b_FirmaEvaluador { get; set; }
         public byte[] b_FirmaAuditor { get; set; }
-     
+
+        public byte[] logoCliente { get; set; }
     }
 }

@@ -107,6 +107,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                  serviceComponents.Add(new ServiceComponentList { Orden = 58, v_ComponentName = "INFORME MEDICO OCUPACIONAL COSAPI", v_ComponentId = Constants.INFORME_MEDICO_OCUPACIONAL_COSAPI });
                  serviceComponents.Add(new ServiceComponentList { Orden = 59, v_ComponentName = "CERTIFICADO DE APTITUD MEDICO OCUPACIONAL COSAPI", v_ComponentId = Constants.CERTIFICADO_APTITUD_MEDICO_COSAPI }); 
                 //serviceComponents.Add(new ServiceComponentList { Orden = 50, v_ComponentName = "INFORME DE TRABAJADOR INTERNACIONAL", v_ComponentId = Constants.INFORME_FICHA_MEDICA_TRABAJADOR_CI });
+                 serviceComponents.Add(new ServiceComponentList { Orden = 60, v_ComponentName = "ENTREGA DE EXAMEN MEDICO OCUPACIONAL", v_ComponentId = Constants.ENTREGA_DE_XAMEN_MEDICO_OCUPACIONAL }); 
 
                  //var serviceComponents11 = _serviceBL.GetServiceComponentsForManagementReport(_serviceId);
                  var ResultadoAnexo312 = serviceComponents.FindAll(p => InformeAnexo3121.Contains(p.v_ComponentId)).ToList();
@@ -817,6 +818,16 @@ namespace Sigesoft.Node.WinClient.UI.Reports
             var _DataService = _serviceBL.GetServiceReport(_serviceId);
 
             DeclaracionJuradaAntecedentesPersonales.CreateDeclaracionJuradaAntecedentesPersonales(filiationData, _DataService, serviceComponents, MedicalCenter, datosP, pathFile);
+        }
+        private void GenerateEntregaExamenMedicoOcupacional(string pathFile)
+        {
+            var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
+            var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
+            var serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
+            var datosP = _pacientBL.DevolverDatosPaciente(_serviceId);
+            var _DataService = _serviceBL.GetServiceReport(_serviceId);
+
+            EntregaExamenMedicoOcipacional.CreateEntregaExamenMedicoOcipacional(filiationData, _DataService, serviceComponents, MedicalCenter, datosP, pathFile);
         }
         #endregion
 
@@ -3954,6 +3965,10 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     break;
                 case Constants.DECLARACION_JURADA_ANTECEDENTES_PERSONALES_ID:
                     GenerateDeclaracionJuradaAntecedentesPersonales(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.DECLARACION_JURADA_ANTECEDENTES_PERSONALES_ID)));
+                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
+                    break;
+                case Constants.ENTREGA_DE_XAMEN_MEDICO_OCUPACIONAL:
+                    GenerateEntregaExamenMedicoOcupacional(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.ENTREGA_DE_XAMEN_MEDICO_OCUPACIONAL)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
                     break;
                 //default:

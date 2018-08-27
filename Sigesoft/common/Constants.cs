@@ -14,6 +14,9 @@ namespace Sigesoft.Common
         public const int WIDTH_MAX_SIZE_IMAGE = 4000;
         public const int HEIGHT_MAX_SIZE_IMAGE = 7000;
         public const int COLUMNAS_POR_CONTROL = 3;
+        #region ENTREGA DE EXAMEN MEDICO OCUPACIONAL
+        public const string ENTREGA_DE_XAMEN_MEDICO_OCUPACIONAL = "ENTREGA-EMO";
+        #endregion
         #region DECLARACIÓN JURADA ANTECEDENTES PERSONALES
 
         public const string DECLARACION_JURADA_ANTECEDENTES_PERSONALES_ID = "N009-ME000000440";

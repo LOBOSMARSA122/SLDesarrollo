@@ -984,14 +984,14 @@ namespace Sigesoft.Node.WinClient.BLL
         public PacientList GetPacientReportEPS(string serviceId)
         {
             //mon.IsActive = true;
-            
+
             try
             {
                 SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
                 //PacientList objDtoEntity = null;
 
                 var objEntity = (from s in dbContext.service
-                                 join pr in dbContext.protocol on s.v_ProtocolId equals pr.v_ProtocolId                             
+                                 join pr in dbContext.protocol on s.v_ProtocolId equals pr.v_ProtocolId
                                  join pe in dbContext.person on s.v_PersonId equals pe.v_PersonId
 
                                  join C in dbContext.systemparameter on new { a = pe.i_TypeOfInsuranceId.Value, b = 188 }  // Tipo de seguro
@@ -1040,12 +1040,17 @@ namespace Sigesoft.Node.WinClient.BLL
                                       equals new { a = lw.v_OrganizationId, b = lw.v_LocationId } into lw_join
                                  from lw in lw_join.DefaultIfEmpty()
 
-                                join D in dbContext.systemparameter on new { a = pe.i_SexTypeId.Value, b = 100 }  // Tipo de seguro
-                                                              equals new { a = D.i_ParameterId, b = D.i_GroupId } into D_join
+                                 join D in dbContext.systemparameter on new { a = pe.i_SexTypeId.Value, b = 100 }  // Tipo de seguro
+                                                               equals new { a = D.i_ParameterId, b = D.i_GroupId } into D_join
                                  from D in D_join.DefaultIfEmpty()
 
-                                join L in dbContext.systemparameter on new { a = pr.i_EsoTypeId.Value, b = 118 }
-                                                 equals new { a = L.i_ParameterId, b = L.i_GroupId } into L_join
+                                 join H in dbContext.systemparameter on new { a = pe.i_MaritalStatusId.Value, b = 101 }  // Tipo de seguro
+                                                             equals new { a = H.i_ParameterId, b = H.i_GroupId } into H_join
+                                 from H in H_join.DefaultIfEmpty()
+
+
+                                 join L in dbContext.systemparameter on new { a = pr.i_EsoTypeId.Value, b = 118 }
+                                                  equals new { a = L.i_ParameterId, b = L.i_GroupId } into L_join
                                  from L in L_join.DefaultIfEmpty()
                                  //************************************************************************************
 
@@ -1071,7 +1076,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                  select new PacientList
                                  {
                                      TimeOfDisease = s.i_TimeOfDisease,
-                                    v_ObsStatusService = s.v_ObsStatusService,
+                                     v_ObsStatusService = s.v_ObsStatusService,
                                      TiempoEnfermedad = ff.v_Value1,
                                      InicioEnfermedad = ee.v_Value1,
                                      CursoEnfermedad = gg.v_Value1,
@@ -1079,8 +1084,8 @@ namespace Sigesoft.Node.WinClient.BLL
                                      v_PersonId = pe.v_PersonId,
                                      v_FirstName = pe.v_FirstName,
                                      v_FirstLastName = pe.v_FirstLastName,
-                                     v_SecondLastName = pe.v_SecondLastName,                                                                                                      
-                                     b_Photo = pe.b_PersonImage,                                  
+                                     v_SecondLastName = pe.v_SecondLastName,
+                                     b_Photo = pe.b_PersonImage,
                                      v_TypeOfInsuranceName = C.v_Value1,
                                      v_FullWorkingOrganizationName = ow.v_Name + " / " + lw.v_Name,
                                      v_OrganitationName = ow.v_Name,
@@ -1104,70 +1109,75 @@ namespace Sigesoft.Node.WinClient.BLL
 
                                      v_Story = s.v_Story,
                                      v_MainSymptom = s.v_MainSymptom,
-                                     FirmaDoctor = pr1.b_SignatureImage      ,
+                                     FirmaDoctor = pr1.b_SignatureImage,
                                      v_ExaAuxResult = s.v_ExaAuxResult,
                                      FirmaDoctorAuditor = pr2.b_SignatureImage,
                                      GESO = F.v_Name,
-                                     i_AptitudeStatusId = s.i_AptitudeStatusId
-                                     
+                                     i_AptitudeStatusId = s.i_AptitudeStatusId,
+                                     v_MaritalStatus = H.v_Value1,
+                                     //EmpresaClienteId = ow.v_OrganizationId
+                                     logoCliente = ow.b_Image
                                  });
 
-             
-                var sql = (from a in objEntity.ToList()
-                         
-                           select new PacientList
-                            {
-                                FirmaDoctor =a.FirmaMedico,
-                                v_Story = a.v_Story,
-                                v_MainSymptom =a.v_MainSymptom,
-                                TimeOfDisease = a.TimeOfDisease,
-                                v_CurrentOccupation = a.v_CurrentOccupation,
-                                TiempoEnfermedad = a.TimeOfDisease + " " + a.TiempoEnfermedad,
-                                InicioEnfermedad = a.InicioEnfermedad,
-                                CursoEnfermedad = a.CursoEnfermedad,
-                                i_EsoTypeId = a.i_EsoTypeId,
 
-                                v_PersonId = a.v_PersonId,
-                                  i_DocTypeId = a.i_DocTypeId,
-                                v_FirstName = a.v_FirstName,
-                                v_FirstLastName = a.v_FirstLastName,
-                                v_SecondLastName = a.v_SecondLastName,
-                                i_Age = GetAge(a.d_Birthdate.Value),
-                                b_Photo = a.b_Photo,
-                                v_TypeOfInsuranceName = a.v_TypeOfInsuranceName,
-                                v_FullWorkingOrganizationName = a.v_FullWorkingOrganizationName,
-                                v_RelationshipName = a.v_RelationshipName,
-                                v_OwnerName = a.v_FirstName + " " + a.v_FirstLastName + " " + a.v_SecondLastName,
-                                d_ServiceDate = a.d_ServiceDate,
-                                i_NumberDependentChildren = a.i_NumberDependentChildren,
-                                i_NumberLivingChildren = a.i_NumberLivingChildren,
-                                v_OwnerOrganizationName = (from n in dbContext.organization
-                                                           where n.v_OrganizationId == Constants.OWNER_ORGNIZATION_ID
-                                                           select n.v_Name).SingleOrDefault<string>(),
-                                v_DoctorPhysicalExamName = (from sc in dbContext.servicecomponent
-                                                            join J1 in dbContext.systemuser on new { i_InsertUserId = sc.i_ApprovedUpdateUserId.Value }
-                                                                       equals new { i_InsertUserId = J1.i_SystemUserId } into J1_join
-                                                            from J1 in J1_join.DefaultIfEmpty()
-                                                            join pe in dbContext.person on J1.v_PersonId equals pe.v_PersonId
-                                                            where (sc.v_ServiceId == serviceId) &&
-                                                                  (sc.v_ComponentId == Constants.EXAMEN_FISICO_ID)
-                                                            select pe.v_FirstName + " " + pe.v_FirstLastName).SingleOrDefault<string>(),
-                                FirmaTrabajador = a.FirmaTrabajador,
-                                HuellaTrabajador = a.HuellaTrabajador,
-                                v_BloodGroupName = a.v_BloodGroupName,
-                                v_BloodFactorName = a.v_BloodFactorName,
-                                v_SexTypeName = a.v_SexTypeName,
-                                v_TipoExamen = a.v_TipoExamen,
-                                v_NombreProtocolo = a.v_NombreProtocolo,
-                                v_DocNumber = a.v_DocNumber,
-                                v_IdService = a.v_IdService,
-                                v_ExaAuxResult = a.v_ExaAuxResult,
-                                FirmaDoctorAuditor = a.FirmaDoctorAuditor,
-                                GESO = a.GESO,
-                                v_OrganitationName = a.v_OrganitationName,
-                                i_AptitudeStatusId = a.i_AptitudeStatusId,
-                                v_ObsStatusService = a.v_ObsStatusService
-                            }).FirstOrDefault();
+                var sql = (from a in objEntity.ToList()
+
+                           select new PacientList
+                           {
+                               FirmaDoctor = a.FirmaMedico,
+                               v_Story = a.v_Story,
+                               v_MainSymptom = a.v_MainSymptom,
+                               TimeOfDisease = a.TimeOfDisease,
+                               v_CurrentOccupation = a.v_CurrentOccupation,
+                               TiempoEnfermedad = a.TimeOfDisease + " " + a.TiempoEnfermedad,
+                               InicioEnfermedad = a.InicioEnfermedad,
+                               CursoEnfermedad = a.CursoEnfermedad,
+                               i_EsoTypeId = a.i_EsoTypeId,
+
+                               v_PersonId = a.v_PersonId,
+                               i_DocTypeId = a.i_DocTypeId,
+                               v_FirstName = a.v_FirstName,
+                               v_FirstLastName = a.v_FirstLastName,
+                               v_SecondLastName = a.v_SecondLastName,
+                               i_Age = GetAge(a.d_Birthdate.Value),
+                               b_Photo = a.b_Photo,
+                               v_TypeOfInsuranceName = a.v_TypeOfInsuranceName,
+                               v_FullWorkingOrganizationName = a.v_FullWorkingOrganizationName,
+                               v_RelationshipName = a.v_RelationshipName,
+                               v_OwnerName = a.v_FirstName + " " + a.v_FirstLastName + " " + a.v_SecondLastName,
+                               d_ServiceDate = a.d_ServiceDate,
+                               i_NumberDependentChildren = a.i_NumberDependentChildren,
+                               i_NumberLivingChildren = a.i_NumberLivingChildren,
+                               v_OwnerOrganizationName = (from n in dbContext.organization
+                                                          where n.v_OrganizationId == Constants.OWNER_ORGNIZATION_ID
+                                                          select n.v_Name).SingleOrDefault<string>(),
+                               v_DoctorPhysicalExamName = (from sc in dbContext.servicecomponent
+                                                           join J1 in dbContext.systemuser on new { i_InsertUserId = sc.i_ApprovedUpdateUserId.Value }
+                                                                      equals new { i_InsertUserId = J1.i_SystemUserId } into J1_join
+                                                           from J1 in J1_join.DefaultIfEmpty()
+                                                           join pe in dbContext.person on J1.v_PersonId equals pe.v_PersonId
+                                                           where (sc.v_ServiceId == serviceId) &&
+                                                                 (sc.v_ComponentId == Constants.EXAMEN_FISICO_ID)
+                                                           select pe.v_FirstName + " " + pe.v_FirstLastName).SingleOrDefault<string>(),
+                               FirmaTrabajador = a.FirmaTrabajador,
+                               HuellaTrabajador = a.HuellaTrabajador,
+                               v_BloodGroupName = a.v_BloodGroupName,
+                               v_BloodFactorName = a.v_BloodFactorName,
+                               v_SexTypeName = a.v_SexTypeName,
+                               v_TipoExamen = a.v_TipoExamen,
+                               v_NombreProtocolo = a.v_NombreProtocolo,
+                               v_DocNumber = a.v_DocNumber,
+                               v_IdService = a.v_IdService,
+                               v_ExaAuxResult = a.v_ExaAuxResult,
+                               FirmaDoctorAuditor = a.FirmaDoctorAuditor,
+                               GESO = a.GESO,
+                               v_OrganitationName = a.v_OrganitationName,
+                               i_AptitudeStatusId = a.i_AptitudeStatusId,
+                               v_ObsStatusService = a.v_ObsStatusService,
+                               v_MaritalStatus = a.v_MaritalStatus,
+                               //EmpresaClienteId = a.EmpresaClienteId
+                               logoCliente = a.logoCliente
+                           }).FirstOrDefault();
 
                 return sql;
             }
@@ -1177,7 +1187,6 @@ namespace Sigesoft.Node.WinClient.BLL
                 return null;
             }
         }
-
         public PacientList GetPacientReportEPSFirmaMedicoOcupacional(string serviceId)
         {
             //mon.IsActive = true;
