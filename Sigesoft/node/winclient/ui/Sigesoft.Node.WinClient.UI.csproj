@@ -136,8 +136,9 @@
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="ScrapperReniecSunat">
-      <HintPath>..\..\..\..\ExternalLibraries\ScrapperReniecSunat.dll</HintPath>
+    <Reference Include="ScrapperReniecSunat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SLSanLorenzo\ExternalLibraries\ScrapperReniecSunat.dll</HintPath>
     </Reference>
     <Reference Include="SigPlusNET">
       <HintPath>..\..\..\..\ExternalLibraries\SigPlusNET.dll</HintPath>
@@ -5838,7 +5839,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

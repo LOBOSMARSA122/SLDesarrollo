@@ -219,6 +219,8 @@ namespace Sigesoft.Node.WinClient.BE
 
         public string Trabajador { get; set; }
         public DateTime? FechaServicio { get; set; }
+        public DateTime? FechaCaducidad { get; set; }
+
         public string MedicoGrabaMedicina { get; set; }
         public int? Edad { get; set; }
         public string Genero { get; set; }

@@ -12683,7 +12683,7 @@ namespace Sigesoft.Node.WinClient.BLL
                              v_DiseasesName = a.v_DiseasesName == "RECOMENDACIONES" ? "" : a.v_DiseasesName,
                              v_RecomendationsName = ConcatenateRecommendationByService(pstrServiceId),
                              v_RestrictionsName = ConcatenateRestrictionConcatecDx(a.v_DiagnosticRepositoryId),
-                             //v_RecomendacionesConcatenadasDx = ConcatenateRecommendationByService(a.v_DiagnosticRepositoryId),
+                             v_RecomendacionesConcatenadasDx = ConcatenateRecommendationByService(a.v_DiagnosticRepositoryId),
                              v_AptitudeStatusName = a.v_AptitudeStatusName,
                              v_OccupationName = a.v_OccupationName,  // por ahora se muestra el GESO
                              g_Image = a.g_Image,
