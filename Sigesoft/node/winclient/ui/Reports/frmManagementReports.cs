@@ -808,6 +808,16 @@ namespace Sigesoft.Node.WinClient.UI.Reports
 
             Test_Audit_Alcoholismo.CreateTestAuditAlcoholismo(filiationData, _DataService, serviceComponents, MedicalCenter, datosP, pathFile);
         }
+        private void GenerateDeclaracionJuradaAntecedentesPersonales(string pathFile)
+        {
+            var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
+            var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
+            var serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
+            var datosP = _pacientBL.DevolverDatosPaciente(_serviceId);
+            var _DataService = _serviceBL.GetServiceReport(_serviceId);
+
+            DeclaracionJuradaAntecedentesPersonales.CreateDeclaracionJuradaAntecedentesPersonales(filiationData, _DataService, serviceComponents, MedicalCenter, datosP, pathFile);
+        }
         #endregion
 
         private void chklChekedAll(CheckedListBox chkl, bool checkedState)
@@ -3940,6 +3950,10 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     break;
                 case Constants.TEST_AUDIT_ALCOHOLISMO_ID:
                     GenerateTestAuditAlcoholismo(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.TEST_AUDIT_ALCOHOLISMO_ID)));
+                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
+                    break;
+                case Constants.DECLARACION_JURADA_ANTECEDENTES_PERSONALES_ID:
+                    GenerateDeclaracionJuradaAntecedentesPersonales(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.DECLARACION_JURADA_ANTECEDENTES_PERSONALES_ID)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
                     break;
                 //default:
