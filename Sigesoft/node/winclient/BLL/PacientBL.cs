@@ -2199,6 +2199,9 @@ namespace Sigesoft.Node.WinClient.BLL
 
                                  join C in dbContext.organization on B.v_WorkingOrganizationId equals C.v_OrganizationId into C_join
                                  from C in C_join.DefaultIfEmpty()
+
+                                 join C1 in dbContext.organization on B.v_CustomerOrganizationId equals C1.v_OrganizationId into C1_join
+                                 from C1 in C1_join.DefaultIfEmpty()
                       
                                  join P1 in dbContext.person on new { a = A.v_PersonId }
                                          equals new { a = P1.v_PersonId } into P1_join
@@ -2237,7 +2240,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                      LugarProcedencia = varDistri + "-" + varProv + "-" + varDpto, // Santa Anita - Lima - Lima
                                      v_AdressLocation = p.v_AdressLocation,
                                      d_ServiceDate = A.d_ServiceDate,
-
+                                     LogoCliente = C1.b_Image
                                  });
 
                 var serviceBL = new ServiceBL();
@@ -2255,7 +2258,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                Empresa = a.Empresa,
                                FirmaTrabajador = a.FirmaTrabajador,
                                HuellaTrabajador = a.HuellaTrabajador,
-
+                               LogoCliente = a.LogoCliente,
                                b_Logo = MedicalCenter.b_Image,
                                EmpresaPropietaria = MedicalCenter.v_Name,
                                EmpresaPropietariaDireccion = MedicalCenter.v_Address,

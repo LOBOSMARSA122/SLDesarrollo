@@ -31,5 +31,6 @@ namespace Sigesoft.Node.WinClient.BE
 
         public string Componentes { get; set; }
         public string ComponentesLaboratorio { get; set; }
+        public byte[] LogoCliente { get; set; }
     }
 }
