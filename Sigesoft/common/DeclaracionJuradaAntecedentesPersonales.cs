@@ -25,7 +25,7 @@ namespace NetPdf
             PacientList datosPac,
             string filePDF)
         {
-            Document document = new Document(PageSize.A4, 30f, 30f, 45f, 41f);
+            Document document = new Document(PageSize.A4, 30f, 30f, 45f, 38f);
 
             document.SetPageSize(iTextSharp.text.PageSize.A4);
 
