@@ -340,52 +340,102 @@ namespace Sigesoft.Node.WinClient.UI
         private void btnEditarESO_Click(object sender, EventArgs e)
         {
             Form frm;
-           int TserviceId = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceId"].Value.ToString());
-           if (TserviceId == (int)MasterService.AtxMedicaParticular)
-           {
-               frm = new Operations.frmMedicalConsult(_serviceId, null, null);
-               frm.ShowDialog();
-           }
-           else
-           {
-               //Obtener Estado del servicio
-               var EstadoServicio = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceStatusId"].Value.ToString());
+            int TserviceId = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceId"].Value.ToString());
+            if (TserviceId == (int)MasterService.AtxMedicaParticular)
+            {
+                frm = new Operations.frmMedicalConsult(_serviceId, null, null);
+                frm.ShowDialog();
+            }
+            else
+            {
+                //Obtener Estado del servicio
+                var EstadoServicio = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceStatusId"].Value.ToString());
 
-               if (EstadoServicio == (int)ServiceStatus.Culminado)
-               {
-                   //Obtener el usuario
-                   int UserId= Globals.ClientSession.i_SystemUserId ;
-                   if (UserId==11)
-	                {
+                if (EstadoServicio == (int)ServiceStatus.Culminado)
+                {
+                    //Obtener el usuario
+                    int UserId = Globals.ClientSession.i_SystemUserId;
+                    if (UserId == 11)
+                    {
                         this.Enabled = false;
-                        frm = new Operations.frmEso(_serviceId, null, "Service");
+                        frm = new Operations.frmEso(_serviceId, null, "Service", (int)MasterService.Eso);
                         frm.ShowDialog();
                         this.Enabled = true;
-	                }
-                   else
-                   {
+                    }
+                    else
+                    {
                         this.Enabled = false;
-                        frm = new Operations.frmEso(_serviceId, null, "View");
+                        frm = new Operations.frmEso(_serviceId, null, "View", (int)MasterService.Eso);
                         frm.ShowDialog();
-                        this.Enabled = true;                   
-                   }
+                        this.Enabled = true;
+                    }
+
+                }
+                else
+                {
+                    this.Enabled = false;
+                    frm = new Operations.frmEso(_serviceId, null, "Service", (int)MasterService.Eso);
+                    frm.ShowDialog();
+                    this.Enabled = true;
+                }
+
+
+            }
+
+            btnFilter_Click(sender, e);
+
+
+        }
+
+        //private void btnEditarESO_Click(object sender, EventArgs e)
+        //{
+        //    Form frm;
+        //   int TserviceId = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceId"].Value.ToString());
+        //   if (TserviceId == (int)MasterService.AtxMedicaParticular)
+        //   {
+        //       frm = new Operations.frmMedicalConsult(_serviceId, null, null);
+        //       frm.ShowDialog();
+        //   }
+        //   else
+        //   {
+        //       //Obtener Estado del servicio
+        //       var EstadoServicio = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceStatusId"].Value.ToString());
+
+        //       if (EstadoServicio == (int)ServiceStatus.Culminado)
+        //       {
+        //           //Obtener el usuario
+        //           int UserId= Globals.ClientSession.i_SystemUserId ;
+        //           if (UserId==11)
+        //            {
+        //                this.Enabled = false;
+        //                frm = new Operations.frmEso(_serviceId, null, "Service");
+        //                frm.ShowDialog();
+        //                this.Enabled = true;
+        //            }
+        //           else
+        //           {
+        //                this.Enabled = false;
+        //                frm = new Operations.frmEso(_serviceId, null, "View");
+        //                frm.ShowDialog();
+        //                this.Enabled = true;                   
+        //           }
                   
-               }
-               else 
-               {
-                   this.Enabled = false;
-                   frm = new Operations.frmEso(_serviceId, null, "Service");
-                   frm.ShowDialog();
-                   this.Enabled = true;
-               }
+        //       }
+        //       else 
+        //       {
+        //           this.Enabled = false;
+        //           frm = new Operations.frmEso(_serviceId, null, "Service");
+        //           frm.ShowDialog();
+        //           this.Enabled = true;
+        //       }
 
              
-           }
+        //   }
 
-           btnFilter_Click(sender, e);
+        //   btnFilter_Click(sender, e);
                   
            
-        }
+        //}
 
         private void grdDataService_AfterSelectChange(object sender, Infragistics.Win.UltraWinGrid.AfterSelectChangeEventArgs e)
         {
@@ -689,62 +739,64 @@ namespace Sigesoft.Node.WinClient.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            saveFileDialog2.FileName = string.Format("{0} 312", _personFullName);         
+            saveFileDialog2.FileName = string.Format("{0} 312", _personFullName);
             saveFileDialog2.Filter = "Files (*.pdf;)|*.pdf;";
 
             //try
             //{
-                if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                using (new LoadingClass.PleaseWait(this.Location, "Generando..."))
                 {
-                    using (new LoadingClass.PleaseWait(this.Location, "Generando..."))
-                    {
-                        this.Enabled = false;
+                    this.Enabled = false;
 
-                        var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
-                        var _listAtecedentesOcupacionales = _historyBL.GetHistoryReport(_pacientId);
-                        var _listaPatologicosFamiliares = _historyBL.GetFamilyMedicalAntecedentsReport(_pacientId);
-                        var _listMedicoPersonales = _historyBL.GetPersonMedicalHistoryReport(_pacientId);
-                        var _DataService = _serviceBL.GetServiceReport(_serviceId);
-                        var _listaHabitoNocivos = _historyBL.GetNoxiousHabitsReport(_pacientId);
+                    var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
+                    var _listAtecedentesOcupacionales = _historyBL.GetHistoryReport(_pacientId);
+                    var _listaPatologicosFamiliares = _historyBL.GetFamilyMedicalAntecedentsReport(_pacientId);
+                    var _listMedicoPersonales = _historyBL.GetPersonMedicalHistoryReport(_pacientId);
+                    var _DataService = _serviceBL.GetServiceReport(_serviceId);
+                    var _listaHabitoNocivos = _historyBL.GetNoxiousHabitsReport(_pacientId);
 
-                        var Antropometria = _serviceBL.ValoresComponente(_serviceId, Constants.ANTROPOMETRIA_ID);
-                        var FuncionesVitales = _serviceBL.ValoresComponente(_serviceId, Constants.FUNCIONES_VITALES_ID);
-                        var ExamenFisico = _serviceBL.ValoresComponente(_serviceId, Constants.EXAMEN_FISICO_ID);
-                        var Oftalmologia = _serviceBL.ValoresComponente(_serviceId, Constants.OFTALMOLOGIA_ID);
+                    var Antropometria = _serviceBL.ValoresComponente(_serviceId, Constants.ANTROPOMETRIA_ID);
+                    var FuncionesVitales = _serviceBL.ValoresComponente(_serviceId, Constants.FUNCIONES_VITALES_ID);
+                    var ExamenFisico = _serviceBL.ValoresComponente(_serviceId, Constants.EXAMEN_FISICO_ID);
+                    var Oftalmologia = _serviceBL.ValoresComponente(_serviceId, Constants.OFTALMOLOGIA_ID);
 
-                        var TestIhihara = _serviceBL.ValoresComponente(_serviceId, Constants.TEST_ISHIHARA_ID);
-                        var TestEstereopsis = _serviceBL.ValoresComponente(_serviceId, Constants.TEST_ESTEREOPSIS_ID);
+                    var TestIhihara = _serviceBL.ValoresComponente(_serviceId, Constants.TEST_ISHIHARA_ID);
+                    var TestEstereopsis = _serviceBL.ValoresComponente(_serviceId, Constants.TEST_ESTEREOPSIS_ID);
 
-                        var Psicologia = _serviceBL.ValoresExamenComponete(_serviceId, Constants.PSICOLOGIA_ID, 195);
-                        var RX = _serviceBL.ValoresExamenComponete(_serviceId, Constants.RX_TORAX_ID, 211);
-                        var RX1 = _serviceBL.ValoresExamenComponete(_serviceId, Constants.RX_TORAX_ID, 135);
-                        var Laboratorio = _serviceBL.ValoresComponente(_serviceId, Constants.INFORME_LABORATORIO_ID);
-                        //var Audiometria = _serviceBL.ValoresComponente(_serviceId, Constants.AUDIOMETRIA_ID);
-                        var Audiometria = _serviceBL.GetDiagnosticForAudiometria(_serviceId, Constants.AUDIOMETRIA_ID);
-                        var Espirometria = _serviceBL.ValoresExamenComponete(_serviceId, Constants.ESPIROMETRIA_ID, 210);
-                        var _DiagnosticRepository = _serviceBL.GetServiceDisgnosticsReports(_serviceId);
-                        var _Recomendation = _serviceBL.GetServiceRecommendationByServiceId(_serviceId);
-                        var _ExamenesServicio = _serviceBL.GetServiceComponentsReport(_serviceId);
+                    var Psicologia = _serviceBL.ValoresExamenComponete(_serviceId, Constants.PSICOLOGIA_ID, 195);
+                    var RX = _serviceBL.ValoresExamenComponete(_serviceId, Constants.RX_TORAX_ID, 211);
+                    var RX1 = _serviceBL.ValoresExamenComponete(_serviceId, Constants.RX_TORAX_ID, 135);
+                    var Laboratorio = _serviceBL.ValoresComponente(_serviceId, Constants.INFORME_LABORATORIO_ID);
+                    //var Audiometria = _serviceBL.ValoresComponente(_serviceId, Constants.AUDIOMETRIA_ID);
+                    var Audiometria = _serviceBL.GetDiagnosticForAudiometria(_serviceId, Constants.AUDIOMETRIA_ID);
+                    var Espirometria = _serviceBL.ValoresExamenComponete(_serviceId, Constants.ESPIROMETRIA_ID, 210);
+                    var _DiagnosticRepository = _serviceBL.GetServiceDisgnosticsReports(_serviceId);
+                    var _Recomendation = _serviceBL.GetServiceRecommendationByServiceId(_serviceId);
+                    var _ExamenesServicio = _serviceBL.GetServiceComponentsReport(_serviceId);
 
-                        var ElectroCardiograma = _serviceBL.ValoresComponente(_serviceId, Constants.ELECTROCARDIOGRAMA_ID);
-                        var PruebaEsfuerzo = _serviceBL.ValoresComponente(_serviceId, Constants.PRUEBA_ESFUERZO_ID);
-                        var Altura7D = _serviceBL.ValoresComponente(_serviceId, Constants.ALTURA_7D_ID);
-                        var AlturaEstructural = _serviceBL.ValoresComponente(_serviceId, Constants.ALTURA_ESTRUCTURAL_ID);
-                        var Odontologia = _serviceBL.ValoresComponente(_serviceId, Constants.ODONTOGRAMA_ID);
-                        var OsteoMuscular = _serviceBL.ValoresComponente(_serviceId, Constants.OSTEO_MUSCULAR_ID_1);
+                    var ElectroCardiograma = _serviceBL.ValoresComponente(_serviceId, Constants.ELECTROCARDIOGRAMA_ID);
+                    var PruebaEsfuerzo = _serviceBL.ValoresComponente(_serviceId, Constants.PRUEBA_ESFUERZO_ID);
+                    var Altura7D = _serviceBL.ValoresComponente(_serviceId, Constants.ALTURA_7D_ID);
+                    var AlturaEstructural = _serviceBL.ValoresComponente(_serviceId, Constants.ALTURA_ESTRUCTURAL_ID);
+                    var Odontologia = _serviceBL.ValoresComponente(_serviceId, Constants.ODONTOGRAMA_ID);
+                    var OsteoMuscular = _serviceBL.ValoresComponente(_serviceId, Constants.OSTEO_MUSCULAR_ID_1);
 
-                        var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
-                        var ValoresDxLab = _serviceBL.ValoresComponenteAMC_(_serviceId, 1);
-                        FichaMedicaOcupacional312.CreateFichaMedicalOcupacional312Report(_DataService,
-                                  filiationData, _listAtecedentesOcupacionales, _listaPatologicosFamiliares,
-                                  _listMedicoPersonales, _listaHabitoNocivos, Antropometria, FuncionesVitales,
-                                  ExamenFisico, Oftalmologia, Psicologia, RX, RX1, Laboratorio, Audiometria, Espirometria,
-                                  _DiagnosticRepository, _Recomendation, _ExamenesServicio, ValoresDxLab, MedicalCenter,TestIhihara,TestEstereopsis,       
-                                  saveFileDialog2.FileName);
+                    var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
+                    var ValoresDxLab = _serviceBL.ValoresComponenteAMC_(_serviceId, 1);
+                    var serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
 
-                        this.Enabled = true;
-                    }
+                    FichaMedicaOcupacional312.CreateFichaMedicalOcupacional312Report(_DataService,
+                              filiationData, _listAtecedentesOcupacionales, _listaPatologicosFamiliares,
+                              _listMedicoPersonales, _listaHabitoNocivos, Antropometria, FuncionesVitales,
+                              ExamenFisico, Oftalmologia, Psicologia, RX, RX1, Laboratorio, Audiometria, Espirometria,
+                              _DiagnosticRepository, _Recomendation, _ExamenesServicio, ValoresDxLab, MedicalCenter, TestIhihara, TestEstereopsis,
+                              serviceComponents, saveFileDialog2.FileName);
+
+                    this.Enabled = true;
                 }
+            }
             //}
             //catch (Exception ex)
             //{
@@ -752,7 +804,7 @@ namespace Sigesoft.Node.WinClient.UI
             //}
 
         }
-     
+    
         private void button3_Click(object sender, EventArgs e)
         {
            
@@ -1251,10 +1303,10 @@ namespace Sigesoft.Node.WinClient.UI
 
 
                             _serviceBL.AddDiagnosticRepository(ref objOperationResult,
-                                                        ListaDxByComponent,
-                                                        serviceComponentDto,
-                                                        Globals.ClientSession.GetAsList(),
-                                                        false);
+                                                            ListaDxByComponent,
+                                                            serviceComponentDto,
+                                                            Globals.ClientSession.GetAsList(),
+                                                            false, false);
 
 
 

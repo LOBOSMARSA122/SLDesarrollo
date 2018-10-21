@@ -17,6 +17,18 @@ namespace Sigesoft.Common
         SinDx = 2
     }
 
+    public enum TipoProblema
+    {
+        Cronico = 1,
+        Agudo = 2
+    }
+
+    public enum Enfermedad
+    {
+        Si = 1,
+        No = 0
+
+    }
     public enum TypePrinter
     {
         Image = 1,
@@ -187,8 +199,10 @@ namespace Sigesoft.Common
     public enum TipoProfesional
     {
         Evaluador = 30,
-        Auditor = 31
+        Auditor = 31,
+        Auditor_Evaluador = 32
     }
+
 
     public enum ServiceComponentStatus
     {
@@ -297,7 +311,11 @@ namespace Sigesoft.Common
         UcEvaluacionErgonomica =18,
         UcOjoSeco=19,
         UcOsteoMuscular = 20,
-        UcBoton = 21
+        UcBoton = 21,
+        UcFototipo = 22,
+        UcHistorialTriaje = 23,
+        UcHistorialGrupoSanguineo = 24,
+        Radiobutton = 30
     }
 
     public enum ComponentType
@@ -675,5 +693,14 @@ namespace Sigesoft.Common
         ResultadoEvaluacion_Motivacion = 259,
         ResultadoEvaluacion_NIVEL_EMPO = 260,
     }
+
+    public enum GrupoEtario
+    {
+        Ninio = 4,
+        Adolecente = 2,
+        Adulto = 1,
+        AdultoMayor = 3
+    }
+
 }
 

@@ -229,10 +229,10 @@ namespace Sigesoft.Node.WinClient.UI
 
 
             _serviceBL.AddDiagnosticRepository(ref objOperationResult,
-                                                  _tmpExamDiagnosticComponentList,
-                                                   null,
-                                                   Globals.ClientSession.GetAsList(),
-                                                   true);
+                                                 _tmpExamDiagnosticComponentList,
+                                                  null,
+                                                  Globals.ClientSession.GetAsList(),
+                                                  true, null);
 
             MessageBox.Show("se guardó correctamente.", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
