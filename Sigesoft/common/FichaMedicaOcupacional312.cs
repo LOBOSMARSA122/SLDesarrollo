@@ -45,6 +45,7 @@ namespace NetPdf
                                                                     organizationDto infoEmpresaPropietaria,
                                                                     List<ServiceComponentFieldValuesList> TestIshihara,
                                                                     List<ServiceComponentFieldValuesList> TestEstereopsis,
+                                                                    List<ServiceComponentList> serviceComponent,
                                                                     string filePDF)
         {
             Document document = new Document();

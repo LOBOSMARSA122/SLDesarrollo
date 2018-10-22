@@ -1908,13 +1908,61 @@ namespace Sigesoft.Node.WinClient.UI
             }
         }
 
+        //private void btnEditarESO_Click(object sender, EventArgs e)
+        //{
+        //    Form frm;
+        //    int TserviceId = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceId"].Value.ToString());
+        //    if (TserviceId == (int)MasterService.AtxMedicaParticular)
+        //    {
+        //    }
+        //    else
+        //    {
+        //        //Obtener Estado del servicio
+        //        var EstadoServicio = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceStatusId"].Value.ToString());
+
+        //        if (EstadoServicio == (int)ServiceStatus.Culminado)
+        //        {
+        //            //Obtener el usuario
+        //            int UserId = Globals.ClientSession.i_SystemUserId;
+        //            if (UserId == 11)
+        //            {
+        //                this.Enabled = false;
+        //                frm = new Operations.frmEso(_serviceId, null, "Service", (int)MasterService.Eso);
+        //                frm.ShowDialog();
+        //                this.Enabled = true;
+        //            }
+        //            else
+        //            {
+        //                this.Enabled = false;
+        //                frm = new Operations.frmEso(_serviceId, null, "View", (int)MasterService.Eso);
+        //                frm.ShowDialog();
+        //                this.Enabled = true;
+        //            }
+
+        //        }
+        //        else
+        //        {
+        //            this.Enabled = false;
+        //            frm = new Operations.frmEso(_serviceId, null, "Service", (int)MasterService.Eso);
+        //            frm.ShowDialog();
+        //            this.Enabled = true;
+        //        }
+
+
+        //    }
+
+        //    btnFilter_Click(sender, e);
+
+
+        //}
+
         private void btnEditarESO_Click(object sender, EventArgs e)
         {
             Form frm;
             string TserviceId = grdDataService.Selected.Rows[0].Cells["ServiceId"].Value.ToString();
-        
+
             this.Enabled = false;
-            frm = new Operations.frmEso(TserviceId, null, "View");
+            frm = new Operations.frmEso(TserviceId, null, "View", (int)MasterService.Eso);
             frm.ShowDialog();
             this.Enabled = true;
         }

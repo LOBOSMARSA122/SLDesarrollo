@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEso));
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn90 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_AntecedentTypeName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn91 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DateOrGroup");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn92 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_StartDate");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn93 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn40 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_AntecedentTypeName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn41 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DateOrGroup");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn42 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_StartDate");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn43 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesName");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
@@ -43,10 +44,10 @@
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn94 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ServiceId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn95 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_MasterServiceName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn96 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_ServiceDate");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn97 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseaseName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn82 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ServiceId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn83 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_MasterServiceName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn84 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_ServiceDate");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn85 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseaseName");
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
@@ -55,8 +56,8 @@
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand3 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticRepositoryId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn44 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticRepositoryId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn45 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesId");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_AutoManualName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RestrictionsName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
@@ -89,7 +90,7 @@
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand5 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn17 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_Item");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn18 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RecommendationId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn19 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticRepositoryId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn50 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticRepositoryId");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn20 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_RecommendationId");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn21 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RecommendationName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, false);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn22 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_RecordStatus");
@@ -104,20 +105,20 @@
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand6 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn24 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticRepositoryId");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn25 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn26 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn27 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn52 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn53 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn69 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_UpdateUser");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn28 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_AutoManualName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn29 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RestrictionsName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn54 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_AutoManualName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn55 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RestrictionsName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn30 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RecomendationsName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn31 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_PreQualificationName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn32 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_FinalQualificationName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn33 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticTypeName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn34 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_IsSentToAntecedentName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn35 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_ExpirationDateDiagnostic");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn36 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_GenerateMedicalBreak");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn37 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_RecordStatus");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn38 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_RecordType");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn60 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_PreQualificationName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn78 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_FinalQualificationName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn103 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticTypeName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn104 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_IsSentToAntecedentName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn105 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_ExpirationDateDiagnostic");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn106 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_GenerateMedicalBreak");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn107 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_RecordStatus");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn108 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_RecordType");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn39 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentId");
             Infragistics.Win.Appearance appearance38 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance39 = new Infragistics.Win.Appearance();
@@ -143,12 +144,12 @@
             Infragistics.Win.Appearance appearance50 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance51 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand8 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn48 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_ItemId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn49 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RestrictionByDiagnosticId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn50 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticRepositoryId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn51 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_RestrictionId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn52 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn53 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RestrictionName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn86 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_ItemId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn87 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RestrictionByDiagnosticId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn88 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticRepositoryId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn89 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_RestrictionId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn90 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn91 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RestrictionName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, false);
             Infragistics.Win.Appearance appearance52 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance53 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance54 = new Infragistics.Win.Appearance();
@@ -157,13 +158,13 @@
             Infragistics.Win.Appearance appearance57 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance58 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand9 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn54 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticRepositoryId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn55 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn56 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn57 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn58 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_AutoManualName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn59 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RestrictionsName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn60 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RecomendationsName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn92 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticRepositoryId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn93 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn94 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn95 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn96 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_AutoManualName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn97 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RestrictionsName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn98 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RecomendationsName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn61 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_PreQualificationName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn62 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_FinalQualificationName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn63 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiagnosticTypeName");
@@ -178,7 +179,87 @@
             Infragistics.Win.Appearance appearance62 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance63 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance64 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance65 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand10 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn57 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_Fecha");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn101 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Descripcion");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn102 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_EsControlado", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn111 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Observacion");
+            Infragistics.Win.Appearance appearance66 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance67 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance68 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance69 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance70 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance71 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance72 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance73 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance74 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand11 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn49 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Tipo", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn112 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_Fecha");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn113 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Descripcion");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn114 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Lugar");
+            Infragistics.Win.Appearance appearance75 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance76 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance77 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance78 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance79 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance80 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance81 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance82 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance83 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand12 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn81 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_Fecha");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn109 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Descripcion");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn110 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Observacion");
+            Infragistics.Win.Appearance appearance84 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance85 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance86 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance87 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance88 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance89 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance90 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance91 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance92 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand13 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn34 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_EmbarazoId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn29 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Anio");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn31 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Cpn");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn32 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Complicacion");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn33 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Parto");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn38 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_PesoRn");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn46 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Puerpio");
+            Infragistics.Win.Appearance appearance93 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance94 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance95 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance96 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance97 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance98 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance99 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance100 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance101 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand14 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn26 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn59 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Hijos");
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand15 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Hijos", 0);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn79 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn51 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("SI");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn56 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("NO");
+            Infragistics.Win.Appearance appearance102 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand16 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Hijos");
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand17 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Hijos", 0);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn19 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn27 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("SI");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn28 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("NO");
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn1 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Anio");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn2 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Cpn");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn3 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Complicacion");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn4 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Parto");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn5 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("PesoRn");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn6 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Puerperio");
             this.tcSubMain = new System.Windows.Forms.TabControl();
             this.tpAntecedentes = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -195,11 +276,24 @@
             this.lblGes = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.General = new System.Windows.Forms.TabPage();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.txtVidaSexual = new System.Windows.Forms.TextBox();
+            this.txtNroCausa = new System.Windows.Forms.TextBox();
+            this.label142 = new System.Windows.Forms.Label();
+            this.label143 = new System.Windows.Forms.Label();
+            this.label144 = new System.Windows.Forms.Label();
+            this.txtNroAbortos = new System.Windows.Forms.TextBox();
+            this.txtNroParejasActuales = new System.Windows.Forms.TextBox();
+            this.label145 = new System.Windows.Forms.Label();
             this.gbAntGinecologicos = new System.Windows.Forms.GroupBox();
-            this.dtpMamografia = new System.Windows.Forms.DateTimePicker();
+            this.txtFechaUltimaMamo = new System.Windows.Forms.TextBox();
+            this.txtFechaUltimoPAP = new System.Windows.Forms.TextBox();
+            this.label146 = new System.Windows.Forms.Label();
+            this.txtResultadoMamo = new System.Windows.Forms.TextBox();
+            this.label147 = new System.Windows.Forms.Label();
+            this.txtResultadoPAP = new System.Windows.Forms.TextBox();
             this.txtGestapara = new System.Windows.Forms.TextBox();
             this.txtMenarquia = new System.Windows.Forms.TextBox();
-            this.dtpPAP = new System.Windows.Forms.DateTimePicker();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -237,12 +331,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardarAnamnesis = new System.Windows.Forms.Button();
             this.tpExam = new System.Windows.Forms.TabPage();
-            this.btnGuardarExamen = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tcExamList = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnPerson = new System.Windows.Forms.Button();
+            this.btnServiciosAnteriores = new System.Windows.Forms.Button();
+            this.btnGuardarExamen = new System.Windows.Forms.Button();
+            this.btnAddListaNerga = new System.Windows.Forms.Button();
             this.btnReceta = new System.Windows.Forms.Button();
+            this.btnAntecedentes = new System.Windows.Forms.Button();
             this.btnFichaMedica = new System.Windows.Forms.Button();
             this.btnVisorReporteExamen = new System.Windows.Forms.Button();
             this.BtnAnamnesis = new System.Windows.Forms.Button();
@@ -265,6 +363,7 @@
             this.tslFechaCrea = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslUsuarioAct = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslFechaAct = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblFecVctoGlobal = new System.Windows.Forms.Label();
             this.tpAnalisisDx = new System.Windows.Forms.TabPage();
             this.chkUtilizaFirmaControlAuditoria = new System.Windows.Forms.CheckBox();
             this.gbEdicionDiagnosticoTotal = new System.Windows.Forms.GroupBox();
@@ -300,6 +399,7 @@
             this.lblRecordCountTotalDiagnosticos = new System.Windows.Forms.Label();
             this.btnAceptarDX = new System.Windows.Forms.Button();
             this.tpConclusion = new System.Windows.Forms.TabPage();
+            this.btnSubirInterconsulta = new System.Windows.Forms.Button();
             this.btn7C = new System.Windows.Forms.Button();
             this.btnInterConsulta = new System.Windows.Forms.Button();
             this.btn312 = new System.Windows.Forms.Button();
@@ -307,7 +407,6 @@
             this.dptDateGlobalExp = new System.Windows.Forms.DateTimePicker();
             this.label34 = new System.Windows.Forms.Label();
             this.txtComentarioAptitud = new System.Windows.Forms.TextBox();
-            this.chkUtilizaFirmaAptitud = new System.Windows.Forms.CheckBox();
             this.gbRecomendaciones_Conclusiones = new System.Windows.Forms.GroupBox();
             this.lblRecordCountRecomendaciones_Conclusiones = new System.Windows.Forms.Label();
             this.grdRecomendaciones_Conclusiones = new Infragistics.Win.UltraWinGrid.UltraGrid();
@@ -318,6 +417,7 @@
             this.grdRestricciones_Conclusiones = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.btnAgregarRestriccion_ConclusionesTratamiento = new System.Windows.Forms.Button();
             this.btnRemoverRestricciones_ConclusionesTratamiento = new System.Windows.Forms.Button();
+            this.chkUtilizaFirmaAptitud = new System.Windows.Forms.CheckBox();
             this.gbConclusionesDiagnosticas = new System.Windows.Forms.GroupBox();
             this.grdConclusionesDiagnosticas = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.lblRecordCountConclusionesDiagnosticas = new System.Windows.Forms.Label();
@@ -327,11 +427,291 @@
             this.lbl3333 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.btnGuardarConclusiones = new System.Windows.Forms.Button();
-            this.btnAntecedentes = new System.Windows.Forms.Button();
-            this.lblFecVctoGlobal = new System.Windows.Forms.Label();
+            this.tpFormatoAtencionIntegral = new System.Windows.Forms.TabPage();
+            this.btnEliminarPlan = new System.Windows.Forms.Button();
+            this.grdCronicos = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.btnEditarPlan = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnNuevoPlan = new System.Windows.Forms.Button();
+            this.btnNuevoCronico = new System.Windows.Forms.Button();
+            this.grdPlanIntegral = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.btnEditarCronico = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
+            this.btnEliminarCronico = new System.Windows.Forms.Button();
+            this.btnEliminarAgudo = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.btnEditarAgudo = new System.Windows.Forms.Button();
+            this.btnNuevoAgudo = new System.Windows.Forms.Button();
+            this.grdAgudos = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.tpDatosAntecedentes = new System.Windows.Forms.TabPage();
+            this.tbcDatos = new System.Windows.Forms.TabControl();
+            this.tbpAdultoMayor = new System.Windows.Forms.TabPage();
+            this.label106 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
+            this.textFlujoVaginalPatológico = new System.Windows.Forms.TextBox();
+            this.textOtroAntecedentesFamiliares = new System.Windows.Forms.TextBox();
+            this.textReaccionAlergicaMedicamentos = new System.Windows.Forms.TextBox();
+            this.textMedicamentoFrecuenteDosis = new System.Windows.Forms.TextBox();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.pnlSexualidad = new System.Windows.Forms.Panel();
+            this.label56 = new System.Windows.Forms.Label();
+            this.txtAmInicioRs = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.txtAmNroPs = new System.Windows.Forms.TextBox();
+            this.pnlEmbarazo = new System.Windows.Forms.Panel();
+            this.btnEditarEmbarazo = new System.Windows.Forms.Button();
+            this.grdEmbarazos = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.label105 = new System.Windows.Forms.Label();
+            this.textObservacionesEmbarazo = new System.Windows.Forms.TextBox();
+            this.btnNuevoEmbarazo = new System.Windows.Forms.Button();
+            this.btnEliminarEmbarazo = new System.Windows.Forms.Button();
+            this.txtAmAborto = new System.Windows.Forms.TextBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.txtAmPrematuro = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.txtAmNroParto = new System.Windows.Forms.TextBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.txtAmCuidador = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.pnlMenarquia = new System.Windows.Forms.Panel();
+            this.label64 = new System.Windows.Forms.Label();
+            this.txtAmFechaUR = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.txtAmRC = new System.Windows.Forms.TextBox();
+            this.txtAmCuidadorEdad = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtAmCuidadorDni = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.tbpAdolescente = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.textViveConAdol = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textEdadAdol = new System.Windows.Forms.TextBox();
+            this.label103 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.textNombreCuidadorAdol = new System.Windows.Forms.TextBox();
+            this.textDniCuidadorAdol = new System.Windows.Forms.TextBox();
+            this.label100 = new System.Windows.Forms.Label();
+            this.label101 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label73 = new System.Windows.Forms.Label();
+            this.txtAdoNroTv = new System.Windows.Forms.TextBox();
+            this.txtAdoNroJuegos = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textObservacionesSexualidadAdol = new System.Windows.Forms.TextBox();
+            this.label104 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.txtAdoMenarquia = new System.Windows.Forms.TextBox();
+            this.txtAdoEdadRS = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label71 = new System.Windows.Forms.Label();
+            this.txtAdoEdadIniTrab = new System.Windows.Forms.TextBox();
+            this.txtAdoTipoTrab = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.tbpNinio = new System.Windows.Forms.TabPage();
+            this.ultgrboxVivienda = new Infragistics.Win.Misc.UltraExpandableGroupBox();
+            this.ultraExpandableGroupBoxPanel5 = new Infragistics.Win.Misc.UltraExpandableGroupBoxPanel();
+            this.textDesague = new System.Windows.Forms.TextBox();
+            this.label136 = new System.Windows.Forms.Label();
+            this.textAguaPotable = new System.Windows.Forms.TextBox();
+            this.label135 = new System.Windows.Forms.Label();
+            this.ultgrboxFamiliares = new Infragistics.Win.Misc.UltraExpandableGroupBox();
+            this.ultraExpandableGroupBoxPanel4 = new Infragistics.Win.Misc.UltraExpandableGroupBoxPanel();
+            this.label141 = new System.Windows.Forms.Label();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.textQuienHepatitisB = new System.Windows.Forms.TextBox();
+            this.rbNoHepatitis = new System.Windows.Forms.RadioButton();
+            this.rbSiHepatitis = new System.Windows.Forms.RadioButton();
+            this.label134 = new System.Windows.Forms.Label();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.textQuienDrogadiccion = new System.Windows.Forms.TextBox();
+            this.rbNoDrogadiccion = new System.Windows.Forms.RadioButton();
+            this.rbSiDrogadiccion = new System.Windows.Forms.RadioButton();
+            this.label133 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.textQuienAlcoholismo = new System.Windows.Forms.TextBox();
+            this.rbNoAlcoholismo = new System.Windows.Forms.RadioButton();
+            this.rbSiAlcoholismo = new System.Windows.Forms.RadioButton();
+            this.label132 = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.textQuienViolenciaFamiliar = new System.Windows.Forms.TextBox();
+            this.rbNoViolencia = new System.Windows.Forms.RadioButton();
+            this.rbSiViolencia = new System.Windows.Forms.RadioButton();
+            this.label131 = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.textQuienAlergias = new System.Windows.Forms.TextBox();
+            this.rbNoAlergia = new System.Windows.Forms.RadioButton();
+            this.rbSiAlergia = new System.Windows.Forms.RadioButton();
+            this.label130 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textQuienEpilepsia = new System.Windows.Forms.TextBox();
+            this.rbNoEpilepsia = new System.Windows.Forms.RadioButton();
+            this.rbSiEpilepsia = new System.Windows.Forms.RadioButton();
+            this.label129 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.textQuienDiabetes = new System.Windows.Forms.TextBox();
+            this.rbNoDiabetes = new System.Windows.Forms.RadioButton();
+            this.rbSiDiabetes = new System.Windows.Forms.RadioButton();
+            this.label128 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textQuienVIH = new System.Windows.Forms.TextBox();
+            this.rbNoVih = new System.Windows.Forms.RadioButton();
+            this.rbSiVih = new System.Windows.Forms.RadioButton();
+            this.label127 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textQuienASMA = new System.Windows.Forms.TextBox();
+            this.rbNoAsma = new System.Windows.Forms.RadioButton();
+            this.rbSiAsma = new System.Windows.Forms.RadioButton();
+            this.label95 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textQuienTuberculosis = new System.Windows.Forms.TextBox();
+            this.rbNoTuberculosis = new System.Windows.Forms.RadioButton();
+            this.rbSiTuberculosis = new System.Windows.Forms.RadioButton();
+            this.label162 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.ultgrboxNacimiento = new Infragistics.Win.Misc.UltraExpandableGroupBox();
+            this.ultraExpandableGroupBoxPanel3 = new Infragistics.Win.Misc.UltraExpandableGroupBoxPanel();
+            this.textOtrosAntecedentes = new System.Windows.Forms.TextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.textAlergiaMedicamentos = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.textPerimetroToracico = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.textPerimetroCefalico = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.textTallaNacer = new System.Windows.Forms.TextBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.textPesoNacer = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.textEdadNacer = new System.Windows.Forms.TextBox();
+            this.label88 = new System.Windows.Forms.Label();
+            this.txtInicioAlimentación = new System.Windows.Forms.TextBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.textTiempoHospit = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.textEspecificacionesNacer = new System.Windows.Forms.TextBox();
+            this.label84 = new System.Windows.Forms.Label();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.ultgrboxEmbarazo = new Infragistics.Win.Misc.UltraExpandableGroupBox();
+            this.ultraExpandableGroupBoxPanel1 = new Infragistics.Win.Misc.UltraExpandableGroupBoxPanel();
+            this.textQuienAtendio = new System.Windows.Forms.TextBox();
+            this.label83 = new System.Windows.Forms.Label();
+            this.textComplicacionesParto = new System.Windows.Forms.TextBox();
+            this.label82 = new System.Windows.Forms.Label();
+            this.textLugarAPN = new System.Windows.Forms.TextBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.txtAPN = new System.Windows.Forms.TextBox();
+            this.label80 = new System.Windows.Forms.Label();
+            this.txtNEmbarazo = new System.Windows.Forms.TextBox();
+            this.textPatologiasGestacion = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.ultgrboxDatosFamiliares = new Infragistics.Win.Misc.UltraExpandableGroupBox();
+            this.ultraExpandableGroupBoxPanel2 = new Infragistics.Win.Misc.UltraExpandableGroupBoxPanel();
+            this.label140 = new System.Windows.Forms.Label();
+            this.txtDNIMadrePadreResponsable = new System.Windows.Forms.TextBox();
+            this.label137 = new System.Windows.Forms.Label();
+            this.txtEdadMadrePadreResponsable = new System.Windows.Forms.TextBox();
+            this.label138 = new System.Windows.Forms.Label();
+            this.label139 = new System.Windows.Forms.Label();
+            this.txtNombreMadrePadreResponsable = new System.Windows.Forms.TextBox();
+            this.listaEstadoCivilHombre = new System.Windows.Forms.ComboBox();
+            this.listaEstadoCivilMujer = new System.Windows.Forms.ComboBox();
+            this.listaGradoInstruccionHombre = new System.Windows.Forms.ComboBox();
+            this.listaGradoInstruccionMujer = new System.Windows.Forms.ComboBox();
+            this.listTipoAfiliacionHombre = new System.Windows.Forms.ComboBox();
+            this.listTipoAfiliacionMujer = new System.Windows.Forms.ComboBox();
+            this.txtReligionPadre = new System.Windows.Forms.TextBox();
+            this.label109 = new System.Windows.Forms.Label();
+            this.txtOcupacionPadre = new System.Windows.Forms.TextBox();
+            this.label110 = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
+            this.label112 = new System.Windows.Forms.Label();
+            this.label113 = new System.Windows.Forms.Label();
+            this.txtAfiliacionPadre = new System.Windows.Forms.TextBox();
+            this.label114 = new System.Windows.Forms.Label();
+            this.txtDNIPadre = new System.Windows.Forms.TextBox();
+            this.label115 = new System.Windows.Forms.Label();
+            this.txtEdadPadre = new System.Windows.Forms.TextBox();
+            this.label116 = new System.Windows.Forms.Label();
+            this.label117 = new System.Windows.Forms.Label();
+            this.txtNombrePadreTutor = new System.Windows.Forms.TextBox();
+            this.txtReligionMadre = new System.Windows.Forms.TextBox();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.txtOcupacionMadre = new System.Windows.Forms.TextBox();
+            this.label120 = new System.Windows.Forms.Label();
+            this.label121 = new System.Windows.Forms.Label();
+            this.label122 = new System.Windows.Forms.Label();
+            this.txtAfiliacionMadre = new System.Windows.Forms.TextBox();
+            this.label123 = new System.Windows.Forms.Label();
+            this.txtDNIMadre = new System.Windows.Forms.TextBox();
+            this.label124 = new System.Windows.Forms.Label();
+            this.txtEdadMadre = new System.Windows.Forms.TextBox();
+            this.label125 = new System.Windows.Forms.Label();
+            this.label126 = new System.Windows.Forms.Label();
+            this.txtNombreMadreTutor = new System.Windows.Forms.TextBox();
+            this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblDni = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.txtCentroEducativo = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.ddlBloodFactorId = new System.Windows.Forms.ComboBox();
+            this.ddlBloodGroupId = new System.Windows.Forms.ComboBox();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.txtOcupacion = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.cboEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.txtHijosVivos = new System.Windows.Forms.TextBox();
+            this.cboGradoInstruccion = new System.Windows.Forms.ComboBox();
+            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
+            this.txtProcedencia = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.txtLugarNacimiento = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.cboGenero = new System.Windows.Forms.ComboBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.ultraGrid1 = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.btnGuardarAntecedentes = new System.Windows.Forms.Button();
+            this.ultraGrid2 = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.label60 = new System.Windows.Forms.Label();
+            this.txtDescripcionAntecedentes = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.tpCuidadosPreventivos = new System.Windows.Forms.TabPage();
+            this.btnGuardarCuidadosPreventivos = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gbDatosPaciente = new System.Windows.Forms.GroupBox();
-            this.btnServiciosAnteriores = new System.Windows.Forms.Button();
-            this.btnAddListaNerga = new System.Windows.Forms.Button();
             this.lblPuesto = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
@@ -354,6 +734,10 @@
             this.pnlLeftPrincipal = new System.Windows.Forms.Panel();
             this.bgwSaveExamen = new System.ComponentModel.BackgroundWorker();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.dsInformeEcograficoRenal1 = new Sigesoft.Node.WinClient.UI.Dataset.dsInformeEcograficoRenal();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.ultraDataSource1 = new Infragistics.Win.UltraWinDataSource.UltraDataSource(this.components);
             this.tcSubMain.SuspendLayout();
             this.tpAntecedentes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -367,6 +751,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdServiciosAnteriores)).BeginInit();
             this.cmVerServicioAnterior.SuspendLayout();
             this.General.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             this.gbAntGinecologicos.SuspendLayout();
             this.gbFuncionesBiologicas.SuspendLayout();
             this.gbSintomasySignos.SuspendLayout();
@@ -397,12 +782,62 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdRestricciones_Conclusiones)).BeginInit();
             this.gbConclusionesDiagnosticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdConclusionesDiagnosticas)).BeginInit();
+            this.tpFormatoAtencionIntegral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCronicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPlanIntegral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAgudos)).BeginInit();
+            this.tpDatosAntecedentes.SuspendLayout();
+            this.tbcDatos.SuspendLayout();
+            this.tbpAdultoMayor.SuspendLayout();
+            this.pnlSexualidad.SuspendLayout();
+            this.pnlEmbarazo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdEmbarazos)).BeginInit();
+            this.pnlMenarquia.SuspendLayout();
+            this.tbpAdolescente.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tbpNinio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxVivienda)).BeginInit();
+            this.ultgrboxVivienda.SuspendLayout();
+            this.ultraExpandableGroupBoxPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxFamiliares)).BeginInit();
+            this.ultgrboxFamiliares.SuspendLayout();
+            this.ultraExpandableGroupBoxPanel4.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxNacimiento)).BeginInit();
+            this.ultgrboxNacimiento.SuspendLayout();
+            this.ultraExpandableGroupBoxPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxEmbarazo)).BeginInit();
+            this.ultgrboxEmbarazo.SuspendLayout();
+            this.ultraExpandableGroupBoxPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxDatosFamiliares)).BeginInit();
+            this.ultgrboxDatosFamiliares.SuspendLayout();
+            this.ultraExpandableGroupBoxPanel2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGrid2)).BeginInit();
+            this.tpCuidadosPreventivos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbDatosPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvExamen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvAnamnesis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvAnalisisDx)).BeginInit();
             this.pnlLeftPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInformeEcograficoRenal1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tcSubMain
@@ -412,10 +847,14 @@
             this.tcSubMain.Controls.Add(this.tpExam);
             this.tcSubMain.Controls.Add(this.tpAnalisisDx);
             this.tcSubMain.Controls.Add(this.tpConclusion);
-            this.tcSubMain.Location = new System.Drawing.Point(12, 78);
+            this.tcSubMain.Controls.Add(this.tpFormatoAtencionIntegral);
+            this.tcSubMain.Controls.Add(this.tpDatosAntecedentes);
+            this.tcSubMain.Controls.Add(this.tpCuidadosPreventivos);
+            this.tcSubMain.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcSubMain.Location = new System.Drawing.Point(12, 41);
             this.tcSubMain.Name = "tcSubMain";
             this.tcSubMain.SelectedIndex = 0;
-            this.tcSubMain.Size = new System.Drawing.Size(1271, 558);
+            this.tcSubMain.Size = new System.Drawing.Size(1329, 672);
             this.tcSubMain.TabIndex = 0;
             // 
             // tpAntecedentes
@@ -424,7 +863,7 @@
             this.tpAntecedentes.Location = new System.Drawing.Point(4, 22);
             this.tpAntecedentes.Name = "tpAntecedentes";
             this.tpAntecedentes.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAntecedentes.Size = new System.Drawing.Size(1263, 532);
+            this.tpAntecedentes.Size = new System.Drawing.Size(1321, 646);
             this.tpAntecedentes.TabIndex = 5;
             this.tpAntecedentes.Text = "ANTECEDENTES";
             this.tpAntecedentes.UseVisualStyleBackColor = true;
@@ -472,7 +911,7 @@
             this.btnVerEditarAntecedentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerEditarAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerEditarAntecedentes.ForeColor = System.Drawing.Color.Black;
-            this.btnVerEditarAntecedentes.Image = global::Sigesoft.Node.WinClient.UI.Resources.book_open;
+            this.btnVerEditarAntecedentes.Image = ((System.Drawing.Image)(resources.GetObject("btnVerEditarAntecedentes.Image")));
             this.btnVerEditarAntecedentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerEditarAntecedentes.Location = new System.Drawing.Point(450, 19);
             this.btnVerEditarAntecedentes.Margin = new System.Windows.Forms.Padding(2);
@@ -495,22 +934,22 @@
             appearance1.BackColor2 = System.Drawing.Color.Silver;
             appearance1.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
             this.grdAntecedentes.DisplayLayout.Appearance = appearance1;
-            ultraGridColumn90.Header.Caption = "Tipo de Ant.";
-            ultraGridColumn90.Header.VisiblePosition = 1;
-            ultraGridColumn90.Width = 196;
-            ultraGridColumn91.Header.Caption = "Fecha / Grupo";
-            ultraGridColumn91.Header.VisiblePosition = 0;
-            ultraGridColumn91.Width = 113;
-            ultraGridColumn92.Header.VisiblePosition = 2;
-            ultraGridColumn92.Hidden = true;
-            ultraGridColumn93.Header.Caption = "Descripción";
-            ultraGridColumn93.Header.VisiblePosition = 3;
-            ultraGridColumn93.Width = 646;
+            ultraGridColumn40.Header.Caption = "Tipo de Ant.";
+            ultraGridColumn40.Header.VisiblePosition = 1;
+            ultraGridColumn40.Width = 196;
+            ultraGridColumn41.Header.Caption = "Fecha / Grupo";
+            ultraGridColumn41.Header.VisiblePosition = 0;
+            ultraGridColumn41.Width = 113;
+            ultraGridColumn42.Header.VisiblePosition = 2;
+            ultraGridColumn42.Hidden = true;
+            ultraGridColumn43.Header.Caption = "Descripción";
+            ultraGridColumn43.Header.VisiblePosition = 3;
+            ultraGridColumn43.Width = 646;
             ultraGridBand1.Columns.AddRange(new object[] {
-            ultraGridColumn90,
-            ultraGridColumn91,
-            ultraGridColumn92,
-            ultraGridColumn93});
+            ultraGridColumn40,
+            ultraGridColumn41,
+            ultraGridColumn42,
+            ultraGridColumn43});
             this.grdAntecedentes.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
             this.grdAntecedentes.DisplayLayout.InterBandSpacing = 10;
             this.grdAntecedentes.DisplayLayout.MaxColScrollRegions = 1;
@@ -572,13 +1011,13 @@
             this.cmAntecedentes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuGridAntecedent});
             this.cmAntecedentes.Name = "contextMenuStrip1";
-            this.cmAntecedentes.Size = new System.Drawing.Size(167, 26);
+            this.cmAntecedentes.Size = new System.Drawing.Size(166, 26);
             // 
             // mnuGridAntecedent
             // 
-            this.mnuGridAntecedent.Image = global::Sigesoft.Node.WinClient.UI.Resources.book_open;
+            this.mnuGridAntecedent.Image = ((System.Drawing.Image)(resources.GetObject("mnuGridAntecedent.Image")));
             this.mnuGridAntecedent.Name = "mnuGridAntecedent";
-            this.mnuGridAntecedent.Size = new System.Drawing.Size(166, 22);
+            this.mnuGridAntecedent.Size = new System.Drawing.Size(165, 22);
             this.mnuGridAntecedent.Text = "Ver Antecedentes";
             this.mnuGridAntecedent.Click += new System.EventHandler(this.mnuGridAntecedent_Click);
             // 
@@ -611,7 +1050,7 @@
             this.btnVerServicioAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerServicioAnterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerServicioAnterior.ForeColor = System.Drawing.Color.Black;
-            this.btnVerServicioAnterior.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_osx_start;
+            this.btnVerServicioAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnVerServicioAnterior.Image")));
             this.btnVerServicioAnterior.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerServicioAnterior.Location = new System.Drawing.Point(393, 16);
             this.btnVerServicioAnterior.Margin = new System.Windows.Forms.Padding(2);
@@ -634,22 +1073,22 @@
             appearance8.BackColor2 = System.Drawing.Color.Silver;
             appearance8.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
             this.grdServiciosAnteriores.DisplayLayout.Appearance = appearance8;
-            ultraGridColumn94.Header.VisiblePosition = 0;
-            ultraGridColumn94.Hidden = true;
-            ultraGridColumn95.Header.Caption = "Servicio";
-            ultraGridColumn95.Header.VisiblePosition = 2;
-            ultraGridColumn95.Width = 169;
-            ultraGridColumn96.Header.Caption = "Fecha";
-            ultraGridColumn96.Header.VisiblePosition = 1;
-            ultraGridColumn96.Width = 71;
-            ultraGridColumn97.Header.Caption = "Diagnóstico";
-            ultraGridColumn97.Header.VisiblePosition = 3;
-            ultraGridColumn97.Width = 348;
+            ultraGridColumn82.Header.VisiblePosition = 0;
+            ultraGridColumn82.Hidden = true;
+            ultraGridColumn83.Header.Caption = "Servicio";
+            ultraGridColumn83.Header.VisiblePosition = 2;
+            ultraGridColumn83.Width = 169;
+            ultraGridColumn84.Header.Caption = "Fecha";
+            ultraGridColumn84.Header.VisiblePosition = 1;
+            ultraGridColumn84.Width = 71;
+            ultraGridColumn85.Header.Caption = "Diagnóstico";
+            ultraGridColumn85.Header.VisiblePosition = 3;
+            ultraGridColumn85.Width = 348;
             ultraGridBand2.Columns.AddRange(new object[] {
-            ultraGridColumn94,
-            ultraGridColumn95,
-            ultraGridColumn96,
-            ultraGridColumn97});
+            ultraGridColumn82,
+            ultraGridColumn83,
+            ultraGridColumn84,
+            ultraGridColumn85});
             this.grdServiciosAnteriores.DisplayLayout.BandsSerializer.Add(ultraGridBand2);
             this.grdServiciosAnteriores.DisplayLayout.InterBandSpacing = 10;
             this.grdServiciosAnteriores.DisplayLayout.MaxColScrollRegions = 1;
@@ -713,13 +1152,13 @@
             this.cmVerServicioAnterior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuVerServicio});
             this.cmVerServicioAnterior.Name = "contextMenuStrip1";
-            this.cmVerServicioAnterior.Size = new System.Drawing.Size(136, 26);
+            this.cmVerServicioAnterior.Size = new System.Drawing.Size(135, 26);
             // 
             // mnuVerServicio
             // 
-            this.mnuVerServicio.Image = global::Sigesoft.Node.WinClient.UI.Resources.play_green;
+            this.mnuVerServicio.Image = ((System.Drawing.Image)(resources.GetObject("mnuVerServicio.Image")));
             this.mnuVerServicio.Name = "mnuVerServicio";
-            this.mnuVerServicio.Size = new System.Drawing.Size(135, 22);
+            this.mnuVerServicio.Size = new System.Drawing.Size(134, 22);
             this.mnuVerServicio.Text = "Ver Servicio";
             this.mnuVerServicio.Click += new System.EventHandler(this.mnuVerServicio_Click);
             // 
@@ -749,6 +1188,7 @@
             // 
             // General
             // 
+            this.General.Controls.Add(this.groupBox15);
             this.General.Controls.Add(this.gbAntGinecologicos);
             this.General.Controls.Add(this.gbFuncionesBiologicas);
             this.General.Controls.Add(this.gbSintomasySignos);
@@ -756,17 +1196,118 @@
             this.General.Location = new System.Drawing.Point(4, 22);
             this.General.Name = "General";
             this.General.Padding = new System.Windows.Forms.Padding(3);
-            this.General.Size = new System.Drawing.Size(1263, 532);
+            this.General.Size = new System.Drawing.Size(1321, 646);
             this.General.TabIndex = 0;
             this.General.Text = "ANAMNESIS";
             this.General.UseVisualStyleBackColor = true;
             // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.txtVidaSexual);
+            this.groupBox15.Controls.Add(this.txtNroCausa);
+            this.groupBox15.Controls.Add(this.label142);
+            this.groupBox15.Controls.Add(this.label143);
+            this.groupBox15.Controls.Add(this.label144);
+            this.groupBox15.Controls.Add(this.txtNroAbortos);
+            this.groupBox15.Controls.Add(this.txtNroParejasActuales);
+            this.groupBox15.Controls.Add(this.label145);
+            this.groupBox15.Location = new System.Drawing.Point(29, 493);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(1171, 69);
+            this.groupBox15.TabIndex = 71;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Antecedentes de Reproducción";
+            // 
+            // txtVidaSexual
+            // 
+            this.txtVidaSexual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVidaSexual.Location = new System.Drawing.Point(135, 28);
+            this.txtVidaSexual.MaxLength = 100;
+            this.txtVidaSexual.Name = "txtVidaSexual";
+            this.txtVidaSexual.Size = new System.Drawing.Size(88, 20);
+            this.txtVidaSexual.TabIndex = 62;
+            // 
+            // txtNroCausa
+            // 
+            this.txtNroCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroCausa.Location = new System.Drawing.Point(823, 28);
+            this.txtNroCausa.MaxLength = 100;
+            this.txtNroCausa.Name = "txtNroCausa";
+            this.txtNroCausa.Size = new System.Drawing.Size(290, 20);
+            this.txtNroCausa.TabIndex = 69;
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label142.ForeColor = System.Drawing.Color.Black;
+            this.label142.Location = new System.Drawing.Point(19, 31);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(106, 13);
+            this.label142.TabIndex = 61;
+            this.label142.Text = "Inicio de Vida Sexual";
+            // 
+            // label143
+            // 
+            this.label143.AutoSize = true;
+            this.label143.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label143.ForeColor = System.Drawing.Color.Black;
+            this.label143.Location = new System.Drawing.Point(734, 31);
+            this.label143.Name = "label143";
+            this.label143.Size = new System.Drawing.Size(83, 13);
+            this.label143.TabIndex = 68;
+            this.label143.Text = "Precisar Causas";
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label144.ForeColor = System.Drawing.Color.Black;
+            this.label144.Location = new System.Drawing.Point(248, 31);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(109, 13);
+            this.label144.TabIndex = 64;
+            this.label144.Text = "Nro. Parejas Actuales";
+            // 
+            // txtNroAbortos
+            // 
+            this.txtNroAbortos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroAbortos.Location = new System.Drawing.Point(563, 28);
+            this.txtNroAbortos.MaxLength = 100;
+            this.txtNroAbortos.Name = "txtNroAbortos";
+            this.txtNroAbortos.Size = new System.Drawing.Size(88, 20);
+            this.txtNroAbortos.TabIndex = 67;
+            // 
+            // txtNroParejasActuales
+            // 
+            this.txtNroParejasActuales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNroParejasActuales.Location = new System.Drawing.Point(364, 28);
+            this.txtNroParejasActuales.MaxLength = 100;
+            this.txtNroParejasActuales.Name = "txtNroParejasActuales";
+            this.txtNroParejasActuales.Size = new System.Drawing.Size(88, 20);
+            this.txtNroParejasActuales.TabIndex = 65;
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label145.ForeColor = System.Drawing.Color.Black;
+            this.label145.Location = new System.Drawing.Point(476, 31);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(81, 13);
+            this.label145.TabIndex = 66;
+            this.label145.Text = "Nro. de Abortos";
+            // 
             // gbAntGinecologicos
             // 
-            this.gbAntGinecologicos.Controls.Add(this.dtpMamografia);
+            this.gbAntGinecologicos.Controls.Add(this.txtFechaUltimaMamo);
+            this.gbAntGinecologicos.Controls.Add(this.txtFechaUltimoPAP);
+            this.gbAntGinecologicos.Controls.Add(this.label146);
+            this.gbAntGinecologicos.Controls.Add(this.txtResultadoMamo);
+            this.gbAntGinecologicos.Controls.Add(this.label147);
+            this.gbAntGinecologicos.Controls.Add(this.txtResultadoPAP);
             this.gbAntGinecologicos.Controls.Add(this.txtGestapara);
             this.gbAntGinecologicos.Controls.Add(this.txtMenarquia);
-            this.gbAntGinecologicos.Controls.Add(this.dtpPAP);
             this.gbAntGinecologicos.Controls.Add(this.label35);
             this.gbAntGinecologicos.Controls.Add(this.label36);
             this.gbAntGinecologicos.Controls.Add(this.label22);
@@ -783,25 +1324,64 @@
             this.gbAntGinecologicos.ForeColor = System.Drawing.Color.MediumBlue;
             this.gbAntGinecologicos.Location = new System.Drawing.Point(38, 321);
             this.gbAntGinecologicos.Name = "gbAntGinecologicos";
-            this.gbAntGinecologicos.Size = new System.Drawing.Size(1171, 121);
+            this.gbAntGinecologicos.Size = new System.Drawing.Size(1171, 166);
             this.gbAntGinecologicos.TabIndex = 61;
             this.gbAntGinecologicos.TabStop = false;
             this.gbAntGinecologicos.Text = "Antecedentes Ginecológicos";
             // 
-            // dtpMamografia
+            // txtFechaUltimaMamo
             // 
-            this.dtpMamografia.Checked = false;
-            this.dtpMamografia.CustomFormat = "MM/yyyy";
-            this.dtpMamografia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpMamografia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMamografia.Location = new System.Drawing.Point(946, 46);
-            this.dtpMamografia.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpMamografia.Name = "dtpMamografia";
-            this.dtpMamografia.ShowCheckBox = true;
-            this.dtpMamografia.ShowUpDown = true;
-            this.dtpMamografia.Size = new System.Drawing.Size(177, 20);
-            this.dtpMamografia.TabIndex = 32;
-            this.dtpMamografia.Visible = false;
+            this.txtFechaUltimaMamo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaUltimaMamo.Location = new System.Drawing.Point(947, 46);
+            this.txtFechaUltimaMamo.Name = "txtFechaUltimaMamo";
+            this.txtFechaUltimaMamo.Size = new System.Drawing.Size(194, 20);
+            this.txtFechaUltimaMamo.TabIndex = 46;
+            // 
+            // txtFechaUltimoPAP
+            // 
+            this.txtFechaUltimoPAP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaUltimoPAP.Location = new System.Drawing.Point(947, 20);
+            this.txtFechaUltimoPAP.Name = "txtFechaUltimoPAP";
+            this.txtFechaUltimoPAP.Size = new System.Drawing.Size(194, 20);
+            this.txtFechaUltimoPAP.TabIndex = 45;
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label146.ForeColor = System.Drawing.Color.Black;
+            this.label146.Location = new System.Drawing.Point(787, 109);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(131, 13);
+            this.label146.TabIndex = 43;
+            this.label146.Text = "Resultado de MAmografía";
+            // 
+            // txtResultadoMamo
+            // 
+            this.txtResultadoMamo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultadoMamo.Location = new System.Drawing.Point(929, 109);
+            this.txtResultadoMamo.Name = "txtResultadoMamo";
+            this.txtResultadoMamo.Size = new System.Drawing.Size(194, 20);
+            this.txtResultadoMamo.TabIndex = 44;
+            // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label147.ForeColor = System.Drawing.Color.Black;
+            this.label147.Location = new System.Drawing.Point(780, 86);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(96, 13);
+            this.label147.TabIndex = 41;
+            this.label147.Text = "Resultado del PAP";
+            // 
+            // txtResultadoPAP
+            // 
+            this.txtResultadoPAP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultadoPAP.Location = new System.Drawing.Point(929, 83);
+            this.txtResultadoPAP.Name = "txtResultadoPAP";
+            this.txtResultadoPAP.Size = new System.Drawing.Size(194, 20);
+            this.txtResultadoPAP.TabIndex = 42;
             // 
             // txtGestapara
             // 
@@ -819,21 +1399,6 @@
             this.txtMenarquia.Name = "txtMenarquia";
             this.txtMenarquia.Size = new System.Drawing.Size(194, 20);
             this.txtMenarquia.TabIndex = 30;
-            // 
-            // dtpPAP
-            // 
-            this.dtpPAP.Checked = false;
-            this.dtpPAP.CustomFormat = "MM/yyyy";
-            this.dtpPAP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpPAP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPAP.Location = new System.Drawing.Point(946, 14);
-            this.dtpPAP.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpPAP.Name = "dtpPAP";
-            this.dtpPAP.ShowCheckBox = true;
-            this.dtpPAP.ShowUpDown = true;
-            this.dtpPAP.Size = new System.Drawing.Size(177, 20);
-            this.dtpPAP.TabIndex = 29;
-            this.dtpPAP.Visible = false;
             // 
             // label35
             // 
@@ -1241,9 +1806,9 @@
             this.btnGuardarAnamnesis.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnGuardarAnamnesis.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnGuardarAnamnesis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarAnamnesis.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_save;
+            this.btnGuardarAnamnesis.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarAnamnesis.Image")));
             this.btnGuardarAnamnesis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarAnamnesis.Location = new System.Drawing.Point(1079, 459);
+            this.btnGuardarAnamnesis.Location = new System.Drawing.Point(1079, 567);
             this.btnGuardarAnamnesis.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarAnamnesis.Name = "btnGuardarAnamnesis";
             this.btnGuardarAnamnesis.Size = new System.Drawing.Size(130, 24);
@@ -1254,36 +1819,17 @@
             // 
             // tpExam
             // 
-            this.tpExam.Controls.Add(this.btnGuardarExamen);
             this.tpExam.Controls.Add(this.splitContainer2);
             this.tpExam.Controls.Add(this.statusStrip1);
+            this.tpExam.Controls.Add(this.lblFecVctoGlobal);
             this.tpExam.Location = new System.Drawing.Point(4, 22);
             this.tpExam.Name = "tpExam";
             this.tpExam.Padding = new System.Windows.Forms.Padding(3);
-            this.tpExam.Size = new System.Drawing.Size(1263, 532);
+            this.tpExam.Size = new System.Drawing.Size(1321, 646);
             this.tpExam.TabIndex = 1;
             this.tpExam.Text = "EXÁMENES";
             this.tpExam.ToolTipText = "EXAMENES";
             this.tpExam.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardarExamen
-            // 
-            this.btnGuardarExamen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardarExamen.BackColor = System.Drawing.SystemColors.Control;
-            this.btnGuardarExamen.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnGuardarExamen.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnGuardarExamen.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnGuardarExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarExamen.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_save;
-            this.btnGuardarExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarExamen.Location = new System.Drawing.Point(983, 503);
-            this.btnGuardarExamen.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGuardarExamen.Name = "btnGuardarExamen";
-            this.btnGuardarExamen.Size = new System.Drawing.Size(272, 24);
-            this.btnGuardarExamen.TabIndex = 60;
-            this.btnGuardarExamen.Text = "      Guardar";
-            this.btnGuardarExamen.UseVisualStyleBackColor = false;
-            this.btnGuardarExamen.Click += new System.EventHandler(this.btnGuardarExamen_Click);
             // 
             // splitContainer2
             // 
@@ -1300,8 +1846,8 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer2.Panel2.Controls.Add(this.gbDiagnosticoExamen);
-            this.splitContainer2.Size = new System.Drawing.Size(1246, 494);
-            this.splitContainer2.SplitterDistance = 307;
+            this.splitContainer2.Size = new System.Drawing.Size(1355, 578);
+            this.splitContainer2.SplitterDistance = 420;
             this.splitContainer2.TabIndex = 59;
             // 
             // tcExamList
@@ -1313,7 +1859,7 @@
             this.tcExamList.Location = new System.Drawing.Point(12, 11);
             this.tcExamList.Name = "tcExamList";
             this.tcExamList.SharedControlsPage = this.ultraTabSharedControlsPage1;
-            this.tcExamList.Size = new System.Drawing.Size(1227, 289);
+            this.tcExamList.Size = new System.Drawing.Size(1301, 390);
             this.tcExamList.TabIndex = 0;
             this.tcExamList.TabOrientation = Infragistics.Win.UltraWinTabs.TabOrientation.LeftTop;
             this.tcExamList.TextOrientation = Infragistics.Win.UltraWinTabs.TextOrientation.Horizontal;
@@ -1323,15 +1869,22 @@
             // 
             // ultraTabSharedControlsPage1
             // 
+            this.ultraTabSharedControlsPage1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(20, 1);
             this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
-            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(1206, 287);
+            this.ultraTabSharedControlsPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(1280, 388);
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.btnPerson);
+            this.groupBox4.Controls.Add(this.btnServiciosAnteriores);
+            this.groupBox4.Controls.Add(this.btnGuardarExamen);
+            this.groupBox4.Controls.Add(this.btnAddListaNerga);
             this.groupBox4.Controls.Add(this.btnReceta);
+            this.groupBox4.Controls.Add(this.btnAntecedentes);
             this.groupBox4.Controls.Add(this.btnFichaMedica);
             this.groupBox4.Controls.Add(this.btnVisorReporteExamen);
             this.groupBox4.Controls.Add(this.BtnAnamnesis);
@@ -1343,32 +1896,134 @@
             this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Controls.Add(this.cbTipoProcedenciaExamen);
             this.groupBox4.Controls.Add(this.txtComentario);
-            this.groupBox4.Location = new System.Drawing.Point(609, 7);
+            this.groupBox4.Location = new System.Drawing.Point(641, -4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(620, 165);
+            this.groupBox4.Size = new System.Drawing.Size(664, 202);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
+            // 
+            // btnPerson
+            // 
+            this.btnPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPerson.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPerson.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerson.Location = new System.Drawing.Point(374, 121);
+            this.btnPerson.Name = "btnPerson";
+            this.btnPerson.Size = new System.Drawing.Size(272, 33);
+            this.btnPerson.TabIndex = 98;
+            this.btnPerson.Text = "Ver Datos Generales";
+            this.btnPerson.UseVisualStyleBackColor = false;
+            this.btnPerson.Click += new System.EventHandler(this.btnPerson_Click);
+            // 
+            // btnServiciosAnteriores
+            // 
+            this.btnServiciosAnteriores.BackColor = System.Drawing.SystemColors.Control;
+            this.btnServiciosAnteriores.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnServiciosAnteriores.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnServiciosAnteriores.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnServiciosAnteriores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServiciosAnteriores.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServiciosAnteriores.ForeColor = System.Drawing.Color.Black;
+            this.btnServiciosAnteriores.Image = ((System.Drawing.Image)(resources.GetObject("btnServiciosAnteriores.Image")));
+            this.btnServiciosAnteriores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnServiciosAnteriores.Location = new System.Drawing.Point(349, 128);
+            this.btnServiciosAnteriores.Margin = new System.Windows.Forms.Padding(2);
+            this.btnServiciosAnteriores.Name = "btnServiciosAnteriores";
+            this.btnServiciosAnteriores.Size = new System.Drawing.Size(113, 24);
+            this.btnServiciosAnteriores.TabIndex = 96;
+            this.btnServiciosAnteriores.Text = "Servicios Anteriores";
+            this.btnServiciosAnteriores.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnServiciosAnteriores.UseVisualStyleBackColor = false;
+            this.btnServiciosAnteriores.Visible = false;
+            this.btnServiciosAnteriores.Click += new System.EventHandler(this.btnServiciosAnteriores_Click);
+            // 
+            // btnGuardarExamen
+            // 
+            this.btnGuardarExamen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGuardarExamen.BackColor = System.Drawing.SystemColors.Control;
+            this.btnGuardarExamen.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnGuardarExamen.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnGuardarExamen.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnGuardarExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarExamen.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarExamen.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarExamen.Image")));
+            this.btnGuardarExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarExamen.Location = new System.Drawing.Point(374, 43);
+            this.btnGuardarExamen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardarExamen.Name = "btnGuardarExamen";
+            this.btnGuardarExamen.Size = new System.Drawing.Size(272, 36);
+            this.btnGuardarExamen.TabIndex = 60;
+            this.btnGuardarExamen.Text = "      Guardar";
+            this.btnGuardarExamen.UseVisualStyleBackColor = false;
+            this.btnGuardarExamen.Click += new System.EventHandler(this.btnGuardarExamen_Click);
+            // 
+            // btnAddListaNerga
+            // 
+            this.btnAddListaNerga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddListaNerga.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddListaNerga.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAddListaNerga.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAddListaNerga.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnAddListaNerga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddListaNerga.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddListaNerga.ForeColor = System.Drawing.Color.Black;
+            this.btnAddListaNerga.Image = ((System.Drawing.Image)(resources.GetObject("btnAddListaNerga.Image")));
+            this.btnAddListaNerga.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddListaNerga.Location = new System.Drawing.Point(359, 126);
+            this.btnAddListaNerga.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddListaNerga.Name = "btnAddListaNerga";
+            this.btnAddListaNerga.Size = new System.Drawing.Size(146, 25);
+            this.btnAddListaNerga.TabIndex = 94;
+            this.btnAddListaNerga.Text = "Lista Negra";
+            this.btnAddListaNerga.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddListaNerga.UseVisualStyleBackColor = false;
+            this.btnAddListaNerga.Visible = false;
+            this.btnAddListaNerga.Click += new System.EventHandler(this.btnAddListaNerga_Click);
             // 
             // btnReceta
             // 
             this.btnReceta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnReceta.BackColor = System.Drawing.SystemColors.Control;
+            this.btnReceta.Enabled = false;
             this.btnReceta.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnReceta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnReceta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnReceta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReceta.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReceta.ForeColor = System.Drawing.Color.Black;
-            this.btnReceta.Image = global::Sigesoft.Node.WinClient.UI.Resources.note_add;
+            this.btnReceta.Image = ((System.Drawing.Image)(resources.GetObject("btnReceta.Image")));
             this.btnReceta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReceta.Location = new System.Drawing.Point(483, 64);
+            this.btnReceta.Location = new System.Drawing.Point(374, 7);
             this.btnReceta.Margin = new System.Windows.Forms.Padding(2);
             this.btnReceta.Name = "btnReceta";
-            this.btnReceta.Size = new System.Drawing.Size(132, 24);
+            this.btnReceta.Size = new System.Drawing.Size(272, 33);
             this.btnReceta.TabIndex = 97;
             this.btnReceta.Text = "Receta";
             this.btnReceta.UseVisualStyleBackColor = false;
             this.btnReceta.Click += new System.EventHandler(this.btnReceta_Click);
+            // 
+            // btnAntecedentes
+            // 
+            this.btnAntecedentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAntecedentes.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAntecedentes.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAntecedentes.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAntecedentes.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnAntecedentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAntecedentes.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAntecedentes.ForeColor = System.Drawing.Color.Black;
+            this.btnAntecedentes.Image = ((System.Drawing.Image)(resources.GetObject("btnAntecedentes.Image")));
+            this.btnAntecedentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAntecedentes.Location = new System.Drawing.Point(319, 122);
+            this.btnAntecedentes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAntecedentes.Name = "btnAntecedentes";
+            this.btnAntecedentes.Size = new System.Drawing.Size(113, 24);
+            this.btnAntecedentes.TabIndex = 95;
+            this.btnAntecedentes.Text = "Antecedentes";
+            this.btnAntecedentes.UseVisualStyleBackColor = false;
+            this.btnAntecedentes.Visible = false;
+            this.btnAntecedentes.Click += new System.EventHandler(this.btnAntecedentes_Click);
             // 
             // btnFichaMedica
             // 
@@ -1380,12 +2035,12 @@
             this.btnFichaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFichaMedica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFichaMedica.ForeColor = System.Drawing.Color.Black;
-            this.btnFichaMedica.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
+            this.btnFichaMedica.Image = ((System.Drawing.Image)(resources.GetObject("btnFichaMedica.Image")));
             this.btnFichaMedica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFichaMedica.Location = new System.Drawing.Point(322, 36);
+            this.btnFichaMedica.Location = new System.Drawing.Point(436, 124);
             this.btnFichaMedica.Margin = new System.Windows.Forms.Padding(2);
             this.btnFichaMedica.Name = "btnFichaMedica";
-            this.btnFichaMedica.Size = new System.Drawing.Size(141, 24);
+            this.btnFichaMedica.Size = new System.Drawing.Size(69, 25);
             this.btnFichaMedica.TabIndex = 96;
             this.btnFichaMedica.Text = "Ficha Médica";
             this.btnFichaMedica.UseVisualStyleBackColor = false;
@@ -1396,18 +2051,19 @@
             // 
             this.btnVisorReporteExamen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVisorReporteExamen.BackColor = System.Drawing.SystemColors.Control;
+            this.btnVisorReporteExamen.Enabled = false;
             this.btnVisorReporteExamen.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnVisorReporteExamen.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnVisorReporteExamen.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnVisorReporteExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisorReporteExamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisorReporteExamen.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisorReporteExamen.ForeColor = System.Drawing.Color.Black;
-            this.btnVisorReporteExamen.Image = global::Sigesoft.Node.WinClient.UI.Resources.find;
+            this.btnVisorReporteExamen.Image = ((System.Drawing.Image)(resources.GetObject("btnVisorReporteExamen.Image")));
             this.btnVisorReporteExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVisorReporteExamen.Location = new System.Drawing.Point(322, 8);
+            this.btnVisorReporteExamen.Location = new System.Drawing.Point(374, 82);
             this.btnVisorReporteExamen.Margin = new System.Windows.Forms.Padding(2);
             this.btnVisorReporteExamen.Name = "btnVisorReporteExamen";
-            this.btnVisorReporteExamen.Size = new System.Drawing.Size(293, 24);
+            this.btnVisorReporteExamen.Size = new System.Drawing.Size(272, 36);
             this.btnVisorReporteExamen.TabIndex = 90;
             this.btnVisorReporteExamen.Text = "Ver Reporte de";
             this.btnVisorReporteExamen.UseVisualStyleBackColor = false;
@@ -1422,14 +2078,14 @@
             this.BtnAnamnesis.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BtnAnamnesis.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BtnAnamnesis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAnamnesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAnamnesis.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAnamnesis.ForeColor = System.Drawing.Color.Black;
-            this.BtnAnamnesis.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_edit;
+            this.BtnAnamnesis.Image = ((System.Drawing.Image)(resources.GetObject("BtnAnamnesis.Image")));
             this.BtnAnamnesis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAnamnesis.Location = new System.Drawing.Point(483, 36);
+            this.BtnAnamnesis.Location = new System.Drawing.Point(319, 126);
             this.BtnAnamnesis.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAnamnesis.Name = "BtnAnamnesis";
-            this.BtnAnamnesis.Size = new System.Drawing.Size(132, 24);
+            this.BtnAnamnesis.Size = new System.Drawing.Size(113, 24);
             this.BtnAnamnesis.TabIndex = 92;
             this.BtnAnamnesis.Text = "Anamnesis";
             this.BtnAnamnesis.UseVisualStyleBackColor = false;
@@ -1439,7 +2095,7 @@
             // chkUtilizarFirma
             // 
             this.chkUtilizarFirma.AutoSize = true;
-            this.chkUtilizarFirma.Location = new System.Drawing.Point(219, 139);
+            this.chkUtilizarFirma.Location = new System.Drawing.Point(219, 111);
             this.chkUtilizarFirma.Name = "chkUtilizarFirma";
             this.chkUtilizarFirma.Size = new System.Drawing.Size(98, 17);
             this.chkUtilizarFirma.TabIndex = 59;
@@ -1450,7 +2106,7 @@
             // 
             this.EXAMENES_lblEstadoComponente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.EXAMENES_lblEstadoComponente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EXAMENES_lblEstadoComponente.Location = new System.Drawing.Point(12, 85);
+            this.EXAMENES_lblEstadoComponente.Location = new System.Drawing.Point(11, 77);
             this.EXAMENES_lblEstadoComponente.Name = "EXAMENES_lblEstadoComponente";
             this.EXAMENES_lblEstadoComponente.Size = new System.Drawing.Size(120, 18);
             this.EXAMENES_lblEstadoComponente.TabIndex = 51;
@@ -1459,7 +2115,7 @@
             // chkApproved
             // 
             this.chkApproved.AutoSize = true;
-            this.chkApproved.Location = new System.Drawing.Point(12, 139);
+            this.chkApproved.Location = new System.Drawing.Point(14, 111);
             this.chkApproved.Name = "chkApproved";
             this.chkApproved.Size = new System.Drawing.Size(146, 17);
             this.chkApproved.TabIndex = 58;
@@ -1471,7 +2127,7 @@
             this.cbEstadoComponente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEstadoComponente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstadoComponente.FormattingEnabled = true;
-            this.cbEstadoComponente.Location = new System.Drawing.Point(138, 85);
+            this.cbEstadoComponente.Location = new System.Drawing.Point(137, 74);
             this.cbEstadoComponente.Name = "cbEstadoComponente";
             this.cbEstadoComponente.Size = new System.Drawing.Size(179, 21);
             this.cbEstadoComponente.TabIndex = 0;
@@ -1486,7 +2142,7 @@
             this.EXAMENES_lblComentarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.EXAMENES_lblComentarios.AutoSize = true;
             this.EXAMENES_lblComentarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EXAMENES_lblComentarios.Location = new System.Drawing.Point(12, 11);
+            this.EXAMENES_lblComentarios.Location = new System.Drawing.Point(28, 6);
             this.EXAMENES_lblComentarios.Name = "EXAMENES_lblComentarios";
             this.EXAMENES_lblComentarios.Size = new System.Drawing.Size(97, 13);
             this.EXAMENES_lblComentarios.TabIndex = 49;
@@ -1496,9 +2152,9 @@
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(12, 114);
+            this.label23.Location = new System.Drawing.Point(56, 151);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(84, 13);
+            this.label23.Size = new System.Drawing.Size(80, 13);
             this.label23.TabIndex = 52;
             this.label23.Text = "Tipo de Exámen";
             // 
@@ -1507,7 +2163,7 @@
             this.cbTipoProcedenciaExamen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTipoProcedenciaExamen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoProcedenciaExamen.FormattingEnabled = true;
-            this.cbTipoProcedenciaExamen.Location = new System.Drawing.Point(138, 112);
+            this.cbTipoProcedenciaExamen.Location = new System.Drawing.Point(31, 157);
             this.cbTipoProcedenciaExamen.Name = "cbTipoProcedenciaExamen";
             this.cbTipoProcedenciaExamen.Size = new System.Drawing.Size(179, 21);
             this.cbTipoProcedenciaExamen.TabIndex = 53;
@@ -1519,7 +2175,7 @@
             // txtComentario
             // 
             this.txtComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComentario.Location = new System.Drawing.Point(12, 27);
+            this.txtComentario.Location = new System.Drawing.Point(11, 19);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -1535,9 +2191,9 @@
             this.gbDiagnosticoExamen.Controls.Add(this.lblRecordCountDiagnosticoPorExamenCom);
             this.gbDiagnosticoExamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDiagnosticoExamen.ForeColor = System.Drawing.Color.MediumBlue;
-            this.gbDiagnosticoExamen.Location = new System.Drawing.Point(4, 7);
+            this.gbDiagnosticoExamen.Location = new System.Drawing.Point(13, 3);
             this.gbDiagnosticoExamen.Name = "gbDiagnosticoExamen";
-            this.gbDiagnosticoExamen.Size = new System.Drawing.Size(599, 165);
+            this.gbDiagnosticoExamen.Size = new System.Drawing.Size(599, 164);
             this.gbDiagnosticoExamen.TabIndex = 49;
             this.gbDiagnosticoExamen.TabStop = false;
             this.gbDiagnosticoExamen.Text = "Diagnosticos del Examen";
@@ -1552,9 +2208,9 @@
             this.btnRemoverDxExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverDxExamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverDxExamen.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoverDxExamen.Image = global::Sigesoft.Node.WinClient.UI.Resources.delete;
+            this.btnRemoverDxExamen.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoverDxExamen.Image")));
             this.btnRemoverDxExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoverDxExamen.Location = new System.Drawing.Point(188, 132);
+            this.btnRemoverDxExamen.Location = new System.Drawing.Point(188, 126);
             this.btnRemoverDxExamen.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverDxExamen.Name = "btnRemoverDxExamen";
             this.btnRemoverDxExamen.Size = new System.Drawing.Size(80, 24);
@@ -1573,9 +2229,9 @@
             this.btnEditarDxExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarDxExamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarDxExamen.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarDxExamen.Image = global::Sigesoft.Node.WinClient.UI.Resources.pencil;
+            this.btnEditarDxExamen.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarDxExamen.Image")));
             this.btnEditarDxExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarDxExamen.Location = new System.Drawing.Point(106, 132);
+            this.btnEditarDxExamen.Location = new System.Drawing.Point(106, 126);
             this.btnEditarDxExamen.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarDxExamen.Name = "btnEditarDxExamen";
             this.btnEditarDxExamen.Size = new System.Drawing.Size(80, 24);
@@ -1596,9 +2252,9 @@
             this.btnAgregarDxExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarDxExamen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarDxExamen.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarDxExamen.Image = global::Sigesoft.Node.WinClient.UI.Resources.add;
+            this.btnAgregarDxExamen.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDxExamen.Image")));
             this.btnAgregarDxExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarDxExamen.Location = new System.Drawing.Point(24, 132);
+            this.btnAgregarDxExamen.Location = new System.Drawing.Point(24, 126);
             this.btnAgregarDxExamen.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarDxExamen.Name = "btnAgregarDxExamen";
             this.btnAgregarDxExamen.Size = new System.Drawing.Size(80, 24);
@@ -1615,10 +2271,10 @@
             appearance16.BackColor2 = System.Drawing.Color.Silver;
             appearance16.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
             this.grdDiagnosticoPorExamenComponente.DisplayLayout.Appearance = appearance16;
-            ultraGridColumn1.Header.VisiblePosition = 0;
-            ultraGridColumn1.Hidden = true;
-            ultraGridColumn2.Header.VisiblePosition = 1;
-            ultraGridColumn2.Hidden = true;
+            ultraGridColumn44.Header.VisiblePosition = 0;
+            ultraGridColumn44.Hidden = true;
+            ultraGridColumn45.Header.VisiblePosition = 1;
+            ultraGridColumn45.Hidden = true;
             ultraGridColumn3.Header.Caption = "Diagnóstico";
             ultraGridColumn3.Header.VisiblePosition = 2;
             ultraGridColumn3.Width = 266;
@@ -1641,8 +2297,8 @@
             ultraGridColumn11.Header.VisiblePosition = 10;
             ultraGridColumn11.Hidden = true;
             ultraGridBand3.Columns.AddRange(new object[] {
-            ultraGridColumn1,
-            ultraGridColumn2,
+            ultraGridColumn44,
+            ultraGridColumn45,
             ultraGridColumn3,
             ultraGridColumn4,
             ultraGridColumn5,
@@ -1700,12 +2356,12 @@
             this.grdDiagnosticoPorExamenComponente.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
             this.grdDiagnosticoPorExamenComponente.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.grdDiagnosticoPorExamenComponente.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
-            this.grdDiagnosticoPorExamenComponente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdDiagnosticoPorExamenComponente.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdDiagnosticoPorExamenComponente.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.grdDiagnosticoPorExamenComponente.Location = new System.Drawing.Point(7, 29);
+            this.grdDiagnosticoPorExamenComponente.Location = new System.Drawing.Point(-1, 16);
             this.grdDiagnosticoPorExamenComponente.Margin = new System.Windows.Forms.Padding(2);
             this.grdDiagnosticoPorExamenComponente.Name = "grdDiagnosticoPorExamenComponente";
-            this.grdDiagnosticoPorExamenComponente.Size = new System.Drawing.Size(584, 101);
+            this.grdDiagnosticoPorExamenComponente.Size = new System.Drawing.Size(584, 111);
             this.grdDiagnosticoPorExamenComponente.TabIndex = 48;
             this.grdDiagnosticoPorExamenComponente.InitializeRow += new Infragistics.Win.UltraWinGrid.InitializeRowEventHandler(this.grdDiagnosticoPorExamenComponente_InitializeRow);
             this.grdDiagnosticoPorExamenComponente.AfterPerformAction += new Infragistics.Win.UltraWinGrid.AfterUltraGridPerformActionEventHandler(this.grdDiagnosticoPorExamenComponente_AfterPerformAction);
@@ -1716,7 +2372,7 @@
             this.lblRecordCountDiagnosticoPorExamenCom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRecordCountDiagnosticoPorExamenCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecordCountDiagnosticoPorExamenCom.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblRecordCountDiagnosticoPorExamenCom.Location = new System.Drawing.Point(402, 8);
+            this.lblRecordCountDiagnosticoPorExamenCom.Location = new System.Drawing.Point(390, -3);
             this.lblRecordCountDiagnosticoPorExamenCom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecordCountDiagnosticoPorExamenCom.Name = "lblRecordCountDiagnosticoPorExamenCom";
             this.lblRecordCountDiagnosticoPorExamenCom.Size = new System.Drawing.Size(189, 19);
@@ -1731,9 +2387,9 @@
             this.tslFechaCrea,
             this.tslUsuarioAct,
             this.tslFechaAct});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 499);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 613);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1257, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(1315, 30);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1765,6 +2421,18 @@
             this.tslFechaAct.Size = new System.Drawing.Size(82, 25);
             this.tslFechaAct.Text = "Fecha Act : {0}";
             // 
+            // lblFecVctoGlobal
+            // 
+            this.lblFecVctoGlobal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lblFecVctoGlobal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFecVctoGlobal.Location = new System.Drawing.Point(878, 579);
+            this.lblFecVctoGlobal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFecVctoGlobal.Name = "lblFecVctoGlobal";
+            this.lblFecVctoGlobal.Size = new System.Drawing.Size(89, 20);
+            this.lblFecVctoGlobal.TabIndex = 13;
+            this.lblFecVctoGlobal.Text = "lblFecVctoGlobal";
+            this.lblFecVctoGlobal.Visible = false;
+            // 
             // tpAnalisisDx
             // 
             this.tpAnalisisDx.Controls.Add(this.chkUtilizaFirmaControlAuditoria);
@@ -1773,7 +2441,7 @@
             this.tpAnalisisDx.Controls.Add(this.btnAceptarDX);
             this.tpAnalisisDx.Location = new System.Drawing.Point(4, 22);
             this.tpAnalisisDx.Name = "tpAnalisisDx";
-            this.tpAnalisisDx.Size = new System.Drawing.Size(1263, 532);
+            this.tpAnalisisDx.Size = new System.Drawing.Size(1321, 646);
             this.tpAnalisisDx.TabIndex = 3;
             this.tpAnalisisDx.Text = "CONTROL DE CALIDAD";
             this.tpAnalisisDx.ToolTipText = "ANÁLISIS DE DIAGNÓSTICOS";
@@ -1782,7 +2450,7 @@
             // chkUtilizaFirmaControlAuditoria
             // 
             this.chkUtilizaFirmaControlAuditoria.AutoSize = true;
-            this.chkUtilizaFirmaControlAuditoria.Location = new System.Drawing.Point(10, 503);
+            this.chkUtilizaFirmaControlAuditoria.Location = new System.Drawing.Point(966, 583);
             this.chkUtilizaFirmaControlAuditoria.Name = "chkUtilizaFirmaControlAuditoria";
             this.chkUtilizaFirmaControlAuditoria.Size = new System.Drawing.Size(98, 17);
             this.chkUtilizaFirmaControlAuditoria.TabIndex = 62;
@@ -1809,9 +2477,9 @@
             this.gbEdicionDiagnosticoTotal.Controls.Add(this.label30);
             this.gbEdicionDiagnosticoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbEdicionDiagnosticoTotal.ForeColor = System.Drawing.Color.MediumBlue;
-            this.gbEdicionDiagnosticoTotal.Location = new System.Drawing.Point(10, 238);
+            this.gbEdicionDiagnosticoTotal.Location = new System.Drawing.Point(10, 315);
             this.gbEdicionDiagnosticoTotal.Name = "gbEdicionDiagnosticoTotal";
-            this.gbEdicionDiagnosticoTotal.Size = new System.Drawing.Size(1241, 259);
+            this.gbEdicionDiagnosticoTotal.Size = new System.Drawing.Size(1299, 259);
             this.gbEdicionDiagnosticoTotal.TabIndex = 51;
             this.gbEdicionDiagnosticoTotal.TabStop = false;
             this.gbEdicionDiagnosticoTotal.Text = "Edición del Diagnóstico";
@@ -1842,7 +2510,7 @@
             this.btnRemoverRestriccion_Analisis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverRestriccion_Analisis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverRestriccion_Analisis.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoverRestriccion_Analisis.Image = global::Sigesoft.Node.WinClient.UI.Resources.delete;
+            this.btnRemoverRestriccion_Analisis.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoverRestriccion_Analisis.Image")));
             this.btnRemoverRestriccion_Analisis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRemoverRestriccion_Analisis.Location = new System.Drawing.Point(491, 63);
             this.btnRemoverRestriccion_Analisis.Margin = new System.Windows.Forms.Padding(2);
@@ -1864,7 +2532,7 @@
             this.btnAgregarRestriccion_Analisis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarRestriccion_Analisis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarRestriccion_Analisis.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarRestriccion_Analisis.Image = global::Sigesoft.Node.WinClient.UI.Resources.add;
+            this.btnAgregarRestriccion_Analisis.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarRestriccion_Analisis.Image")));
             this.btnAgregarRestriccion_Analisis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarRestriccion_Analisis.Location = new System.Drawing.Point(491, 35);
             this.btnAgregarRestriccion_Analisis.Margin = new System.Windows.Forms.Padding(2);
@@ -1996,7 +2664,7 @@
             this.btnRemoverRecomendacion_AnalisisDx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverRecomendacion_AnalisisDx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverRecomendacion_AnalisisDx.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoverRecomendacion_AnalisisDx.Image = global::Sigesoft.Node.WinClient.UI.Resources.delete;
+            this.btnRemoverRecomendacion_AnalisisDx.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoverRecomendacion_AnalisisDx.Image")));
             this.btnRemoverRecomendacion_AnalisisDx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRemoverRecomendacion_AnalisisDx.Location = new System.Drawing.Point(549, 62);
             this.btnRemoverRecomendacion_AnalisisDx.Margin = new System.Windows.Forms.Padding(2);
@@ -2018,7 +2686,7 @@
             this.btnAgregarRecomendaciones_AnalisisDx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarRecomendaciones_AnalisisDx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarRecomendaciones_AnalisisDx.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarRecomendaciones_AnalisisDx.Image = global::Sigesoft.Node.WinClient.UI.Resources.add;
+            this.btnAgregarRecomendaciones_AnalisisDx.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarRecomendaciones_AnalisisDx.Image")));
             this.btnAgregarRecomendaciones_AnalisisDx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarRecomendaciones_AnalisisDx.Location = new System.Drawing.Point(549, 34);
             this.btnAgregarRecomendaciones_AnalisisDx.Margin = new System.Windows.Forms.Padding(2);
@@ -2040,8 +2708,8 @@
             ultraGridColumn17.Hidden = true;
             ultraGridColumn18.Header.VisiblePosition = 1;
             ultraGridColumn18.Hidden = true;
-            ultraGridColumn19.Header.VisiblePosition = 2;
-            ultraGridColumn19.Hidden = true;
+            ultraGridColumn50.Header.VisiblePosition = 2;
+            ultraGridColumn50.Hidden = true;
             ultraGridColumn20.Header.VisiblePosition = 3;
             ultraGridColumn20.Hidden = true;
             ultraGridColumn21.Header.Caption = "Recomendaciones";
@@ -2054,7 +2722,7 @@
             ultraGridBand5.Columns.AddRange(new object[] {
             ultraGridColumn17,
             ultraGridColumn18,
-            ultraGridColumn19,
+            ultraGridColumn50,
             ultraGridColumn20,
             ultraGridColumn21,
             ultraGridColumn22,
@@ -2131,9 +2799,9 @@
             // 
             // btnAgregarDX
             // 
-            this.btnAgregarDX.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_search;
+            this.btnAgregarDX.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDX.Image")));
             this.btnAgregarDX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarDX.Location = new System.Drawing.Point(1284, 20);
+            this.btnAgregarDX.Location = new System.Drawing.Point(1182, 21);
             this.btnAgregarDX.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarDX.Name = "btnAgregarDX";
             this.btnAgregarDX.Size = new System.Drawing.Size(26, 24);
@@ -2285,7 +2953,7 @@
             this.gbTotalDiagnostico.ForeColor = System.Drawing.Color.MediumBlue;
             this.gbTotalDiagnostico.Location = new System.Drawing.Point(10, 4);
             this.gbTotalDiagnostico.Name = "gbTotalDiagnostico";
-            this.gbTotalDiagnostico.Size = new System.Drawing.Size(1241, 228);
+            this.gbTotalDiagnostico.Size = new System.Drawing.Size(1299, 305);
             this.gbTotalDiagnostico.TabIndex = 50;
             this.gbTotalDiagnostico.TabStop = false;
             this.gbTotalDiagnostico.Text = "TOTAL DE DIAGNÓSTICOS";
@@ -2301,15 +2969,16 @@
             this.btnRemoverTotalDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverTotalDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverTotalDiagnostico.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoverTotalDiagnostico.Image = global::Sigesoft.Node.WinClient.UI.Resources.delete;
+            this.btnRemoverTotalDiagnostico.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoverTotalDiagnostico.Image")));
             this.btnRemoverTotalDiagnostico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoverTotalDiagnostico.Location = new System.Drawing.Point(1154, 55);
+            this.btnRemoverTotalDiagnostico.Location = new System.Drawing.Point(1212, 110);
             this.btnRemoverTotalDiagnostico.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoverTotalDiagnostico.Name = "btnRemoverTotalDiagnostico";
             this.btnRemoverTotalDiagnostico.Size = new System.Drawing.Size(80, 24);
             this.btnRemoverTotalDiagnostico.TabIndex = 93;
             this.btnRemoverTotalDiagnostico.Text = "     Eliminar";
             this.btnRemoverTotalDiagnostico.UseVisualStyleBackColor = false;
+            this.btnRemoverTotalDiagnostico.Visible = false;
             this.btnRemoverTotalDiagnostico.Click += new System.EventHandler(this.btnRemoverTotalDiagnostico_Click);
             // 
             // btnAgregarTotalDiagnostico
@@ -2323,15 +2992,16 @@
             this.btnAgregarTotalDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarTotalDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarTotalDiagnostico.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarTotalDiagnostico.Image = global::Sigesoft.Node.WinClient.UI.Resources.add;
+            this.btnAgregarTotalDiagnostico.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTotalDiagnostico.Image")));
             this.btnAgregarTotalDiagnostico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarTotalDiagnostico.Location = new System.Drawing.Point(1154, 27);
+            this.btnAgregarTotalDiagnostico.Location = new System.Drawing.Point(1212, 82);
             this.btnAgregarTotalDiagnostico.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarTotalDiagnostico.Name = "btnAgregarTotalDiagnostico";
             this.btnAgregarTotalDiagnostico.Size = new System.Drawing.Size(80, 24);
             this.btnAgregarTotalDiagnostico.TabIndex = 92;
             this.btnAgregarTotalDiagnostico.Text = "      Agregar";
             this.btnAgregarTotalDiagnostico.UseVisualStyleBackColor = false;
+            this.btnAgregarTotalDiagnostico.Visible = false;
             this.btnAgregarTotalDiagnostico.Click += new System.EventHandler(this.btnAgregarTotalDiagnostico_Click);
             // 
             // btnRefrescarTotalDiagnostico
@@ -2344,9 +3014,9 @@
             this.btnRefrescarTotalDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefrescarTotalDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefrescarTotalDiagnostico.ForeColor = System.Drawing.Color.Black;
-            this.btnRefrescarTotalDiagnostico.Image = global::Sigesoft.Node.WinClient.UI.Resources.arrow_refresh;
+            this.btnRefrescarTotalDiagnostico.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescarTotalDiagnostico.Image")));
             this.btnRefrescarTotalDiagnostico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefrescarTotalDiagnostico.Location = new System.Drawing.Point(1154, 83);
+            this.btnRefrescarTotalDiagnostico.Location = new System.Drawing.Point(1212, 138);
             this.btnRefrescarTotalDiagnostico.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefrescarTotalDiagnostico.Name = "btnRefrescarTotalDiagnostico";
             this.btnRefrescarTotalDiagnostico.Size = new System.Drawing.Size(80, 24);
@@ -2371,59 +3041,59 @@
             ultraGridColumn24.Hidden = true;
             ultraGridColumn25.Header.VisiblePosition = 1;
             ultraGridColumn25.Hidden = true;
-            ultraGridColumn26.Header.Caption = "Consultorio";
-            ultraGridColumn26.Header.VisiblePosition = 2;
-            ultraGridColumn26.Width = 183;
-            ultraGridColumn27.Header.Caption = "Diagnóstico";
-            ultraGridColumn27.Header.VisiblePosition = 3;
-            ultraGridColumn27.Width = 403;
+            ultraGridColumn52.Header.Caption = "Consultorio";
+            ultraGridColumn52.Header.VisiblePosition = 2;
+            ultraGridColumn52.Width = 183;
+            ultraGridColumn53.Header.Caption = "Diagnóstico";
+            ultraGridColumn53.Header.VisiblePosition = 3;
+            ultraGridColumn53.Width = 403;
             ultraGridColumn69.Header.Caption = "Usuario Act.";
             ultraGridColumn69.Header.VisiblePosition = 4;
-            ultraGridColumn28.Header.Caption = "Automatico?";
-            ultraGridColumn28.Header.VisiblePosition = 5;
-            ultraGridColumn29.Header.Caption = "Restricciones";
-            ultraGridColumn29.Header.VisiblePosition = 6;
-            ultraGridColumn29.Width = 311;
+            ultraGridColumn54.Header.Caption = "Automatico?";
+            ultraGridColumn54.Header.VisiblePosition = 5;
+            ultraGridColumn55.Header.Caption = "Restricciones";
+            ultraGridColumn55.Header.VisiblePosition = 6;
+            ultraGridColumn55.Width = 311;
             ultraGridColumn30.Header.Caption = "Recomendaciones";
             ultraGridColumn30.Header.VisiblePosition = 7;
             ultraGridColumn30.Width = 305;
-            ultraGridColumn31.Header.Caption = "Pre-Calificación";
-            ultraGridColumn31.Header.VisiblePosition = 8;
-            ultraGridColumn32.Header.Caption = "Calificación Final";
-            ultraGridColumn32.Header.VisiblePosition = 9;
-            ultraGridColumn33.Header.Caption = "Tipo DX";
-            ultraGridColumn33.Header.VisiblePosition = 10;
-            ultraGridColumn33.Width = 122;
-            ultraGridColumn34.Header.Caption = "Enviar a Ant";
-            ultraGridColumn34.Header.VisiblePosition = 11;
-            ultraGridColumn34.Width = 81;
-            ultraGridColumn35.Header.Caption = "Fec Vcto";
-            ultraGridColumn35.Header.VisiblePosition = 12;
-            ultraGridColumn36.Header.VisiblePosition = 13;
-            ultraGridColumn36.Hidden = true;
-            ultraGridColumn37.Header.VisiblePosition = 14;
-            ultraGridColumn37.Hidden = true;
-            ultraGridColumn38.Header.VisiblePosition = 15;
-            ultraGridColumn38.Hidden = true;
+            ultraGridColumn60.Header.Caption = "Pre-Calificación";
+            ultraGridColumn60.Header.VisiblePosition = 8;
+            ultraGridColumn78.Header.Caption = "Calificación Final";
+            ultraGridColumn78.Header.VisiblePosition = 9;
+            ultraGridColumn103.Header.Caption = "Tipo DX";
+            ultraGridColumn103.Header.VisiblePosition = 10;
+            ultraGridColumn103.Width = 122;
+            ultraGridColumn104.Header.Caption = "Enviar a Ant";
+            ultraGridColumn104.Header.VisiblePosition = 11;
+            ultraGridColumn104.Width = 81;
+            ultraGridColumn105.Header.Caption = "Fec Vcto";
+            ultraGridColumn105.Header.VisiblePosition = 12;
+            ultraGridColumn106.Header.VisiblePosition = 13;
+            ultraGridColumn106.Hidden = true;
+            ultraGridColumn107.Header.VisiblePosition = 14;
+            ultraGridColumn107.Hidden = true;
+            ultraGridColumn108.Header.VisiblePosition = 15;
+            ultraGridColumn108.Hidden = true;
             ultraGridColumn39.Header.VisiblePosition = 16;
             ultraGridColumn39.Hidden = true;
             ultraGridBand6.Columns.AddRange(new object[] {
             ultraGridColumn24,
             ultraGridColumn25,
-            ultraGridColumn26,
-            ultraGridColumn27,
+            ultraGridColumn52,
+            ultraGridColumn53,
             ultraGridColumn69,
-            ultraGridColumn28,
-            ultraGridColumn29,
+            ultraGridColumn54,
+            ultraGridColumn55,
             ultraGridColumn30,
-            ultraGridColumn31,
-            ultraGridColumn32,
-            ultraGridColumn33,
-            ultraGridColumn34,
-            ultraGridColumn35,
-            ultraGridColumn36,
-            ultraGridColumn37,
-            ultraGridColumn38,
+            ultraGridColumn60,
+            ultraGridColumn78,
+            ultraGridColumn103,
+            ultraGridColumn104,
+            ultraGridColumn105,
+            ultraGridColumn106,
+            ultraGridColumn107,
+            ultraGridColumn108,
             ultraGridColumn39});
             this.grdTotalDiagnosticos.DisplayLayout.BandsSerializer.Add(ultraGridBand6);
             this.grdTotalDiagnosticos.DisplayLayout.InterBandSpacing = 10;
@@ -2478,11 +3148,9 @@
             this.grdTotalDiagnosticos.Location = new System.Drawing.Point(11, 26);
             this.grdTotalDiagnosticos.Margin = new System.Windows.Forms.Padding(2);
             this.grdTotalDiagnosticos.Name = "grdTotalDiagnosticos";
-            this.grdTotalDiagnosticos.Size = new System.Drawing.Size(1139, 195);
+            this.grdTotalDiagnosticos.Size = new System.Drawing.Size(1197, 272);
             this.grdTotalDiagnosticos.TabIndex = 50;
-            this.grdTotalDiagnosticos.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdTotalDiagnosticos_InitializeLayout);
             this.grdTotalDiagnosticos.InitializeRow += new Infragistics.Win.UltraWinGrid.InitializeRowEventHandler(this.grdTotalDiagnosticos_InitializeRow);
-            this.grdTotalDiagnosticos.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.grdTotalDiagnosticos_AfterSelectChange);
             this.grdTotalDiagnosticos.BeforePerformAction += new Infragistics.Win.UltraWinGrid.BeforeUltraGridPerformActionEventHandler(this.grdTotalDiagnosticos_BeforePerformAction);
             this.grdTotalDiagnosticos.ClickCell += new Infragistics.Win.UltraWinGrid.ClickCellEventHandler(this.grdTotalDiagnosticos_ClickCell);
             this.grdTotalDiagnosticos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.grdTotalDiagnosticos_KeyDown);
@@ -2497,7 +3165,7 @@
             // 
             // Refrescar
             // 
-            this.Refrescar.Image = global::Sigesoft.Node.WinClient.UI.Resources.arrow_refresh;
+            this.Refrescar.Image = ((System.Drawing.Image)(resources.GetObject("Refrescar.Image")));
             this.Refrescar.Name = "Refrescar";
             this.Refrescar.Size = new System.Drawing.Size(149, 22);
             this.Refrescar.Text = "Refrescar Lista";
@@ -2508,10 +3176,10 @@
             this.lblRecordCountTotalDiagnosticos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRecordCountTotalDiagnosticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordCountTotalDiagnosticos.Location = new System.Drawing.Point(925, 5);
+            this.lblRecordCountTotalDiagnosticos.Location = new System.Drawing.Point(925, 82);
             this.lblRecordCountTotalDiagnosticos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecordCountTotalDiagnosticos.Name = "lblRecordCountTotalDiagnosticos";
-            this.lblRecordCountTotalDiagnosticos.Size = new System.Drawing.Size(225, 19);
+            this.lblRecordCountTotalDiagnosticos.Size = new System.Drawing.Size(283, 19);
             this.lblRecordCountTotalDiagnosticos.TabIndex = 49;
             this.lblRecordCountTotalDiagnosticos.Text = "No se ha realizado la búsqueda aún.";
             this.lblRecordCountTotalDiagnosticos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2524,9 +3192,9 @@
             this.btnAceptarDX.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAceptarDX.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnAceptarDX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptarDX.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_save;
+            this.btnAceptarDX.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptarDX.Image")));
             this.btnAceptarDX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptarDX.Location = new System.Drawing.Point(1099, 504);
+            this.btnAceptarDX.Location = new System.Drawing.Point(1099, 581);
             this.btnAceptarDX.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptarDX.Name = "btnAceptarDX";
             this.btnAceptarDX.Size = new System.Drawing.Size(152, 24);
@@ -2537,6 +3205,7 @@
             // 
             // tpConclusion
             // 
+            this.tpConclusion.Controls.Add(this.btnSubirInterconsulta);
             this.tpConclusion.Controls.Add(this.btn7C);
             this.tpConclusion.Controls.Add(this.btnInterConsulta);
             this.tpConclusion.Controls.Add(this.btn312);
@@ -2544,7 +3213,6 @@
             this.tpConclusion.Controls.Add(this.dptDateGlobalExp);
             this.tpConclusion.Controls.Add(this.label34);
             this.tpConclusion.Controls.Add(this.txtComentarioAptitud);
-            this.tpConclusion.Controls.Add(this.chkUtilizaFirmaAptitud);
             this.tpConclusion.Controls.Add(this.gbRecomendaciones_Conclusiones);
             this.tpConclusion.Controls.Add(this.gbRestricciones_Conclusiones);
             this.tpConclusion.Controls.Add(this.gbConclusionesDiagnosticas);
@@ -2556,11 +3224,32 @@
             this.tpConclusion.Controls.Add(this.btnGuardarConclusiones);
             this.tpConclusion.Location = new System.Drawing.Point(4, 22);
             this.tpConclusion.Name = "tpConclusion";
-            this.tpConclusion.Size = new System.Drawing.Size(1263, 532);
+            this.tpConclusion.Size = new System.Drawing.Size(1321, 646);
             this.tpConclusion.TabIndex = 2;
             this.tpConclusion.Text = "APTITUD";
             this.tpConclusion.ToolTipText = "CONCLUSIONES";
             this.tpConclusion.UseVisualStyleBackColor = true;
+            // 
+            // btnSubirInterconsulta
+            // 
+            this.btnSubirInterconsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSubirInterconsulta.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSubirInterconsulta.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnSubirInterconsulta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSubirInterconsulta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSubirInterconsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubirInterconsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirInterconsulta.ForeColor = System.Drawing.Color.Black;
+            this.btnSubirInterconsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirInterconsulta.Image")));
+            this.btnSubirInterconsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubirInterconsulta.Location = new System.Drawing.Point(220, 566);
+            this.btnSubirInterconsulta.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubirInterconsulta.Name = "btnSubirInterconsulta";
+            this.btnSubirInterconsulta.Size = new System.Drawing.Size(158, 24);
+            this.btnSubirInterconsulta.TabIndex = 106;
+            this.btnSubirInterconsulta.Text = "Subir Interconsulta";
+            this.btnSubirInterconsulta.UseVisualStyleBackColor = false;
+            this.btnSubirInterconsulta.Click += new System.EventHandler(this.btnSubirInterconsulta_Click);
             // 
             // btn7C
             // 
@@ -2573,15 +3262,16 @@
             this.btn7C.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7C.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7C.ForeColor = System.Drawing.Color.Black;
-            this.btn7C.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
+            this.btn7C.Image = ((System.Drawing.Image)(resources.GetObject("btn7C.Image")));
             this.btn7C.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn7C.Location = new System.Drawing.Point(337, 491);
+            this.btn7C.Location = new System.Drawing.Point(356, 608);
             this.btn7C.Margin = new System.Windows.Forms.Padding(2);
             this.btn7C.Name = "btn7C";
             this.btn7C.Size = new System.Drawing.Size(159, 24);
             this.btn7C.TabIndex = 104;
             this.btn7C.Text = "7 C";
             this.btn7C.UseVisualStyleBackColor = false;
+            this.btn7C.Visible = false;
             this.btn7C.Click += new System.EventHandler(this.btn7C_Click);
             // 
             // btnInterConsulta
@@ -2594,9 +3284,9 @@
             this.btnInterConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInterConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInterConsulta.ForeColor = System.Drawing.Color.Black;
-            this.btnInterConsulta.Image = global::Sigesoft.Node.WinClient.UI.Resources.arrow_refresh;
+            this.btnInterConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnInterConsulta.Image")));
             this.btnInterConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInterConsulta.Location = new System.Drawing.Point(502, 491);
+            this.btnInterConsulta.Location = new System.Drawing.Point(31, 567);
             this.btnInterConsulta.Margin = new System.Windows.Forms.Padding(2);
             this.btnInterConsulta.Name = "btnInterConsulta";
             this.btnInterConsulta.Size = new System.Drawing.Size(158, 24);
@@ -2616,15 +3306,16 @@
             this.btn312.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn312.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn312.ForeColor = System.Drawing.Color.Black;
-            this.btn312.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
+            this.btn312.Image = ((System.Drawing.Image)(resources.GetObject("btn312.Image")));
             this.btn312.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn312.Location = new System.Drawing.Point(174, 491);
+            this.btn312.Location = new System.Drawing.Point(193, 608);
             this.btn312.Margin = new System.Windows.Forms.Padding(2);
             this.btn312.Name = "btn312";
             this.btn312.Size = new System.Drawing.Size(159, 24);
             this.btn312.TabIndex = 102;
             this.btn312.Text = "Anexo 312";
             this.btn312.UseVisualStyleBackColor = false;
+            this.btn312.Visible = false;
             this.btn312.Click += new System.EventHandler(this.btn312_Click);
             // 
             // btnCertificadoAptitud
@@ -2637,9 +3328,9 @@
             this.btnCertificadoAptitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCertificadoAptitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCertificadoAptitud.ForeColor = System.Drawing.Color.Black;
-            this.btnCertificadoAptitud.Image = global::Sigesoft.Node.WinClient.UI.Resources.building_add;
+            this.btnCertificadoAptitud.Image = ((System.Drawing.Image)(resources.GetObject("btnCertificadoAptitud.Image")));
             this.btnCertificadoAptitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCertificadoAptitud.Location = new System.Drawing.Point(11, 491);
+            this.btnCertificadoAptitud.Location = new System.Drawing.Point(410, 567);
             this.btnCertificadoAptitud.Margin = new System.Windows.Forms.Padding(2);
             this.btnCertificadoAptitud.Name = "btnCertificadoAptitud";
             this.btnCertificadoAptitud.Size = new System.Drawing.Size(159, 24);
@@ -2664,7 +3355,7 @@
             this.label34.Location = new System.Drawing.Point(582, 15);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(60, 13);
+            this.label34.Size = new System.Drawing.Size(63, 13);
             this.label34.TabIndex = 99;
             this.label34.Text = "Comentario";
             // 
@@ -2678,17 +3369,6 @@
             this.txtComentarioAptitud.TabIndex = 98;
             this.txtComentarioAptitud.Text = "NINGUNA";
             // 
-            // chkUtilizaFirmaAptitud
-            // 
-            this.chkUtilizaFirmaAptitud.AutoSize = true;
-            this.chkUtilizaFirmaAptitud.Enabled = false;
-            this.chkUtilizaFirmaAptitud.Location = new System.Drawing.Point(981, 508);
-            this.chkUtilizaFirmaAptitud.Name = "chkUtilizaFirmaAptitud";
-            this.chkUtilizaFirmaAptitud.Size = new System.Drawing.Size(98, 17);
-            this.chkUtilizaFirmaAptitud.TabIndex = 95;
-            this.chkUtilizaFirmaAptitud.Text = "SI Utilizar Firma";
-            this.chkUtilizaFirmaAptitud.UseVisualStyleBackColor = true;
-            // 
             // gbRecomendaciones_Conclusiones
             // 
             this.gbRecomendaciones_Conclusiones.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -2698,7 +3378,7 @@
             this.gbRecomendaciones_Conclusiones.Controls.Add(this.btnRemoverRecomendaciones_Conclusiones);
             this.gbRecomendaciones_Conclusiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbRecomendaciones_Conclusiones.ForeColor = System.Drawing.Color.MediumBlue;
-            this.gbRecomendaciones_Conclusiones.Location = new System.Drawing.Point(11, 258);
+            this.gbRecomendaciones_Conclusiones.Location = new System.Drawing.Point(31, 334);
             this.gbRecomendaciones_Conclusiones.Name = "gbRecomendaciones_Conclusiones";
             this.gbRecomendaciones_Conclusiones.Size = new System.Drawing.Size(611, 228);
             this.gbRecomendaciones_Conclusiones.TabIndex = 95;
@@ -2818,7 +3498,7 @@
             this.btnAgregarRecomendaciones_Conclusiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarRecomendaciones_Conclusiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarRecomendaciones_Conclusiones.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarRecomendaciones_Conclusiones.Image = global::Sigesoft.Node.WinClient.UI.Resources.add;
+            this.btnAgregarRecomendaciones_Conclusiones.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarRecomendaciones_Conclusiones.Image")));
             this.btnAgregarRecomendaciones_Conclusiones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarRecomendaciones_Conclusiones.Location = new System.Drawing.Point(21, 191);
             this.btnAgregarRecomendaciones_Conclusiones.Margin = new System.Windows.Forms.Padding(2);
@@ -2841,7 +3521,7 @@
             this.btnRemoverRecomendaciones_Conclusiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverRecomendaciones_Conclusiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverRecomendaciones_Conclusiones.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoverRecomendaciones_Conclusiones.Image = global::Sigesoft.Node.WinClient.UI.Resources.delete;
+            this.btnRemoverRecomendaciones_Conclusiones.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoverRecomendaciones_Conclusiones.Image")));
             this.btnRemoverRecomendaciones_Conclusiones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRemoverRecomendaciones_Conclusiones.Location = new System.Drawing.Point(105, 191);
             this.btnRemoverRecomendaciones_Conclusiones.Margin = new System.Windows.Forms.Padding(2);
@@ -2860,9 +3540,10 @@
             this.gbRestricciones_Conclusiones.Controls.Add(this.grdRestricciones_Conclusiones);
             this.gbRestricciones_Conclusiones.Controls.Add(this.btnAgregarRestriccion_ConclusionesTratamiento);
             this.gbRestricciones_Conclusiones.Controls.Add(this.btnRemoverRestricciones_ConclusionesTratamiento);
+            this.gbRestricciones_Conclusiones.Controls.Add(this.chkUtilizaFirmaAptitud);
             this.gbRestricciones_Conclusiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbRestricciones_Conclusiones.ForeColor = System.Drawing.Color.MediumBlue;
-            this.gbRestricciones_Conclusiones.Location = new System.Drawing.Point(637, 258);
+            this.gbRestricciones_Conclusiones.Location = new System.Drawing.Point(695, 335);
             this.gbRestricciones_Conclusiones.Name = "gbRestricciones_Conclusiones";
             this.gbRestricciones_Conclusiones.Size = new System.Drawing.Size(616, 228);
             this.gbRestricciones_Conclusiones.TabIndex = 94;
@@ -2889,28 +3570,28 @@
             appearance51.BackColor2 = System.Drawing.Color.Silver;
             appearance51.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
             this.grdRestricciones_Conclusiones.DisplayLayout.Appearance = appearance51;
-            ultraGridColumn48.Header.Caption = "#";
-            ultraGridColumn48.Header.VisiblePosition = 0;
-            ultraGridColumn48.Hidden = true;
-            ultraGridColumn48.Width = 41;
-            ultraGridColumn49.Header.VisiblePosition = 1;
-            ultraGridColumn49.Hidden = true;
-            ultraGridColumn50.Header.VisiblePosition = 2;
-            ultraGridColumn50.Hidden = true;
-            ultraGridColumn51.Header.VisiblePosition = 3;
-            ultraGridColumn51.Hidden = true;
-            ultraGridColumn52.Header.VisiblePosition = 4;
-            ultraGridColumn52.Hidden = true;
-            ultraGridColumn53.Header.Caption = "Restricción";
-            ultraGridColumn53.Header.VisiblePosition = 5;
-            ultraGridColumn53.Width = 580;
+            ultraGridColumn86.Header.Caption = "#";
+            ultraGridColumn86.Header.VisiblePosition = 0;
+            ultraGridColumn86.Hidden = true;
+            ultraGridColumn86.Width = 41;
+            ultraGridColumn87.Header.VisiblePosition = 1;
+            ultraGridColumn87.Hidden = true;
+            ultraGridColumn88.Header.VisiblePosition = 2;
+            ultraGridColumn88.Hidden = true;
+            ultraGridColumn89.Header.VisiblePosition = 3;
+            ultraGridColumn89.Hidden = true;
+            ultraGridColumn90.Header.VisiblePosition = 4;
+            ultraGridColumn90.Hidden = true;
+            ultraGridColumn91.Header.Caption = "Restricción";
+            ultraGridColumn91.Header.VisiblePosition = 5;
+            ultraGridColumn91.Width = 580;
             ultraGridBand8.Columns.AddRange(new object[] {
-            ultraGridColumn48,
-            ultraGridColumn49,
-            ultraGridColumn50,
-            ultraGridColumn51,
-            ultraGridColumn52,
-            ultraGridColumn53});
+            ultraGridColumn86,
+            ultraGridColumn87,
+            ultraGridColumn88,
+            ultraGridColumn89,
+            ultraGridColumn90,
+            ultraGridColumn91});
             this.grdRestricciones_Conclusiones.DisplayLayout.BandsSerializer.Add(ultraGridBand8);
             this.grdRestricciones_Conclusiones.DisplayLayout.InterBandSpacing = 10;
             this.grdRestricciones_Conclusiones.DisplayLayout.MaxColScrollRegions = 1;
@@ -2978,7 +3659,7 @@
             this.btnAgregarRestriccion_ConclusionesTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarRestriccion_ConclusionesTratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarRestriccion_ConclusionesTratamiento.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregarRestriccion_ConclusionesTratamiento.Image = global::Sigesoft.Node.WinClient.UI.Resources.add;
+            this.btnAgregarRestriccion_ConclusionesTratamiento.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarRestriccion_ConclusionesTratamiento.Image")));
             this.btnAgregarRestriccion_ConclusionesTratamiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarRestriccion_ConclusionesTratamiento.Location = new System.Drawing.Point(10, 191);
             this.btnAgregarRestriccion_ConclusionesTratamiento.Margin = new System.Windows.Forms.Padding(2);
@@ -3001,7 +3682,7 @@
             this.btnRemoverRestricciones_ConclusionesTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverRestricciones_ConclusionesTratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverRestricciones_ConclusionesTratamiento.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoverRestricciones_ConclusionesTratamiento.Image = global::Sigesoft.Node.WinClient.UI.Resources.delete;
+            this.btnRemoverRestricciones_ConclusionesTratamiento.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoverRestricciones_ConclusionesTratamiento.Image")));
             this.btnRemoverRestricciones_ConclusionesTratamiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRemoverRestricciones_ConclusionesTratamiento.Location = new System.Drawing.Point(106, 191);
             this.btnRemoverRestricciones_ConclusionesTratamiento.Margin = new System.Windows.Forms.Padding(2);
@@ -3012,6 +3693,17 @@
             this.btnRemoverRestricciones_ConclusionesTratamiento.UseVisualStyleBackColor = false;
             this.btnRemoverRestricciones_ConclusionesTratamiento.Visible = false;
             this.btnRemoverRestricciones_ConclusionesTratamiento.Click += new System.EventHandler(this.btnRemoverRestricciones_ConclusionesTratamiento_Click);
+            // 
+            // chkUtilizaFirmaAptitud
+            // 
+            this.chkUtilizaFirmaAptitud.AutoSize = true;
+            this.chkUtilizaFirmaAptitud.Enabled = false;
+            this.chkUtilizaFirmaAptitud.Location = new System.Drawing.Point(214, 196);
+            this.chkUtilizaFirmaAptitud.Name = "chkUtilizaFirmaAptitud";
+            this.chkUtilizaFirmaAptitud.Size = new System.Drawing.Size(115, 17);
+            this.chkUtilizaFirmaAptitud.TabIndex = 95;
+            this.chkUtilizaFirmaAptitud.Text = "SI Utilizar Firma";
+            this.chkUtilizaFirmaAptitud.UseVisualStyleBackColor = true;
             // 
             // gbConclusionesDiagnosticas
             // 
@@ -3024,7 +3716,7 @@
             this.gbConclusionesDiagnosticas.ForeColor = System.Drawing.Color.MediumBlue;
             this.gbConclusionesDiagnosticas.Location = new System.Drawing.Point(10, 37);
             this.gbConclusionesDiagnosticas.Name = "gbConclusionesDiagnosticas";
-            this.gbConclusionesDiagnosticas.Size = new System.Drawing.Size(1243, 215);
+            this.gbConclusionesDiagnosticas.Size = new System.Drawing.Size(1301, 292);
             this.gbConclusionesDiagnosticas.TabIndex = 51;
             this.gbConclusionesDiagnosticas.TabStop = false;
             this.gbConclusionesDiagnosticas.Text = "Conclusiones Diagnósticas";
@@ -3039,27 +3731,27 @@
             appearance58.BackColor2 = System.Drawing.Color.Silver;
             appearance58.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
             this.grdConclusionesDiagnosticas.DisplayLayout.Appearance = appearance58;
-            ultraGridColumn54.Header.VisiblePosition = 0;
-            ultraGridColumn54.Hidden = true;
-            ultraGridColumn55.Header.VisiblePosition = 1;
-            ultraGridColumn55.Hidden = true;
-            ultraGridColumn56.Header.Caption = "Consultorio";
-            ultraGridColumn56.Header.VisiblePosition = 2;
-            ultraGridColumn56.Width = 257;
-            ultraGridColumn57.Header.Caption = "Diagnóstico";
-            ultraGridColumn57.Header.VisiblePosition = 3;
-            ultraGridColumn57.Width = 403;
-            ultraGridColumn58.Header.Caption = "Automatico?";
-            ultraGridColumn58.Header.VisiblePosition = 4;
-            ultraGridColumn58.Width = 141;
-            ultraGridColumn59.Header.Caption = "Restricciones";
-            ultraGridColumn59.Header.VisiblePosition = 5;
-            ultraGridColumn59.Hidden = true;
-            ultraGridColumn59.Width = 311;
-            ultraGridColumn60.Header.Caption = "Recomendaciones";
-            ultraGridColumn60.Header.VisiblePosition = 6;
-            ultraGridColumn60.Hidden = true;
-            ultraGridColumn60.Width = 305;
+            ultraGridColumn92.Header.VisiblePosition = 0;
+            ultraGridColumn92.Hidden = true;
+            ultraGridColumn93.Header.VisiblePosition = 1;
+            ultraGridColumn93.Hidden = true;
+            ultraGridColumn94.Header.Caption = "Consultorio";
+            ultraGridColumn94.Header.VisiblePosition = 2;
+            ultraGridColumn94.Width = 257;
+            ultraGridColumn95.Header.Caption = "Diagnóstico";
+            ultraGridColumn95.Header.VisiblePosition = 3;
+            ultraGridColumn95.Width = 403;
+            ultraGridColumn96.Header.Caption = "Automatico?";
+            ultraGridColumn96.Header.VisiblePosition = 4;
+            ultraGridColumn96.Width = 141;
+            ultraGridColumn97.Header.Caption = "Restricciones";
+            ultraGridColumn97.Header.VisiblePosition = 5;
+            ultraGridColumn97.Hidden = true;
+            ultraGridColumn97.Width = 311;
+            ultraGridColumn98.Header.Caption = "Recomendaciones";
+            ultraGridColumn98.Header.VisiblePosition = 6;
+            ultraGridColumn98.Hidden = true;
+            ultraGridColumn98.Width = 305;
             ultraGridColumn61.Header.Caption = "Pre-Calificación";
             ultraGridColumn61.Header.VisiblePosition = 7;
             ultraGridColumn61.Width = 126;
@@ -3081,13 +3773,13 @@
             ultraGridColumn68.Header.VisiblePosition = 14;
             ultraGridColumn68.Hidden = true;
             ultraGridBand9.Columns.AddRange(new object[] {
-            ultraGridColumn54,
-            ultraGridColumn55,
-            ultraGridColumn56,
-            ultraGridColumn57,
-            ultraGridColumn58,
-            ultraGridColumn59,
-            ultraGridColumn60,
+            ultraGridColumn92,
+            ultraGridColumn93,
+            ultraGridColumn94,
+            ultraGridColumn95,
+            ultraGridColumn96,
+            ultraGridColumn97,
+            ultraGridColumn98,
             ultraGridColumn61,
             ultraGridColumn62,
             ultraGridColumn63,
@@ -3146,7 +3838,7 @@
             this.grdConclusionesDiagnosticas.Location = new System.Drawing.Point(8, 21);
             this.grdConclusionesDiagnosticas.Margin = new System.Windows.Forms.Padding(2);
             this.grdConclusionesDiagnosticas.Name = "grdConclusionesDiagnosticas";
-            this.grdConclusionesDiagnosticas.Size = new System.Drawing.Size(1230, 189);
+            this.grdConclusionesDiagnosticas.Size = new System.Drawing.Size(1288, 266);
             this.grdConclusionesDiagnosticas.TabIndex = 51;
             this.grdConclusionesDiagnosticas.InitializeRow += new Infragistics.Win.UltraWinGrid.InitializeRowEventHandler(this.grdConclusionesDiagnosticas_InitializeRow);
             this.grdConclusionesDiagnosticas.ClickCell += new Infragistics.Win.UltraWinGrid.ClickCellEventHandler(this.grdConclusionesDiagnosticas_ClickCell);
@@ -3156,10 +3848,10 @@
             this.lblRecordCountConclusionesDiagnosticas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRecordCountConclusionesDiagnosticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordCountConclusionesDiagnosticas.Location = new System.Drawing.Point(883, 0);
+            this.lblRecordCountConclusionesDiagnosticas.Location = new System.Drawing.Point(883, 77);
             this.lblRecordCountConclusionesDiagnosticas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecordCountConclusionesDiagnosticas.Name = "lblRecordCountConclusionesDiagnosticas";
-            this.lblRecordCountConclusionesDiagnosticas.Size = new System.Drawing.Size(360, 19);
+            this.lblRecordCountConclusionesDiagnosticas.Size = new System.Drawing.Size(418, 19);
             this.lblRecordCountConclusionesDiagnosticas.TabIndex = 52;
             this.lblRecordCountConclusionesDiagnosticas.Text = "No se ha realizado la búsqueda aún.";
             this.lblRecordCountConclusionesDiagnosticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3191,7 +3883,7 @@
             this.lbl4553.Location = new System.Drawing.Point(193, 16);
             this.lbl4553.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl4553.Name = "lbl4553";
-            this.lbl4553.Size = new System.Drawing.Size(86, 13);
+            this.lbl4553.Size = new System.Drawing.Size(81, 13);
             this.lbl4553.TabIndex = 7;
             this.lbl4553.Text = "Fec. Vcto Global";
             // 
@@ -3201,7 +3893,7 @@
             this.lbl3333.Location = new System.Drawing.Point(15, 15);
             this.lbl3333.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl3333.Name = "lbl3333";
-            this.lbl3333.Size = new System.Drawing.Size(81, 13);
+            this.lbl3333.Size = new System.Drawing.Size(71, 13);
             this.lbl3333.TabIndex = 29;
             this.lbl3333.Text = "Fec. Vcto OBS.";
             // 
@@ -3211,7 +3903,7 @@
             this.label19.Location = new System.Drawing.Point(387, 15);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(40, 13);
+            this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 14;
             this.label19.Text = "Aptitud";
             // 
@@ -3223,9 +3915,9 @@
             this.btnGuardarConclusiones.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnGuardarConclusiones.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnGuardarConclusiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarConclusiones.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_save;
+            this.btnGuardarConclusiones.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarConclusiones.Image")));
             this.btnGuardarConclusiones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarConclusiones.Location = new System.Drawing.Point(1101, 504);
+            this.btnGuardarConclusiones.Location = new System.Drawing.Point(1101, 567);
             this.btnGuardarConclusiones.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarConclusiones.Name = "btnGuardarConclusiones";
             this.btnGuardarConclusiones.Size = new System.Drawing.Size(152, 24);
@@ -3234,45 +3926,3397 @@
             this.btnGuardarConclusiones.UseVisualStyleBackColor = false;
             this.btnGuardarConclusiones.Click += new System.EventHandler(this.btnGuardarConclusiones_Click);
             // 
-            // btnAntecedentes
+            // tpFormatoAtencionIntegral
             // 
-            this.btnAntecedentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAntecedentes.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAntecedentes.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnAntecedentes.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAntecedentes.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnAntecedentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAntecedentes.ForeColor = System.Drawing.Color.Black;
-            this.btnAntecedentes.Image = global::Sigesoft.Node.WinClient.UI.Resources.book_edit;
-            this.btnAntecedentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAntecedentes.Location = new System.Drawing.Point(969, 41);
-            this.btnAntecedentes.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAntecedentes.Name = "btnAntecedentes";
-            this.btnAntecedentes.Size = new System.Drawing.Size(141, 24);
-            this.btnAntecedentes.TabIndex = 95;
-            this.btnAntecedentes.Text = "Antecedentes";
-            this.btnAntecedentes.UseVisualStyleBackColor = false;
-            this.btnAntecedentes.Click += new System.EventHandler(this.btnAntecedentes_Click);
+            this.tpFormatoAtencionIntegral.AutoScroll = true;
+            this.tpFormatoAtencionIntegral.Controls.Add(this.btnEliminarPlan);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.grdCronicos);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.btnEditarPlan);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.label15);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.btnNuevoPlan);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.btnNuevoCronico);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.grdPlanIntegral);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.btnEditarCronico);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.label38);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.btnEliminarCronico);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.btnEliminarAgudo);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.label37);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.btnEditarAgudo);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.btnNuevoAgudo);
+            this.tpFormatoAtencionIntegral.Controls.Add(this.grdAgudos);
+            this.tpFormatoAtencionIntegral.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpFormatoAtencionIntegral.Location = new System.Drawing.Point(4, 22);
+            this.tpFormatoAtencionIntegral.Name = "tpFormatoAtencionIntegral";
+            this.tpFormatoAtencionIntegral.Padding = new System.Windows.Forms.Padding(3);
+            this.tpFormatoAtencionIntegral.Size = new System.Drawing.Size(1321, 646);
+            this.tpFormatoAtencionIntegral.TabIndex = 6;
+            this.tpFormatoAtencionIntegral.Text = "FORMATO DE ATENCIÓN INTEGRAL";
+            this.tpFormatoAtencionIntegral.UseVisualStyleBackColor = true;
             // 
-            // lblFecVctoGlobal
+            // btnEliminarPlan
             // 
-            this.lblFecVctoGlobal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.lblFecVctoGlobal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFecVctoGlobal.Location = new System.Drawing.Point(18, 635);
-            this.lblFecVctoGlobal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFecVctoGlobal.Name = "lblFecVctoGlobal";
-            this.lblFecVctoGlobal.Size = new System.Drawing.Size(89, 20);
-            this.lblFecVctoGlobal.TabIndex = 13;
-            this.lblFecVctoGlobal.Text = "lblFecVctoGlobal";
-            this.lblFecVctoGlobal.Visible = false;
+            this.btnEliminarPlan.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEliminarPlan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEliminarPlan.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEliminarPlan.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEliminarPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarPlan.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarPlan.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarPlan.Image")));
+            this.btnEliminarPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarPlan.Location = new System.Drawing.Point(1238, 590);
+            this.btnEliminarPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarPlan.Name = "btnEliminarPlan";
+            this.btnEliminarPlan.Size = new System.Drawing.Size(75, 24);
+            this.btnEliminarPlan.TabIndex = 65;
+            this.btnEliminarPlan.Text = "Eliminar";
+            this.btnEliminarPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminarPlan.UseVisualStyleBackColor = false;
+            this.btnEliminarPlan.Click += new System.EventHandler(this.btnEliminarPlan_Click);
+            // 
+            // grdCronicos
+            // 
+            this.grdCronicos.CausesValidation = false;
+            appearance65.BackColor2 = System.Drawing.Color.White;
+            appearance65.BorderColor = System.Drawing.Color.DarkGray;
+            appearance65.ForeColor = System.Drawing.Color.Black;
+            this.grdCronicos.DisplayLayout.Appearance = appearance65;
+            ultraGridColumn57.Header.Caption = "Fecha";
+            ultraGridColumn57.Header.VisiblePosition = 0;
+            ultraGridColumn57.Width = 99;
+            ultraGridColumn101.Header.Caption = "Problema Crónico";
+            ultraGridColumn101.Header.VisiblePosition = 1;
+            ultraGridColumn101.Width = 212;
+            ultraGridColumn102.Header.Caption = "¿Es controlado?";
+            ultraGridColumn102.Header.VisiblePosition = 2;
+            ultraGridColumn111.Header.Caption = "Observación";
+            ultraGridColumn111.Header.VisiblePosition = 3;
+            ultraGridColumn111.Width = 151;
+            ultraGridBand10.Columns.AddRange(new object[] {
+            ultraGridColumn57,
+            ultraGridColumn101,
+            ultraGridColumn102,
+            ultraGridColumn111});
+            appearance66.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance66.BackColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance66.FontData.SizeInPoints = 8F;
+            appearance66.ForeColor = System.Drawing.Color.DarkBlue;
+            appearance66.TextHAlignAsString = "Left";
+            ultraGridBand10.Header.Appearance = appearance66;
+            this.grdCronicos.DisplayLayout.BandsSerializer.Add(ultraGridBand10);
+            this.grdCronicos.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.grdCronicos.DisplayLayout.DefaultSelectedBackColor = System.Drawing.Color.Empty;
+            this.grdCronicos.DisplayLayout.DefaultSelectedForeColor = System.Drawing.Color.White;
+            appearance67.BackColorAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdCronicos.DisplayLayout.EmptyRowSettings.CellAppearance = appearance67;
+            appearance68.BackGradientAlignment = Infragistics.Win.GradientAlignment.Container;
+            appearance68.BackHatchStyle = Infragistics.Win.BackHatchStyle.None;
+            appearance68.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdCronicos.DisplayLayout.EmptyRowSettings.RowAppearance = appearance68;
+            this.grdCronicos.DisplayLayout.InterBandSpacing = 10;
+            this.grdCronicos.DisplayLayout.MaxColScrollRegions = 1;
+            this.grdCronicos.DisplayLayout.MaxRowScrollRegions = 1;
+            this.grdCronicos.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
+            this.grdCronicos.DisplayLayout.Override.ActiveAppearancesEnabled = Infragistics.Win.DefaultableBoolean.True;
+            this.grdCronicos.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
+            this.grdCronicos.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
+            this.grdCronicos.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            this.grdCronicos.DisplayLayout.Override.AllowRowSummaries = Infragistics.Win.UltraWinGrid.AllowRowSummaries.False;
+            this.grdCronicos.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.grdCronicos.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance69.BackColor = System.Drawing.Color.Transparent;
+            this.grdCronicos.DisplayLayout.Override.CardAreaAppearance = appearance69;
+            appearance70.BackColor = System.Drawing.Color.White;
+            appearance70.BackColor2 = System.Drawing.Color.White;
+            appearance70.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+            appearance70.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdCronicos.DisplayLayout.Override.CellAppearance = appearance70;
+            this.grdCronicos.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
+            appearance71.BackColor = System.Drawing.Color.White;
+            appearance71.BackColor2 = System.Drawing.Color.LightGray;
+            appearance71.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance71.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            appearance71.BorderColor = System.Drawing.Color.DarkGray;
+            appearance71.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdCronicos.DisplayLayout.Override.HeaderAppearance = appearance71;
+            this.grdCronicos.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            appearance72.AlphaLevel = ((short)(187));
+            appearance72.BackColor = System.Drawing.Color.Gainsboro;
+            appearance72.BackColor2 = System.Drawing.Color.Gainsboro;
+            appearance72.ForeColor = System.Drawing.Color.Black;
+            appearance72.ForegroundAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdCronicos.DisplayLayout.Override.RowAlternateAppearance = appearance72;
+            this.grdCronicos.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
+            appearance73.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance73.BackColor2 = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance73.BackColorAlpha = Infragistics.Win.Alpha.UseAlphaLevel;
+            appearance73.BackGradientStyle = Infragistics.Win.GradientStyle.None;
+            appearance73.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance73.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance73.BorderColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance73.FontData.BoldAsString = "False";
+            appearance73.ForeColor = System.Drawing.Color.Black;
+            this.grdCronicos.DisplayLayout.Override.SelectedRowAppearance = appearance73;
+            this.grdCronicos.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
+            this.grdCronicos.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
+            this.grdCronicos.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.grdCronicos.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdCronicos.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
+            this.grdCronicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdCronicos.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.grdCronicos.Location = new System.Drawing.Point(5, 60);
+            this.grdCronicos.Margin = new System.Windows.Forms.Padding(2);
+            this.grdCronicos.Name = "grdCronicos";
+            this.grdCronicos.Size = new System.Drawing.Size(595, 165);
+            this.grdCronicos.TabIndex = 44;
+            // 
+            // btnEditarPlan
+            // 
+            this.btnEditarPlan.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEditarPlan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEditarPlan.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEditarPlan.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEditarPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarPlan.ForeColor = System.Drawing.Color.Black;
+            this.btnEditarPlan.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarPlan.Image")));
+            this.btnEditarPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarPlan.Location = new System.Drawing.Point(1159, 590);
+            this.btnEditarPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarPlan.Name = "btnEditarPlan";
+            this.btnEditarPlan.Size = new System.Drawing.Size(75, 24);
+            this.btnEditarPlan.TabIndex = 63;
+            this.btnEditarPlan.Text = "   Editar";
+            this.btnEditarPlan.UseVisualStyleBackColor = false;
+            this.btnEditarPlan.Click += new System.EventHandler(this.btnEditarPlan_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 23);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(168, 19);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "PROBLEMAS CRÓNICOS";
+            // 
+            // btnNuevoPlan
+            // 
+            this.btnNuevoPlan.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNuevoPlan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnNuevoPlan.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnNuevoPlan.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnNuevoPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoPlan.ForeColor = System.Drawing.Color.Black;
+            this.btnNuevoPlan.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoPlan.Image")));
+            this.btnNuevoPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoPlan.Location = new System.Drawing.Point(1080, 590);
+            this.btnNuevoPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevoPlan.Name = "btnNuevoPlan";
+            this.btnNuevoPlan.Size = new System.Drawing.Size(75, 24);
+            this.btnNuevoPlan.TabIndex = 64;
+            this.btnNuevoPlan.Text = "     Nuevo";
+            this.btnNuevoPlan.UseVisualStyleBackColor = false;
+            this.btnNuevoPlan.Click += new System.EventHandler(this.btnNuevoPlan_Click);
+            // 
+            // btnNuevoCronico
+            // 
+            this.btnNuevoCronico.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNuevoCronico.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnNuevoCronico.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnNuevoCronico.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnNuevoCronico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoCronico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoCronico.ForeColor = System.Drawing.Color.Black;
+            this.btnNuevoCronico.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCronico.Image")));
+            this.btnNuevoCronico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoCronico.Location = new System.Drawing.Point(367, 229);
+            this.btnNuevoCronico.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevoCronico.Name = "btnNuevoCronico";
+            this.btnNuevoCronico.Size = new System.Drawing.Size(75, 24);
+            this.btnNuevoCronico.TabIndex = 45;
+            this.btnNuevoCronico.Text = "     Nuevo";
+            this.btnNuevoCronico.UseVisualStyleBackColor = false;
+            this.btnNuevoCronico.Click += new System.EventHandler(this.btnNuevoCronico_Click);
+            // 
+            // grdPlanIntegral
+            // 
+            this.grdPlanIntegral.CausesValidation = false;
+            appearance74.BackColor2 = System.Drawing.Color.White;
+            appearance74.BorderColor = System.Drawing.Color.DarkGray;
+            appearance74.ForeColor = System.Drawing.Color.Black;
+            this.grdPlanIntegral.DisplayLayout.Appearance = appearance74;
+            ultraGridColumn49.Header.Caption = "Tipo";
+            ultraGridColumn49.Header.VisiblePosition = 0;
+            ultraGridColumn112.Header.Caption = "Fecha";
+            ultraGridColumn112.Header.VisiblePosition = 1;
+            ultraGridColumn113.Header.Caption = "Descripción";
+            ultraGridColumn113.Header.VisiblePosition = 2;
+            ultraGridColumn113.Width = 386;
+            ultraGridColumn114.Header.Caption = "Lugar";
+            ultraGridColumn114.Header.VisiblePosition = 3;
+            ultraGridColumn114.Width = 326;
+            ultraGridBand11.Columns.AddRange(new object[] {
+            ultraGridColumn49,
+            ultraGridColumn112,
+            ultraGridColumn113,
+            ultraGridColumn114});
+            appearance75.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance75.BackColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance75.FontData.SizeInPoints = 8F;
+            appearance75.ForeColor = System.Drawing.Color.DarkBlue;
+            appearance75.TextHAlignAsString = "Left";
+            ultraGridBand11.Header.Appearance = appearance75;
+            this.grdPlanIntegral.DisplayLayout.BandsSerializer.Add(ultraGridBand11);
+            this.grdPlanIntegral.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.grdPlanIntegral.DisplayLayout.DefaultSelectedBackColor = System.Drawing.Color.Empty;
+            this.grdPlanIntegral.DisplayLayout.DefaultSelectedForeColor = System.Drawing.Color.White;
+            appearance76.BackColorAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdPlanIntegral.DisplayLayout.EmptyRowSettings.CellAppearance = appearance76;
+            appearance77.BackGradientAlignment = Infragistics.Win.GradientAlignment.Container;
+            appearance77.BackHatchStyle = Infragistics.Win.BackHatchStyle.None;
+            appearance77.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdPlanIntegral.DisplayLayout.EmptyRowSettings.RowAppearance = appearance77;
+            this.grdPlanIntegral.DisplayLayout.InterBandSpacing = 10;
+            this.grdPlanIntegral.DisplayLayout.MaxColScrollRegions = 1;
+            this.grdPlanIntegral.DisplayLayout.MaxRowScrollRegions = 1;
+            this.grdPlanIntegral.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
+            this.grdPlanIntegral.DisplayLayout.Override.ActiveAppearancesEnabled = Infragistics.Win.DefaultableBoolean.True;
+            this.grdPlanIntegral.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
+            this.grdPlanIntegral.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
+            this.grdPlanIntegral.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            this.grdPlanIntegral.DisplayLayout.Override.AllowRowSummaries = Infragistics.Win.UltraWinGrid.AllowRowSummaries.False;
+            this.grdPlanIntegral.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.grdPlanIntegral.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance78.BackColor = System.Drawing.Color.Transparent;
+            this.grdPlanIntegral.DisplayLayout.Override.CardAreaAppearance = appearance78;
+            appearance79.BackColor = System.Drawing.Color.White;
+            appearance79.BackColor2 = System.Drawing.Color.White;
+            appearance79.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+            appearance79.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdPlanIntegral.DisplayLayout.Override.CellAppearance = appearance79;
+            this.grdPlanIntegral.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
+            appearance80.BackColor = System.Drawing.Color.White;
+            appearance80.BackColor2 = System.Drawing.Color.LightGray;
+            appearance80.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance80.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            appearance80.BorderColor = System.Drawing.Color.DarkGray;
+            appearance80.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdPlanIntegral.DisplayLayout.Override.HeaderAppearance = appearance80;
+            this.grdPlanIntegral.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            appearance81.AlphaLevel = ((short)(187));
+            appearance81.BackColor = System.Drawing.Color.Gainsboro;
+            appearance81.BackColor2 = System.Drawing.Color.Gainsboro;
+            appearance81.ForeColor = System.Drawing.Color.Black;
+            appearance81.ForegroundAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdPlanIntegral.DisplayLayout.Override.RowAlternateAppearance = appearance81;
+            this.grdPlanIntegral.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
+            appearance82.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance82.BackColor2 = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance82.BackColorAlpha = Infragistics.Win.Alpha.UseAlphaLevel;
+            appearance82.BackGradientStyle = Infragistics.Win.GradientStyle.None;
+            appearance82.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance82.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance82.BorderColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance82.FontData.BoldAsString = "False";
+            appearance82.ForeColor = System.Drawing.Color.Black;
+            this.grdPlanIntegral.DisplayLayout.Override.SelectedRowAppearance = appearance82;
+            this.grdPlanIntegral.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
+            this.grdPlanIntegral.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
+            this.grdPlanIntegral.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.grdPlanIntegral.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdPlanIntegral.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
+            this.grdPlanIntegral.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdPlanIntegral.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.grdPlanIntegral.Location = new System.Drawing.Point(5, 316);
+            this.grdPlanIntegral.Margin = new System.Windows.Forms.Padding(2);
+            this.grdPlanIntegral.Name = "grdPlanIntegral";
+            this.grdPlanIntegral.Size = new System.Drawing.Size(1308, 270);
+            this.grdPlanIntegral.TabIndex = 62;
+            this.grdPlanIntegral.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdPlanIntegral_InitializeLayout);
+            // 
+            // btnEditarCronico
+            // 
+            this.btnEditarCronico.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEditarCronico.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEditarCronico.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEditarCronico.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEditarCronico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarCronico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCronico.ForeColor = System.Drawing.Color.Black;
+            this.btnEditarCronico.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarCronico.Image")));
+            this.btnEditarCronico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarCronico.Location = new System.Drawing.Point(446, 229);
+            this.btnEditarCronico.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarCronico.Name = "btnEditarCronico";
+            this.btnEditarCronico.Size = new System.Drawing.Size(75, 24);
+            this.btnEditarCronico.TabIndex = 45;
+            this.btnEditarCronico.Text = "   Editar";
+            this.btnEditarCronico.UseVisualStyleBackColor = false;
+            this.btnEditarCronico.Click += new System.EventHandler(this.btnEditarCronico_Click);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(6, 283);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(213, 19);
+            this.label38.TabIndex = 52;
+            this.label38.Text = "PLAN DE ATENCIÓN INTEGRAL";
+            // 
+            // btnEliminarCronico
+            // 
+            this.btnEliminarCronico.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEliminarCronico.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEliminarCronico.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEliminarCronico.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEliminarCronico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarCronico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCronico.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarCronico.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarCronico.Image")));
+            this.btnEliminarCronico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarCronico.Location = new System.Drawing.Point(525, 229);
+            this.btnEliminarCronico.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarCronico.Name = "btnEliminarCronico";
+            this.btnEliminarCronico.Size = new System.Drawing.Size(75, 24);
+            this.btnEliminarCronico.TabIndex = 46;
+            this.btnEliminarCronico.Text = "Eliminar";
+            this.btnEliminarCronico.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminarCronico.UseVisualStyleBackColor = false;
+            this.btnEliminarCronico.Click += new System.EventHandler(this.btnEliminarCronico_Click);
+            // 
+            // btnEliminarAgudo
+            // 
+            this.btnEliminarAgudo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEliminarAgudo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEliminarAgudo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEliminarAgudo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEliminarAgudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarAgudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarAgudo.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarAgudo.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarAgudo.Image")));
+            this.btnEliminarAgudo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarAgudo.Location = new System.Drawing.Point(1238, 229);
+            this.btnEliminarAgudo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarAgudo.Name = "btnEliminarAgudo";
+            this.btnEliminarAgudo.Size = new System.Drawing.Size(75, 24);
+            this.btnEliminarAgudo.TabIndex = 51;
+            this.btnEliminarAgudo.Text = "Eliminar";
+            this.btnEliminarAgudo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminarAgudo.UseVisualStyleBackColor = false;
+            this.btnEliminarAgudo.Click += new System.EventHandler(this.btnEliminarAgudo_Click);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(620, 23);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(157, 19);
+            this.label37.TabIndex = 47;
+            this.label37.Text = "PROBLEMAS AGUDOS";
+            // 
+            // btnEditarAgudo
+            // 
+            this.btnEditarAgudo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEditarAgudo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEditarAgudo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEditarAgudo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEditarAgudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarAgudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarAgudo.ForeColor = System.Drawing.Color.Black;
+            this.btnEditarAgudo.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarAgudo.Image")));
+            this.btnEditarAgudo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarAgudo.Location = new System.Drawing.Point(1159, 229);
+            this.btnEditarAgudo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarAgudo.Name = "btnEditarAgudo";
+            this.btnEditarAgudo.Size = new System.Drawing.Size(75, 24);
+            this.btnEditarAgudo.TabIndex = 49;
+            this.btnEditarAgudo.Text = "   Editar";
+            this.btnEditarAgudo.UseVisualStyleBackColor = false;
+            this.btnEditarAgudo.Click += new System.EventHandler(this.btnEditarAgudo_Click);
+            // 
+            // btnNuevoAgudo
+            // 
+            this.btnNuevoAgudo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNuevoAgudo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnNuevoAgudo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnNuevoAgudo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnNuevoAgudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoAgudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoAgudo.ForeColor = System.Drawing.Color.Black;
+            this.btnNuevoAgudo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoAgudo.Image")));
+            this.btnNuevoAgudo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoAgudo.Location = new System.Drawing.Point(1080, 229);
+            this.btnNuevoAgudo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevoAgudo.Name = "btnNuevoAgudo";
+            this.btnNuevoAgudo.Size = new System.Drawing.Size(75, 24);
+            this.btnNuevoAgudo.TabIndex = 50;
+            this.btnNuevoAgudo.Text = "     Nuevo";
+            this.btnNuevoAgudo.UseVisualStyleBackColor = false;
+            this.btnNuevoAgudo.Click += new System.EventHandler(this.btnNuevoAgudo_Click);
+            // 
+            // grdAgudos
+            // 
+            this.grdAgudos.CausesValidation = false;
+            appearance83.BackColor2 = System.Drawing.Color.White;
+            appearance83.BorderColor = System.Drawing.Color.DarkGray;
+            appearance83.ForeColor = System.Drawing.Color.Black;
+            this.grdAgudos.DisplayLayout.Appearance = appearance83;
+            ultraGridColumn81.Header.Caption = "Fecha";
+            ultraGridColumn81.Header.VisiblePosition = 1;
+            ultraGridColumn109.Header.Caption = "Problema Agudo";
+            ultraGridColumn109.Header.VisiblePosition = 0;
+            ultraGridColumn109.Width = 219;
+            ultraGridColumn110.Header.Caption = "Observación";
+            ultraGridColumn110.Header.VisiblePosition = 2;
+            ultraGridColumn110.Width = 350;
+            ultraGridBand12.Columns.AddRange(new object[] {
+            ultraGridColumn81,
+            ultraGridColumn109,
+            ultraGridColumn110});
+            appearance84.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance84.BackColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance84.FontData.SizeInPoints = 8F;
+            appearance84.ForeColor = System.Drawing.Color.DarkBlue;
+            appearance84.TextHAlignAsString = "Left";
+            ultraGridBand12.Header.Appearance = appearance84;
+            this.grdAgudos.DisplayLayout.BandsSerializer.Add(ultraGridBand12);
+            this.grdAgudos.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.grdAgudos.DisplayLayout.DefaultSelectedBackColor = System.Drawing.Color.Empty;
+            this.grdAgudos.DisplayLayout.DefaultSelectedForeColor = System.Drawing.Color.White;
+            appearance85.BackColorAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdAgudos.DisplayLayout.EmptyRowSettings.CellAppearance = appearance85;
+            appearance86.BackGradientAlignment = Infragistics.Win.GradientAlignment.Container;
+            appearance86.BackHatchStyle = Infragistics.Win.BackHatchStyle.None;
+            appearance86.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdAgudos.DisplayLayout.EmptyRowSettings.RowAppearance = appearance86;
+            this.grdAgudos.DisplayLayout.InterBandSpacing = 10;
+            this.grdAgudos.DisplayLayout.MaxColScrollRegions = 1;
+            this.grdAgudos.DisplayLayout.MaxRowScrollRegions = 1;
+            this.grdAgudos.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
+            this.grdAgudos.DisplayLayout.Override.ActiveAppearancesEnabled = Infragistics.Win.DefaultableBoolean.True;
+            this.grdAgudos.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
+            this.grdAgudos.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
+            this.grdAgudos.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            this.grdAgudos.DisplayLayout.Override.AllowRowSummaries = Infragistics.Win.UltraWinGrid.AllowRowSummaries.False;
+            this.grdAgudos.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.grdAgudos.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance87.BackColor = System.Drawing.Color.Transparent;
+            this.grdAgudos.DisplayLayout.Override.CardAreaAppearance = appearance87;
+            appearance88.BackColor = System.Drawing.Color.White;
+            appearance88.BackColor2 = System.Drawing.Color.White;
+            appearance88.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+            appearance88.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdAgudos.DisplayLayout.Override.CellAppearance = appearance88;
+            this.grdAgudos.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
+            appearance89.BackColor = System.Drawing.Color.White;
+            appearance89.BackColor2 = System.Drawing.Color.LightGray;
+            appearance89.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance89.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            appearance89.BorderColor = System.Drawing.Color.DarkGray;
+            appearance89.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdAgudos.DisplayLayout.Override.HeaderAppearance = appearance89;
+            this.grdAgudos.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            appearance90.AlphaLevel = ((short)(187));
+            appearance90.BackColor = System.Drawing.Color.Gainsboro;
+            appearance90.BackColor2 = System.Drawing.Color.Gainsboro;
+            appearance90.ForeColor = System.Drawing.Color.Black;
+            appearance90.ForegroundAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdAgudos.DisplayLayout.Override.RowAlternateAppearance = appearance90;
+            this.grdAgudos.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
+            appearance91.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance91.BackColor2 = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance91.BackColorAlpha = Infragistics.Win.Alpha.UseAlphaLevel;
+            appearance91.BackGradientStyle = Infragistics.Win.GradientStyle.None;
+            appearance91.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance91.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance91.BorderColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance91.FontData.BoldAsString = "False";
+            appearance91.ForeColor = System.Drawing.Color.Black;
+            this.grdAgudos.DisplayLayout.Override.SelectedRowAppearance = appearance91;
+            this.grdAgudos.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
+            this.grdAgudos.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
+            this.grdAgudos.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.grdAgudos.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdAgudos.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
+            this.grdAgudos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdAgudos.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.grdAgudos.Location = new System.Drawing.Point(624, 60);
+            this.grdAgudos.Margin = new System.Windows.Forms.Padding(2);
+            this.grdAgudos.Name = "grdAgudos";
+            this.grdAgudos.Size = new System.Drawing.Size(689, 165);
+            this.grdAgudos.TabIndex = 48;
+            // 
+            // tpDatosAntecedentes
+            // 
+            this.tpDatosAntecedentes.Controls.Add(this.tbcDatos);
+            this.tpDatosAntecedentes.Controls.Add(this.groupBox3);
+            this.tpDatosAntecedentes.Controls.Add(this.label39);
+            this.tpDatosAntecedentes.Controls.Add(this.ultraGrid1);
+            this.tpDatosAntecedentes.Controls.Add(this.btnGuardarAntecedentes);
+            this.tpDatosAntecedentes.Controls.Add(this.ultraGrid2);
+            this.tpDatosAntecedentes.Controls.Add(this.label60);
+            this.tpDatosAntecedentes.Controls.Add(this.txtDescripcionAntecedentes);
+            this.tpDatosAntecedentes.Controls.Add(this.label58);
+            this.tpDatosAntecedentes.Controls.Add(this.shapeContainer1);
+            this.tpDatosAntecedentes.Location = new System.Drawing.Point(4, 22);
+            this.tpDatosAntecedentes.Name = "tpDatosAntecedentes";
+            this.tpDatosAntecedentes.Size = new System.Drawing.Size(1321, 646);
+            this.tpDatosAntecedentes.TabIndex = 7;
+            this.tpDatosAntecedentes.Text = "DATOS GENERALES Y ANTECEDENTES";
+            this.tpDatosAntecedentes.UseVisualStyleBackColor = true;
+            // 
+            // tbcDatos
+            // 
+            this.tbcDatos.Controls.Add(this.tbpAdultoMayor);
+            this.tbcDatos.Controls.Add(this.tbpAdolescente);
+            this.tbcDatos.Controls.Add(this.tbpNinio);
+            this.tbcDatos.Location = new System.Drawing.Point(3, 198);
+            this.tbcDatos.Name = "tbcDatos";
+            this.tbcDatos.SelectedIndex = 0;
+            this.tbcDatos.Size = new System.Drawing.Size(551, 445);
+            this.tbcDatos.TabIndex = 113;
+            // 
+            // tbpAdultoMayor
+            // 
+            this.tbpAdultoMayor.Controls.Add(this.label106);
+            this.tbpAdultoMayor.Controls.Add(this.label108);
+            this.tbpAdultoMayor.Controls.Add(this.textFlujoVaginalPatológico);
+            this.tbpAdultoMayor.Controls.Add(this.textOtroAntecedentesFamiliares);
+            this.tbpAdultoMayor.Controls.Add(this.textReaccionAlergicaMedicamentos);
+            this.tbpAdultoMayor.Controls.Add(this.textMedicamentoFrecuenteDosis);
+            this.tbpAdultoMayor.Controls.Add(this.label98);
+            this.tbpAdultoMayor.Controls.Add(this.label66);
+            this.tbpAdultoMayor.Controls.Add(this.pnlSexualidad);
+            this.tbpAdultoMayor.Controls.Add(this.pnlEmbarazo);
+            this.tbpAdultoMayor.Controls.Add(this.txtAmCuidador);
+            this.tbpAdultoMayor.Controls.Add(this.label63);
+            this.tbpAdultoMayor.Controls.Add(this.label40);
+            this.tbpAdultoMayor.Controls.Add(this.label62);
+            this.tbpAdultoMayor.Controls.Add(this.label41);
+            this.tbpAdultoMayor.Controls.Add(this.pnlMenarquia);
+            this.tbpAdultoMayor.Controls.Add(this.txtAmCuidadorEdad);
+            this.tbpAdultoMayor.Controls.Add(this.label42);
+            this.tbpAdultoMayor.Controls.Add(this.txtAmCuidadorDni);
+            this.tbpAdultoMayor.Controls.Add(this.label43);
+            this.tbpAdultoMayor.Location = new System.Drawing.Point(4, 22);
+            this.tbpAdultoMayor.Name = "tbpAdultoMayor";
+            this.tbpAdultoMayor.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpAdultoMayor.Size = new System.Drawing.Size(543, 419);
+            this.tbpAdultoMayor.TabIndex = 0;
+            this.tbpAdultoMayor.Text = "Adulto Mayor / Adulto";
+            this.tbpAdultoMayor.UseVisualStyleBackColor = true;
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label106.Location = new System.Drawing.Point(346, 43);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(124, 14);
+            this.label106.TabIndex = 141;
+            this.label106.Text = "Flujo Vaginal Patológico";
+            this.label106.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label108.Location = new System.Drawing.Point(3, 43);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(173, 14);
+            this.label108.TabIndex = 140;
+            this.label108.Text = "Antecedentes familiares (OTROS)";
+            this.label108.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textFlujoVaginalPatológico
+            // 
+            this.textFlujoVaginalPatológico.Location = new System.Drawing.Point(349, 61);
+            this.textFlujoVaginalPatológico.Multiline = true;
+            this.textFlujoVaginalPatológico.Name = "textFlujoVaginalPatológico";
+            this.textFlujoVaginalPatológico.Size = new System.Drawing.Size(176, 23);
+            this.textFlujoVaginalPatológico.TabIndex = 139;
+            // 
+            // textOtroAntecedentesFamiliares
+            // 
+            this.textOtroAntecedentesFamiliares.Location = new System.Drawing.Point(6, 61);
+            this.textOtroAntecedentesFamiliares.Multiline = true;
+            this.textOtroAntecedentesFamiliares.Name = "textOtroAntecedentesFamiliares";
+            this.textOtroAntecedentesFamiliares.Size = new System.Drawing.Size(333, 23);
+            this.textOtroAntecedentesFamiliares.TabIndex = 138;
+            // 
+            // textReaccionAlergicaMedicamentos
+            // 
+            this.textReaccionAlergicaMedicamentos.Location = new System.Drawing.Point(349, 104);
+            this.textReaccionAlergicaMedicamentos.Multiline = true;
+            this.textReaccionAlergicaMedicamentos.Name = "textReaccionAlergicaMedicamentos";
+            this.textReaccionAlergicaMedicamentos.Size = new System.Drawing.Size(176, 37);
+            this.textReaccionAlergicaMedicamentos.TabIndex = 135;
+            // 
+            // textMedicamentoFrecuenteDosis
+            // 
+            this.textMedicamentoFrecuenteDosis.Location = new System.Drawing.Point(6, 104);
+            this.textMedicamentoFrecuenteDosis.Multiline = true;
+            this.textMedicamentoFrecuenteDosis.Name = "textMedicamentoFrecuenteDosis";
+            this.textMedicamentoFrecuenteDosis.Size = new System.Drawing.Size(333, 37);
+            this.textMedicamentoFrecuenteDosis.TabIndex = 134;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(346, 88);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(171, 13);
+            this.label98.TabIndex = 132;
+            this.label98.Text = "Reacción Alérgica a Medicamentos";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(6, 190);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(56, 14);
+            this.label66.TabIndex = 131;
+            this.label66.Text = "Embarazo";
+            this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlSexualidad
+            // 
+            this.pnlSexualidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSexualidad.Controls.Add(this.label56);
+            this.pnlSexualidad.Controls.Add(this.txtAmInicioRs);
+            this.pnlSexualidad.Controls.Add(this.label59);
+            this.pnlSexualidad.Controls.Add(this.txtAmNroPs);
+            this.pnlSexualidad.Location = new System.Drawing.Point(6, 161);
+            this.pnlSexualidad.Name = "pnlSexualidad";
+            this.pnlSexualidad.Size = new System.Drawing.Size(252, 28);
+            this.pnlSexualidad.TabIndex = 126;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(3, 6);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(46, 13);
+            this.label56.TabIndex = 120;
+            this.label56.Text = "Inicio RS";
+            // 
+            // txtAmInicioRs
+            // 
+            this.txtAmInicioRs.Location = new System.Drawing.Point(55, 3);
+            this.txtAmInicioRs.Name = "txtAmInicioRs";
+            this.txtAmInicioRs.Size = new System.Drawing.Size(39, 21);
+            this.txtAmInicioRs.TabIndex = 121;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(116, 6);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(87, 13);
+            this.label59.TabIndex = 122;
+            this.label59.Text = "Nro. PS (3 meses)";
+            // 
+            // txtAmNroPs
+            // 
+            this.txtAmNroPs.Location = new System.Drawing.Point(208, 3);
+            this.txtAmNroPs.Name = "txtAmNroPs";
+            this.txtAmNroPs.Size = new System.Drawing.Size(39, 21);
+            this.txtAmNroPs.TabIndex = 123;
+            // 
+            // pnlEmbarazo
+            // 
+            this.pnlEmbarazo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEmbarazo.Controls.Add(this.btnEditarEmbarazo);
+            this.pnlEmbarazo.Controls.Add(this.grdEmbarazos);
+            this.pnlEmbarazo.Controls.Add(this.label105);
+            this.pnlEmbarazo.Controls.Add(this.textObservacionesEmbarazo);
+            this.pnlEmbarazo.Controls.Add(this.btnNuevoEmbarazo);
+            this.pnlEmbarazo.Controls.Add(this.btnEliminarEmbarazo);
+            this.pnlEmbarazo.Controls.Add(this.txtAmAborto);
+            this.pnlEmbarazo.Controls.Add(this.label69);
+            this.pnlEmbarazo.Controls.Add(this.txtAmPrematuro);
+            this.pnlEmbarazo.Controls.Add(this.label68);
+            this.pnlEmbarazo.Controls.Add(this.txtAmNroParto);
+            this.pnlEmbarazo.Controls.Add(this.label67);
+            this.pnlEmbarazo.Location = new System.Drawing.Point(6, 207);
+            this.pnlEmbarazo.Name = "pnlEmbarazo";
+            this.pnlEmbarazo.Size = new System.Drawing.Size(531, 212);
+            this.pnlEmbarazo.TabIndex = 130;
+            // 
+            // btnEditarEmbarazo
+            // 
+            this.btnEditarEmbarazo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEditarEmbarazo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEditarEmbarazo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEditarEmbarazo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEditarEmbarazo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarEmbarazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarEmbarazo.ForeColor = System.Drawing.Color.Black;
+            this.btnEditarEmbarazo.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarEmbarazo.Image")));
+            this.btnEditarEmbarazo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarEmbarazo.Location = new System.Drawing.Point(452, 78);
+            this.btnEditarEmbarazo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarEmbarazo.Name = "btnEditarEmbarazo";
+            this.btnEditarEmbarazo.Size = new System.Drawing.Size(75, 24);
+            this.btnEditarEmbarazo.TabIndex = 137;
+            this.btnEditarEmbarazo.Text = "   Editar";
+            this.btnEditarEmbarazo.UseVisualStyleBackColor = false;
+            this.btnEditarEmbarazo.Click += new System.EventHandler(this.btnEditarEmbarazo_Click);
+            // 
+            // grdEmbarazos
+            // 
+            this.grdEmbarazos.CausesValidation = false;
+            appearance92.BackColor2 = System.Drawing.Color.White;
+            appearance92.BorderColor = System.Drawing.Color.DarkGray;
+            appearance92.ForeColor = System.Drawing.Color.Black;
+            this.grdEmbarazos.DisplayLayout.Appearance = appearance92;
+            ultraGridColumn34.Header.VisiblePosition = 0;
+            ultraGridColumn34.Width = 64;
+            ultraGridColumn29.Header.VisiblePosition = 1;
+            ultraGridColumn31.Header.VisiblePosition = 2;
+            ultraGridColumn32.Header.VisiblePosition = 3;
+            ultraGridColumn33.Header.VisiblePosition = 4;
+            ultraGridColumn38.Header.VisiblePosition = 5;
+            ultraGridColumn46.Header.VisiblePosition = 6;
+            ultraGridBand13.Columns.AddRange(new object[] {
+            ultraGridColumn34,
+            ultraGridColumn29,
+            ultraGridColumn31,
+            ultraGridColumn32,
+            ultraGridColumn33,
+            ultraGridColumn38,
+            ultraGridColumn46});
+            appearance93.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance93.BackColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance93.FontData.SizeInPoints = 8F;
+            appearance93.ForeColor = System.Drawing.Color.DarkBlue;
+            appearance93.TextHAlignAsString = "Left";
+            ultraGridBand13.Header.Appearance = appearance93;
+            this.grdEmbarazos.DisplayLayout.BandsSerializer.Add(ultraGridBand13);
+            this.grdEmbarazos.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.grdEmbarazos.DisplayLayout.DefaultSelectedBackColor = System.Drawing.Color.Empty;
+            this.grdEmbarazos.DisplayLayout.DefaultSelectedForeColor = System.Drawing.Color.White;
+            appearance94.BackColorAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdEmbarazos.DisplayLayout.EmptyRowSettings.CellAppearance = appearance94;
+            appearance95.BackGradientAlignment = Infragistics.Win.GradientAlignment.Container;
+            appearance95.BackHatchStyle = Infragistics.Win.BackHatchStyle.None;
+            appearance95.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdEmbarazos.DisplayLayout.EmptyRowSettings.RowAppearance = appearance95;
+            this.grdEmbarazos.DisplayLayout.InterBandSpacing = 10;
+            this.grdEmbarazos.DisplayLayout.MaxColScrollRegions = 1;
+            this.grdEmbarazos.DisplayLayout.MaxRowScrollRegions = 1;
+            this.grdEmbarazos.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
+            this.grdEmbarazos.DisplayLayout.Override.ActiveAppearancesEnabled = Infragistics.Win.DefaultableBoolean.True;
+            this.grdEmbarazos.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
+            this.grdEmbarazos.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
+            this.grdEmbarazos.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            this.grdEmbarazos.DisplayLayout.Override.AllowRowSummaries = Infragistics.Win.UltraWinGrid.AllowRowSummaries.False;
+            this.grdEmbarazos.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.grdEmbarazos.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance96.BackColor = System.Drawing.Color.Transparent;
+            this.grdEmbarazos.DisplayLayout.Override.CardAreaAppearance = appearance96;
+            appearance97.BackColor = System.Drawing.Color.White;
+            appearance97.BackColor2 = System.Drawing.Color.White;
+            appearance97.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+            appearance97.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdEmbarazos.DisplayLayout.Override.CellAppearance = appearance97;
+            this.grdEmbarazos.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
+            appearance98.BackColor = System.Drawing.Color.White;
+            appearance98.BackColor2 = System.Drawing.Color.LightGray;
+            appearance98.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance98.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            appearance98.BorderColor = System.Drawing.Color.DarkGray;
+            appearance98.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdEmbarazos.DisplayLayout.Override.HeaderAppearance = appearance98;
+            this.grdEmbarazos.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            appearance99.AlphaLevel = ((short)(187));
+            appearance99.BackColor = System.Drawing.Color.Gainsboro;
+            appearance99.BackColor2 = System.Drawing.Color.Gainsboro;
+            appearance99.ForeColor = System.Drawing.Color.Black;
+            appearance99.ForegroundAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdEmbarazos.DisplayLayout.Override.RowAlternateAppearance = appearance99;
+            this.grdEmbarazos.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
+            appearance100.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance100.BackColor2 = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance100.BackColorAlpha = Infragistics.Win.Alpha.UseAlphaLevel;
+            appearance100.BackGradientStyle = Infragistics.Win.GradientStyle.None;
+            appearance100.BorderAlpha = Infragistics.Win.Alpha.Transparent;
+            appearance100.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance100.BorderColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance100.FontData.BoldAsString = "False";
+            appearance100.ForeColor = System.Drawing.Color.Black;
+            this.grdEmbarazos.DisplayLayout.Override.SelectedRowAppearance = appearance100;
+            this.grdEmbarazos.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
+            this.grdEmbarazos.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
+            this.grdEmbarazos.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.grdEmbarazos.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdEmbarazos.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
+            this.grdEmbarazos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdEmbarazos.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.grdEmbarazos.Location = new System.Drawing.Point(6, 36);
+            this.grdEmbarazos.Margin = new System.Windows.Forms.Padding(2);
+            this.grdEmbarazos.Name = "grdEmbarazos";
+            this.grdEmbarazos.Size = new System.Drawing.Size(442, 113);
+            this.grdEmbarazos.TabIndex = 136;
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(2, 151);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(125, 13);
+            this.label105.TabIndex = 135;
+            this.label105.Text = "Observaciones Embarazo";
+            this.label105.Click += new System.EventHandler(this.label105_Click);
+            // 
+            // textObservacionesEmbarazo
+            // 
+            this.textObservacionesEmbarazo.Location = new System.Drawing.Point(2, 167);
+            this.textObservacionesEmbarazo.Multiline = true;
+            this.textObservacionesEmbarazo.Name = "textObservacionesEmbarazo";
+            this.textObservacionesEmbarazo.Size = new System.Drawing.Size(524, 39);
+            this.textObservacionesEmbarazo.TabIndex = 134;
+            // 
+            // btnNuevoEmbarazo
+            // 
+            this.btnNuevoEmbarazo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNuevoEmbarazo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnNuevoEmbarazo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnNuevoEmbarazo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnNuevoEmbarazo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoEmbarazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoEmbarazo.ForeColor = System.Drawing.Color.Black;
+            this.btnNuevoEmbarazo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoEmbarazo.Image")));
+            this.btnNuevoEmbarazo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoEmbarazo.Location = new System.Drawing.Point(452, 48);
+            this.btnNuevoEmbarazo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevoEmbarazo.Name = "btnNuevoEmbarazo";
+            this.btnNuevoEmbarazo.Size = new System.Drawing.Size(75, 24);
+            this.btnNuevoEmbarazo.TabIndex = 130;
+            this.btnNuevoEmbarazo.Text = "     Nuevo";
+            this.btnNuevoEmbarazo.UseVisualStyleBackColor = false;
+            this.btnNuevoEmbarazo.Click += new System.EventHandler(this.btnNuevoEmbarazo_Click);
+            // 
+            // btnEliminarEmbarazo
+            // 
+            this.btnEliminarEmbarazo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEliminarEmbarazo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEliminarEmbarazo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEliminarEmbarazo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEliminarEmbarazo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarEmbarazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarEmbarazo.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarEmbarazo.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarEmbarazo.Image")));
+            this.btnEliminarEmbarazo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarEmbarazo.Location = new System.Drawing.Point(452, 106);
+            this.btnEliminarEmbarazo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarEmbarazo.Name = "btnEliminarEmbarazo";
+            this.btnEliminarEmbarazo.Size = new System.Drawing.Size(75, 24);
+            this.btnEliminarEmbarazo.TabIndex = 132;
+            this.btnEliminarEmbarazo.Text = "Eliminar";
+            this.btnEliminarEmbarazo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminarEmbarazo.UseVisualStyleBackColor = false;
+            this.btnEliminarEmbarazo.Click += new System.EventHandler(this.btnEliminarEmbarazo_Click);
+            // 
+            // txtAmAborto
+            // 
+            this.txtAmAborto.Location = new System.Drawing.Point(325, 2);
+            this.txtAmAborto.Name = "txtAmAborto";
+            this.txtAmAborto.Size = new System.Drawing.Size(39, 21);
+            this.txtAmAborto.TabIndex = 128;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(258, 9);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(61, 13);
+            this.label69.TabIndex = 127;
+            this.label69.Text = "Nro. Aborto";
+            // 
+            // txtAmPrematuro
+            // 
+            this.txtAmPrematuro.Location = new System.Drawing.Point(203, 2);
+            this.txtAmPrematuro.Name = "txtAmPrematuro";
+            this.txtAmPrematuro.Size = new System.Drawing.Size(39, 21);
+            this.txtAmPrematuro.TabIndex = 126;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(123, 9);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(80, 13);
+            this.label68.TabIndex = 125;
+            this.label68.Text = "Nro. Prematuro";
+            // 
+            // txtAmNroParto
+            // 
+            this.txtAmNroParto.Location = new System.Drawing.Point(71, 3);
+            this.txtAmNroParto.Name = "txtAmNroParto";
+            this.txtAmNroParto.Size = new System.Drawing.Size(39, 21);
+            this.txtAmNroParto.TabIndex = 124;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(10, 9);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(55, 13);
+            this.label67.TabIndex = 120;
+            this.label67.Text = "Nro. Parto";
+            // 
+            // txtAmCuidador
+            // 
+            this.txtAmCuidador.Location = new System.Drawing.Point(5, 19);
+            this.txtAmCuidador.Name = "txtAmCuidador";
+            this.txtAmCuidador.Size = new System.Drawing.Size(333, 21);
+            this.txtAmCuidador.TabIndex = 113;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(266, 144);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(60, 14);
+            this.label63.TabIndex = 129;
+            this.label63.Text = "Menarquia";
+            this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(3, 3);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(159, 13);
+            this.label40.TabIndex = 112;
+            this.label40.Text = "Familiar o cuidador responsable";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(6, 144);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(61, 14);
+            this.label62.TabIndex = 127;
+            this.label62.Text = "Sexualidad";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(345, 3);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(30, 13);
+            this.label41.TabIndex = 114;
+            this.label41.Text = "Edad";
+            // 
+            // pnlMenarquia
+            // 
+            this.pnlMenarquia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMenarquia.Controls.Add(this.label64);
+            this.pnlMenarquia.Controls.Add(this.txtAmFechaUR);
+            this.pnlMenarquia.Controls.Add(this.label65);
+            this.pnlMenarquia.Controls.Add(this.txtAmRC);
+            this.pnlMenarquia.Location = new System.Drawing.Point(268, 161);
+            this.pnlMenarquia.Name = "pnlMenarquia";
+            this.pnlMenarquia.Size = new System.Drawing.Size(253, 28);
+            this.pnlMenarquia.TabIndex = 128;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(7, 7);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(50, 13);
+            this.label64.TabIndex = 120;
+            this.label64.Text = "Fecha UR";
+            // 
+            // txtAmFechaUR
+            // 
+            this.txtAmFechaUR.Location = new System.Drawing.Point(79, 3);
+            this.txtAmFechaUR.Name = "txtAmFechaUR";
+            this.txtAmFechaUR.Size = new System.Drawing.Size(39, 21);
+            this.txtAmFechaUR.TabIndex = 121;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(141, 7);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(23, 13);
+            this.label65.TabIndex = 122;
+            this.label65.Text = "R/C";
+            // 
+            // txtAmRC
+            // 
+            this.txtAmRC.Location = new System.Drawing.Point(179, 3);
+            this.txtAmRC.Name = "txtAmRC";
+            this.txtAmRC.Size = new System.Drawing.Size(39, 21);
+            this.txtAmRC.TabIndex = 123;
+            // 
+            // txtAmCuidadorEdad
+            // 
+            this.txtAmCuidadorEdad.Location = new System.Drawing.Point(348, 19);
+            this.txtAmCuidadorEdad.Name = "txtAmCuidadorEdad";
+            this.txtAmCuidadorEdad.Size = new System.Drawing.Size(39, 21);
+            this.txtAmCuidadorEdad.TabIndex = 115;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(391, 3);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(96, 13);
+            this.label42.TabIndex = 116;
+            this.label42.Text = "Identificación (DNI)";
+            // 
+            // txtAmCuidadorDni
+            // 
+            this.txtAmCuidadorDni.Location = new System.Drawing.Point(393, 19);
+            this.txtAmCuidadorDni.Name = "txtAmCuidadorDni";
+            this.txtAmCuidadorDni.Size = new System.Drawing.Size(131, 21);
+            this.txtAmCuidadorDni.TabIndex = 117;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(7, 87);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(317, 13);
+            this.label43.TabIndex = 118;
+            this.label43.Text = "Medicamento Frecuente (dosis, tiempo de uso u otra observación)";
+            // 
+            // tbpAdolescente
+            // 
+            this.tbpAdolescente.BackColor = System.Drawing.Color.Transparent;
+            this.tbpAdolescente.Controls.Add(this.panel2);
+            this.tbpAdolescente.Controls.Add(this.panel1);
+            this.tbpAdolescente.Controls.Add(this.label101);
+            this.tbpAdolescente.Controls.Add(this.panel6);
+            this.tbpAdolescente.Controls.Add(this.panel5);
+            this.tbpAdolescente.Controls.Add(this.panel4);
+            this.tbpAdolescente.Location = new System.Drawing.Point(4, 22);
+            this.tbpAdolescente.Name = "tbpAdolescente";
+            this.tbpAdolescente.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpAdolescente.Size = new System.Drawing.Size(543, 419);
+            this.tbpAdolescente.TabIndex = 1;
+            this.tbpAdolescente.Text = "Adolescente";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label107);
+            this.panel2.Controls.Add(this.label102);
+            this.panel2.Controls.Add(this.textViveConAdol);
+            this.panel2.Location = new System.Drawing.Point(9, 99);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(512, 55);
+            this.panel2.TabIndex = 136;
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label107.Location = new System.Drawing.Point(6, 16);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(82, 14);
+            this.label107.TabIndex = 129;
+            this.label107.Text = "Ant. Familiares";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(121, 10);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(288, 13);
+            this.label102.TabIndex = 120;
+            this.label102.Text = "En caso de no tener referente adulto, Indicar con quien vive.";
+            // 
+            // textViveConAdol
+            // 
+            this.textViveConAdol.Location = new System.Drawing.Point(124, 26);
+            this.textViveConAdol.Name = "textViveConAdol";
+            this.textViveConAdol.Size = new System.Drawing.Size(377, 21);
+            this.textViveConAdol.TabIndex = 121;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.textEdadAdol);
+            this.panel1.Controls.Add(this.label103);
+            this.panel1.Controls.Add(this.label99);
+            this.panel1.Controls.Add(this.textNombreCuidadorAdol);
+            this.panel1.Controls.Add(this.textDniCuidadorAdol);
+            this.panel1.Controls.Add(this.label100);
+            this.panel1.Location = new System.Drawing.Point(9, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(512, 53);
+            this.panel1.TabIndex = 134;
+            // 
+            // textEdadAdol
+            // 
+            this.textEdadAdol.Location = new System.Drawing.Point(365, 21);
+            this.textEdadAdol.Name = "textEdadAdol";
+            this.textEdadAdol.Size = new System.Drawing.Size(121, 21);
+            this.textEdadAdol.TabIndex = 123;
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Location = new System.Drawing.Point(362, 5);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(30, 13);
+            this.label103.TabIndex = 122;
+            this.label103.Text = "Edad";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(3, 5);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(45, 13);
+            this.label99.TabIndex = 116;
+            this.label99.Text = "Nombre";
+            // 
+            // textNombreCuidadorAdol
+            // 
+            this.textNombreCuidadorAdol.Location = new System.Drawing.Point(3, 21);
+            this.textNombreCuidadorAdol.Name = "textNombreCuidadorAdol";
+            this.textNombreCuidadorAdol.Size = new System.Drawing.Size(213, 21);
+            this.textNombreCuidadorAdol.TabIndex = 117;
+            // 
+            // textDniCuidadorAdol
+            // 
+            this.textDniCuidadorAdol.Location = new System.Drawing.Point(230, 21);
+            this.textDniCuidadorAdol.Name = "textDniCuidadorAdol";
+            this.textDniCuidadorAdol.Size = new System.Drawing.Size(121, 21);
+            this.textDniCuidadorAdol.TabIndex = 119;
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(227, 5);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(24, 13);
+            this.label100.TabIndex = 118;
+            this.label100.Text = "DNI";
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label101.Location = new System.Drawing.Point(6, 15);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(100, 14);
+            this.label101.TabIndex = 135;
+            this.label101.Text = "Datos del Cuidador";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label73);
+            this.panel6.Controls.Add(this.txtAdoNroTv);
+            this.panel6.Controls.Add(this.txtAdoNroJuegos);
+            this.panel6.Controls.Add(this.label76);
+            this.panel6.Controls.Add(this.label74);
+            this.panel6.Location = new System.Drawing.Point(9, 238);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(512, 55);
+            this.panel6.TabIndex = 132;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(118, 12);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(70, 13);
+            this.label73.TabIndex = 120;
+            this.label73.Text = "Nro. Horas TV";
+            // 
+            // txtAdoNroTv
+            // 
+            this.txtAdoNroTv.Location = new System.Drawing.Point(121, 28);
+            this.txtAdoNroTv.Name = "txtAdoNroTv";
+            this.txtAdoNroTv.Size = new System.Drawing.Size(95, 21);
+            this.txtAdoNroTv.TabIndex = 121;
+            // 
+            // txtAdoNroJuegos
+            // 
+            this.txtAdoNroJuegos.Location = new System.Drawing.Point(243, 28);
+            this.txtAdoNroJuegos.Name = "txtAdoNroJuegos";
+            this.txtAdoNroJuegos.Size = new System.Drawing.Size(258, 21);
+            this.txtAdoNroJuegos.TabIndex = 123;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label76.Location = new System.Drawing.Point(6, 21);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(68, 14);
+            this.label76.TabIndex = 133;
+            this.label76.Text = "Ant. Hábitos";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(241, 12);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(120, 13);
+            this.label74.TabIndex = 122;
+            this.label74.Text = "Nro. Horas Video Juegos";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.textObservacionesSexualidadAdol);
+            this.panel5.Controls.Add(this.label104);
+            this.panel5.Controls.Add(this.label78);
+            this.panel5.Controls.Add(this.txtAdoMenarquia);
+            this.panel5.Controls.Add(this.txtAdoEdadRS);
+            this.panel5.Controls.Add(this.label79);
+            this.panel5.Controls.Add(this.label75);
+            this.panel5.Location = new System.Drawing.Point(9, 302);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(512, 109);
+            this.panel5.TabIndex = 130;
+            // 
+            // textObservacionesSexualidadAdol
+            // 
+            this.textObservacionesSexualidadAdol.Location = new System.Drawing.Point(192, 52);
+            this.textObservacionesSexualidadAdol.Multiline = true;
+            this.textObservacionesSexualidadAdol.Name = "textObservacionesSexualidadAdol";
+            this.textObservacionesSexualidadAdol.Size = new System.Drawing.Size(309, 52);
+            this.textObservacionesSexualidadAdol.TabIndex = 133;
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Location = new System.Drawing.Point(96, 70);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(77, 13);
+            this.label104.TabIndex = 132;
+            this.label104.Text = "Observaciones";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(189, 11);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(133, 13);
+            this.label78.TabIndex = 120;
+            this.label78.Text = "Menarquia / Espermarquia";
+            // 
+            // txtAdoMenarquia
+            // 
+            this.txtAdoMenarquia.Location = new System.Drawing.Point(192, 27);
+            this.txtAdoMenarquia.Name = "txtAdoMenarquia";
+            this.txtAdoMenarquia.Size = new System.Drawing.Size(127, 21);
+            this.txtAdoMenarquia.TabIndex = 121;
+            // 
+            // txtAdoEdadRS
+            // 
+            this.txtAdoEdadRS.Location = new System.Drawing.Point(351, 27);
+            this.txtAdoEdadRS.Name = "txtAdoEdadRS";
+            this.txtAdoEdadRS.Size = new System.Drawing.Size(150, 21);
+            this.txtAdoEdadRS.TabIndex = 123;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(348, 11);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(134, 13);
+            this.label79.TabIndex = 122;
+            this.label79.Text = "Edad Inicio Relación Sexual";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label75.Location = new System.Drawing.Point(6, 34);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(170, 14);
+            this.label75.TabIndex = 131;
+            this.label75.Text = "Ant. Salud Sexual y Reproductiva";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label71);
+            this.panel4.Controls.Add(this.txtAdoEdadIniTrab);
+            this.panel4.Controls.Add(this.txtAdoTipoTrab);
+            this.panel4.Controls.Add(this.label72);
+            this.panel4.Controls.Add(this.label77);
+            this.panel4.Location = new System.Drawing.Point(9, 166);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(512, 55);
+            this.panel4.TabIndex = 128;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(121, 12);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(95, 13);
+            this.label71.TabIndex = 116;
+            this.label71.Text = "Edad Inicio Trabajo";
+            // 
+            // txtAdoEdadIniTrab
+            // 
+            this.txtAdoEdadIniTrab.Location = new System.Drawing.Point(121, 28);
+            this.txtAdoEdadIniTrab.Name = "txtAdoEdadIniTrab";
+            this.txtAdoEdadIniTrab.Size = new System.Drawing.Size(95, 21);
+            this.txtAdoEdadIniTrab.TabIndex = 117;
+            // 
+            // txtAdoTipoTrab
+            // 
+            this.txtAdoTipoTrab.Location = new System.Drawing.Point(244, 28);
+            this.txtAdoTipoTrab.Name = "txtAdoTipoTrab";
+            this.txtAdoTipoTrab.Size = new System.Drawing.Size(257, 21);
+            this.txtAdoTipoTrab.TabIndex = 119;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(240, 12);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(78, 13);
+            this.label72.TabIndex = 118;
+            this.label72.Text = "Tipo de Trabajo";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(6, 16);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(77, 14);
+            this.label77.TabIndex = 129;
+            this.label77.Text = "Ant. Laborales";
+            // 
+            // tbpNinio
+            // 
+            this.tbpNinio.AutoScroll = true;
+            this.tbpNinio.Controls.Add(this.ultgrboxVivienda);
+            this.tbpNinio.Controls.Add(this.ultgrboxFamiliares);
+            this.tbpNinio.Controls.Add(this.ultgrboxNacimiento);
+            this.tbpNinio.Controls.Add(this.ultgrboxEmbarazo);
+            this.tbpNinio.Controls.Add(this.ultgrboxDatosFamiliares);
+            this.tbpNinio.Location = new System.Drawing.Point(4, 22);
+            this.tbpNinio.Name = "tbpNinio";
+            this.tbpNinio.Size = new System.Drawing.Size(543, 419);
+            this.tbpNinio.TabIndex = 2;
+            this.tbpNinio.Text = "Niño";
+            this.tbpNinio.UseVisualStyleBackColor = true;
+            // 
+            // ultgrboxVivienda
+            // 
+            this.ultgrboxVivienda.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Near;
+            this.ultgrboxVivienda.Controls.Add(this.ultraExpandableGroupBoxPanel5);
+            this.ultgrboxVivienda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ultgrboxVivienda.Expanded = false;
+            this.ultgrboxVivienda.ExpandedSize = new System.Drawing.Size(543, 172);
+            this.ultgrboxVivienda.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
+            this.ultgrboxVivienda.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
+            this.ultgrboxVivienda.Location = new System.Drawing.Point(0, 104);
+            this.ultgrboxVivienda.Name = "ultgrboxVivienda";
+            this.ultgrboxVivienda.Size = new System.Drawing.Size(543, 26);
+            this.ultgrboxVivienda.TabIndex = 158;
+            this.ultgrboxVivienda.Text = "ANT. VIVIENDA / SANEAMIENTO BÁSICO";
+            this.ultgrboxVivienda.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
+            // 
+            // ultraExpandableGroupBoxPanel5
+            // 
+            this.ultraExpandableGroupBoxPanel5.Controls.Add(this.textDesague);
+            this.ultraExpandableGroupBoxPanel5.Controls.Add(this.label136);
+            this.ultraExpandableGroupBoxPanel5.Controls.Add(this.textAguaPotable);
+            this.ultraExpandableGroupBoxPanel5.Controls.Add(this.label135);
+            this.ultraExpandableGroupBoxPanel5.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraExpandableGroupBoxPanel5.Name = "ultraExpandableGroupBoxPanel5";
+            this.ultraExpandableGroupBoxPanel5.Size = new System.Drawing.Size(522, 146);
+            this.ultraExpandableGroupBoxPanel5.TabIndex = 0;
+            this.ultraExpandableGroupBoxPanel5.Visible = false;
+            // 
+            // textDesague
+            // 
+            this.textDesague.Location = new System.Drawing.Point(3, 90);
+            this.textDesague.Multiline = true;
+            this.textDesague.Name = "textDesague";
+            this.textDesague.Size = new System.Drawing.Size(513, 40);
+            this.textDesague.TabIndex = 147;
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Location = new System.Drawing.Point(2, 73);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(145, 13);
+            this.label136.TabIndex = 146;
+            this.label136.Text = "Especificaciones de Desagüe:";
+            // 
+            // textAguaPotable
+            // 
+            this.textAguaPotable.Location = new System.Drawing.Point(3, 23);
+            this.textAguaPotable.Multiline = true;
+            this.textAguaPotable.Name = "textAguaPotable";
+            this.textAguaPotable.Size = new System.Drawing.Size(513, 40);
+            this.textAguaPotable.TabIndex = 145;
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Location = new System.Drawing.Point(2, 6);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(166, 13);
+            this.label135.TabIndex = 144;
+            this.label135.Text = "Especificaciones de Agua Potable:";
+            // 
+            // ultgrboxFamiliares
+            // 
+            this.ultgrboxFamiliares.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Near;
+            this.ultgrboxFamiliares.Controls.Add(this.ultraExpandableGroupBoxPanel4);
+            this.ultgrboxFamiliares.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ultgrboxFamiliares.Expanded = false;
+            this.ultgrboxFamiliares.ExpandedSize = new System.Drawing.Size(543, 380);
+            this.ultgrboxFamiliares.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
+            this.ultgrboxFamiliares.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
+            this.ultgrboxFamiliares.Location = new System.Drawing.Point(0, 78);
+            this.ultgrboxFamiliares.Name = "ultgrboxFamiliares";
+            this.ultgrboxFamiliares.Size = new System.Drawing.Size(543, 26);
+            this.ultgrboxFamiliares.TabIndex = 157;
+            this.ultgrboxFamiliares.Text = "ANT. FAMILIARES";
+            this.ultgrboxFamiliares.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
+            // 
+            // ultraExpandableGroupBoxPanel4
+            // 
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.label141);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox11);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox14);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox13);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox12);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox10);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox9);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox8);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox7);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox6);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.groupBox5);
+            this.ultraExpandableGroupBoxPanel4.Controls.Add(this.label94);
+            this.ultraExpandableGroupBoxPanel4.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraExpandableGroupBoxPanel4.Name = "ultraExpandableGroupBoxPanel4";
+            this.ultraExpandableGroupBoxPanel4.Size = new System.Drawing.Size(522, 293);
+            this.ultraExpandableGroupBoxPanel4.TabIndex = 0;
+            this.ultraExpandableGroupBoxPanel4.Visible = false;
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Location = new System.Drawing.Point(144, 332);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(255, 13);
+            this.label141.TabIndex = 186;
+            this.label141.Text = "(*) Padre (P), Madre (M), Hno(H), Abuelo/a (A), Otro (O)";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.textQuienHepatitisB);
+            this.groupBox11.Controls.Add(this.rbNoHepatitis);
+            this.groupBox11.Controls.Add(this.rbSiHepatitis);
+            this.groupBox11.Controls.Add(this.label134);
+            this.groupBox11.Location = new System.Drawing.Point(9, 295);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(500, 31);
+            this.groupBox11.TabIndex = 182;
+            this.groupBox11.TabStop = false;
+            // 
+            // textQuienHepatitisB
+            // 
+            this.textQuienHepatitisB.Enabled = false;
+            this.textQuienHepatitisB.Location = new System.Drawing.Point(175, 8);
+            this.textQuienHepatitisB.Name = "textQuienHepatitisB";
+            this.textQuienHepatitisB.Size = new System.Drawing.Size(170, 21);
+            this.textQuienHepatitisB.TabIndex = 177;
+            // 
+            // rbNoHepatitis
+            // 
+            this.rbNoHepatitis.AutoSize = true;
+            this.rbNoHepatitis.Location = new System.Drawing.Point(425, 9);
+            this.rbNoHepatitis.Name = "rbNoHepatitis";
+            this.rbNoHepatitis.Size = new System.Drawing.Size(38, 17);
+            this.rbNoHepatitis.TabIndex = 176;
+            this.rbNoHepatitis.TabStop = true;
+            this.rbNoHepatitis.Text = "No";
+            this.rbNoHepatitis.UseVisualStyleBackColor = true;
+            this.rbNoHepatitis.CheckedChanged += new System.EventHandler(this.rbNoHepatitis_CheckedChanged);
+            // 
+            // rbSiHepatitis
+            // 
+            this.rbSiHepatitis.AutoSize = true;
+            this.rbSiHepatitis.Location = new System.Drawing.Point(369, 9);
+            this.rbSiHepatitis.Name = "rbSiHepatitis";
+            this.rbSiHepatitis.Size = new System.Drawing.Size(33, 17);
+            this.rbSiHepatitis.TabIndex = 175;
+            this.rbSiHepatitis.TabStop = true;
+            this.rbSiHepatitis.Text = "Si";
+            this.rbSiHepatitis.UseVisualStyleBackColor = true;
+            this.rbSiHepatitis.CheckedChanged += new System.EventHandler(this.rbSiHepatitis_CheckedChanged);
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Location = new System.Drawing.Point(37, 11);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(60, 13);
+            this.label134.TabIndex = 174;
+            this.label134.Text = "Hepatitis B.";
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.textQuienDrogadiccion);
+            this.groupBox14.Controls.Add(this.rbNoDrogadiccion);
+            this.groupBox14.Controls.Add(this.rbSiDrogadiccion);
+            this.groupBox14.Controls.Add(this.label133);
+            this.groupBox14.Location = new System.Drawing.Point(9, 265);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(500, 31);
+            this.groupBox14.TabIndex = 185;
+            this.groupBox14.TabStop = false;
+            // 
+            // textQuienDrogadiccion
+            // 
+            this.textQuienDrogadiccion.Enabled = false;
+            this.textQuienDrogadiccion.Location = new System.Drawing.Point(175, 8);
+            this.textQuienDrogadiccion.Name = "textQuienDrogadiccion";
+            this.textQuienDrogadiccion.Size = new System.Drawing.Size(170, 21);
+            this.textQuienDrogadiccion.TabIndex = 173;
+            // 
+            // rbNoDrogadiccion
+            // 
+            this.rbNoDrogadiccion.AutoSize = true;
+            this.rbNoDrogadiccion.Location = new System.Drawing.Point(425, 9);
+            this.rbNoDrogadiccion.Name = "rbNoDrogadiccion";
+            this.rbNoDrogadiccion.Size = new System.Drawing.Size(38, 17);
+            this.rbNoDrogadiccion.TabIndex = 172;
+            this.rbNoDrogadiccion.TabStop = true;
+            this.rbNoDrogadiccion.Text = "No";
+            this.rbNoDrogadiccion.UseVisualStyleBackColor = true;
+            this.rbNoDrogadiccion.CheckedChanged += new System.EventHandler(this.rbNoDrogadiccion_CheckedChanged);
+            // 
+            // rbSiDrogadiccion
+            // 
+            this.rbSiDrogadiccion.AutoSize = true;
+            this.rbSiDrogadiccion.Location = new System.Drawing.Point(369, 9);
+            this.rbSiDrogadiccion.Name = "rbSiDrogadiccion";
+            this.rbSiDrogadiccion.Size = new System.Drawing.Size(33, 17);
+            this.rbSiDrogadiccion.TabIndex = 171;
+            this.rbSiDrogadiccion.TabStop = true;
+            this.rbSiDrogadiccion.Text = "Si";
+            this.rbSiDrogadiccion.UseVisualStyleBackColor = true;
+            this.rbSiDrogadiccion.CheckedChanged += new System.EventHandler(this.rbSiDrogadiccion_CheckedChanged);
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Location = new System.Drawing.Point(37, 11);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(69, 13);
+            this.label133.TabIndex = 170;
+            this.label133.Text = "Drogadicción";
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.textQuienAlcoholismo);
+            this.groupBox13.Controls.Add(this.rbNoAlcoholismo);
+            this.groupBox13.Controls.Add(this.rbSiAlcoholismo);
+            this.groupBox13.Controls.Add(this.label132);
+            this.groupBox13.Location = new System.Drawing.Point(9, 235);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(500, 31);
+            this.groupBox13.TabIndex = 184;
+            this.groupBox13.TabStop = false;
+            // 
+            // textQuienAlcoholismo
+            // 
+            this.textQuienAlcoholismo.Enabled = false;
+            this.textQuienAlcoholismo.Location = new System.Drawing.Point(175, 8);
+            this.textQuienAlcoholismo.Name = "textQuienAlcoholismo";
+            this.textQuienAlcoholismo.Size = new System.Drawing.Size(170, 21);
+            this.textQuienAlcoholismo.TabIndex = 169;
+            this.textQuienAlcoholismo.TextChanged += new System.EventHandler(this.textQuienAlcoholismo_TextChanged);
+            // 
+            // rbNoAlcoholismo
+            // 
+            this.rbNoAlcoholismo.AutoSize = true;
+            this.rbNoAlcoholismo.Location = new System.Drawing.Point(425, 9);
+            this.rbNoAlcoholismo.Name = "rbNoAlcoholismo";
+            this.rbNoAlcoholismo.Size = new System.Drawing.Size(38, 17);
+            this.rbNoAlcoholismo.TabIndex = 168;
+            this.rbNoAlcoholismo.TabStop = true;
+            this.rbNoAlcoholismo.Text = "No";
+            this.rbNoAlcoholismo.UseVisualStyleBackColor = true;
+            this.rbNoAlcoholismo.CheckedChanged += new System.EventHandler(this.rbNoAlcoholismo_CheckedChanged);
+            // 
+            // rbSiAlcoholismo
+            // 
+            this.rbSiAlcoholismo.AutoSize = true;
+            this.rbSiAlcoholismo.Location = new System.Drawing.Point(369, 9);
+            this.rbSiAlcoholismo.Name = "rbSiAlcoholismo";
+            this.rbSiAlcoholismo.Size = new System.Drawing.Size(33, 17);
+            this.rbSiAlcoholismo.TabIndex = 167;
+            this.rbSiAlcoholismo.TabStop = true;
+            this.rbSiAlcoholismo.Text = "Si";
+            this.rbSiAlcoholismo.UseVisualStyleBackColor = true;
+            this.rbSiAlcoholismo.CheckedChanged += new System.EventHandler(this.rbSiAlcoholismo_CheckedChanged);
+            // 
+            // label132
+            // 
+            this.label132.AutoSize = true;
+            this.label132.Location = new System.Drawing.Point(37, 11);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(65, 13);
+            this.label132.TabIndex = 166;
+            this.label132.Text = "Alcoholismo";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.textQuienViolenciaFamiliar);
+            this.groupBox12.Controls.Add(this.rbNoViolencia);
+            this.groupBox12.Controls.Add(this.rbSiViolencia);
+            this.groupBox12.Controls.Add(this.label131);
+            this.groupBox12.Location = new System.Drawing.Point(9, 205);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(500, 31);
+            this.groupBox12.TabIndex = 183;
+            this.groupBox12.TabStop = false;
+            // 
+            // textQuienViolenciaFamiliar
+            // 
+            this.textQuienViolenciaFamiliar.Enabled = false;
+            this.textQuienViolenciaFamiliar.Location = new System.Drawing.Point(175, 8);
+            this.textQuienViolenciaFamiliar.Name = "textQuienViolenciaFamiliar";
+            this.textQuienViolenciaFamiliar.Size = new System.Drawing.Size(170, 21);
+            this.textQuienViolenciaFamiliar.TabIndex = 165;
+            // 
+            // rbNoViolencia
+            // 
+            this.rbNoViolencia.AutoSize = true;
+            this.rbNoViolencia.Location = new System.Drawing.Point(425, 9);
+            this.rbNoViolencia.Name = "rbNoViolencia";
+            this.rbNoViolencia.Size = new System.Drawing.Size(38, 17);
+            this.rbNoViolencia.TabIndex = 164;
+            this.rbNoViolencia.TabStop = true;
+            this.rbNoViolencia.Text = "No";
+            this.rbNoViolencia.UseVisualStyleBackColor = true;
+            this.rbNoViolencia.CheckedChanged += new System.EventHandler(this.rbNoViolencia_CheckedChanged);
+            // 
+            // rbSiViolencia
+            // 
+            this.rbSiViolencia.AutoSize = true;
+            this.rbSiViolencia.Location = new System.Drawing.Point(369, 9);
+            this.rbSiViolencia.Name = "rbSiViolencia";
+            this.rbSiViolencia.Size = new System.Drawing.Size(33, 17);
+            this.rbSiViolencia.TabIndex = 163;
+            this.rbSiViolencia.TabStop = true;
+            this.rbSiViolencia.Text = "Si";
+            this.rbSiViolencia.UseVisualStyleBackColor = true;
+            this.rbSiViolencia.CheckedChanged += new System.EventHandler(this.rbSiViolencia_CheckedChanged);
+            // 
+            // label131
+            // 
+            this.label131.AutoSize = true;
+            this.label131.Location = new System.Drawing.Point(37, 11);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(92, 13);
+            this.label131.TabIndex = 162;
+            this.label131.Text = "Violencia Familiar";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.textQuienAlergias);
+            this.groupBox10.Controls.Add(this.rbNoAlergia);
+            this.groupBox10.Controls.Add(this.rbSiAlergia);
+            this.groupBox10.Controls.Add(this.label130);
+            this.groupBox10.Location = new System.Drawing.Point(9, 175);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(500, 31);
+            this.groupBox10.TabIndex = 179;
+            this.groupBox10.TabStop = false;
+            // 
+            // textQuienAlergias
+            // 
+            this.textQuienAlergias.Enabled = false;
+            this.textQuienAlergias.Location = new System.Drawing.Point(175, 8);
+            this.textQuienAlergias.Name = "textQuienAlergias";
+            this.textQuienAlergias.Size = new System.Drawing.Size(170, 21);
+            this.textQuienAlergias.TabIndex = 161;
+            // 
+            // rbNoAlergia
+            // 
+            this.rbNoAlergia.AutoSize = true;
+            this.rbNoAlergia.Location = new System.Drawing.Point(425, 9);
+            this.rbNoAlergia.Name = "rbNoAlergia";
+            this.rbNoAlergia.Size = new System.Drawing.Size(38, 17);
+            this.rbNoAlergia.TabIndex = 160;
+            this.rbNoAlergia.TabStop = true;
+            this.rbNoAlergia.Text = "No";
+            this.rbNoAlergia.UseVisualStyleBackColor = true;
+            this.rbNoAlergia.CheckedChanged += new System.EventHandler(this.rbNoAlergia_CheckedChanged);
+            // 
+            // rbSiAlergia
+            // 
+            this.rbSiAlergia.AutoSize = true;
+            this.rbSiAlergia.Location = new System.Drawing.Point(369, 9);
+            this.rbSiAlergia.Name = "rbSiAlergia";
+            this.rbSiAlergia.Size = new System.Drawing.Size(33, 17);
+            this.rbSiAlergia.TabIndex = 159;
+            this.rbSiAlergia.TabStop = true;
+            this.rbSiAlergia.Text = "Si";
+            this.rbSiAlergia.UseVisualStyleBackColor = true;
+            this.rbSiAlergia.CheckedChanged += new System.EventHandler(this.rbSiAlergia_CheckedChanged);
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Location = new System.Drawing.Point(37, 11);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(104, 13);
+            this.label130.TabIndex = 158;
+            this.label130.Text = "Alergias a medicinas";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.textQuienEpilepsia);
+            this.groupBox9.Controls.Add(this.rbNoEpilepsia);
+            this.groupBox9.Controls.Add(this.rbSiEpilepsia);
+            this.groupBox9.Controls.Add(this.label129);
+            this.groupBox9.Location = new System.Drawing.Point(9, 145);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(500, 31);
+            this.groupBox9.TabIndex = 178;
+            this.groupBox9.TabStop = false;
+            // 
+            // textQuienEpilepsia
+            // 
+            this.textQuienEpilepsia.Enabled = false;
+            this.textQuienEpilepsia.Location = new System.Drawing.Point(175, 8);
+            this.textQuienEpilepsia.Name = "textQuienEpilepsia";
+            this.textQuienEpilepsia.Size = new System.Drawing.Size(170, 21);
+            this.textQuienEpilepsia.TabIndex = 157;
+            // 
+            // rbNoEpilepsia
+            // 
+            this.rbNoEpilepsia.AutoSize = true;
+            this.rbNoEpilepsia.Location = new System.Drawing.Point(425, 10);
+            this.rbNoEpilepsia.Name = "rbNoEpilepsia";
+            this.rbNoEpilepsia.Size = new System.Drawing.Size(38, 17);
+            this.rbNoEpilepsia.TabIndex = 156;
+            this.rbNoEpilepsia.TabStop = true;
+            this.rbNoEpilepsia.Text = "No";
+            this.rbNoEpilepsia.UseVisualStyleBackColor = true;
+            this.rbNoEpilepsia.CheckedChanged += new System.EventHandler(this.rbNoEpilepsia_CheckedChanged);
+            // 
+            // rbSiEpilepsia
+            // 
+            this.rbSiEpilepsia.AutoSize = true;
+            this.rbSiEpilepsia.Location = new System.Drawing.Point(369, 10);
+            this.rbSiEpilepsia.Name = "rbSiEpilepsia";
+            this.rbSiEpilepsia.Size = new System.Drawing.Size(33, 17);
+            this.rbSiEpilepsia.TabIndex = 155;
+            this.rbSiEpilepsia.TabStop = true;
+            this.rbSiEpilepsia.Text = "Si";
+            this.rbSiEpilepsia.UseVisualStyleBackColor = true;
+            this.rbSiEpilepsia.CheckedChanged += new System.EventHandler(this.rbSiEpilepsia_CheckedChanged);
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Location = new System.Drawing.Point(37, 12);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(50, 13);
+            this.label129.TabIndex = 154;
+            this.label129.Text = "Epilepsia";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.textQuienDiabetes);
+            this.groupBox8.Controls.Add(this.rbNoDiabetes);
+            this.groupBox8.Controls.Add(this.rbSiDiabetes);
+            this.groupBox8.Controls.Add(this.label128);
+            this.groupBox8.Location = new System.Drawing.Point(9, 115);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(500, 31);
+            this.groupBox8.TabIndex = 177;
+            this.groupBox8.TabStop = false;
+            // 
+            // textQuienDiabetes
+            // 
+            this.textQuienDiabetes.Enabled = false;
+            this.textQuienDiabetes.Location = new System.Drawing.Point(175, 8);
+            this.textQuienDiabetes.Name = "textQuienDiabetes";
+            this.textQuienDiabetes.Size = new System.Drawing.Size(170, 21);
+            this.textQuienDiabetes.TabIndex = 153;
+            // 
+            // rbNoDiabetes
+            // 
+            this.rbNoDiabetes.AutoSize = true;
+            this.rbNoDiabetes.Location = new System.Drawing.Point(425, 9);
+            this.rbNoDiabetes.Name = "rbNoDiabetes";
+            this.rbNoDiabetes.Size = new System.Drawing.Size(38, 17);
+            this.rbNoDiabetes.TabIndex = 152;
+            this.rbNoDiabetes.TabStop = true;
+            this.rbNoDiabetes.Text = "No";
+            this.rbNoDiabetes.UseVisualStyleBackColor = true;
+            this.rbNoDiabetes.CheckedChanged += new System.EventHandler(this.rbNoDiabetes_CheckedChanged);
+            // 
+            // rbSiDiabetes
+            // 
+            this.rbSiDiabetes.AutoSize = true;
+            this.rbSiDiabetes.Location = new System.Drawing.Point(369, 9);
+            this.rbSiDiabetes.Name = "rbSiDiabetes";
+            this.rbSiDiabetes.Size = new System.Drawing.Size(33, 17);
+            this.rbSiDiabetes.TabIndex = 151;
+            this.rbSiDiabetes.TabStop = true;
+            this.rbSiDiabetes.Text = "Si";
+            this.rbSiDiabetes.UseVisualStyleBackColor = true;
+            this.rbSiDiabetes.CheckedChanged += new System.EventHandler(this.rbSiDiabetes_CheckedChanged);
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Location = new System.Drawing.Point(37, 11);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(50, 13);
+            this.label128.TabIndex = 150;
+            this.label128.Text = "Diabetes";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.textQuienVIH);
+            this.groupBox7.Controls.Add(this.rbNoVih);
+            this.groupBox7.Controls.Add(this.rbSiVih);
+            this.groupBox7.Controls.Add(this.label127);
+            this.groupBox7.Location = new System.Drawing.Point(9, 85);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(500, 31);
+            this.groupBox7.TabIndex = 176;
+            this.groupBox7.TabStop = false;
+            // 
+            // textQuienVIH
+            // 
+            this.textQuienVIH.Enabled = false;
+            this.textQuienVIH.Location = new System.Drawing.Point(175, 7);
+            this.textQuienVIH.Name = "textQuienVIH";
+            this.textQuienVIH.Size = new System.Drawing.Size(170, 21);
+            this.textQuienVIH.TabIndex = 149;
+            // 
+            // rbNoVih
+            // 
+            this.rbNoVih.AutoSize = true;
+            this.rbNoVih.Location = new System.Drawing.Point(425, 10);
+            this.rbNoVih.Name = "rbNoVih";
+            this.rbNoVih.Size = new System.Drawing.Size(38, 17);
+            this.rbNoVih.TabIndex = 148;
+            this.rbNoVih.TabStop = true;
+            this.rbNoVih.Text = "No";
+            this.rbNoVih.UseVisualStyleBackColor = true;
+            this.rbNoVih.CheckedChanged += new System.EventHandler(this.rbNoVih_CheckedChanged);
+            // 
+            // rbSiVih
+            // 
+            this.rbSiVih.AutoSize = true;
+            this.rbSiVih.Location = new System.Drawing.Point(369, 10);
+            this.rbSiVih.Name = "rbSiVih";
+            this.rbSiVih.Size = new System.Drawing.Size(33, 17);
+            this.rbSiVih.TabIndex = 147;
+            this.rbSiVih.TabStop = true;
+            this.rbSiVih.Text = "Si";
+            this.rbSiVih.UseVisualStyleBackColor = true;
+            this.rbSiVih.CheckedChanged += new System.EventHandler(this.rbSiVih_CheckedChanged);
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Location = new System.Drawing.Point(37, 12);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(51, 13);
+            this.label127.TabIndex = 146;
+            this.label127.Text = "VIH - SIDA";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textQuienASMA);
+            this.groupBox6.Controls.Add(this.rbNoAsma);
+            this.groupBox6.Controls.Add(this.rbSiAsma);
+            this.groupBox6.Controls.Add(this.label95);
+            this.groupBox6.Location = new System.Drawing.Point(9, 55);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(500, 31);
+            this.groupBox6.TabIndex = 175;
+            this.groupBox6.TabStop = false;
+            // 
+            // textQuienASMA
+            // 
+            this.textQuienASMA.Enabled = false;
+            this.textQuienASMA.Location = new System.Drawing.Point(175, 8);
+            this.textQuienASMA.Name = "textQuienASMA";
+            this.textQuienASMA.Size = new System.Drawing.Size(170, 21);
+            this.textQuienASMA.TabIndex = 149;
+            // 
+            // rbNoAsma
+            // 
+            this.rbNoAsma.AutoSize = true;
+            this.rbNoAsma.Location = new System.Drawing.Point(425, 9);
+            this.rbNoAsma.Name = "rbNoAsma";
+            this.rbNoAsma.Size = new System.Drawing.Size(38, 17);
+            this.rbNoAsma.TabIndex = 148;
+            this.rbNoAsma.TabStop = true;
+            this.rbNoAsma.Text = "No";
+            this.rbNoAsma.UseVisualStyleBackColor = true;
+            this.rbNoAsma.CheckedChanged += new System.EventHandler(this.rbNoAsma_CheckedChanged);
+            // 
+            // rbSiAsma
+            // 
+            this.rbSiAsma.AutoSize = true;
+            this.rbSiAsma.Location = new System.Drawing.Point(369, 9);
+            this.rbSiAsma.Name = "rbSiAsma";
+            this.rbSiAsma.Size = new System.Drawing.Size(33, 17);
+            this.rbSiAsma.TabIndex = 147;
+            this.rbSiAsma.TabStop = true;
+            this.rbSiAsma.Text = "Si";
+            this.rbSiAsma.UseVisualStyleBackColor = true;
+            this.rbSiAsma.CheckedChanged += new System.EventHandler(this.rbSiAsma_CheckedChanged);
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(37, 11);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(33, 13);
+            this.label95.TabIndex = 146;
+            this.label95.Text = "ASMA";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textQuienTuberculosis);
+            this.groupBox5.Controls.Add(this.rbNoTuberculosis);
+            this.groupBox5.Controls.Add(this.rbSiTuberculosis);
+            this.groupBox5.Controls.Add(this.label162);
+            this.groupBox5.Location = new System.Drawing.Point(9, 22);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(500, 31);
+            this.groupBox5.TabIndex = 174;
+            this.groupBox5.TabStop = false;
+            // 
+            // textQuienTuberculosis
+            // 
+            this.textQuienTuberculosis.Enabled = false;
+            this.textQuienTuberculosis.Location = new System.Drawing.Point(175, 8);
+            this.textQuienTuberculosis.Name = "textQuienTuberculosis";
+            this.textQuienTuberculosis.Size = new System.Drawing.Size(170, 21);
+            this.textQuienTuberculosis.TabIndex = 140;
+            // 
+            // rbNoTuberculosis
+            // 
+            this.rbNoTuberculosis.AutoSize = true;
+            this.rbNoTuberculosis.Location = new System.Drawing.Point(425, 10);
+            this.rbNoTuberculosis.Name = "rbNoTuberculosis";
+            this.rbNoTuberculosis.Size = new System.Drawing.Size(38, 17);
+            this.rbNoTuberculosis.TabIndex = 139;
+            this.rbNoTuberculosis.TabStop = true;
+            this.rbNoTuberculosis.Text = "No";
+            this.rbNoTuberculosis.UseVisualStyleBackColor = true;
+            this.rbNoTuberculosis.CheckedChanged += new System.EventHandler(this.rbNoTuberculosis_CheckedChanged);
+            // 
+            // rbSiTuberculosis
+            // 
+            this.rbSiTuberculosis.AutoSize = true;
+            this.rbSiTuberculosis.Location = new System.Drawing.Point(369, 10);
+            this.rbSiTuberculosis.Name = "rbSiTuberculosis";
+            this.rbSiTuberculosis.Size = new System.Drawing.Size(33, 17);
+            this.rbSiTuberculosis.TabIndex = 138;
+            this.rbSiTuberculosis.TabStop = true;
+            this.rbSiTuberculosis.Text = "Si";
+            this.rbSiTuberculosis.UseVisualStyleBackColor = true;
+            this.rbSiTuberculosis.CheckedChanged += new System.EventHandler(this.rbSiTuberculosis_CheckedChanged);
+            // 
+            // label162
+            // 
+            this.label162.AutoSize = true;
+            this.label162.Location = new System.Drawing.Point(37, 12);
+            this.label162.Name = "label162";
+            this.label162.Size = new System.Drawing.Size(66, 13);
+            this.label162.TabIndex = 137;
+            this.label162.Text = "Tuberculosis";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(243, 6);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(58, 13);
+            this.label94.TabIndex = 137;
+            this.label94.Text = "¿Quién? (*)";
+            // 
+            // ultgrboxNacimiento
+            // 
+            this.ultgrboxNacimiento.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Near;
+            this.ultgrboxNacimiento.Controls.Add(this.ultraExpandableGroupBoxPanel3);
+            this.ultgrboxNacimiento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ultgrboxNacimiento.Expanded = false;
+            this.ultgrboxNacimiento.ExpandedSize = new System.Drawing.Size(543, 339);
+            this.ultgrboxNacimiento.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
+            this.ultgrboxNacimiento.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
+            this.ultgrboxNacimiento.Location = new System.Drawing.Point(0, 52);
+            this.ultgrboxNacimiento.Name = "ultgrboxNacimiento";
+            this.ultgrboxNacimiento.Size = new System.Drawing.Size(543, 26);
+            this.ultgrboxNacimiento.TabIndex = 156;
+            this.ultgrboxNacimiento.Text = "ANT. PERSONALES - NACIMIENTO - ALIMENTACIÓN - PATOLOGÍAS ";
+            this.ultgrboxNacimiento.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
+            // 
+            // ultraExpandableGroupBoxPanel3
+            // 
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.textOtrosAntecedentes);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label93);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.textAlergiaMedicamentos);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label92);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.textPerimetroToracico);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label91);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.textPerimetroCefalico);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label90);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.textTallaNacer);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label89);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.textPesoNacer);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label87);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.textEdadNacer);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label88);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.txtInicioAlimentación);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label86);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.textTiempoHospit);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label85);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.textEspecificacionesNacer);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.label84);
+            this.ultraExpandableGroupBoxPanel3.Controls.Add(this.shapeContainer2);
+            this.ultraExpandableGroupBoxPanel3.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraExpandableGroupBoxPanel3.Name = "ultraExpandableGroupBoxPanel3";
+            this.ultraExpandableGroupBoxPanel3.Size = new System.Drawing.Size(537, 186);
+            this.ultraExpandableGroupBoxPanel3.TabIndex = 0;
+            this.ultraExpandableGroupBoxPanel3.Visible = false;
+            // 
+            // textOtrosAntecedentes
+            // 
+            this.textOtrosAntecedentes.Location = new System.Drawing.Point(3, 268);
+            this.textOtrosAntecedentes.Multiline = true;
+            this.textOtrosAntecedentes.Name = "textOtrosAntecedentes";
+            this.textOtrosAntecedentes.Size = new System.Drawing.Size(513, 40);
+            this.textOtrosAntecedentes.TabIndex = 171;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(1, 252);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(156, 13);
+            this.label93.TabIndex = 170;
+            this.label93.Text = "Especificar otros antecedentes:";
+            // 
+            // textAlergiaMedicamentos
+            // 
+            this.textAlergiaMedicamentos.Location = new System.Drawing.Point(4, 207);
+            this.textAlergiaMedicamentos.Multiline = true;
+            this.textAlergiaMedicamentos.Name = "textAlergiaMedicamentos";
+            this.textAlergiaMedicamentos.Size = new System.Drawing.Size(513, 40);
+            this.textAlergiaMedicamentos.TabIndex = 169;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(2, 191);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(177, 13);
+            this.label92.TabIndex = 168;
+            this.label92.Text = "Especificar Alergia a medicamentos:";
+            // 
+            // textPerimetroToracico
+            // 
+            this.textPerimetroToracico.Location = new System.Drawing.Point(301, 65);
+            this.textPerimetroToracico.Name = "textPerimetroToracico";
+            this.textPerimetroToracico.Size = new System.Drawing.Size(84, 21);
+            this.textPerimetroToracico.TabIndex = 167;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(298, 50);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(96, 13);
+            this.label91.TabIndex = 166;
+            this.label91.Text = "Perímetro Torácico";
+            // 
+            // textPerimetroCefalico
+            // 
+            this.textPerimetroCefalico.Location = new System.Drawing.Point(432, 25);
+            this.textPerimetroCefalico.Name = "textPerimetroCefalico";
+            this.textPerimetroCefalico.Size = new System.Drawing.Size(84, 21);
+            this.textPerimetroCefalico.TabIndex = 165;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(429, 5);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(94, 13);
+            this.label90.TabIndex = 164;
+            this.label90.Text = "Perímetro cefálico";
+            // 
+            // textTallaNacer
+            // 
+            this.textTallaNacer.Location = new System.Drawing.Point(301, 25);
+            this.textTallaNacer.Name = "textTallaNacer";
+            this.textTallaNacer.Size = new System.Drawing.Size(84, 21);
+            this.textTallaNacer.TabIndex = 163;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(298, 5);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(91, 13);
+            this.label89.TabIndex = 162;
+            this.label89.Text = "Talla al nacer (cm)";
+            // 
+            // textPesoNacer
+            // 
+            this.textPesoNacer.Location = new System.Drawing.Point(172, 25);
+            this.textPesoNacer.Name = "textPesoNacer";
+            this.textPesoNacer.Size = new System.Drawing.Size(84, 21);
+            this.textPesoNacer.TabIndex = 161;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(169, 5);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(87, 13);
+            this.label87.TabIndex = 160;
+            this.label87.Text = "Peso al nacer (gr)";
+            // 
+            // textEdadNacer
+            // 
+            this.textEdadNacer.Location = new System.Drawing.Point(3, 25);
+            this.textEdadNacer.Name = "textEdadNacer";
+            this.textEdadNacer.Size = new System.Drawing.Size(124, 21);
+            this.textEdadNacer.TabIndex = 159;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(1, 5);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(126, 13);
+            this.label88.TabIndex = 158;
+            this.label88.Text = "Edad Gest. al Nacer (sem)";
+            // 
+            // txtInicioAlimentación
+            // 
+            this.txtInicioAlimentación.Location = new System.Drawing.Point(200, 159);
+            this.txtInicioAlimentación.Name = "txtInicioAlimentación";
+            this.txtInicioAlimentación.Size = new System.Drawing.Size(316, 21);
+            this.txtInicioAlimentación.TabIndex = 157;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(3, 159);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(194, 13);
+            this.label86.TabIndex = 156;
+            this.label86.Text = "Inicio de Alimentación Complementaria";
+            // 
+            // textTiempoHospit
+            // 
+            this.textTiempoHospit.Location = new System.Drawing.Point(3, 65);
+            this.textTiempoHospit.Name = "textTiempoHospit";
+            this.textTiempoHospit.Size = new System.Drawing.Size(196, 21);
+            this.textTiempoHospit.TabIndex = 154;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(2, 50);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(131, 13);
+            this.label85.TabIndex = 153;
+            this.label85.Text = "Tiempo de Hospitalización";
+            // 
+            // textEspecificacionesNacer
+            // 
+            this.textEspecificacionesNacer.Location = new System.Drawing.Point(4, 104);
+            this.textEspecificacionesNacer.Multiline = true;
+            this.textEspecificacionesNacer.Name = "textEspecificacionesNacer";
+            this.textEspecificacionesNacer.Size = new System.Drawing.Size(513, 40);
+            this.textEspecificacionesNacer.TabIndex = 152;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(2, 88);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(190, 13);
+            this.label84.TabIndex = 151;
+            this.label84.Text = "Especificación de Respiración al Nacer:";
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape3,
+            this.lineShape2});
+            this.shapeContainer2.Size = new System.Drawing.Size(537, 186);
+            this.shapeContainer2.TabIndex = 155;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 5;
+            this.lineShape3.X2 = 508;
+            this.lineShape3.Y1 = 186;
+            this.lineShape3.Y2 = 186;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 7;
+            this.lineShape2.X2 = 510;
+            this.lineShape2.Y1 = 151;
+            this.lineShape2.Y2 = 151;
+            // 
+            // ultgrboxEmbarazo
+            // 
+            this.ultgrboxEmbarazo.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Near;
+            this.ultgrboxEmbarazo.Controls.Add(this.ultraExpandableGroupBoxPanel1);
+            this.ultgrboxEmbarazo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ultgrboxEmbarazo.Expanded = false;
+            this.ultgrboxEmbarazo.ExpandedSize = new System.Drawing.Size(543, 214);
+            this.ultgrboxEmbarazo.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
+            this.ultgrboxEmbarazo.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
+            this.ultgrboxEmbarazo.Location = new System.Drawing.Point(0, 26);
+            this.ultgrboxEmbarazo.Name = "ultgrboxEmbarazo";
+            this.ultgrboxEmbarazo.Size = new System.Drawing.Size(543, 26);
+            this.ultgrboxEmbarazo.TabIndex = 155;
+            this.ultgrboxEmbarazo.Text = "ANT. PERSONALES - EMBARAZO - PARTO";
+            this.ultgrboxEmbarazo.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
+            // 
+            // ultraExpandableGroupBoxPanel1
+            // 
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.textQuienAtendio);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.label83);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.textComplicacionesParto);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.label82);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.textLugarAPN);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.label81);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.txtAPN);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.label80);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.txtNEmbarazo);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.textPatologiasGestacion);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.label96);
+            this.ultraExpandableGroupBoxPanel1.Controls.Add(this.label97);
+            this.ultraExpandableGroupBoxPanel1.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraExpandableGroupBoxPanel1.Name = "ultraExpandableGroupBoxPanel1";
+            this.ultraExpandableGroupBoxPanel1.Size = new System.Drawing.Size(522, 188);
+            this.ultraExpandableGroupBoxPanel1.TabIndex = 0;
+            this.ultraExpandableGroupBoxPanel1.Visible = false;
+            // 
+            // textQuienAtendio
+            // 
+            this.textQuienAtendio.Location = new System.Drawing.Point(173, 162);
+            this.textQuienAtendio.Name = "textQuienAtendio";
+            this.textQuienAtendio.Size = new System.Drawing.Size(343, 21);
+            this.textQuienAtendio.TabIndex = 152;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(0, 165);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(170, 13);
+            this.label83.TabIndex = 151;
+            this.label83.Text = "Especificar por quién fue atendido:";
+            // 
+            // textComplicacionesParto
+            // 
+            this.textComplicacionesParto.Location = new System.Drawing.Point(3, 114);
+            this.textComplicacionesParto.Multiline = true;
+            this.textComplicacionesParto.Name = "textComplicacionesParto";
+            this.textComplicacionesParto.Size = new System.Drawing.Size(513, 40);
+            this.textComplicacionesParto.TabIndex = 150;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(2, 97);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(130, 13);
+            this.label82.TabIndex = 149;
+            this.label82.Text = "Complicaciones del Parto:";
+            // 
+            // textLugarAPN
+            // 
+            this.textLugarAPN.Location = new System.Drawing.Point(323, 70);
+            this.textLugarAPN.Name = "textLugarAPN";
+            this.textLugarAPN.Size = new System.Drawing.Size(196, 21);
+            this.textLugarAPN.TabIndex = 148;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(257, 73);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(68, 13);
+            this.label81.TabIndex = 147;
+            this.label81.Text = "Lugar de APN";
+            // 
+            // txtAPN
+            // 
+            this.txtAPN.Location = new System.Drawing.Point(200, 68);
+            this.txtAPN.Name = "txtAPN";
+            this.txtAPN.Size = new System.Drawing.Size(39, 21);
+            this.txtAPN.TabIndex = 146;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(155, 73);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(39, 13);
+            this.label80.TabIndex = 145;
+            this.label80.Text = "N° APN";
+            // 
+            // txtNEmbarazo
+            // 
+            this.txtNEmbarazo.Location = new System.Drawing.Point(92, 68);
+            this.txtNEmbarazo.Name = "txtNEmbarazo";
+            this.txtNEmbarazo.Size = new System.Drawing.Size(39, 21);
+            this.txtNEmbarazo.TabIndex = 144;
+            // 
+            // textPatologiasGestacion
+            // 
+            this.textPatologiasGestacion.Location = new System.Drawing.Point(6, 20);
+            this.textPatologiasGestacion.Multiline = true;
+            this.textPatologiasGestacion.Name = "textPatologiasGestacion";
+            this.textPatologiasGestacion.Size = new System.Drawing.Size(513, 40);
+            this.textPatologiasGestacion.TabIndex = 143;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(6, 73);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(80, 13);
+            this.label96.TabIndex = 136;
+            this.label96.Text = "N° de Embarazo";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(5, 3);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(165, 13);
+            this.label97.TabIndex = 133;
+            this.label97.Text = "Patología(s) durante la gestación:";
+            // 
+            // ultgrboxDatosFamiliares
+            // 
+            this.ultgrboxDatosFamiliares.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Near;
+            this.ultgrboxDatosFamiliares.Controls.Add(this.ultraExpandableGroupBoxPanel2);
+            this.ultgrboxDatosFamiliares.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ultgrboxDatosFamiliares.Expanded = false;
+            this.ultgrboxDatosFamiliares.ExpandedSize = new System.Drawing.Size(543, 317);
+            this.ultgrboxDatosFamiliares.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
+            this.ultgrboxDatosFamiliares.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
+            this.ultgrboxDatosFamiliares.Location = new System.Drawing.Point(0, 0);
+            this.ultgrboxDatosFamiliares.Name = "ultgrboxDatosFamiliares";
+            this.ultgrboxDatosFamiliares.Size = new System.Drawing.Size(543, 26);
+            this.ultgrboxDatosFamiliares.TabIndex = 154;
+            this.ultgrboxDatosFamiliares.Text = "DATOS GENERALES - FAMILIARES";
+            this.ultgrboxDatosFamiliares.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
+            // 
+            // ultraExpandableGroupBoxPanel2
+            // 
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label140);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtDNIMadrePadreResponsable);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label137);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtEdadMadrePadreResponsable);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label138);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label139);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtNombreMadrePadreResponsable);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.listaEstadoCivilHombre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.listaEstadoCivilMujer);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.listaGradoInstruccionHombre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.listaGradoInstruccionMujer);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.listTipoAfiliacionHombre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.listTipoAfiliacionMujer);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtReligionPadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label109);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtOcupacionPadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label110);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label111);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label112);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label113);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtAfiliacionPadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label114);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtDNIPadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label115);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtEdadPadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label116);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label117);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtNombrePadreTutor);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtReligionMadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label118);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label119);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtOcupacionMadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label120);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label121);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label122);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtAfiliacionMadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label123);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtDNIMadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label124);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtEdadMadre);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label125);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.label126);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.txtNombreMadreTutor);
+            this.ultraExpandableGroupBoxPanel2.Controls.Add(this.shapeContainer3);
+            this.ultraExpandableGroupBoxPanel2.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraExpandableGroupBoxPanel2.Name = "ultraExpandableGroupBoxPanel2";
+            this.ultraExpandableGroupBoxPanel2.Size = new System.Drawing.Size(522, 291);
+            this.ultraExpandableGroupBoxPanel2.TabIndex = 0;
+            this.ultraExpandableGroupBoxPanel2.Visible = false;
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Location = new System.Drawing.Point(27, 49);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(234, 13);
+            this.label140.TabIndex = 192;
+            this.label140.Text = "(*) INFORMACIÓN PARA PROBLEMAS Y ATENCIONES ";
+            // 
+            // txtDNIMadrePadreResponsable
+            // 
+            this.txtDNIMadrePadreResponsable.Location = new System.Drawing.Point(411, 22);
+            this.txtDNIMadrePadreResponsable.Name = "txtDNIMadrePadreResponsable";
+            this.txtDNIMadrePadreResponsable.Size = new System.Drawing.Size(84, 21);
+            this.txtDNIMadrePadreResponsable.TabIndex = 191;
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Location = new System.Drawing.Point(413, 5);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(24, 13);
+            this.label137.TabIndex = 190;
+            this.label137.Text = "DNI";
+            // 
+            // txtEdadMadrePadreResponsable
+            // 
+            this.txtEdadMadrePadreResponsable.Location = new System.Drawing.Point(352, 22);
+            this.txtEdadMadrePadreResponsable.Name = "txtEdadMadrePadreResponsable";
+            this.txtEdadMadrePadreResponsable.Size = new System.Drawing.Size(30, 21);
+            this.txtEdadMadrePadreResponsable.TabIndex = 189;
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Location = new System.Drawing.Point(352, 5);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(30, 13);
+            this.label138.TabIndex = 188;
+            this.label138.Text = "Edad";
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Location = new System.Drawing.Point(3, 5);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(283, 13);
+            this.label139.TabIndex = 186;
+            this.label139.Text = "Madre, Padre o adulto responsable del cuidado del niño (*)";
+            // 
+            // txtNombreMadrePadreResponsable
+            // 
+            this.txtNombreMadrePadreResponsable.Location = new System.Drawing.Point(7, 21);
+            this.txtNombreMadrePadreResponsable.Name = "txtNombreMadrePadreResponsable";
+            this.txtNombreMadrePadreResponsable.Size = new System.Drawing.Size(312, 21);
+            this.txtNombreMadrePadreResponsable.TabIndex = 187;
+            // 
+            // listaEstadoCivilHombre
+            // 
+            this.listaEstadoCivilHombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.listaEstadoCivilHombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listaEstadoCivilHombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaEstadoCivilHombre.FormattingEnabled = true;
+            this.listaEstadoCivilHombre.Location = new System.Drawing.Point(320, 257);
+            this.listaEstadoCivilHombre.Margin = new System.Windows.Forms.Padding(2);
+            this.listaEstadoCivilHombre.Name = "listaEstadoCivilHombre";
+            this.listaEstadoCivilHombre.Size = new System.Drawing.Size(89, 21);
+            this.listaEstadoCivilHombre.TabIndex = 184;
+            // 
+            // listaEstadoCivilMujer
+            // 
+            this.listaEstadoCivilMujer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.listaEstadoCivilMujer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listaEstadoCivilMujer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaEstadoCivilMujer.FormattingEnabled = true;
+            this.listaEstadoCivilMujer.Location = new System.Drawing.Point(320, 164);
+            this.listaEstadoCivilMujer.Margin = new System.Windows.Forms.Padding(2);
+            this.listaEstadoCivilMujer.Name = "listaEstadoCivilMujer";
+            this.listaEstadoCivilMujer.Size = new System.Drawing.Size(91, 21);
+            this.listaEstadoCivilMujer.TabIndex = 183;
+            // 
+            // listaGradoInstruccionHombre
+            // 
+            this.listaGradoInstruccionHombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.listaGradoInstruccionHombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listaGradoInstruccionHombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaGradoInstruccionHombre.FormattingEnabled = true;
+            this.listaGradoInstruccionHombre.Location = new System.Drawing.Point(0, 257);
+            this.listaGradoInstruccionHombre.Margin = new System.Windows.Forms.Padding(2);
+            this.listaGradoInstruccionHombre.Name = "listaGradoInstruccionHombre";
+            this.listaGradoInstruccionHombre.Size = new System.Drawing.Size(118, 21);
+            this.listaGradoInstruccionHombre.TabIndex = 182;
+            // 
+            // listaGradoInstruccionMujer
+            // 
+            this.listaGradoInstruccionMujer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.listaGradoInstruccionMujer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listaGradoInstruccionMujer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaGradoInstruccionMujer.FormattingEnabled = true;
+            this.listaGradoInstruccionMujer.Location = new System.Drawing.Point(-1, 164);
+            this.listaGradoInstruccionMujer.Margin = new System.Windows.Forms.Padding(2);
+            this.listaGradoInstruccionMujer.Name = "listaGradoInstruccionMujer";
+            this.listaGradoInstruccionMujer.Size = new System.Drawing.Size(119, 21);
+            this.listaGradoInstruccionMujer.TabIndex = 181;
+            // 
+            // listTipoAfiliacionHombre
+            // 
+            this.listTipoAfiliacionHombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.listTipoAfiliacionHombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listTipoAfiliacionHombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listTipoAfiliacionHombre.FormattingEnabled = true;
+            this.listTipoAfiliacionHombre.Location = new System.Drawing.Point(344, 219);
+            this.listTipoAfiliacionHombre.Margin = new System.Windows.Forms.Padding(2);
+            this.listTipoAfiliacionHombre.Name = "listTipoAfiliacionHombre";
+            this.listTipoAfiliacionHombre.Size = new System.Drawing.Size(86, 21);
+            this.listTipoAfiliacionHombre.TabIndex = 180;
+            // 
+            // listTipoAfiliacionMujer
+            // 
+            this.listTipoAfiliacionMujer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.listTipoAfiliacionMujer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listTipoAfiliacionMujer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listTipoAfiliacionMujer.FormattingEnabled = true;
+            this.listTipoAfiliacionMujer.Location = new System.Drawing.Point(344, 112);
+            this.listTipoAfiliacionMujer.Margin = new System.Windows.Forms.Padding(2);
+            this.listTipoAfiliacionMujer.Name = "listTipoAfiliacionMujer";
+            this.listTipoAfiliacionMujer.Size = new System.Drawing.Size(86, 21);
+            this.listTipoAfiliacionMujer.TabIndex = 179;
+            // 
+            // txtReligionPadre
+            // 
+            this.txtReligionPadre.Location = new System.Drawing.Point(417, 259);
+            this.txtReligionPadre.Name = "txtReligionPadre";
+            this.txtReligionPadre.Size = new System.Drawing.Size(102, 21);
+            this.txtReligionPadre.TabIndex = 178;
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Location = new System.Drawing.Point(417, 242);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(45, 13);
+            this.label109.TabIndex = 177;
+            this.label109.Text = "Religión";
+            // 
+            // txtOcupacionPadre
+            // 
+            this.txtOcupacionPadre.Location = new System.Drawing.Point(123, 258);
+            this.txtOcupacionPadre.Name = "txtOcupacionPadre";
+            this.txtOcupacionPadre.Size = new System.Drawing.Size(191, 21);
+            this.txtOcupacionPadre.TabIndex = 171;
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Location = new System.Drawing.Point(321, 242);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(61, 13);
+            this.label110.TabIndex = 167;
+            this.label110.Text = "Estado Civil";
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(104, 242);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(57, 13);
+            this.label111.TabIndex = 165;
+            this.label111.Text = "Ocupación";
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Location = new System.Drawing.Point(4, 242);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(91, 13);
+            this.label112.TabIndex = 164;
+            this.label112.Text = "Grado Instrucción";
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Location = new System.Drawing.Point(321, 201);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(51, 13);
+            this.label113.TabIndex = 176;
+            this.label113.Text = "Afiliación";
+            // 
+            // txtAfiliacionPadre
+            // 
+            this.txtAfiliacionPadre.Location = new System.Drawing.Point(441, 217);
+            this.txtAfiliacionPadre.Name = "txtAfiliacionPadre";
+            this.txtAfiliacionPadre.Size = new System.Drawing.Size(78, 21);
+            this.txtAfiliacionPadre.TabIndex = 175;
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Location = new System.Drawing.Point(417, 201);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(74, 13);
+            this.label114.TabIndex = 174;
+            this.label114.Text = "Cod. Afiliación";
+            // 
+            // txtDNIPadre
+            // 
+            this.txtDNIPadre.Location = new System.Drawing.Point(258, 217);
+            this.txtDNIPadre.Name = "txtDNIPadre";
+            this.txtDNIPadre.Size = new System.Drawing.Size(81, 21);
+            this.txtDNIPadre.TabIndex = 173;
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Location = new System.Drawing.Point(273, 201);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(24, 13);
+            this.label115.TabIndex = 172;
+            this.label115.Text = "DNI";
+            // 
+            // txtEdadPadre
+            // 
+            this.txtEdadPadre.Location = new System.Drawing.Point(219, 217);
+            this.txtEdadPadre.Name = "txtEdadPadre";
+            this.txtEdadPadre.Size = new System.Drawing.Size(30, 21);
+            this.txtEdadPadre.TabIndex = 170;
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Location = new System.Drawing.Point(219, 201);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(30, 13);
+            this.label116.TabIndex = 163;
+            this.label116.Text = "Edad";
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Location = new System.Drawing.Point(1, 201);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(167, 13);
+            this.label117.TabIndex = 161;
+            this.label117.Text = "Nombres y Apellidos Padre o Tutor";
+            // 
+            // txtNombrePadreTutor
+            // 
+            this.txtNombrePadreTutor.Location = new System.Drawing.Point(1, 217);
+            this.txtNombrePadreTutor.Name = "txtNombrePadreTutor";
+            this.txtNombrePadreTutor.Size = new System.Drawing.Size(213, 21);
+            this.txtNombrePadreTutor.TabIndex = 162;
+            // 
+            // txtReligionMadre
+            // 
+            this.txtReligionMadre.Location = new System.Drawing.Point(417, 164);
+            this.txtReligionMadre.Name = "txtReligionMadre";
+            this.txtReligionMadre.Size = new System.Drawing.Size(102, 21);
+            this.txtReligionMadre.TabIndex = 160;
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Location = new System.Drawing.Point(417, 147);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(45, 13);
+            this.label118.TabIndex = 159;
+            this.label118.Text = "Religión";
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Location = new System.Drawing.Point(321, 147);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(61, 13);
+            this.label119.TabIndex = 155;
+            this.label119.Text = "Estado Civil";
+            // 
+            // txtOcupacionMadre
+            // 
+            this.txtOcupacionMadre.Location = new System.Drawing.Point(123, 164);
+            this.txtOcupacionMadre.Name = "txtOcupacionMadre";
+            this.txtOcupacionMadre.Size = new System.Drawing.Size(192, 21);
+            this.txtOcupacionMadre.TabIndex = 158;
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Location = new System.Drawing.Point(104, 147);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(57, 13);
+            this.label120.TabIndex = 154;
+            this.label120.Text = "Ocupación";
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Location = new System.Drawing.Point(4, 147);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(91, 13);
+            this.label121.TabIndex = 153;
+            this.label121.Text = "Grado Instrucción";
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Location = new System.Drawing.Point(341, 97);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(51, 13);
+            this.label122.TabIndex = 142;
+            this.label122.Text = "Afiliación";
+            // 
+            // txtAfiliacionMadre
+            // 
+            this.txtAfiliacionMadre.Location = new System.Drawing.Point(441, 113);
+            this.txtAfiliacionMadre.Name = "txtAfiliacionMadre";
+            this.txtAfiliacionMadre.Size = new System.Drawing.Size(77, 21);
+            this.txtAfiliacionMadre.TabIndex = 141;
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Location = new System.Drawing.Point(438, 97);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(74, 13);
+            this.label123.TabIndex = 140;
+            this.label123.Text = "Cod. Afiliación";
+            // 
+            // txtDNIMadre
+            // 
+            this.txtDNIMadre.Location = new System.Drawing.Point(255, 113);
+            this.txtDNIMadre.Name = "txtDNIMadre";
+            this.txtDNIMadre.Size = new System.Drawing.Size(84, 21);
+            this.txtDNIMadre.TabIndex = 139;
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Location = new System.Drawing.Point(255, 97);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(24, 13);
+            this.label124.TabIndex = 138;
+            this.label124.Text = "DNI";
+            // 
+            // txtEdadMadre
+            // 
+            this.txtEdadMadre.Location = new System.Drawing.Point(219, 113);
+            this.txtEdadMadre.Name = "txtEdadMadre";
+            this.txtEdadMadre.Size = new System.Drawing.Size(30, 21);
+            this.txtEdadMadre.TabIndex = 137;
+            // 
+            // label125
+            // 
+            this.label125.AutoSize = true;
+            this.label125.Location = new System.Drawing.Point(219, 97);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(30, 13);
+            this.label125.TabIndex = 136;
+            this.label125.Text = "Edad";
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Location = new System.Drawing.Point(0, 97);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(176, 13);
+            this.label126.TabIndex = 133;
+            this.label126.Text = "Nombres y Apellidos Madre o Tutora";
+            // 
+            // txtNombreMadreTutor
+            // 
+            this.txtNombreMadreTutor.Location = new System.Drawing.Point(0, 113);
+            this.txtNombreMadreTutor.Name = "txtNombreMadreTutor";
+            this.txtNombreMadreTutor.Size = new System.Drawing.Size(214, 21);
+            this.txtNombreMadreTutor.TabIndex = 134;
+            // 
+            // shapeContainer3
+            // 
+            this.shapeContainer3.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer3.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer3.Name = "shapeContainer3";
+            this.shapeContainer3.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape4});
+            this.shapeContainer3.Size = new System.Drawing.Size(522, 291);
+            this.shapeContainer3.TabIndex = 185;
+            this.shapeContainer3.TabStop = false;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 2;
+            this.lineShape4.X2 = 517;
+            this.lineShape4.Y1 = 70;
+            this.lineShape4.Y2 = 70;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblDni);
+            this.groupBox3.Controls.Add(this.label70);
+            this.groupBox3.Controls.Add(this.txtCentroEducativo);
+            this.groupBox3.Controls.Add(this.label44);
+            this.groupBox3.Controls.Add(this.ddlBloodFactorId);
+            this.groupBox3.Controls.Add(this.ddlBloodGroupId);
+            this.groupBox3.Controls.Add(this.txtDomicilio);
+            this.groupBox3.Controls.Add(this.label57);
+            this.groupBox3.Controls.Add(this.txtOcupacion);
+            this.groupBox3.Controls.Add(this.label55);
+            this.groupBox3.Controls.Add(this.cboEstadoCivil);
+            this.groupBox3.Controls.Add(this.label54);
+            this.groupBox3.Controls.Add(this.txtHijosVivos);
+            this.groupBox3.Controls.Add(this.cboGradoInstruccion);
+            this.groupBox3.Controls.Add(this.txtApellidoPaterno);
+            this.groupBox3.Controls.Add(this.label61);
+            this.groupBox3.Controls.Add(this.label53);
+            this.groupBox3.Controls.Add(this.label45);
+            this.groupBox3.Controls.Add(this.label52);
+            this.groupBox3.Controls.Add(this.txtApellidoMaterno);
+            this.groupBox3.Controls.Add(this.txtProcedencia);
+            this.groupBox3.Controls.Add(this.label46);
+            this.groupBox3.Controls.Add(this.label51);
+            this.groupBox3.Controls.Add(this.txtNombres);
+            this.groupBox3.Controls.Add(this.txtLugarNacimiento);
+            this.groupBox3.Controls.Add(this.label50);
+            this.groupBox3.Controls.Add(this.label47);
+            this.groupBox3.Controls.Add(this.label49);
+            this.groupBox3.Controls.Add(this.dtpFechaNacimiento);
+            this.groupBox3.Controls.Add(this.cboGenero);
+            this.groupBox3.Controls.Add(this.txtEdad);
+            this.groupBox3.Controls.Add(this.label48);
+            this.groupBox3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(3, 7);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(545, 185);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DATOS PERSONALES";
+            // 
+            // lblDni
+            // 
+            this.lblDni.AutoSize = true;
+            this.lblDni.Enabled = false;
+            this.lblDni.Location = new System.Drawing.Point(296, 15);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(24, 13);
+            this.lblDni.TabIndex = 126;
+            this.lblDni.Text = "DNI";
+            this.lblDni.Visible = false;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(7, 161);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(85, 13);
+            this.label70.TabIndex = 116;
+            this.label70.Text = "Centro Educativo";
+            // 
+            // txtCentroEducativo
+            // 
+            this.txtCentroEducativo.Location = new System.Drawing.Point(100, 157);
+            this.txtCentroEducativo.Name = "txtCentroEducativo";
+            this.txtCentroEducativo.Size = new System.Drawing.Size(291, 21);
+            this.txtCentroEducativo.TabIndex = 117;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 17);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(68, 13);
+            this.label44.TabIndex = 57;
+            this.label44.Text = "Ape. Paterno";
+            // 
+            // ddlBloodFactorId
+            // 
+            this.ddlBloodFactorId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlBloodFactorId.Enabled = false;
+            this.ddlBloodFactorId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlBloodFactorId.FormattingEnabled = true;
+            this.ddlBloodFactorId.Location = new System.Drawing.Point(486, 79);
+            this.ddlBloodFactorId.Margin = new System.Windows.Forms.Padding(2);
+            this.ddlBloodFactorId.Name = "ddlBloodFactorId";
+            this.ddlBloodFactorId.Size = new System.Drawing.Size(39, 21);
+            this.ddlBloodFactorId.TabIndex = 115;
+            // 
+            // ddlBloodGroupId
+            // 
+            this.ddlBloodGroupId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlBloodGroupId.Enabled = false;
+            this.ddlBloodGroupId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlBloodGroupId.FormattingEnabled = true;
+            this.ddlBloodGroupId.Location = new System.Drawing.Point(394, 79);
+            this.ddlBloodGroupId.Margin = new System.Windows.Forms.Padding(2);
+            this.ddlBloodGroupId.Name = "ddlBloodGroupId";
+            this.ddlBloodGroupId.Size = new System.Drawing.Size(86, 21);
+            this.ddlBloodGroupId.TabIndex = 114;
+            // 
+            // txtDomicilio
+            // 
+            this.txtDomicilio.Location = new System.Drawing.Point(394, 130);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(131, 21);
+            this.txtDomicilio.TabIndex = 83;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(391, 114);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(52, 13);
+            this.label57.TabIndex = 82;
+            this.label57.Text = "Domicilio";
+            // 
+            // txtOcupacion
+            // 
+            this.txtOcupacion.Location = new System.Drawing.Point(206, 130);
+            this.txtOcupacion.Name = "txtOcupacion";
+            this.txtOcupacion.Size = new System.Drawing.Size(185, 21);
+            this.txtOcupacion.TabIndex = 81;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(206, 114);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(56, 13);
+            this.label55.TabIndex = 80;
+            this.label55.Text = "Ocupación";
+            // 
+            // cboEstadoCivil
+            // 
+            this.cboEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEstadoCivil.FormattingEnabled = true;
+            this.cboEstadoCivil.Location = new System.Drawing.Point(100, 130);
+            this.cboEstadoCivil.Name = "cboEstadoCivil";
+            this.cboEstadoCivil.Size = new System.Drawing.Size(100, 21);
+            this.cboEstadoCivil.TabIndex = 79;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(100, 114);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(59, 13);
+            this.label54.TabIndex = 78;
+            this.label54.Text = "Estado Civil";
+            // 
+            // txtHijosVivos
+            // 
+            this.txtHijosVivos.Location = new System.Drawing.Point(486, 153);
+            this.txtHijosVivos.Name = "txtHijosVivos";
+            this.txtHijosVivos.Size = new System.Drawing.Size(39, 21);
+            this.txtHijosVivos.TabIndex = 125;
+            // 
+            // cboGradoInstruccion
+            // 
+            this.cboGradoInstruccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGradoInstruccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGradoInstruccion.FormattingEnabled = true;
+            this.cboGradoInstruccion.Location = new System.Drawing.Point(6, 130);
+            this.cboGradoInstruccion.Name = "cboGradoInstruccion";
+            this.cboGradoInstruccion.Size = new System.Drawing.Size(86, 21);
+            this.cboGradoInstruccion.TabIndex = 77;
+            // 
+            // txtApellidoPaterno
+            // 
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(6, 34);
+            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(86, 21);
+            this.txtApellidoPaterno.TabIndex = 58;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(394, 160);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(57, 13);
+            this.label61.TabIndex = 124;
+            this.label61.Text = "Hijos Vivos";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(6, 114);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(89, 13);
+            this.label53.TabIndex = 76;
+            this.label53.Text = "Grado Instrucción";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(100, 17);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(72, 13);
+            this.label45.TabIndex = 59;
+            this.label45.Text = "Ape. Materno";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(394, 64);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(86, 13);
+            this.label52.TabIndex = 73;
+            this.label52.Text = "Grupo Sanguineo";
+            // 
+            // txtApellidoMaterno
+            // 
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(100, 34);
+            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(100, 21);
+            this.txtApellidoMaterno.TabIndex = 60;
+            // 
+            // txtProcedencia
+            // 
+            this.txtProcedencia.Location = new System.Drawing.Point(206, 81);
+            this.txtProcedencia.Name = "txtProcedencia";
+            this.txtProcedencia.Size = new System.Drawing.Size(185, 21);
+            this.txtProcedencia.TabIndex = 72;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(206, 17);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(49, 13);
+            this.label46.TabIndex = 61;
+            this.label46.Text = "Nombres";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(206, 64);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(65, 13);
+            this.label51.TabIndex = 71;
+            this.label51.Text = "Procedencia";
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.Location = new System.Drawing.Point(206, 34);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(185, 21);
+            this.txtNombres.TabIndex = 62;
+            // 
+            // txtLugarNacimiento
+            // 
+            this.txtLugarNacimiento.Location = new System.Drawing.Point(100, 81);
+            this.txtLugarNacimiento.Name = "txtLugarNacimiento";
+            this.txtLugarNacimiento.Size = new System.Drawing.Size(100, 21);
+            this.txtLugarNacimiento.TabIndex = 70;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(100, 64);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(102, 13);
+            this.label50.TabIndex = 69;
+            this.label50.Text = "Lugar de Nacimiento";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(394, 17);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(42, 13);
+            this.label47.TabIndex = 63;
+            this.label47.Text = "Género";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(6, 64);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(90, 13);
+            this.label49.TabIndex = 67;
+            this.label49.Text = "Fecha Nacimiento";
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(6, 81);
+            this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(86, 21);
+            this.dtpFechaNacimiento.TabIndex = 68;
+            // 
+            // cboGenero
+            // 
+            this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGenero.Enabled = false;
+            this.cboGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGenero.FormattingEnabled = true;
+            this.cboGenero.Location = new System.Drawing.Point(394, 34);
+            this.cboGenero.Name = "cboGenero";
+            this.cboGenero.Size = new System.Drawing.Size(86, 21);
+            this.cboGenero.TabIndex = 64;
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(486, 35);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(39, 21);
+            this.txtEdad.TabIndex = 66;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(486, 18);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(29, 13);
+            this.label48.TabIndex = 65;
+            this.label48.Text = "Edad";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(947, 20);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(205, 19);
+            this.label39.TabIndex = 86;
+            this.label39.Text = "ANTECEDENTES ANTERIORES";
+            // 
+            // ultraGrid1
+            // 
+            this.ultraGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            appearance101.BackColor = System.Drawing.SystemColors.ControlLight;
+            appearance101.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance101.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            this.ultraGrid1.DisplayLayout.Appearance = appearance101;
+            ultraGridColumn26.Header.Caption = "Enfermedades";
+            ultraGridColumn26.Header.VisiblePosition = 0;
+            ultraGridColumn26.Width = 256;
+            ultraGridColumn59.Header.VisiblePosition = 1;
+            ultraGridBand14.Columns.AddRange(new object[] {
+            ultraGridColumn26,
+            ultraGridColumn59});
+            ultraGridColumn79.Header.VisiblePosition = 0;
+            ultraGridColumn51.Header.VisiblePosition = 1;
+            ultraGridColumn56.Header.VisiblePosition = 2;
+            ultraGridBand15.Columns.AddRange(new object[] {
+            ultraGridColumn79,
+            ultraGridColumn51,
+            ultraGridColumn56});
+            ultraGridBand15.Expandable = false;
+            this.ultraGrid1.DisplayLayout.BandsSerializer.Add(ultraGridBand14);
+            this.ultraGrid1.DisplayLayout.BandsSerializer.Add(ultraGridBand15);
+            this.ultraGrid1.DisplayLayout.GroupByBox.Hidden = true;
+            this.ultraGrid1.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
+            this.ultraGrid1.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.ultraGrid1.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
+            this.ultraGrid1.DisplayLayout.Override.SelectTypeCell = Infragistics.Win.UltraWinGrid.SelectType.None;
+            this.ultraGrid1.DisplayLayout.Override.SelectTypeCol = Infragistics.Win.UltraWinGrid.SelectType.None;
+            this.ultraGrid1.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
+            this.ultraGrid1.DisplayLayout.RowConnectorColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ultraGrid1.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
+            this.ultraGrid1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.ultraGrid1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.ultraGrid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ultraGrid1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ultraGrid1.Location = new System.Drawing.Point(951, 44);
+            this.ultraGrid1.Name = "ultraGrid1";
+            this.ultraGrid1.Size = new System.Drawing.Size(362, 514);
+            this.ultraGrid1.TabIndex = 110;
+            this.ultraGrid1.CellChange += new Infragistics.Win.UltraWinGrid.CellEventHandler(this.AntecedentesCheck);
+            // 
+            // btnGuardarAntecedentes
+            // 
+            this.btnGuardarAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarAntecedentes.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarAntecedentes.Image")));
+            this.btnGuardarAntecedentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarAntecedentes.Location = new System.Drawing.Point(1175, 577);
+            this.btnGuardarAntecedentes.Name = "btnGuardarAntecedentes";
+            this.btnGuardarAntecedentes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGuardarAntecedentes.Size = new System.Drawing.Size(92, 38);
+            this.btnGuardarAntecedentes.TabIndex = 111;
+            this.btnGuardarAntecedentes.Text = "   Guardar";
+            this.btnGuardarAntecedentes.UseVisualStyleBackColor = true;
+            this.btnGuardarAntecedentes.Click += new System.EventHandler(this.btnGuardarAntecedentes_Click);
+            // 
+            // ultraGrid2
+            // 
+            this.ultraGrid2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            appearance102.BackColor = System.Drawing.SystemColors.ControlLight;
+            appearance102.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance102.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            this.ultraGrid2.DisplayLayout.Appearance = appearance102;
+            ultraGridColumn1.Header.Caption = "Enfermedades";
+            ultraGridColumn1.Header.VisiblePosition = 0;
+            ultraGridColumn1.Width = 256;
+            ultraGridColumn2.Header.VisiblePosition = 1;
+            ultraGridBand16.Columns.AddRange(new object[] {
+            ultraGridColumn1,
+            ultraGridColumn2});
+            ultraGridColumn19.Header.VisiblePosition = 0;
+            ultraGridColumn27.Header.VisiblePosition = 1;
+            ultraGridColumn28.Header.VisiblePosition = 2;
+            ultraGridBand17.Columns.AddRange(new object[] {
+            ultraGridColumn19,
+            ultraGridColumn27,
+            ultraGridColumn28});
+            ultraGridBand17.Expandable = false;
+            this.ultraGrid2.DisplayLayout.BandsSerializer.Add(ultraGridBand16);
+            this.ultraGrid2.DisplayLayout.BandsSerializer.Add(ultraGridBand17);
+            this.ultraGrid2.DisplayLayout.GroupByBox.Hidden = true;
+            this.ultraGrid2.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
+            this.ultraGrid2.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
+            this.ultraGrid2.DisplayLayout.Override.SelectTypeCell = Infragistics.Win.UltraWinGrid.SelectType.None;
+            this.ultraGrid2.DisplayLayout.Override.SelectTypeCol = Infragistics.Win.UltraWinGrid.SelectType.None;
+            this.ultraGrid2.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
+            this.ultraGrid2.DisplayLayout.RowConnectorColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ultraGrid2.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
+            this.ultraGrid2.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.ultraGrid2.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.ultraGrid2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ultraGrid2.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ultraGrid2.Location = new System.Drawing.Point(584, 44);
+            this.ultraGrid2.Name = "ultraGrid2";
+            this.ultraGrid2.Size = new System.Drawing.Size(362, 514);
+            this.ultraGrid2.TabIndex = 110;
+            this.ultraGrid2.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.ultraGrid2_InitializeLayout);
+            this.ultraGrid2.CellChange += new Infragistics.Win.UltraWinGrid.CellEventHandler(this.AntecedentesCheck);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(581, 561);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(191, 14);
+            this.label60.TabIndex = 107;
+            this.label60.Text = "Descripción de antecedentes y otros: ";
+            // 
+            // txtDescripcionAntecedentes
+            // 
+            this.txtDescripcionAntecedentes.Location = new System.Drawing.Point(581, 577);
+            this.txtDescripcionAntecedentes.Multiline = true;
+            this.txtDescripcionAntecedentes.Name = "txtDescripcionAntecedentes";
+            this.txtDescripcionAntecedentes.Size = new System.Drawing.Size(365, 52);
+            this.txtDescripcionAntecedentes.TabIndex = 108;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(580, 20);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(188, 19);
+            this.label58.TabIndex = 86;
+            this.label58.Text = "ANTECEDENTES ACTUALES";
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(1321, 646);
+            this.shapeContainer1.TabIndex = 109;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 565;
+            this.lineShape1.X2 = 558;
+            this.lineShape1.Y1 = 7;
+            this.lineShape1.Y2 = 646;
+            // 
+            // tpCuidadosPreventivos
+            // 
+            this.tpCuidadosPreventivos.Controls.Add(this.btnGuardarCuidadosPreventivos);
+            this.tpCuidadosPreventivos.Controls.Add(this.dataGridView1);
+            this.tpCuidadosPreventivos.Location = new System.Drawing.Point(4, 22);
+            this.tpCuidadosPreventivos.Name = "tpCuidadosPreventivos";
+            this.tpCuidadosPreventivos.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCuidadosPreventivos.Size = new System.Drawing.Size(1321, 646);
+            this.tpCuidadosPreventivos.TabIndex = 8;
+            this.tpCuidadosPreventivos.Text = "CUIDADOS PREVENTIVOS";
+            this.tpCuidadosPreventivos.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardarCuidadosPreventivos
+            // 
+            this.btnGuardarCuidadosPreventivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCuidadosPreventivos.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarCuidadosPreventivos.Image")));
+            this.btnGuardarCuidadosPreventivos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarCuidadosPreventivos.Location = new System.Drawing.Point(1192, 578);
+            this.btnGuardarCuidadosPreventivos.Name = "btnGuardarCuidadosPreventivos";
+            this.btnGuardarCuidadosPreventivos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGuardarCuidadosPreventivos.Size = new System.Drawing.Size(92, 38);
+            this.btnGuardarCuidadosPreventivos.TabIndex = 112;
+            this.btnGuardarCuidadosPreventivos.Text = "   Guardar";
+            this.btnGuardarCuidadosPreventivos.UseVisualStyleBackColor = true;
+            this.btnGuardarCuidadosPreventivos.Click += new System.EventHandler(this.btnGuardarCuidadosPreventivos_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(31, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1266, 549);
+            this.dataGridView1.TabIndex = 0;
             // 
             // gbDatosPaciente
             // 
-            this.gbDatosPaciente.Controls.Add(this.btnServiciosAnteriores);
-            this.gbDatosPaciente.Controls.Add(this.btnAddListaNerga);
             this.gbDatosPaciente.Controls.Add(this.lblPuesto);
-            this.gbDatosPaciente.Controls.Add(this.btnAntecedentes);
             this.gbDatosPaciente.Controls.Add(this.label21);
             this.gbDatosPaciente.Controls.Add(this.pbPersonImage);
             this.gbDatosPaciente.Controls.Add(this.lblGenero);
@@ -3287,72 +7331,32 @@
             this.gbDatosPaciente.Controls.Add(this.lblTipoEso);
             this.gbDatosPaciente.Controls.Add(this.label17);
             this.gbDatosPaciente.Controls.Add(this.label16);
-            this.gbDatosPaciente.Location = new System.Drawing.Point(8, 7);
+            this.gbDatosPaciente.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDatosPaciente.Location = new System.Drawing.Point(8, -2);
             this.gbDatosPaciente.Name = "gbDatosPaciente";
-            this.gbDatosPaciente.Size = new System.Drawing.Size(1273, 69);
+            this.gbDatosPaciente.Size = new System.Drawing.Size(1333, 47);
             this.gbDatosPaciente.TabIndex = 2;
             this.gbDatosPaciente.TabStop = false;
             this.gbDatosPaciente.Text = "Datos del Paciente / Servicio";
-            // 
-            // btnServiciosAnteriores
-            // 
-            this.btnServiciosAnteriores.BackColor = System.Drawing.SystemColors.Control;
-            this.btnServiciosAnteriores.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnServiciosAnteriores.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnServiciosAnteriores.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnServiciosAnteriores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServiciosAnteriores.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServiciosAnteriores.ForeColor = System.Drawing.Color.Black;
-            this.btnServiciosAnteriores.Image = global::Sigesoft.Node.WinClient.UI.Resources.time;
-            this.btnServiciosAnteriores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServiciosAnteriores.Location = new System.Drawing.Point(839, 42);
-            this.btnServiciosAnteriores.Margin = new System.Windows.Forms.Padding(2);
-            this.btnServiciosAnteriores.Name = "btnServiciosAnteriores";
-            this.btnServiciosAnteriores.Size = new System.Drawing.Size(126, 24);
-            this.btnServiciosAnteriores.TabIndex = 96;
-            this.btnServiciosAnteriores.Text = "Servicios Anteriores";
-            this.btnServiciosAnteriores.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnServiciosAnteriores.UseVisualStyleBackColor = false;
-            this.btnServiciosAnteriores.Click += new System.EventHandler(this.btnServiciosAnteriores_Click);
-            // 
-            // btnAddListaNerga
-            // 
-            this.btnAddListaNerga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddListaNerga.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAddListaNerga.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnAddListaNerga.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAddListaNerga.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnAddListaNerga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddListaNerga.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddListaNerga.ForeColor = System.Drawing.Color.Black;
-            this.btnAddListaNerga.Image = global::Sigesoft.Node.WinClient.UI.Resources.user_suit;
-            this.btnAddListaNerga.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddListaNerga.Location = new System.Drawing.Point(1172, 40);
-            this.btnAddListaNerga.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddListaNerga.Name = "btnAddListaNerga";
-            this.btnAddListaNerga.Size = new System.Drawing.Size(96, 24);
-            this.btnAddListaNerga.TabIndex = 94;
-            this.btnAddListaNerga.Text = "Lista Negra";
-            this.btnAddListaNerga.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddListaNerga.UseVisualStyleBackColor = false;
-            this.btnAddListaNerga.Click += new System.EventHandler(this.btnAddListaNerga_Click);
             // 
             // lblPuesto
             // 
             this.lblPuesto.BackColor = System.Drawing.Color.White;
             this.lblPuesto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPuesto.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuesto.ForeColor = System.Drawing.Color.Black;
-            this.lblPuesto.Location = new System.Drawing.Point(124, 42);
+            this.lblPuesto.Location = new System.Drawing.Point(428, 17);
             this.lblPuesto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(265, 20);
+            this.lblPuesto.Size = new System.Drawing.Size(205, 20);
             this.lblPuesto.TabIndex = 40;
             this.lblPuesto.Text = "lblPuesto";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(70, 43);
+            this.label21.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(387, 21);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(40, 13);
@@ -3364,10 +7368,10 @@
             this.pbPersonImage.BackColor = System.Drawing.Color.Gray;
             this.pbPersonImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPersonImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPersonImage.Image = global::Sigesoft.Node.WinClient.UI.Resources.nofoto;
-            this.pbPersonImage.Location = new System.Drawing.Point(4, 17);
+            this.pbPersonImage.Image = ((System.Drawing.Image)(resources.GetObject("pbPersonImage.Image")));
+            this.pbPersonImage.Location = new System.Drawing.Point(4, 14);
             this.pbPersonImage.Name = "pbPersonImage";
-            this.pbPersonImage.Size = new System.Drawing.Size(61, 48);
+            this.pbPersonImage.Size = new System.Drawing.Size(48, 33);
             this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonImage.TabIndex = 38;
             this.pbPersonImage.TabStop = false;
@@ -3378,7 +7382,8 @@
             // 
             this.lblGenero.BackColor = System.Drawing.Color.White;
             this.lblGenero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblGenero.Location = new System.Drawing.Point(522, 19);
+            this.lblGenero.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenero.Location = new System.Drawing.Point(932, 17);
             this.lblGenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(70, 20);
@@ -3387,7 +7392,8 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(476, 23);
+            this.label27.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(889, 21);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(42, 13);
@@ -3398,7 +7404,8 @@
             // 
             this.lblFecInicio.BackColor = System.Drawing.Color.LightCyan;
             this.lblFecInicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFecInicio.Location = new System.Drawing.Point(672, 42);
+            this.lblFecInicio.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecInicio.Location = new System.Drawing.Point(1237, 17);
             this.lblFecInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecInicio.Name = "lblFecInicio";
             this.lblFecInicio.Size = new System.Drawing.Size(84, 20);
@@ -3407,10 +7414,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(612, 47);
+            this.label18.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(1180, 21);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 13);
+            this.label18.Size = new System.Drawing.Size(54, 13);
             this.label18.TabIndex = 34;
             this.label18.Text = "Fec. Inicio";
             // 
@@ -3418,17 +7426,19 @@
             // 
             this.lblGeso.BackColor = System.Drawing.Color.White;
             this.lblGeso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblGeso.Location = new System.Drawing.Point(429, 42);
+            this.lblGeso.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeso.Location = new System.Drawing.Point(671, 17);
             this.lblGeso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGeso.Name = "lblGeso";
-            this.lblGeso.Size = new System.Drawing.Size(163, 20);
+            this.lblGeso.Size = new System.Drawing.Size(150, 20);
             this.lblGeso.TabIndex = 26;
             this.lblGeso.Text = "lblGeso";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(393, 46);
+            this.label24.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(634, 21);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(36, 13);
@@ -3439,7 +7449,8 @@
             // 
             this.lblEdad.BackColor = System.Drawing.Color.White;
             this.lblEdad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblEdad.Location = new System.Drawing.Point(429, 19);
+            this.lblEdad.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdad.Location = new System.Drawing.Point(855, 17);
             this.lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(33, 20);
@@ -3449,10 +7460,11 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(393, 23);
+            this.label20.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(822, 21);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(32, 13);
+            this.label20.Size = new System.Drawing.Size(30, 13);
             this.label20.TabIndex = 19;
             this.label20.Text = "Edad";
             // 
@@ -3460,7 +7472,8 @@
             // 
             this.lblProtocolName.BackColor = System.Drawing.Color.White;
             this.lblProtocolName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblProtocolName.Location = new System.Drawing.Point(124, 19);
+            this.lblProtocolName.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProtocolName.Location = new System.Drawing.Point(121, 17);
             this.lblProtocolName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProtocolName.Name = "lblProtocolName";
             this.lblProtocolName.Size = new System.Drawing.Size(265, 20);
@@ -3471,30 +7484,33 @@
             // 
             this.lblTipoEso.BackColor = System.Drawing.Color.White;
             this.lblTipoEso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTipoEso.Location = new System.Drawing.Point(672, 19);
+            this.lblTipoEso.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoEso.Location = new System.Drawing.Point(1076, 17);
             this.lblTipoEso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoEso.Name = "lblTipoEso";
-            this.lblTipoEso.Size = new System.Drawing.Size(193, 20);
+            this.lblTipoEso.Size = new System.Drawing.Size(103, 20);
             this.lblTipoEso.TabIndex = 17;
             this.lblTipoEso.Text = "lblTipoEso";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(596, 24);
+            this.label17.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(1003, 21);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 13);
+            this.label17.Size = new System.Drawing.Size(68, 13);
             this.label17.TabIndex = 11;
             this.label17.Text = "Tipo Examen ";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(68, 23);
+            this.label16.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(68, 21);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.Size = new System.Drawing.Size(53, 13);
             this.label16.TabIndex = 9;
             this.label16.Text = "Protocolo";
             // 
@@ -3516,13 +7532,12 @@
             // pnlLeftPrincipal
             // 
             this.pnlLeftPrincipal.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pnlLeftPrincipal.Controls.Add(this.gbDatosPaciente);
-            this.pnlLeftPrincipal.Controls.Add(this.lblFecVctoGlobal);
             this.pnlLeftPrincipal.Controls.Add(this.tcSubMain);
+            this.pnlLeftPrincipal.Controls.Add(this.gbDatosPaciente);
             this.pnlLeftPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeftPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlLeftPrincipal.Name = "pnlLeftPrincipal";
-            this.pnlLeftPrincipal.Size = new System.Drawing.Size(1370, 638);
+            this.pnlLeftPrincipal.Size = new System.Drawing.Size(1358, 724);
             this.pnlLeftPrincipal.TabIndex = 6;
             // 
             // bgwSaveExamen
@@ -3530,12 +7545,32 @@
             this.bgwSaveExamen.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwSaveExamen_DoWork);
             this.bgwSaveExamen.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwSaveExamen_RunWorkerCompleted);
             // 
+            // dsInformeEcograficoRenal1
+            // 
+            this.dsInformeEcograficoRenal1.DataSetName = "dsInformeEcograficoRenal";
+            this.dsInformeEcograficoRenal1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // ultraDataSource1
+            // 
+            this.ultraDataSource1.Band.Columns.AddRange(new object[] {
+            ultraDataColumn1,
+            ultraDataColumn2,
+            ultraDataColumn3,
+            ultraDataColumn4,
+            ultraDataColumn5,
+            ultraDataColumn6});
+            // 
             // frmEso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1284, 655);
+            this.ClientSize = new System.Drawing.Size(1350, 741);
             this.Controls.Add(this.pnlLeftPrincipal);
             this.Name = "frmEso";
             this.ShowIcon = false;
@@ -3559,6 +7594,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdServiciosAnteriores)).EndInit();
             this.cmVerServicioAnterior.ResumeLayout(false);
             this.General.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
             this.gbAntGinecologicos.ResumeLayout(false);
             this.gbAntGinecologicos.PerformLayout();
             this.gbFuncionesBiologicas.ResumeLayout(false);
@@ -3595,9 +7632,86 @@
             this.gbRecomendaciones_Conclusiones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdRecomendaciones_Conclusiones)).EndInit();
             this.gbRestricciones_Conclusiones.ResumeLayout(false);
+            this.gbRestricciones_Conclusiones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdRestricciones_Conclusiones)).EndInit();
             this.gbConclusionesDiagnosticas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdConclusionesDiagnosticas)).EndInit();
+            this.tpFormatoAtencionIntegral.ResumeLayout(false);
+            this.tpFormatoAtencionIntegral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCronicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPlanIntegral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAgudos)).EndInit();
+            this.tpDatosAntecedentes.ResumeLayout(false);
+            this.tpDatosAntecedentes.PerformLayout();
+            this.tbcDatos.ResumeLayout(false);
+            this.tbpAdultoMayor.ResumeLayout(false);
+            this.tbpAdultoMayor.PerformLayout();
+            this.pnlSexualidad.ResumeLayout(false);
+            this.pnlSexualidad.PerformLayout();
+            this.pnlEmbarazo.ResumeLayout(false);
+            this.pnlEmbarazo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdEmbarazos)).EndInit();
+            this.pnlMenarquia.ResumeLayout(false);
+            this.pnlMenarquia.PerformLayout();
+            this.tbpAdolescente.ResumeLayout(false);
+            this.tbpAdolescente.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.tbpNinio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxVivienda)).EndInit();
+            this.ultgrboxVivienda.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel5.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxFamiliares)).EndInit();
+            this.ultgrboxFamiliares.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel4.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel4.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxNacimiento)).EndInit();
+            this.ultgrboxNacimiento.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel3.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxEmbarazo)).EndInit();
+            this.ultgrboxEmbarazo.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel1.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultgrboxDatosFamiliares)).EndInit();
+            this.ultgrboxDatosFamiliares.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel2.ResumeLayout(false);
+            this.ultraExpandableGroupBoxPanel2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraGrid2)).EndInit();
+            this.tpCuidadosPreventivos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbDatosPaciente.ResumeLayout(false);
             this.gbDatosPaciente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
@@ -3605,6 +7719,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.uvAnamnesis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvAnalisisDx)).EndInit();
             this.pnlLeftPrincipal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dsInformeEcograficoRenal1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraDataSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3758,10 +7874,8 @@
         private System.Windows.Forms.TextBox txtHallazgos;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox gbAntGinecologicos;
-        private System.Windows.Forms.DateTimePicker dtpMamografia;
         private System.Windows.Forms.TextBox txtGestapara;
         private System.Windows.Forms.TextBox txtMenarquia;
-        private System.Windows.Forms.DateTimePicker dtpPAP;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label22;
@@ -3786,5 +7900,310 @@
         private System.Windows.Forms.Button btn312;
         private System.Windows.Forms.Button btn7C;
         private System.Windows.Forms.Button btnReceta;
+        private System.Windows.Forms.Button btnPerson;
+        private Dataset.dsInformeEcograficoRenal dsInformeEcograficoRenal1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btnSubirInterconsulta;
+        private System.Windows.Forms.TabPage tpFormatoAtencionIntegral;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label15;
+        private Infragistics.Win.UltraWinGrid.UltraGrid grdCronicos;
+        private System.Windows.Forms.Button btnNuevoCronico;
+        private System.Windows.Forms.Button btnEliminarCronico;
+        private System.Windows.Forms.Button btnEditarCronico;
+        private System.Windows.Forms.Button btnEliminarAgudo;
+        private System.Windows.Forms.Button btnEditarAgudo;
+        private Infragistics.Win.UltraWinGrid.UltraGrid grdAgudos;
+        private System.Windows.Forms.Button btnNuevoAgudo;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private Infragistics.Win.UltraWinGrid.UltraGrid grdPlanIntegral;
+        private System.Windows.Forms.Button btnEliminarPlan;
+        private System.Windows.Forms.Button btnEditarPlan;
+        private System.Windows.Forms.Button btnNuevoPlan;
+        private System.Windows.Forms.TabPage tpDatosAntecedentes;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox txtApellidoPaterno;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox txtApellidoMaterno;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox txtNombres;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox txtDescripcionAntecedentes;
+        private System.Windows.Forms.ComboBox cboGenero;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox txtLugarNacimiento;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox txtProcedencia;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.ComboBox cboGradoInstruccion;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.ComboBox cboEstadoCivil;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox txtOcupacion;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox txtDomicilio;
+        private System.Windows.Forms.Label label58;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private Infragistics.Win.UltraWinGrid.UltraGrid ultraGrid2;
+        private System.Windows.Forms.TabPage tpCuidadosPreventivos;
+        private System.Windows.Forms.Button btnGuardarAntecedentes;
+        private System.Windows.Forms.Label label39;
+        private Infragistics.Win.UltraWinGrid.UltraGrid ultraGrid1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnGuardarCuidadosPreventivos;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox txtAmCuidador;
+        private System.Windows.Forms.ComboBox ddlBloodFactorId;
+        private System.Windows.Forms.ComboBox ddlBloodGroupId;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtAmCuidadorDni;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtAmCuidadorEdad;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Panel pnlSexualidad;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox txtAmInicioRs;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox txtAmNroPs;
+        private System.Windows.Forms.TextBox txtHijosVivos;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Panel pnlMenarquia;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.TextBox txtAmRC;
+        private System.Windows.Forms.TextBox txtAmFechaUR;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Panel pnlEmbarazo;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox txtAmAborto;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TextBox txtAmPrematuro;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TextBox txtAmNroParto;
+        private System.Windows.Forms.Button btnNuevoEmbarazo;
+        private System.Windows.Forms.Button btnEliminarEmbarazo;
+        private System.Windows.Forms.TabControl tbcDatos;
+        private System.Windows.Forms.TabPage tbpAdultoMayor;
+        private System.Windows.Forms.TabPage tbpAdolescente;
+        private System.Windows.Forms.TabPage tbpNinio;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.TextBox txtCentroEducativo;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txtAdoMenarquia;
+        private System.Windows.Forms.TextBox txtAdoEdadRS;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.TextBox textViveConAdol;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textEdadAdol;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.TextBox textNombreCuidadorAdol;
+        private System.Windows.Forms.TextBox textDniCuidadorAdol;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.TextBox txtAdoNroTv;
+        private System.Windows.Forms.TextBox txtAdoNroJuegos;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.TextBox textObservacionesSexualidadAdol;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.TextBox txtAdoEdadIniTrab;
+        private System.Windows.Forms.TextBox txtAdoTipoTrab;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.TextBox textObservacionesEmbarazo;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.TextBox textFlujoVaginalPatológico;
+        private System.Windows.Forms.TextBox textOtroAntecedentesFamiliares;
+        private System.Windows.Forms.TextBox textReaccionAlergicaMedicamentos;
+        private System.Windows.Forms.TextBox textMedicamentoFrecuenteDosis;
+        private Infragistics.Win.Misc.UltraExpandableGroupBox ultgrboxDatosFamiliares;
+        private Infragistics.Win.Misc.UltraExpandableGroupBoxPanel ultraExpandableGroupBoxPanel2;
+        private System.Windows.Forms.TextBox txtReligionPadre;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.TextBox txtOcupacionPadre;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.TextBox txtAfiliacionPadre;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.TextBox txtDNIPadre;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.TextBox txtEdadPadre;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.TextBox txtNombrePadreTutor;
+        private System.Windows.Forms.TextBox txtReligionMadre;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.TextBox txtOcupacionMadre;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.TextBox txtAfiliacionMadre;
+        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.TextBox txtDNIMadre;
+        private System.Windows.Forms.Label label124;
+        private System.Windows.Forms.TextBox txtEdadMadre;
+        private System.Windows.Forms.Label label125;
+        private System.Windows.Forms.Label label126;
+        private System.Windows.Forms.TextBox txtNombreMadreTutor;
+        private Infragistics.Win.Misc.UltraExpandableGroupBox ultgrboxVivienda;
+        private Infragistics.Win.Misc.UltraExpandableGroupBoxPanel ultraExpandableGroupBoxPanel5;
+        private Infragistics.Win.Misc.UltraExpandableGroupBox ultgrboxFamiliares;
+        private Infragistics.Win.Misc.UltraExpandableGroupBoxPanel ultraExpandableGroupBoxPanel4;
+        private Infragistics.Win.Misc.UltraExpandableGroupBox ultgrboxNacimiento;
+        private Infragistics.Win.Misc.UltraExpandableGroupBoxPanel ultraExpandableGroupBoxPanel3;
+        private Infragistics.Win.Misc.UltraExpandableGroupBox ultgrboxEmbarazo;
+        private Infragistics.Win.Misc.UltraExpandableGroupBoxPanel ultraExpandableGroupBoxPanel1;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.ComboBox listTipoAfiliacionHombre;
+        private System.Windows.Forms.ComboBox listTipoAfiliacionMujer;
+        private System.Windows.Forms.ComboBox listaGradoInstruccionHombre;
+        private System.Windows.Forms.ComboBox listaGradoInstruccionMujer;
+        private System.Windows.Forms.ComboBox listaEstadoCivilHombre;
+        private System.Windows.Forms.ComboBox listaEstadoCivilMujer;
+        private System.Windows.Forms.TextBox textQuienAtendio;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.TextBox textComplicacionesParto;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.TextBox textLugarAPN;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.TextBox txtAPN;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.TextBox txtNEmbarazo;
+        private System.Windows.Forms.TextBox textPatologiasGestacion;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.TextBox textOtrosAntecedentes;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.TextBox textAlergiaMedicamentos;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.TextBox textPerimetroToracico;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.TextBox textPerimetroCefalico;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.TextBox textTallaNacer;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.TextBox textPesoNacer;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TextBox textEdadNacer;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.TextBox txtInicioAlimentación;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.TextBox textTiempoHospit;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.TextBox textEspecificacionesNacer;
+        private System.Windows.Forms.Label label84;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private System.Windows.Forms.TextBox textDesague;
+        private System.Windows.Forms.Label label136;
+        private System.Windows.Forms.TextBox textAguaPotable;
+        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.Label lblDni;
+        private Infragistics.Win.UltraWinDataSource.UltraDataSource ultraDataSource1;
+        private Infragistics.Win.UltraWinGrid.UltraGrid grdEmbarazos;
+        private System.Windows.Forms.Button btnEditarEmbarazo;
+        private System.Windows.Forms.Label label140;
+        private System.Windows.Forms.TextBox txtDNIMadrePadreResponsable;
+        private System.Windows.Forms.Label label137;
+        private System.Windows.Forms.TextBox txtEdadMadrePadreResponsable;
+        private System.Windows.Forms.Label label138;
+        private System.Windows.Forms.Label label139;
+        private System.Windows.Forms.TextBox txtNombreMadrePadreResponsable;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox textQuienASMA;
+        private System.Windows.Forms.RadioButton rbNoAsma;
+        private System.Windows.Forms.RadioButton rbSiAsma;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox textQuienTuberculosis;
+        private System.Windows.Forms.RadioButton rbNoTuberculosis;
+        private System.Windows.Forms.RadioButton rbSiTuberculosis;
+        private System.Windows.Forms.Label label162;
+        private System.Windows.Forms.Label label141;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.TextBox textQuienHepatitisB;
+        private System.Windows.Forms.RadioButton rbNoHepatitis;
+        private System.Windows.Forms.RadioButton rbSiHepatitis;
+        private System.Windows.Forms.Label label134;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.TextBox textQuienDrogadiccion;
+        private System.Windows.Forms.RadioButton rbNoDrogadiccion;
+        private System.Windows.Forms.RadioButton rbSiDrogadiccion;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.TextBox textQuienAlcoholismo;
+        private System.Windows.Forms.RadioButton rbNoAlcoholismo;
+        private System.Windows.Forms.RadioButton rbSiAlcoholismo;
+        private System.Windows.Forms.Label label132;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.TextBox textQuienViolenciaFamiliar;
+        private System.Windows.Forms.RadioButton rbNoViolencia;
+        private System.Windows.Forms.RadioButton rbSiViolencia;
+        private System.Windows.Forms.Label label131;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.TextBox textQuienAlergias;
+        private System.Windows.Forms.RadioButton rbNoAlergia;
+        private System.Windows.Forms.RadioButton rbSiAlergia;
+        private System.Windows.Forms.Label label130;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox textQuienEpilepsia;
+        private System.Windows.Forms.RadioButton rbNoEpilepsia;
+        private System.Windows.Forms.RadioButton rbSiEpilepsia;
+        private System.Windows.Forms.Label label129;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox textQuienDiabetes;
+        private System.Windows.Forms.RadioButton rbNoDiabetes;
+        private System.Windows.Forms.RadioButton rbSiDiabetes;
+        private System.Windows.Forms.Label label128;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox textQuienVIH;
+        private System.Windows.Forms.RadioButton rbNoVih;
+        private System.Windows.Forms.RadioButton rbSiVih;
+        private System.Windows.Forms.Label label127;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.TextBox txtVidaSexual;
+        private System.Windows.Forms.TextBox txtNroCausa;
+        private System.Windows.Forms.Label label142;
+        private System.Windows.Forms.Label label143;
+        private System.Windows.Forms.Label label144;
+        private System.Windows.Forms.TextBox txtNroAbortos;
+        private System.Windows.Forms.TextBox txtNroParejasActuales;
+        private System.Windows.Forms.Label label145;
+        private System.Windows.Forms.Label label146;
+        private System.Windows.Forms.TextBox txtResultadoMamo;
+        private System.Windows.Forms.Label label147;
+        private System.Windows.Forms.TextBox txtResultadoPAP;
+        private System.Windows.Forms.TextBox txtFechaUltimaMamo;
+        private System.Windows.Forms.TextBox txtFechaUltimoPAP;
     }
 }

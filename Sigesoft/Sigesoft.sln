@@ -78,11 +78,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C4C9ED
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigesoft.Node.Contasol.Integration", "Sigesoft.Node.Contasol.Integration\Sigesoft.Node.Contasol.Integration.csproj", "{02CD938D-A8D0-4540-B50A-FEC346261CE4}"
+EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -144,6 +142,10 @@ Global
 		{C3CABD0C-0656-413F-8AFD-F268FB4FEACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3CABD0C-0656-413F-8AFD-F268FB4FEACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3CABD0C-0656-413F-8AFD-F268FB4FEACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02CD938D-A8D0-4540-B50A-FEC346261CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02CD938D-A8D0-4540-B50A-FEC346261CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02CD938D-A8D0-4540-B50A-FEC346261CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02CD938D-A8D0-4540-B50A-FEC346261CE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -172,6 +174,7 @@ Global
 		{52B189EB-F76E-4117-A40E-D1BB356BB0AD} = {6E9CD3C6-B052-41F4-B222-7151715B0292}
 		{85044A2D-4482-4C1A-945A-7A079E24568E} = {6E9CD3C6-B052-41F4-B222-7151715B0292}
 		{5CF08CBC-3693-460B-873D-7398A48E20A9} = {8FAC4208-1CD5-4C4E-91F2-63BBF46B104A}
+		{02CD938D-A8D0-4540-B50A-FEC346261CE4} = {8FAC4208-1CD5-4C4E-91F2-63BBF46B104A}
 		{733B4265-75BB-431F-9B19-1D8A483CBAD8} = {0116697B-EBBB-4D4A-A5C7-8C3987774BDC}
 		{9E9649A3-A2F0-4F44-AA34-5450A68A3EC0} = {492789C9-1D8D-4820-9AFA-F08F91FD82D2}
 		{2E2E151D-C779-4C13-AF37-65F3BA6B1A98} = {44574F72-3133-4C6E-92E7-8D7F2A4631CD}
@@ -180,5 +183,9 @@ Global
 		{0F883C9E-D04E-42C8-AE44-AB6285F01C9B} = {85044A2D-4482-4C1A-945A-7A079E24568E}
 		{83B4875B-6B20-49F1-891D-B1F379760899} = {6A8FBBFB-4BFE-4B3F-A3EA-EABC9CA38F5C}
 		{C3CABD0C-0656-413F-8AFD-F268FB4FEACA} = {6B8E52FE-FE6F-4327-A6FD-1E8ECA5B5653}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal
