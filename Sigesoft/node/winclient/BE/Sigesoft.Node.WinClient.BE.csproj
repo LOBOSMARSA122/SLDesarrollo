@@ -56,6 +56,7 @@
     <Compile Include="Custom\AutorizationList.cs" />
     <Compile Include="Custom\AuxiliaryExamList.cs" />
     <Compile Include="Custom\BlackListList.cs" />
+    <Compile Include="Custom\CalendarDetail.cs" />
     <Compile Include="Custom\CalendarList.cs" />
     <Compile Include="Custom\CargaOftalmologia.cs" />
     <Compile Include="Custom\Categoria.cs" />
@@ -112,11 +113,17 @@
     <Compile Include="Custom\HistoryList.cs" />
     <Compile Include="Custom\HojaRutaCabecera.cs" />
     <Compile Include="Custom\HojaRutaDetalle.cs" />
+    <Compile Include="Custom\HospitalizacionList.cs" />
     <Compile Include="Custom\ImprimirFactura.cs" />
+    <Compile Include="Custom\InformacionEmpresas.cs" />
     <Compile Include="Custom\InterfaceSeguimiento.cs" />
     <Compile Include="Custom\JerarquiaServicioCamposValores.cs" />
     <Compile Include="Custom\KeyTagControl.cs" />
+    <Compile Include="Custom\LiquiAseguradoraDetalle.cs" />
     <Compile Include="Custom\Liquidacion.cs" />
+    <Compile Include="Custom\LiquidacionAseguradora.cs" />
+    <Compile Include="Custom\LiquidacionEmpresa.cs" />
+    <Compile Include="Custom\LiquidacionMedicoList.cs" />
     <Compile Include="Custom\ListaAtenciones.cs" />
     <Compile Include="Custom\ListaComun.cs" />
     <Compile Include="Custom\ListaExamenes.cs" />
@@ -136,6 +143,8 @@
     <Compile Include="Custom\MedicalExamList.cs" />
     <Compile Include="Custom\Medicamentos.cs" />
     <Compile Include="Custom\MedicationList.cs" />
+    <Compile Include="Custom\MedicoList.cs" />
+    <Compile Include="Custom\MedicoTratanteAtenciones.cs" />
     <Compile Include="Custom\MovementDetailList.cs" />
     <Compile Include="Custom\MovementList.cs" />
     <Compile Include="Custom\multimediafileList.cs" />
@@ -148,6 +157,7 @@
     <Compile Include="Custom\OrganizationList.cs" />
     <Compile Include="Custom\OsteomuscularNuevo.cs" />
     <Compile Include="Custom\PacientList.cs" />
+    <Compile Include="Custom\PagosComisiones.cs" />
     <Compile Include="Custom\PersonList.cs" />
     <Compile Include="Custom\PersonMedicalHistoryList.cs" />
     <Compile Include="Custom\Piso.cs" />
@@ -167,6 +177,7 @@
     <Compile Include="Custom\PruebaEspiro.cs" />
     <Compile Include="Custom\recetadespachoDto.cs" />
     <Compile Include="Custom\recetaDto.cs" />
+    <Compile Include="Custom\recetaList.cs" />
     <Compile Include="Custom\RecomendationList.cs" />
     <Compile Include="Custom\ReportAlturaEstructural.cs" />
     <Compile Include="Custom\ReportAntigenosFebriles.cs" />
@@ -374,10 +385,12 @@
     <Compile Include="Generated\multimediafileDto.cs" />
     <Compile Include="Generated\movementdetailDto.cs" />
     <Compile Include="Generated\movementDto.cs" />
+    <Compile Include="Generated\medicoDto.cs" />
     <Compile Include="Generated\medicationDto.cs" />
     <Compile Include="Generated\masterrecommendationrestricctionDto.cs" />
     <Compile Include="Generated\logDto.cs" />
     <Compile Include="Generated\locationDto.cs" />
+    <Compile Include="Generated\liquidacionDto.cs" />
     <Compile Include="Generated\hospitalizacionserviceDto.cs" />
     <Compile Include="Generated\hospitalizacionhabitacionDto.cs" />
     <Compile Include="Generated\hospitalizacionDto.cs" />
@@ -388,6 +401,9 @@
     <Compile Include="Generated\facturaciondetalleDto.cs" />
     <Compile Include="Generated\facturacionDto.cs" />
     <Compile Include="Generated\reporteatencionmedicaResultDto.cs" />
+    <Compile Include="Generated\obtenerproductoResultDto.cs" />
+    <Compile Include="Generated\obtenerpreciotarifarioResultDto.cs" />
+    <Compile Include="Generated\obtenernetoporcobrarResultDto.cs" />
     <Compile Include="Generated\llenargrillasigesoftResultDto.cs" />
     <Compile Include="IRastreable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

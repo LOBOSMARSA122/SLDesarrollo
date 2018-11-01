@@ -18,6 +18,8 @@ namespace Sigesoft.Node.WinClient.UI
         public CalendarBL _calendarBL = new CalendarBL();
         public List<ServiceComponentList> _auxiliaryExams = null;    
         public string _serviceId;
+        private string _modo;
+        private string _protocolId;
 
         List<string> _ListaComponentes = null;
         #endregion
@@ -31,10 +33,13 @@ namespace Sigesoft.Node.WinClient.UI
 
         #endregion
 
-        public frmAddExam(List<string> ListaComponentes)
+        public frmAddExam(List<string> ListaComponentes, string modo, string protocolId)
         {
             _ListaComponentes = ListaComponentes;
+            _modo = modo;
+            _protocolId = protocolId;
             InitializeComponent();
+
         }
 
         private void btnAgregarExamenAuxiliar_Click(object sender, EventArgs e)
@@ -112,6 +117,17 @@ namespace Sigesoft.Node.WinClient.UI
             var ListServiceComponent = objServiceBL.GetAllComponents(ref objOperationResult);
             grdDataServiceComponent.DataSource = ListServiceComponent;
             ultraGrid1.DataSource = ListServiceComponent;
+            if (_modo == "HOSPI")
+            {
+                cboMedico.Enabled = true;
+                Utils.LoadDropDownList(cboMedico, "Value1", "Id", BLL.Utils.GetProfessionalName(ref objOperationResult), DropDownListAction.Select);
+            }
+            else
+            {
+                Utils.LoadDropDownList(cboMedico, "Value1", "Id", BLL.Utils.GetProfessionalName(ref objOperationResult), DropDownListAction.Select);
+                cboMedico.SelectedValue = "11";
+                cboMedico.Enabled = false;
+            }
         }
 
         private void lvExamenesSeleccionados_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
@@ -135,10 +151,26 @@ namespace Sigesoft.Node.WinClient.UI
                 var fields = item.SubItems;
                 var serviceComponentConcatId = fields[1].Text.Split('|');
                 var NombreComponente = fields[0].Text.Split('|');
+                MedicalExamBL objComponentBL = new MedicalExamBL();
+                componentDto objComponentDto = new componentDto();
 
+                OperationResult objOperationResult = new OperationResult();
                 foreach (var scid in serviceComponentConcatId)
                 {
-                    FormPrecioComponente frm = new FormPrecioComponente(NombreComponente[0].ToString());        
+                    objComponentDto = objComponentBL.GetMedicalExam(ref objOperationResult, scid);
+                    SystemParameterBL oSp = new SystemParameterBL();
+                    var o = oSp.GetSystemParameter(ref objOperationResult, 116, int.Parse(objComponentDto.i_CategoryId.ToString()));
+                    //Lógica de Aumento de Precio Base
+
+                    var porcentajes = o.v_Field.Split('-');
+
+                    float p1 = porcentajes[0] == null ? 0 : float.Parse(porcentajes[0].ToString());
+
+                    float p2 = porcentajes[1] == null ? 0 : float.Parse(porcentajes[1].ToString());
+
+                    float pb = objComponentDto.r_BasePrice.Value;
+                    var precio_base = pb + (pb * p1 / 100) + (pb * p2 / 100);
+                    FormPrecioComponente frm = new FormPrecioComponente(NombreComponente[0].ToString(),precio_base.ToString(),"");        
                    
                     frm.ShowDialog();
                  
@@ -147,8 +179,8 @@ namespace Sigesoft.Node.WinClient.UI
                     //_auxiliaryExams.Add(auxiliaryExam);
 
                     servicecomponentDto objServiceComponentDto = new servicecomponentDto();
-                    OperationResult objOperationResult = new OperationResult();
                     ServiceBL _ObjServiceBL = new ServiceBL();
+                    TicketBL oTicketBL = new TicketBL();
 
                     objServiceComponentDto.v_ServiceId = _serviceId;
                     objServiceComponentDto.i_ExternalInternalId = (int)Common.ComponenteProcedencia.Interno;
@@ -168,7 +200,28 @@ namespace Sigesoft.Node.WinClient.UI
                     objServiceComponentDto.i_Iscalling_1 = (int)Common.Flag_Call.NoseLlamo;
                     objServiceComponentDto.i_IsManuallyAddedId = (int)Common.SiNo.NO;
                     objServiceComponentDto.i_IsRequiredId = (int)Common.SiNo.SI;
+                    objServiceComponentDto.v_IdUnidadProductiva = objComponentDto.v_IdUnidadProductiva;
+                    objServiceComponentDto.i_MedicoTratanteId = int.Parse(cboMedico.SelectedValue.ToString());
 
+
+                    var tienePlan = false;
+                    var resultplan = oTicketBL.TienePlan(_protocolId, objComponentDto.v_IdUnidadProductiva);
+                    if (resultplan.Count > 0) tienePlan = true;
+                    else tienePlan = false;
+
+                    if (tienePlan)
+                    {
+                        if (resultplan[0].i_EsCoaseguro == 1)
+                        {
+                            objServiceComponentDto.d_SaldoPaciente = resultplan[0].d_Importe;
+                            objServiceComponentDto.d_SaldoAseguradora = decimal.Parse(objServiceComponentDto.r_Price.ToString()) - resultplan[0].d_Importe;
+                        }
+                        if (resultplan[0].i_EsDeducible == 1)
+                        {
+                            objServiceComponentDto.d_SaldoPaciente = resultplan[0].d_Importe * decimal.Parse(objServiceComponentDto.r_Price.ToString()) / 100;
+                            objServiceComponentDto.d_SaldoAseguradora = decimal.Parse(objServiceComponentDto.r_Price.ToString()) - objServiceComponentDto.d_SaldoPaciente;
+                        }
+                    }
 
                     //_calendarBL.UpdateAdditionalExam(_auxiliaryExams, _serviceId, (int?)SiNo.SI, Globals.ClientSession.GetAsList());
                     _ObjServiceBL.AddServiceComponent(ref objOperationResult, objServiceComponentDto, Globals.ClientSession.GetAsList());

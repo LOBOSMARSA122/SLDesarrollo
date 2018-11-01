@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaBL.cs" />
+    <Compile Include="AseguradoraBL.cs" />
     <Compile Include="AtencionesIntegralesBL.cs" />
     <Compile Include="AuthorizedPersonBL.cs" />
     <Compile Include="BlackListBL.cs" />
@@ -59,6 +60,9 @@
     <Compile Include="GesBL.cs" />
     <Compile Include="GroupOccupationBL.cs" />
     <Compile Include="HistoryBL.cs" />
+    <Compile Include="HospitalizacionBL.cs" />
+    <Compile Include="HospitalizacionHabitacionBL.cs" />
+    <Compile Include="LiquidacionBL.cs" />
     <Compile Include="LocationBL.cs" />
     <Compile Include="LogBL.cs" />
     <Compile Include="MasterRecommendationRestricctionBL.cs" />
