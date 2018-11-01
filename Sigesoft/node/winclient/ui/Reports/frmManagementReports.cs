@@ -2749,8 +2749,8 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     break;
                 case Constants.RX_TORAX_ID:
 
-                    
-                    var RX_TORAX_ID = new ServiceBL().ReportRadiologico(_serviceId, Constants.RX_TORAX_ID);
+                  
+                     var    RX_TORAX_ID = new ServiceBL().ReportRadiologico(_serviceId, Constants.RX_TORAX_ID);
                     dsGetRepo = new DataSet();
 
                     DataTable dt_RX_TORAX_ID = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(RX_TORAX_ID);
@@ -2785,6 +2785,8 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     rp.Close();
                     break;
                 case Constants.OIT_ID:
+
+
                     var OIT_ID = new ServiceBL().ReportInformeRadiografico(_serviceId, Constants.OIT_ID);
 
                     dsGetRepo = new DataSet();
@@ -3527,7 +3529,14 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     {
                         Componente = Constants.RX_TORAX_ID;
                     }
-                    var LUMBOSACRA_ID = new ServiceBL().ReporteLumboSaca(_serviceId, Componente);
+
+                    var LUMBOSACRA_ID = new List<LumboSacracs>();
+                    LUMBOSACRA_ID = new ServiceBL().ReporteLumboSaca(_serviceId, Componente);
+                    if (LUMBOSACRA_ID[0].LUMBOSACRA_1 == "")
+                    {
+                        LUMBOSACRA_ID = new ServiceBL().ReporteLumboSaca(_serviceId, Constants.LUMBOSACRA_ID);
+                    }
+
 
                     dsGetRepo = new DataSet();
 
