@@ -358,97 +358,51 @@ namespace Sigesoft.Node.WinClient.UI
 
         private void btnEditarESO_Click(object sender, EventArgs e)
         {
-            #region ...
-            // Form frm;
-            //int TserviceId = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceId"].Value.ToString());
-            //if (TserviceId == (int)MasterService.AtxMedicaParticular)
-            //{
-            //    frm = new Operations.frmMedicalConsult(_serviceId, null, null);
-            //    frm.ShowDialog();
-            //}
-            //else
-            //{
-            //    //Obtener Estado del servicio
-            //    var EstadoServicio = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceStatusId"].Value.ToString());
-
-            //    if (EstadoServicio == (int)ServiceStatus.Culminado)
-            //    {
-            //        //Obtener el usuario
-            //        int UserId= Globals.ClientSession.i_SystemUserId ;
-            //        if (UserId==11)
-            //         {
-            //             this.Enabled = false;
-            //             frm = new Operations.frmEsoOLD(_serviceId, null, "Service");
-            //             frm.ShowDialog();
-            //             this.Enabled = true;
-            //         }
-            //        else
-            //        {
-            //             this.Enabled = false;
-            //             frm = new Operations.frmEsoOLD(_serviceId, null, "View");
-            //             frm.ShowDialog();
-            //             this.Enabled = true;                   
-            //        }
-
-            //    }
-            //    else 
-            //    {
-            //        this.Enabled = false;
-            //        frm = new Operations.frmEsoOLD(_serviceId, null, "Service");
-            //        frm.ShowDialog();
-            //        this.Enabled = true;
-            //    }
-
-
-            //}
-
-            //btnFilter_Click(sender, e);
-            #endregion         
-
             Form frm;
-            int TserviceId = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceId"].Value.ToString());
-            if (TserviceId == (int)MasterService.AtxMedicaParticular)
-            {
-                frm = new Operations.frmEso(_serviceId, null, null, TserviceId);
-                frm.ShowDialog();
-            }
-            else
-            {
-                //Obtener Estado del servicio
-                var estadoAptitud = int.Parse(grdDataService.Selected.Rows[0].Cells["i_AptitudeStatusId"].Value.ToString());
+           int TserviceId = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceId"].Value.ToString());
+           if (TserviceId == (int)MasterService.AtxMedicaParticular)
+           {
+               frm = new Operations.frmMedicalConsult(_serviceId, null, null);
+               frm.ShowDialog();
+           }
+           else
+           {
+               //Obtener Estado del servicio
+               var EstadoServicio = int.Parse(grdDataService.Selected.Rows[0].Cells["i_ServiceStatusId"].Value.ToString());
 
-                if (estadoAptitud != (int)AptitudeStatus.SinAptitud || estadoAptitud != (int)AptitudeStatus.AptoObs)
-                {
-                    //Obtener el usuario
-                    int UserId = Globals.ClientSession.i_SystemUserId;
-                    if (UserId == 11 || UserId == 175 || UserId == 173 || UserId == 172 || UserId == 171 || UserId == 168 || UserId == 169)
-                    {
+               if (EstadoServicio == (int)ServiceStatus.Culminado)
+               {
+                   //Obtener el usuario
+                   int UserId= Globals.ClientSession.i_SystemUserId ;
+                   if (UserId==11)
+	                {
                         this.Enabled = false;
-                        frm = new Operations.frmEso(_serviceId, null, "Service", TserviceId);
+                        frm = new Operations.frmEso(_serviceId, null, "Service");
                         frm.ShowDialog();
                         this.Enabled = true;
-                    }
-                    else
-                    {
+	                }
+                   else
+                   {
                         this.Enabled = false;
-                        frm = new Operations.frmEso(_serviceId, null, "View", TserviceId);
+                        frm = new Operations.frmEso(_serviceId, null, "View");
                         frm.ShowDialog();
-                        this.Enabled = true;
-                    }
+                        this.Enabled = true;                   
+                   }
+                  
+               }
+               else 
+               {
+                   this.Enabled = false;
+                   frm = new Operations.frmEso(_serviceId, null, "Service");
+                   frm.ShowDialog();
+                   this.Enabled = true;
+               }
 
-                }
-                else
-                {
-                    this.Enabled = false;
-                    frm = new Operations.frmEso(_serviceId, null, "Service", (int)MasterService.Eso);
-                    frm.ShowDialog();
-                    this.Enabled = true;
-                }
+             
+           }
 
-
-            }
-
-            btnFilter_Click(sender, e);
+           btnFilter_Click(sender, e);
+                  
            
         }
 
@@ -801,14 +755,12 @@ namespace Sigesoft.Node.WinClient.UI
 
                         var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
                         var ValoresDxLab = _serviceBL.ValoresComponenteAMC_(_serviceId, 1);
-                        var serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
-
                         FichaMedicaOcupacional312.CreateFichaMedicalOcupacional312Report(_DataService,
                                   filiationData, _listAtecedentesOcupacionales, _listaPatologicosFamiliares,
                                   _listMedicoPersonales, _listaHabitoNocivos, Antropometria, FuncionesVitales,
                                   ExamenFisico, Oftalmologia, Psicologia, RX, RX1, Laboratorio, Audiometria, Espirometria,
-                                  _DiagnosticRepository, _Recomendation, _ExamenesServicio, ValoresDxLab, MedicalCenter, TestIhihara, TestEstereopsis,
-                                  serviceComponents, saveFileDialog2.FileName);
+                                  _DiagnosticRepository, _Recomendation, _ExamenesServicio, ValoresDxLab, MedicalCenter,TestIhihara,TestEstereopsis,       
+                                  saveFileDialog2.FileName);
 
                         this.Enabled = true;
                     }
@@ -1317,11 +1269,12 @@ namespace Sigesoft.Node.WinClient.UI
                                                                  ServiceComponentId);
 
 
+
                             _serviceBL.AddDiagnosticRepository(ref objOperationResult,
-                                                                               ListaDxByComponent,
-                                                                               serviceComponentDto,
-                                                                               Globals.ClientSession.GetAsList(),
-                                                                               false, false);
+                                                        ListaDxByComponent,
+                                                        serviceComponentDto,
+                                                        Globals.ClientSession.GetAsList(),
+                                                        false);
 
 
 

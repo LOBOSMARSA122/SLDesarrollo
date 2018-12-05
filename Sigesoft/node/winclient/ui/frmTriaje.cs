@@ -446,7 +446,7 @@ namespace Sigesoft.Node.WinClient.UI
                                             ListaDxByComponent,
                                             serviceComponentDto,
                                             Globals.ClientSession.GetAsList(),
-                                            true, null);
+                                            true);
             }
 
              ListaDxByComponent = new List<DiagnosticRepositoryList>();
@@ -521,7 +521,7 @@ namespace Sigesoft.Node.WinClient.UI
                                                 ListaDxByComponent,
                                                 serviceComponentDto,
                                                 Globals.ClientSession.GetAsList(),
-                                                true, false);
+                                                true);
                 }
             }
 
@@ -598,7 +598,7 @@ namespace Sigesoft.Node.WinClient.UI
                                                 ListaDxByComponent,
                                                 serviceComponentDto,
                                                 Globals.ClientSession.GetAsList(),
-                                                true, false);
+                                                true);
                 }
                 
 

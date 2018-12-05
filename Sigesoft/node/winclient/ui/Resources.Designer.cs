@@ -1073,16 +1073,6 @@ namespace Sigesoft.Node.WinClient.UI {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap historiaclinica {
-            get {
-                object obj = ResourceManager.GetObject("historiaclinica", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap hombros01 {
             get {
                 object obj = ResourceManager.GetObject("hombros01", resourceCulture);

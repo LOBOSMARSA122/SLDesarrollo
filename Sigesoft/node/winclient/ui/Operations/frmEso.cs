@@ -19,29 +19,17 @@ using Infragistics.Win.UltraWinMaskedEdit;
 using Sigesoft.Node.WinClient.UI.UserControls;
 using NetPdf;
 using System.Diagnostics;
-using Sigesoft.Node.Contasol.Integration;
-using Sigesoft.Node.WinClient.UI.Operations.Popups;
-using AutoCompleteMode = System.Windows.Forms.AutoCompleteMode;
-using Sigesoft.Node.WinClient.UI.Reports;
-using Sigesoft.Node.WinClient.UI;
-using System.Web.Script.Serialization;
-using System.IO;
-using CrystalDecisions.Shared;
 
 namespace Sigesoft.Node.WinClient.UI.Operations
 {
     public partial class frmEso : Form
     {
-       
-
         public class RunWorkerAsyncPackage
         {
             public Infragistics.Win.UltraWinTabControl.UltraTabPageControl SelectedTab { get; set; }
             public List<DiagnosticRepositoryList> ExamDiagnosticComponentList { get; set; }
             public servicecomponentDto ServiceComponent { get; set; }
             public int? i_SystemUserSuplantadorId { get; set; }
-            public int? i_SystemUserEspecialistaId { get; set; }
-            
         }
 
         public class ValidacionAMC
@@ -60,17 +48,12 @@ namespace Sigesoft.Node.WinClient.UI.Operations
         List<ValidacionAMC> _oListValidacionAMC = new List<ValidacionAMC>();
         private int _EsMayuscula = int.Parse(Common.Utils.GetApplicationConfigValue("EsMayuscula"));
 
-        private ServiceList _datosPersona;
-        private string _v_CustomerOrganizationId;
         private int _AMCGenero;
         private string _Dni;
-        string _PacientId;
-        int GrupoEtario;
         private int _Categoria;
         private DateTime? _FechaServico;
         private List<BE.ComponentList> _tmpServiceComponentsForBuildMenuList = null;
         private ServiceBL _serviceBL = new ServiceBL();
-        private PacientBL _pacientBL = new PacientBL();
         private string _serviceId = null;
         private string _componentId;
         private string _serviceComponentId;
@@ -82,7 +65,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
         public int? _EstadoComponente = null;
         private Keys _currentDownKey = Keys.None;
         private List<ComponentFieldsList> groupedFields = new List<ComponentFieldsList>();
-        private string _ProtocolId;
         HistoryBL _historyBL = new HistoryBL();
         /// <summary>
         /// lista temporal (solo diagnosticos vinculados a examenes / componentes)
@@ -143,7 +125,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
         private string _personId;
         private string _serviceIdByWiewServiceHistory;
         private string _action;
-        private int _tipo;
         private string _pharmacyWarehouseId;
         private int _masterServiceId;
         private List<KeyValueDTO> _formActions = null;
@@ -167,49 +148,14 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private string _customerOrganizationName;
         public int _profesionId;
-
-
-        private AtencionesIntegralesBL _objAtencionesIntegralesBl = new AtencionesIntegralesBL();
-        private PacientBL _objPacienteBl = new PacientBL();
-
-        string adolId = string.Empty;
-        serviceDto idPerson = new serviceDto();
-        private adolescenteDto objAdolDto = null;
-
-        string adulId = string.Empty;
-        private adultoDto objAdultoDto = null;
-
-        string adulmayId = string.Empty;
-        private adultomayorDto objAdultoMAyorDto = null;
-
-        string ninioId = string.Empty;
-        private ninioDto objNinioDto = null;
-
-        string PacientId;
-
-        private EmbarazoBL _objEmbarazoBL = new EmbarazoBL();
-
-        private MergeExPDF _mergeExPDF = new MergeExPDF();
-        List<ServiceComponentList> _listaDosaje = new List<ServiceComponentList>();
-
-        List<ServiceComponentList> serviceComponent;
-
-        public List<string> _filesNameToMerge = new List<string>();
-        string ruta;
-        public frmManagementReports rep = new frmManagementReports();
-        //private SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-        DataSet dsGetRepo = null;
-
-        private string _tempSourcePath;
         #endregion
 
-        public frmEso(string serviceId, string componentIdByDefault, string action, int tipo)
+        public frmEso(string serviceId, string componentIdByDefault, string action)
         {
             InitializeComponent();
             _serviceId = serviceId;
             _componentIdByDefault = componentIdByDefault;
             _action = action;
-            _tipo = tipo;
         }
 
         private void frmEso_Load(object sender, EventArgs e)
@@ -217,7 +163,10 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             //obenter la profesión del usuario
             _profesionId = int.Parse(Globals.ClientSession.i_ProfesionId.ToString());
 
-             var serviceComponents = _serviceBL.GetServiceComponentsForManagementReport(_serviceId);
+            tcSubMain.TabPages.Remove(tpAntecedentes);
+            tcSubMain.TabPages.Remove(General);
+
+            var serviceComponents = _serviceBL.GetServiceComponentsForManagementReport(_serviceId);
 
             var vbtn312 = serviceComponents.Find(p => p.v_ComponentId == Constants.EXAMEN_FISICO_ID);
             if (vbtn312 != null)
@@ -249,7 +198,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 cbEstadoComponente.Enabled = false;
                 cbTipoProcedenciaExamen.Enabled = false;
                 btnGuardarExamen.Enabled = false;
-                btnVisorReporteExamen.Enabled = false;
 
                 #endregion
 
@@ -333,26 +281,13 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
                 cbAptitudEso.Enabled = Sigesoft.Node.WinClient.BLL.Utils.IsActionEnabled("frmEso_CONCLUSIONES_DEFAPTITUD", _formActions);
                 btnGuardarConclusiones.Enabled = Sigesoft.Node.WinClient.BLL.Utils.IsActionEnabled("frmEso_CONCLUSIONES_SAVE", _formActions);
-                if (_profesionId == 31 || _profesionId == 32)
+                if (_profesionId == 31)
                 {
                     btnGuardarConclusiones.Enabled = true;
-                    btnAceptarDX.Enabled = true;
                 }
-                else if (_profesionId == 30)
+                else
                 {
                     btnGuardarConclusiones.Enabled = false;
-                    btnAceptarDX.Enabled = false;
-                    tcSubMain.TabPages.Remove(tpAnalisisDx);
-                    tcSubMain.TabPages.Remove(tpConclusion);
-                }
-                 else 
-                {
-                    btnGuardarConclusiones.Enabled = false;
-                    btnAceptarDX.Enabled = false;
-                    tcSubMain.TabPages.Remove(tpAnalisisDx);
-                    tcSubMain.TabPages.Remove(tpConclusion);
-                    //tcSubMain.TabPages.Remove(tpAntecedentes);
-                    tcSubMain.TabPages.Remove(General);
                 }
 
 
@@ -371,22 +306,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 #endregion
 
                 // PESTAÑA Antecedentes X DEFECTO
-                if (_tipo == (int)MasterService.AtxMedicaParticular)
-                {
-                    tcSubMain.TabPages.Remove(tpAntecedentes);
-                    tcSubMain.TabPages.Remove(General);
-                    tcSubMain.TabPages.Remove(tpConclusion);
-                }
-                else
-                {
-                    //tcSubMain.TabPages.Remove(tpAntecedentes);
-                    //tcSubMain.TabPages.Remove(General);
-                    tcSubMain.TabPages.Remove(tpFormatoAtencionIntegral);
-                    tcSubMain.TabPages.Remove(tpDatosAntecedentes);
-                    tcSubMain.TabPages.Remove(tpCuidadosPreventivos);
-                    tcSubMain.SelectedIndex = 0;
-                }
-               
+                tcSubMain.SelectedIndex = 0;
                 // Setear por default un examen componente desde consusltorio
 
                 #region Set Tab x default
@@ -426,19 +346,14 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
                 // Setear pestaña de Aptitud x default
                 if (_action == "Service")
-                    tcSubMain.SelectedIndex = 2;
+                    tcSubMain.SelectedIndex = 3;
 
                 // Información para grillas
                 GetTotalDiagnosticsForGridView();
                 GetConclusionesDiagnosticasForGridView();
                 ConclusionesyTratamiento_LoadAllGrid();
                 gbEdicionDiagnosticoTotal.Enabled = false;
-                if (_tipo == (int)MasterService.AtxMedicaParticular)
-                {
-                    ConstruirFormularioAntecedentes();
-                    ConstruirFormularioCuidadosPreventivos();
-                }
-           
+
             }
             if (_action == "View")
             {
@@ -453,234 +368,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 cbAptitudEso.Enabled = false;
                 btnGuardarExamen.Enabled = false;
             }
-        }
-
-        private void ConstruirFormularioAntecedentes()
-        {
-            int GrupoBase = 282; //Antecedentes
-            GrupoEtario = _serviceBL.ObtenerIdGrupoEtarioDePaciente(_age);
-            int Grupo = int.Parse(GrupoBase.ToString() + GrupoEtario.ToString());
-
-            List<frmEsoAntecedentesPadre> AntecedentesActuales = _serviceBL.ObtenerEsoAntecedentesPorGrupoId(Grupo,GrupoEtario,_personId);
-
-            if (AntecedentesActuales.Count == 0)
-            {
-                btnGuardarAntecedentes.Visible = false;
-                label58.Visible = false;
-                ultraGrid2.Visible = false;
-            }
-            else
-            {
-                ultraGrid2.DataSource = AntecedentesActuales;
-                ultraGrid2.DisplayLayout.Bands[0].Columns[0].CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
-            }
-                
-            int GrupoEtarioAnterior = 0;
-
-            switch (GrupoEtario)
-            {
-                case 1:
-                    {
-                        GrupoEtarioAnterior = 1;
-                        break;
-                    }
-                case 2:
-                    {
-                        GrupoEtarioAnterior = 2;
-                        break;
-                    }
-                case 3:
-                    {
-                        GrupoEtarioAnterior = 3;
-                        break;
-                    }
-                case 4:
-                    {
-                        GrupoEtarioAnterior = 4;
-                        break;
-                    }
-                default:
-                    {
-                        GrupoEtarioAnterior = 0;
-                        break;
-                    }
-            }
-            Grupo = int.Parse(GrupoBase.ToString() + GrupoEtarioAnterior.ToString());
-            List<frmEsoAntecedentesPadre> AntecedentesAnteriores = _serviceBL.ObtenerEsoAntecedentesPorGrupoId(Grupo, GrupoEtarioAnterior, _personId);
-
-            if (AntecedentesAnteriores.Count == 0)
-            {
-                label39.Visible = false;
-                ultraGrid1.Visible = false;
-            }
-            else
-            {
-                ultraGrid1.DataSource = AntecedentesAnteriores;
-            }
-        }
-
-        private void ConstruirFormularioCuidadosPreventivos()
-        {
-            int GrupoBase = 0;
-            switch (GrupoEtario)
-            {
-                case (int)Sigesoft.Common.GrupoEtario.Ninio:
-                    {
-                        GrupoBase = 292;
-                        break;
-                    }
-                case (int)Sigesoft.Common.GrupoEtario.Adolecente:
-                    {
-                        GrupoBase = 285;
-                        break;
-                    }
-                case (int)Sigesoft.Common.GrupoEtario.Adulto:
-                    {
-                        if (_AMCGenero == 1)
-                        {
-                            GrupoBase = 284;
-                            break;
-                        }
-                        else
-                        {
-                            GrupoBase = 283;
-                            break;
-                        }
-                    }
-                case (int)Sigesoft.Common.GrupoEtario.AdultoMayor:
-                    {
-                        GrupoBase = 286;
-                        break;
-                    }
-                default:
-                    {
-                        GrupoBase = 0;
-                        break;
-                    }
-            }
-
-            if (GrupoBase == 0)
-            {
-                dataGridView1.Visible = false;
-                btnGuardarCuidadosPreventivos.Visible = false;
-                return;
-            }
-
-            List<frmEsoCuidadosPreventivosFechas> Fechas = _serviceBL.ObtenerFechasCuidadosPreventivos(GrupoBase,_personId);
-            List<frmEsoCuidadosPreventivosComentarios> Comentarios = _serviceBL.ObtenerComentariosCuidadosPreventivos(_personId);
-
-            if (Fechas.Count == 0)
-            {
-                dataGridView1.Visible = false;
-            }
-            else
-            {
-                dataGridView1.Columns.Add("GrupoId", "GrupoId");
-                dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns.Add("ParameterId", "ParameterId");
-                dataGridView1.Columns[1].Visible = false;
-                dataGridView1.Columns.Add("Nombre","Nombre");
-                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView1.Columns[2].ReadOnly = true;
-                dataGridView1.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
-                int ContadorColumna = 2;
-                bool AgregarTitulos = true;
-                foreach (var F in Fechas)
-                {
-                    ContadorColumna++;
-                    dataGridView1.Columns.Add("Fecha" + (ContadorColumna - 2), F.FechaServicio.ToShortDateString());
-                    dataGridView1.Columns[ContadorColumna].SortMode = DataGridViewColumnSortMode.NotSortable;
-                    dataGridView1.Columns[ContadorColumna].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-                    if (ContadorColumna != (Fechas.Count + 2))
-                        dataGridView1.Columns[ContadorColumna].ReadOnly = true;
-
-                    int ContadorFila = -1;
-                    foreach (var L in F.Listado)
-                    {
-                        ContadorFila++;
-                        if (AgregarTitulos)
-                        {
-                            dataGridView1.Rows.Add();
-                            dataGridView1.Rows[ContadorFila].Cells[0].Value = L.GrupoId;
-                            dataGridView1.Rows[ContadorFila].Cells[1].Value = L.ParameterId;
-                            dataGridView1.Rows[ContadorFila].Cells[2].Value = L.Nombre;
-
-                            if(L.Hijos != null)
-                                dataGridView1.Rows[ContadorFila].Cells[2].Style.Font = new Font(FontFamily.GenericSansSerif,10f, FontStyle.Bold);
-                        }
-
-                        if (L.Hijos != null)
-                        {
-                            dataGridView1.Rows[ContadorFila].Cells[ContadorColumna].ReadOnly = true;
-                            ContadorFila = AgregarHijosDeTablaRecursivo(L, AgregarTitulos, F.FechaServicio, ContadorColumna, ContadorFila);
-                        }
-                        else
-                        {
-
-                            DataGridViewCheckBoxCell cell = new DataGridViewCheckBoxCell(false);
-                            cell.Value = L.Valor;
-                            dataGridView1.Rows[ContadorFila].Cells[ContadorColumna] = cell;
-                            if (ContadorColumna != Fechas.Count)
-                                dataGridView1.Rows[ContadorFila].Cells[ContadorColumna].ReadOnly = true;
-                        }
-                    }
-                    AgregarTitulos = false;
-                }
-
-                ContadorColumna++;
-                dataGridView1.Columns.Add("Comentarios","Comentarios");
-                dataGridView1.Columns[ContadorColumna].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-
-                foreach (DataGridViewRow D in dataGridView1.Rows)
-                {
-                    int CelIndex = D.Cells.Count - 2;
-
-                    DataGridViewCheckBoxCell cell = D.Cells[CelIndex] as DataGridViewCheckBoxCell;
-
-                    if (cell != null)
-                    {
-                        D.Cells["Comentarios"].Value = Comentarios.Where(x => x.GrupoId == int.Parse(D.Cells["GrupoId"].Value.ToString()) && x.ParametroId == int.Parse(D.Cells["ParameterId"].Value.ToString())).FirstOrDefault() == null ? "" : Comentarios.Where(x => x.GrupoId == int.Parse(D.Cells["GrupoId"].Value.ToString()) && x.ParametroId == int.Parse(D.Cells["ParameterId"].Value.ToString())).FirstOrDefault().Comentario;
-                    }
-                    else
-                    {
-                        D.Cells["Comentarios"].ReadOnly = true;
-                    }
-                }
-            }
-        }
-
-        private int AgregarHijosDeTablaRecursivo(frmEsoCuidadosPreventivos Lista, bool AgregarTitulos, DateTime FechaServicio, int ContadorColumna, int ContadorFila)
-        {
-            foreach (var L in Lista.Hijos)
-            {
-                ContadorFila++;
-                if (AgregarTitulos)
-                {
-                    dataGridView1.Rows.Add();
-                    dataGridView1.Rows[ContadorFila].Cells[0].Value = L.GrupoId;
-                    dataGridView1.Rows[ContadorFila].Cells[1].Value = L.ParameterId;
-                    dataGridView1.Rows[ContadorFila].Cells[2].Value = L.Nombre;
-
-                    if(L.Hijos != null)
-                        dataGridView1.Rows[ContadorFila].Cells[2].Style.Font = new Font(FontFamily.GenericSansSerif, 10f, FontStyle.Bold);
-                }
-
-                if (L.Hijos != null)
-                {
-                    ContadorFila = AgregarHijosDeTablaRecursivo(L, AgregarTitulos, FechaServicio, ContadorColumna, ContadorFila);
-                }
-                else
-                {
-
-                    DataGridViewCheckBoxCell cell = new DataGridViewCheckBoxCell(false);
-                    cell.Value = L.Valor;
-                    dataGridView1.Rows[ContadorFila].Cells[ContadorColumna] = cell;
-                }
-            }
-
-            return ContadorFila;
         }
 
         private void BuildMenu()
@@ -806,23 +493,13 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                             {
                                 #region Crear control GroupBox para agrupar los campos (controles)
 
-                                
                                 // Crear y configurar GroupBox por cada grupo
                                 gb = new GroupBox();
                                 gb.Text = g.v_Group;
                                 gb.Name = "gb_" + g.v_Group;
-                                if (gb.Name == "gb_E. FUNCIONES COGNITIVAS")
-                                {
-
-                                } 
                                 gb.BackColor = Color.Azure;
                                 gb.AutoSize = true;
                                 gb.Dock = DockStyle.Top;
-
-                                if (g.v_ComponentFieldId == "N009-MF000000728" || g.v_Group == "C 4.1 Placa Pleurales" || g.v_Group == "C 4.2 Engrosamiento Difuso de la Pleura" || g.v_Group == "C 6. MARQUE  la respuesta adecuada; si marca \"od\", escriba a continuación un COMENTARIO")
-                                {
-                                    gb.Enabled = false;
-                                }
 
                                 fieldsByGroupBoxCount++;
 
@@ -1136,20 +813,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                             }
 
                                             break;
-                                        case ControlType.Radiobutton:
-                                            ctl = new RadioButton()
-                                            {
-                                                Width = f.i_ControlWidth,
-                                                Height = f.i_HeightControl,
-                                                Name = f.v_ComponentFieldId
-                                            };
-                                            ctl.Enter += new EventHandler(Capture_Value);
-                                            ctl.Leave += new EventHandler(txt_Leave);
-                                            if (_action == "View")
-                                            {
-                                                ctl.Enabled = false;
-                                            }
-                                            break;
                                         case ControlType.SiNoCombo:
                                             ctl = new ComboBox()
                                             {
@@ -1168,7 +831,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
                                             ctl.Enter += new EventHandler(Capture_Value);
                                             ctl.Leave += new EventHandler(txt_Leave);
-                                            ctl.MouseWheel += new MouseEventHandler(comboBox1_MouseWheel);
 
                                             if (_action == "View")
                                             {
@@ -1219,20 +881,12 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                             // Establecer evento
                                             ctl = ucBoton;
                                             break;
+
                                         case ControlType.UcAcumetria:
                                             var ucAcumetria = new Sigesoft.Node.WinClient.UI.UserControls.ucAcumetria();
                                             ucAcumetria.Name = f.v_ComponentFieldId;
                                             // Establecer evento
                                             ctl = ucAcumetria;
-                                            break;
-                                        case ControlType.UcFototipo:
-                                            var ucFotoTipo = new Sigesoft.Node.WinClient.UI.UserControls.ucFotoTipo();
-                                            ucFotoTipo.Name = f.v_ComponentFieldId;
-                                            ucFotoTipo.ServiceId = _serviceId;
-                                            ucFotoTipo.PersonId = _personId;
-                                            ucFotoTipo.ServiceComponentId = com.v_ServiceComponentId;
-                                            // Establecer evento
-                                            ctl = ucFotoTipo;
                                             break;
                                         case ControlType.UcSintomaticoRespi:
                                             var ucSintomaticoRespi = new Sigesoft.Node.WinClient.UI.UserControls.ucSintomaticoResp();
@@ -1243,25 +897,9 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                         case ControlType.UcRxLumboSacra:
                                             var ucRxLumboSacra = new Sigesoft.Node.WinClient.UI.UserControls.ucRXLumboSacra();
                                             ucRxLumboSacra.Name = f.v_ComponentFieldId;
-                                            ucRxLumboSacra.PersonId = _personId;
                                             // Establecer evento
                                             ctl = ucRxLumboSacra;
                                             break;
-
-                                        case ControlType.UcHistorialTriaje:
-                                            var ucHisorialTriaje = new Sigesoft.Node.WinClient.UI.UserControls.ucHisorialTriaje();
-                                            ucHisorialTriaje.PersonId = _personId;
-                                            // Establecer evento
-                                            ctl = ucHisorialTriaje;
-                                            break;
-
-                                        case ControlType.UcHistorialGrupoSanguineo:
-                                            var ucHisorialGrupoSanguineo = new Sigesoft.Node.WinClient.UI.UserControls.ucHistorialGrupoFactor();
-                                            ucHisorialGrupoSanguineo.PersonId = _personId;
-                                            // Establecer evento
-                                            ctl = ucHisorialGrupoSanguineo;
-                                            break;
-
                                         case ControlType.UcOjoSeco:
                                             var ucOjoSeco = new Sigesoft.Node.WinClient.UI.UserControls.ucOjoSeco();
                                             ucOjoSeco.Name = f.v_ComponentFieldId;
@@ -1296,12 +934,9 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                                 Width = f.i_ControlWidth,
                                                 Height = f.i_HeightControl,
                                                 DropDownStyle = ComboBoxStyle.DropDownList,
-                                                Name = f.v_ComponentFieldId,
-                                                //AutoCompleteMode = AutoCompleteMode.SuggestAppend,
-                                                //AutoCompleteSource = AutoCompleteSource.ListItems
+                                                Name = f.v_ComponentFieldId
                                             };
 
-                                            cb.MouseWheel += new MouseEventHandler(comboBox1_MouseWheel);
                                             //Utils.LoadDropDownList((ComboBox)ctl, "Value1", "Id", BLL.Utils.GetDataHierarchyForComboAndItemId(ref objOperationResult, f.i_GroupId, f.i_ItemId, null), DropDownListAction.Select);
                                             var data = BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, f.i_GroupId, null);
 
@@ -1393,7 +1028,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                     lbl1.AutoSize = false;
                                     lbl1.Width = 50;
                                     lbl1.Text = f.v_MeasurementUnitName;
-                                    lbl1.Font = new Font(lbl1.Font, FontStyle.Regular | FontStyle.Italic);
+                                    lbl1.Font = new Font(lbl1.Font, FontStyle.Bold | FontStyle.Italic);
                                     lbl1.TextAlign = ContentAlignment.BottomLeft;
                                     fila = RedondeoMayor(nroControlNET, g.i_Column * Constants.COLUMNAS_POR_CONTROL);
                                     columna = nroControlNET - (fila - 1) * (g.i_Column * Constants.COLUMNAS_POR_CONTROL);
@@ -1436,10 +1071,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                             gb = new GroupBox();
                             gb.Text = g.v_Group;
                             gb.Name = "gb_" + g.v_Group;
-                            if (gb.Name == "gb_E. FUNCIONES COGNITIVAS")
-                            {
-
-                            } 
                             gb.BackColor = Color.Azure;
                             gb.AutoSize = true;
                             gb.Dock = DockStyle.Top;
@@ -1650,21 +1281,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                         }
 
                                         break;
-
-                                    case ControlType.Radiobutton:
-                                        ctl = new RadioButton()
-                                        {
-                                            Width = f.i_ControlWidth,
-                                            Height = f.i_HeightControl,
-                                            Name = f.v_ComponentFieldId
-                                        };
-                                        ctl.Enter += new EventHandler(Capture_Value);
-                                        ctl.Leave += new EventHandler(txt_Leave);
-                                        if (_action == "View")
-                                        {
-                                            ctl.Enabled = false;
-                                        }
-                                        break;
                                     case ControlType.SiNoCombo:
                                         ctl = new ComboBox()
                                         {
@@ -1733,21 +1349,14 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                         // Establecer evento
                                         ctl = ucBoton;
                                         break;
+
                                     case ControlType.UcAcumetria:
                                         var ucAcumetria = new Sigesoft.Node.WinClient.UI.UserControls.ucAcumetria();
                                         ucAcumetria.Name = f.v_ComponentFieldId;
                                         // Establecer evento
                                         ctl = ucAcumetria;
                                         break;
-                                    case ControlType.UcFototipo:
-                                        var ucFotoTipo = new Sigesoft.Node.WinClient.UI.UserControls.ucFotoTipo();
-                                        ucFotoTipo.Name = f.v_ComponentFieldId;
-                                        ucFotoTipo.ServiceId = _serviceId;
-                                        ucFotoTipo.PersonId = _personId;
-                                        ucFotoTipo.ServiceComponentId = com.v_ServiceComponentId;
-                                        // Establecer evento
-                                        ctl = ucFotoTipo;
-                                        break;
+
                                     case ControlType.UcSintomaticoRespi:
                                         var ucSintomaticoRespi = new Sigesoft.Node.WinClient.UI.UserControls.ucSintomaticoResp();
                                         ucSintomaticoRespi.Name = f.v_ComponentFieldId;
@@ -1758,22 +1367,8 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                     case ControlType.UcRxLumboSacra:
                                         var ucRxLumboSacra = new Sigesoft.Node.WinClient.UI.UserControls.ucRXLumboSacra();
                                         ucRxLumboSacra.Name = f.v_ComponentFieldId;
-                                        ucRxLumboSacra.PersonId = _personId;
                                         // Establecer evento
                                         ctl = ucRxLumboSacra;
-                                        break;
-                                    case ControlType.UcHistorialTriaje:
-                                        var ucHisorialTriaje = new Sigesoft.Node.WinClient.UI.UserControls.ucHisorialTriaje();
-                                        ucHisorialTriaje.PersonId = _personId;
-                                        // Establecer evento
-                                        ctl = ucHisorialTriaje;
-                                        break;
-
-                                    case ControlType.UcHistorialGrupoSanguineo:
-                                        var ucHisorialGrupoSanguineo = new Sigesoft.Node.WinClient.UI.UserControls.ucHistorialGrupoFactor();
-                                        ucHisorialGrupoSanguineo.PersonId = _personId;
-                                        // Establecer evento
-                                        ctl = ucHisorialGrupoSanguineo;
                                         break;
                                     case ControlType.UcOjoSeco:
                                         var ucOjoSeco = new Sigesoft.Node.WinClient.UI.UserControls.ucOjoSeco();
@@ -1929,11 +1524,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         }
 
-        private void comboBox1_MouseWheel(object sender, MouseEventArgs e)
-        {
-            ((HandledMouseEventArgs)e).Handled = true;
-        }
-        
         private void InitializeData()
         {
             if (this.InvokeRequired)
@@ -1947,8 +1537,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 OperationResult objOperationResult = new OperationResult();
 
                 ServiceList personData = _serviceBL.GetServicePersonData(ref objOperationResult, _serviceId);
-                _datosPersona = personData;
-                _v_CustomerOrganizationId = personData.v_CustomerOrganizationId;
                 _Dni = personData.v_DocNumber;
 
                 _FechaServico = personData.d_ServiceDate;
@@ -1961,7 +1549,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
                 lblTipoEso.Text = personData.v_EsoTypeName;
                 lblProtocolName.Text = personData.v_ProtocolName;
-                _ProtocolId = personData.v_ProtocolId;
                 _customerOrganizationName = personData.v_EmployerOrganizationName;
                 lblFecVctoGlobal.Text = personData.d_GlobalExpirationDate == null ? "NO REQUIERE" : personData.d_GlobalExpirationDate.Value.ToShortDateString();
                 lblFecVctoObs.Text = personData.d_ObsExpirationDate == null ? string.Empty : personData.d_ObsExpirationDate.Value.ToShortDateString();
@@ -1969,10 +1556,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 //lblTipoServ.Text = personData.v_ServiceTypeName;
                 //lblServicio.Text = personData.v_MasterServiceName;
                 _masterServiceId = personData.i_MasterServiceId.Value;
-
-                if (_masterServiceId == 2) btnReceta.Enabled = false;
-                else btnReceta.Enabled = true;
-
                 cbAptitudEso.SelectedValue = personData.i_AptitudeStatusId.ToString();
                 txtComentarioAptitud.Text = personData.v_ObsStatusService;
 
@@ -2017,30 +1600,20 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 txtRegimenCatamenial.Text = personData.v_CatemenialRegime;
                 cbMac.SelectedValue = personData.i_MacId == null ? "1" : personData.i_MacId.ToString();
 
-                txtFechaUltimoPAP.Text = string.IsNullOrEmpty(personData.v_FechaUltimoPAP) ? "" : personData.v_FechaUltimoPAP;
-                txtFechaUltimaMamo.Text = string.IsNullOrEmpty(personData.v_FechaUltimaMamo) ? "" : personData.v_FechaUltimaMamo;
-                txtResultadoPAP.Text = string.IsNullOrEmpty(personData.v_ResultadosPAP) ? "" : personData.v_ResultadosPAP;
-                txtResultadoMamo.Text = string.IsNullOrEmpty(personData.v_ResultadoMamo) ? "" : personData.v_ResultadoMamo;
-
-                txtVidaSexual.Text = string.IsNullOrEmpty(personData.v_InicioVidaSexaul) ? "" : personData.v_InicioVidaSexaul;
-                txtNroParejasActuales.Text = string.IsNullOrEmpty(personData.v_NroParejasActuales) ? "" : personData.v_NroParejasActuales;
-                txtNroAbortos.Text = string.IsNullOrEmpty(personData.v_NroAbortos) ? "" : personData.v_NroAbortos;
-                txtNroCausa.Text = string.IsNullOrEmpty(personData.v_PrecisarCausas) ? "" : personData.v_PrecisarCausas;
-
 
                 //-----------------------------------------------------------------
-                //if (personData.d_PAP != null)
-                //{
-                //    dtpPAP.Value = personData.d_PAP.Value;
-                //    dtpPAP.Checked = true;
-                //}
+                if (personData.d_PAP != null)
+                {
+                    dtpPAP.Value = personData.d_PAP.Value;
+                    dtpPAP.Checked = true;
+                }
 
 
-                //if (personData.d_Mamografia != null)
-                //{
-                //    dtpMamografia.Value = personData.d_Mamografia.Value;
-                //    dtpMamografia.Checked = true;
-                //}
+                if (personData.d_Mamografia != null)
+                {
+                    dtpMamografia.Value = personData.d_Mamografia.Value;
+                    dtpMamografia.Checked = true;
+                }
 
 
                 txtGestapara.Text = string.IsNullOrEmpty(personData.v_Gestapara) ? "G ( )  P ( ) ( ) ( ) ( ) " : personData.v_Gestapara;
@@ -2075,307 +1648,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
                 #endregion
 
-                #region Datos Personales
-
-                Utils.LoadDropDownList(cboGenero, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, 100, null), DropDownListAction.Select);
-                Utils.LoadDropDownList(cboEstadoCivil, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, 101, null), DropDownListAction.Select);
-                Utils.LoadDropDownList(cboGradoInstruccion, "Value1", "Id", BLL.Utils.GetDataHierarchyForCombo(ref objOperationResult, 108, null), DropDownListAction.Select);
-                Utils.LoadDropDownList(ddlBloodGroupId, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, 154, null), DropDownListAction.Select);
-                Utils.LoadDropDownList(ddlBloodFactorId, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, 155, null), DropDownListAction.Select);
-                
-
-                txtApellidoPaterno.Text = personData.v_FirstLastName;
-                txtApellidoMaterno.Text = personData.v_SecondLastName;
-                txtNombres.Text = personData.v_FirstName;
-                cboGenero.SelectedValue = personData.i_SexTypeId.ToString();
-                txtEdad.Text = _age.ToString();
-                dtpFechaNacimiento.Value = personData.d_BirthDate.Value;
-                txtLugarNacimiento.Text = personData.v_BirthPlace;
-                txtProcedencia.Text = personData.v_Procedencia;
-                ddlBloodFactorId.SelectedValue = personData.i_BloodFactorId.ToString();
-                ddlBloodGroupId.SelectedValue = personData.i_BloodGroupId.ToString();
-                cboGradoInstruccion.SelectedValue = personData.i_LevelOfId.ToString();
-                cboEstadoCivil.SelectedValue = personData.i_MaritalStatusId.ToString();
-                txtOcupacion.Text = personData.v_CurrentOccupation;
-                txtDomicilio.Text = personData.v_AdressLocation;
-                txtCentroEducativo.Text = personData.v_CentroEducativo;
-                txtHijosVivos.Text = personData.TotalHijos.ToString();
-                lblDni.Text = personData.v_DocNumber.ToString();
-
-                idPerson = _objAtencionesIntegralesBl.GetService(_serviceId);
-
-             
-                if (_age <= 12)
-                {
-                    Utils.LoadDropDownList(listaEstadoCivilMujer, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, 101, null), DropDownListAction.Select);
-                    Utils.LoadDropDownList(listaGradoInstruccionMujer, "Value1", "Id", BLL.Utils.GetDataHierarchyForCombo(ref objOperationResult, 108, null), DropDownListAction.Select);
-                    Utils.LoadDropDownList(listTipoAfiliacionMujer, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, 188, null), DropDownListAction.Select);
-
-                    Utils.LoadDropDownList(listaEstadoCivilHombre, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, 101, null), DropDownListAction.Select);
-                    Utils.LoadDropDownList(listaGradoInstruccionHombre, "Value1", "Id", BLL.Utils.GetDataHierarchyForCombo(ref objOperationResult, 108, null), DropDownListAction.Select);
-                    Utils.LoadDropDownList(listTipoAfiliacionHombre, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, 188, null), DropDownListAction.Select);
-
-
-                    tbcDatos.TabPages.Remove(tbpAdultoMayor);
-                    tbcDatos.TabPages.Remove(tbpAdolescente);
-
-                    objNinioDto = _objAtencionesIntegralesBl.GetNinio(ref objOperationResult, idPerson.v_PersonId);
-
-                    if (objNinioDto != null)
-                    {
-                        txtNombreMadrePadreResponsable.Text = objNinioDto.v_NombreCuidador;
-                        txtEdadMadrePadreResponsable.Text = objNinioDto.v_EdadCuidador;
-                        txtDNIMadrePadreResponsable.Text = objNinioDto.v_DniCuidador;
-
-                        txtNombrePadreTutor.Text = objNinioDto.v_NombrePadre;
-                        txtEdadPadre.Text = objNinioDto.v_EdadPadre;
-                        txtDNIPadre.Text = objNinioDto.v_DniPadre;
-                        listTipoAfiliacionHombre.SelectedValue = objNinioDto.i_TipoAfiliacionPadre.ToString();
-                        txtAfiliacionPadre.Text = objNinioDto.v_CodigoAfiliacionPadre;
-                        listaGradoInstruccionHombre.SelectedValue = objNinioDto.i_GradoInstruccionPadre.ToString();
-                        txtOcupacionPadre.Text = objNinioDto.v_OcupacionPadre;
-                        listaEstadoCivilHombre.SelectedValue = objNinioDto.i_EstadoCivilIdPadre.ToString();
-                        txtReligionPadre.Text = objNinioDto.v_ReligionPadre;
-
-                        txtNombreMadreTutor.Text = objNinioDto.v_NombreMadre;
-                        txtEdadMadre.Text = objNinioDto.v_EdadMadre;
-                        txtDNIMadre.Text = objNinioDto.v_DniMadre;
-                        listTipoAfiliacionMujer.SelectedValue = objNinioDto.i_TipoAfiliacionMadre.ToString();
-                        txtAfiliacionMadre.Text = objNinioDto.v_CodigoAfiliacionMadre;
-                        listaGradoInstruccionMujer.SelectedValue = objNinioDto.i_GradoInstruccionMadre.ToString();
-                        txtOcupacionMadre.Text = objNinioDto.v_OcupacionMadre;
-                        listaEstadoCivilMujer.SelectedValue = objNinioDto.i_EstadoCivilIdMadre1.ToString();
-                        txtReligionMadre.Text = objNinioDto.v_ReligionMadre;
-
-                        textPatologiasGestacion.Text = objNinioDto.v_PatologiasGestacion;
-                        txtNEmbarazo.Text = objNinioDto.v_nEmbarazos;
-                        txtAPN.Text = objNinioDto.v_nAPN;
-                        textLugarAPN.Text = objNinioDto.v_LugarAPN;
-                        textComplicacionesParto.Text = objNinioDto.v_ComplicacionesParto;
-                        textQuienAtendio.Text = objNinioDto.v_Atencion;
-
-                        textEdadNacer.Text = objNinioDto.v_EdadGestacion;
-                        textPesoNacer.Text = objNinioDto.v_Peso;
-                        textTallaNacer.Text = objNinioDto.v_Talla;
-                        textPerimetroCefalico.Text = objNinioDto.v_PerimetroCefalico;
-                        textTiempoHospit.Text = objNinioDto.v_TiempoHospitalizacion;
-                        textPerimetroToracico.Text = objNinioDto.v_PerimetroToracico;
-                        textEspecificacionesNacer.Text = objNinioDto.v_EspecificacionesNac;
-                        txtInicioAlimentación.Text = objNinioDto.v_InicioAlimentacionComp;
-                        textAlergiaMedicamentos.Text = objNinioDto.v_AlergiasMedicamentos;
-                        textOtrosAntecedentes.Text = objNinioDto.v_OtrosAntecedentes;
-
-                        textQuienTuberculosis.Text = objNinioDto.v_QuienTuberculosis;
-                        if (objNinioDto.i_QuienTuberculosis == (int)Enfermedad.Si)
-                            rbSiTuberculosis.Checked = true;
-                        else
-                            rbNoTuberculosis.Checked = true;
-
-                        textQuienASMA.Text = objNinioDto.v_QuienAsma;
-                        if (objNinioDto.i_QuienAsma == (int)Enfermedad.Si)
-                            rbSiAsma.Checked = true;
-                        else
-                            rbNoAsma.Checked = true;
-
-                        textQuienVIH.Text = objNinioDto.v_QuienVIH;
-                        if (objNinioDto.i_QuienVIH == (int)Enfermedad.Si)
-                            rbSiVih.Checked = true;
-                        else
-                            rbNoVih.Checked = true;
-
-                        textQuienDiabetes.Text = objNinioDto.v_QuienDiabetes;
-                        if (objNinioDto.i_QuienDiabetes == (int)Enfermedad.Si)
-                            rbSiDiabetes.Checked = true;
-                        else
-                            rbNoDiabetes.Checked = true;
-
-                        textQuienEpilepsia.Text = objNinioDto.v_QuienEpilepsia;
-                        if (objNinioDto.i_QuienEpilepsia == (int)Enfermedad.Si)
-                            rbSiEpilepsia.Checked = true;
-                        else
-                            rbNoEpilepsia.Checked = true;
-
-                        textQuienAlergias.Text = objNinioDto.v_QuienAlergias;
-                        if (objNinioDto.i_QuienAlergias == (int)Enfermedad.Si)
-                            rbSiAlergia.Checked = true;
-                        else
-                            rbNoAlergia.Checked = true;
-
-                        textQuienViolenciaFamiliar.Text = objNinioDto.v_QuienViolenciaFamiliar;
-                        if (objNinioDto.i_QuienViolenciaFamiliar == (int)Enfermedad.Si)
-                            rbSiViolencia.Checked = true;
-                        else
-                            rbNoViolencia.Checked = true;
-
-                        textQuienAlcoholismo.Text = objNinioDto.v_QuienAlcoholismo;
-                        if (objNinioDto.i_QuienAlcoholismo == (int)Enfermedad.Si)
-                            rbSiAlcoholismo.Checked = true;
-                        else
-                            rbNoAlcoholismo.Checked = true;
-
-                        textQuienDrogadiccion.Text = objNinioDto.v_QuienDrogadiccion;
-                        if (objNinioDto.i_QuienDrogadiccion == (int)Enfermedad.Si)
-                            rbSiDrogadiccion.Checked = true;
-                        else
-                            rbNoDrogadiccion.Checked = true;
-
-                        textQuienHepatitisB.Text = objNinioDto.v_QuienHeptitisB;
-                        if (objNinioDto.i_QuienHeptitisB == (int)Enfermedad.Si)
-                            rbSiHepatitis.Checked = true;
-                        else
-                            rbNoHepatitis.Checked = true;
-
-                        textAguaPotable.Text = objNinioDto.v_EspecificacionesAgua;
-                        textDesague.Text = objNinioDto.v_EspecificacionesDesague;
-                    }
-                }
-                else if (13 <= _age && _age <= 17)
-                {
-                    tbcDatos.TabPages.Remove(tbpNinio);
-                    tbcDatos.TabPages.Remove(tbpAdultoMayor);
-
-                    objAdolDto = _objAtencionesIntegralesBl.GetAdolescente(ref objOperationResult, idPerson.v_PersonId);
-
-                    if (objAdolDto != null)
-                    {
-                        textNombreCuidadorAdol.Text = objAdolDto.v_NombreCuidador;
-                        textDniCuidadorAdol.Text = objAdolDto.v_DniCuidador;
-                        textEdadAdol.Text = objAdolDto.v_EdadCuidador;
-                        textViveConAdol.Text = objAdolDto.v_ViveCon;
-                        txtAdoEdadIniTrab.Text = objAdolDto.v_EdadInicioTrabajo;
-                        txtAdoTipoTrab.Text = objAdolDto.v_TipoTrabajo;
-                        txtAdoNroTv.Text = objAdolDto.v_NroHorasTv;
-                        txtAdoNroJuegos.Text = objAdolDto.v_NroHorasJuegos;
-                        txtAdoMenarquia.Text = objAdolDto.v_MenarquiaEspermarquia;
-                        txtAdoEdadRS.Text = objAdolDto.v_EdadInicioRS;
-                        textObservacionesSexualidadAdol.Text = objAdolDto.v_Observaciones;
-                    }
-                }
-                else if (18 <= _age && _age <= 64)
-                {
-                    tbcDatos.TabPages.Remove(tbpNinio);
-                    tbcDatos.TabPages.Remove(tbpAdolescente);
-                    CargarGrillaEmbarazos(idPerson.v_PersonId);
-
-                    if (personData.i_SexTypeId == (int) Gender.MASCULINO)
-                    {
-                        pnlMenarquia.Enabled = false;
-                        pnlEmbarazo.Enabled = false;
-                        
-                        objAdultoDto = _objAtencionesIntegralesBl.GetAdulto(ref objOperationResult, idPerson.v_PersonId);
-
-                        if (objAdultoDto != null)
-                        {
-                            txtAmCuidador.Text = objAdultoDto.v_NombreCuidador;
-                            txtAmCuidadorEdad.Text = objAdultoDto.v_EdadCuidador;
-                            txtAmCuidadorDni.Text = objAdultoDto.v_DniCuidador;
-                            textOtroAntecedentesFamiliares.Text = objAdultoDto.v_OtrosAntecedentes;
-                            textFlujoVaginalPatológico.Text = objAdultoDto.v_FlujoVaginal;
-                            textMedicamentoFrecuenteDosis.Text = objAdultoDto.v_MedicamentoFrecuente;
-                            textReaccionAlergicaMedicamentos.Text = objAdultoDto.v_ReaccionAlergica;
-                            txtAmInicioRs.Text = objAdultoDto.v_InicioRS;
-                            txtAmNroPs.Text = objAdultoDto.v_NroPs;
-                            txtAmFechaUR.Text = objAdultoDto.v_FechaUR;
-                            //txtAmRC.Text = objAdultoDto.v_RC;
-                            //txtAmNroParto.Text = objAdultoDto.v_Parto;
-                            //txtAmPrematuro.Text = objAdultoDto.v_Prematuro;
-                            //txtAmAborto.Text = objAdultoDto.v_Aborto;
-                            //textObservacionesEmbarazo.Text = objAdultoDto.v_ObservacionesEmbarazo;
-                        }
-                    }
-                    else
-                    {
-                        pnlMenarquia.Enabled = true;
-                        pnlEmbarazo.Enabled = true;
-
-                        objAdultoDto = _objAtencionesIntegralesBl.GetAdulto(ref objOperationResult, idPerson.v_PersonId);
-
-                        if (objAdultoDto != null)
-                        {
-                            txtAmCuidador.Text = objAdultoDto.v_NombreCuidador;
-                            txtAmCuidadorEdad.Text = objAdultoDto.v_EdadCuidador;
-                            txtAmCuidadorDni.Text = objAdultoDto.v_DniCuidador;
-                            textOtroAntecedentesFamiliares.Text = objAdultoDto.v_OtrosAntecedentes;
-                            textFlujoVaginalPatológico.Text = objAdultoDto.v_FlujoVaginal;
-                            textMedicamentoFrecuenteDosis.Text = objAdultoDto.v_MedicamentoFrecuente;
-                            textReaccionAlergicaMedicamentos.Text = objAdultoDto.v_ReaccionAlergica;
-                            txtAmInicioRs.Text = objAdultoDto.v_InicioRS;
-                            txtAmNroPs.Text = objAdultoDto.v_NroPs;
-                            txtAmFechaUR.Text =  objAdultoDto.v_FechaUR;
-                            txtAmRC.Text = objAdultoDto.v_RC;
-                            txtAmNroParto.Text = objAdultoDto.v_Parto;
-                            txtAmPrematuro.Text = objAdultoDto.v_Prematuro;
-                            txtAmAborto.Text = objAdultoDto.v_Aborto;
-                            textObservacionesEmbarazo.Text = objAdultoDto.v_ObservacionesEmbarazo;
-                        }
-                    }
-                }
-                else
-                {
-                    tbcDatos.TabPages.Remove(tbpNinio);
-                    tbcDatos.TabPages.Remove(tbpAdolescente);
-
-                    if (personData.i_SexTypeId == (int)Gender.MASCULINO)
-                    {
-                        pnlMenarquia.Enabled = false;
-                        pnlEmbarazo.Enabled = false;
-
-                        objAdultoMAyorDto = _objAtencionesIntegralesBl.GetAdultoMayor(ref objOperationResult, idPerson.v_PersonId);
-
-                        if (objAdultoMAyorDto != null)
-                        {
-                            txtAmCuidador.Text = objAdultoMAyorDto.v_NombreCuidador;
-                            txtAmCuidadorEdad.Text = objAdultoMAyorDto.v_EdadCuidador;
-                            txtAmCuidadorDni.Text = objAdultoMAyorDto.v_DniCuidador;
-                            //textOtroAntecedentesFamiliares.Text = objAdultoMAyorDto.v_OtrosAntecedentes;
-                            textFlujoVaginalPatológico.Text = objAdultoMAyorDto.v_FlujoVaginal;
-                            textMedicamentoFrecuenteDosis.Text = objAdultoMAyorDto.v_MedicamentoFrecuente;
-                            textReaccionAlergicaMedicamentos.Text = objAdultoMAyorDto.v_ReaccionAlergica;
-                            txtAmInicioRs.Text = objAdultoMAyorDto.v_InicioRS;
-                            txtAmNroPs.Text = objAdultoMAyorDto.v_NroPs;
-                            txtAmFechaUR.Text = objAdultoMAyorDto.v_FechaUR;
-                            //txtAmRC.Text = objAdultoDto.v_RC;
-                            //txtAmNroParto.Text = objAdultoDto.v_Parto;
-                            //txtAmPrematuro.Text = objAdultoDto.v_Prematuro;
-                            //txtAmAborto.Text = objAdultoDto.v_Aborto;
-                            //textObservacionesEmbarazo.Text = objAdultoDto.v_ObservacionesEmbarazo;
-                        }
-                    }
-                    else
-                    {
-                        pnlMenarquia.Enabled = true;
-                        pnlEmbarazo.Enabled = true;
-
-                        objAdultoMAyorDto = _objAtencionesIntegralesBl.GetAdultoMayor(ref objOperationResult, idPerson.v_PersonId);
-
-                        if (objAdultoMAyorDto != null)
-                        {
-                            txtAmCuidador.Text = objAdultoMAyorDto.v_NombreCuidador;
-                            txtAmCuidadorEdad.Text = objAdultoMAyorDto.v_EdadCuidador;
-                            txtAmCuidadorDni.Text = objAdultoMAyorDto.v_DniCuidador;
-                            //textOtroAntecedentesFamiliares.Text = objAdultoMAyorDto.v_OtrosAntecedentes;
-                            textFlujoVaginalPatológico.Text = objAdultoMAyorDto.v_FlujoVaginal;
-                            textMedicamentoFrecuenteDosis.Text = objAdultoMAyorDto.v_MedicamentoFrecuente;
-                            textReaccionAlergicaMedicamentos.Text = objAdultoMAyorDto.v_ReaccionAlergica;
-                            txtAmInicioRs.Text = objAdultoMAyorDto.v_InicioRS;
-                            txtAmNroPs.Text = objAdultoMAyorDto.v_NroPs;
-                            txtAmFechaUR.Text = objAdultoMAyorDto.v_FechaUR;
-                            txtAmRC.Text = objAdultoMAyorDto.v_RC;
-                            txtAmNroParto.Text = objAdultoMAyorDto.v_Parto;
-                            txtAmPrematuro.Text = objAdultoMAyorDto.v_Prematuro;
-                            txtAmAborto.Text = objAdultoMAyorDto.v_Aborto;
-                            textObservacionesEmbarazo.Text = objAdultoMAyorDto.v_ObservacionesEmbarazo;
-                        }
-                    }
-                }
-
-                #endregion
-
-                #region Cargar Atención Integral
-
-                CargarGrillaProblemas(_personId);
-                CargarGrillaPlanAtencionIntegral(_personId);
-                #endregion
 
                 // Analizar el resultado de la operación
                 if (objOperationResult.Success != 1)
@@ -2386,6 +1658,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             }
 
         }
+
         private void LoadComboBox()
         {
             // Llenado de combos
@@ -2485,22 +1758,14 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     serviceDTO.i_MacId = int.Parse(cbMac.SelectedValue.ToString());
                     serviceDTO.i_HasSymptomId = Convert.ToInt32(chkPresentaSisntomas.Checked);
 
-                    //serviceDTO.d_PAP = dtpPAP.Checked ? dtpPAP.Value : (DateTime?)null;
-                    //serviceDTO.d_Mamografia = dtpMamografia.Checked ? dtpMamografia.Value : (DateTime?)null;
+                    serviceDTO.d_PAP = dtpPAP.Checked ? dtpPAP.Value : (DateTime?)null;
+                    serviceDTO.d_Mamografia = dtpMamografia.Checked ? dtpMamografia.Value : (DateTime?)null;
                     serviceDTO.v_Gestapara = txtGestapara.Text;
                     serviceDTO.v_Menarquia = txtMenarquia.Text;
                     serviceDTO.v_CiruGine = txtCiruGine.Text;
                     serviceDTO.v_Findings = txtHallazgos.Text;
 
-                    serviceDTO.v_FechaUltimoPAP = txtFechaUltimoPAP.Text;
-                    serviceDTO.v_ResultadosPAP = txtResultadoPAP.Text;
-                    serviceDTO.v_FechaUltimaMamo = txtFechaUltimaMamo.Text;
-                    serviceDTO.v_ResultadoMamo = txtResultadoPAP.Text;
 
-                    serviceDTO.v_InicioVidaSexaul = txtVidaSexual.Text;
-                    serviceDTO.v_NroParejasActuales = txtNroParejasActuales.Text;
-                    serviceDTO.v_NroAbortos = txtNroAbortos.Text;
-                    serviceDTO.v_PrecisarCausas = txtNroCausa.Text;
 
                     // datos de cabecera del Servicio
                     serviceDTO.i_AptitudeStatusId = int.Parse(cbAptitudEso.SelectedValue.ToString());
@@ -2584,15 +1849,15 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
             if (e.Tab.Text == "MEDICINA")
             {
-                btnAntecedentes.Visible = false;
-                BtnAnamnesis.Visible = false;
-                //btnFichaMedica.Visible = false;
+                btnAntecedentes.Visible = true;
+                BtnAnamnesis.Visible = true;
+                btnFichaMedica.Visible = true;
             }
             else
             {
-                btnAntecedentes.Visible = false;
+                btnAntecedentes.Visible = true;
                 BtnAnamnesis.Visible = false;
-                //btnFichaMedica.Visible = false;
+                btnFichaMedica.Visible = false;
             }
             _componentId = e.Tab.Key;
             _serviceComponentId = e.Tab.Tag.ToString();
@@ -2618,64 +1883,15 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             {
                 var arrComponentId = _componentId.Split('|');
 
-                if (arrComponentId.Contains(Constants.AUDIOMETRIA_ID)//audiometría
-                    || arrComponentId.Contains("N009-ME000000337")
-                    || arrComponentId.Contains(Constants.AUDIO_COIMOLACHE)
-
-                    || arrComponentId.Contains(Constants.APENDICE_ID)//cardiologia
+                if (arrComponentId.Contains(Constants.AUDIOMETRIA_ID)
+                    || arrComponentId.Contains(Constants.OFTALMOLOGIA_ID)
+                    || arrComponentId.Contains(Constants.PSICOLOGIA_ID)
                     || arrComponentId.Contains(Constants.ELECTROCARDIOGRAMA_ID)
-                    || arrComponentId.Contains(Constants.ELECTRO_GOLD)
-                    || arrComponentId.Contains(Constants.PRUEBA_ESFUERZO_ID)
-
-                    || arrComponentId.Contains(Constants.ESPIROMETRIA_ID)//espirometría
-
-                    || arrComponentId.Contains(Constants.INFORME_LABORATORIO_ID)//laboratorio
-                    || arrComponentId.Contains(Constants.TOXICOLOGICO_COCAINA_MARIHUANA_ID)
-
-                    || arrComponentId.Contains(Constants.EXAMEN_FISICO_7C_ID)//medicina
-                    || arrComponentId.Contains(Constants.EXAMEN_FISICO_ID)
-                    || arrComponentId.Contains(Constants.ATENCION_INTEGRAL_ID)
-                    || arrComponentId.Contains(Constants.C_N_ID)//cuestionario nordico
-                    || arrComponentId.Contains(Constants.FICHA_SAS_ID)
-                    || arrComponentId.Contains(Constants.EVA_ERGONOMICA_ID)
-                    || arrComponentId.Contains(Constants.EVA_NEUROLOGICA_ID)
-                    || arrComponentId.Contains(Constants.ALTURA_7D_ID)
-                    || arrComponentId.Contains(Constants.ALTURA_ESTRUCTURAL_ID)
-                    || arrComponentId.Contains(Constants.EXAMEN_SUF_MED__OPERADORES_ID)
-                    || arrComponentId.Contains(Constants.OSTEO_MUSCULAR_ID_1)
-                    || arrComponentId.Contains(Constants.FOTO_TIPO_ID)
-                    || arrComponentId.Contains(Constants.OSTEO_COIMO)
-                    || arrComponentId.Contains(Constants.SINTOMATICO_ID)
-                    || arrComponentId.Contains(Constants.FICHA_SUFICIENCIA_MEDICA_ID)
-                    || arrComponentId.Contains(Constants.TAMIZAJE_DERMATOLOGIO_ID)
-                    || arrComponentId.Contains(Constants.TEST_VERTIGO_ID)
-                    || arrComponentId.Contains(Constants.EVA_OSTEO_ID)
-
-                    || arrComponentId.Contains(Constants.ODONTOGRAMA_ID)//odontologia
-
-                    || arrComponentId.Contains(Constants.OFTALMOLOGIA_ID)//oftalmologia
-                    || arrComponentId.Contains(Constants.EXAMEN_OFTALMOLOGICO_SIMPLE_ID)
-                    || arrComponentId.Contains(Constants.EXAMEN_OFTALMOLOGICO_COMPLETO_ID)
-                    || arrComponentId.Contains(Constants.APENDICE_N_2_EVALUACION_OFTALMOLOGICA_YANACOCHA_ID)
-                    || arrComponentId.Contains(Constants.INFORME_OFTALMOLOGICO_HUDBAY_ID)
-                    || arrComponentId.Contains(Constants.PETRINOVIC_ID)
-                    || arrComponentId.Contains(Constants.CERTIFICADO_PSICOSENSOMETRICO_DATOS_ID)
-                    || arrComponentId.Contains("N009-ME000000437")
-
-                    || arrComponentId.Contains(Constants.PSICOLOGIA_ID)//psicologia
-                    || arrComponentId.Contains(Constants.HISTORIA_CLINICA_PSICOLOGICA_ID)
-                    || arrComponentId.Contains(Constants.FICHA_PSICOLOGICA_OCUPACIONAL_GOLDFIELDS)
-                    || arrComponentId.Contains(Constants.INFORME_PSICOLOGICO_OCUPACIONAL_GOLDFIELDS)
-                    || arrComponentId.Contains(Constants.SOMNOLENCIA_ID)
-
-                    || arrComponentId.Contains(Constants.OIT_ID)//rayos x
+                    || arrComponentId.Contains(Constants.ODONTOGRAMA_ID)
+                    || arrComponentId.Contains(Constants.OIT_ID)
                     || arrComponentId.Contains(Constants.RX_TORAX_ID)
-                    || arrComponentId.Contains(Constants.EXCEPCIONES_RX_ID)
-                    || arrComponentId.Contains(Constants.EXCEPCIONES_RX_AUTORIZACION_ID)
-
-                    || arrComponentId.Contains(Constants.LUMBOSACRA_ID)
-                    || arrComponentId.Contains(Constants.ELECTROENCEFALOGRAMA_ID)
-                    || arrComponentId.Contains("N009-ME000000302")
+                    || arrComponentId.Contains(Constants.INFORME_LABORATORIO_ID)
+                     || arrComponentId.Contains(Constants.EVA_OSTEO_ID)
                     )
                 {
                     btnVisorReporteExamen.Text = string.Format("&Ver Reporte de ({0})", _examName);
@@ -2771,13 +1987,13 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
             }
 
-            //if (tcExamList.SelectedTab.TabPage.Tab.Text == "MEDICINA")
-            //{
-            //    string pstrPersonId = _personId;
+            if (tcExamList.SelectedTab.TabPage.Tab.Text == "MEDICINA")
+            {
+                string pstrPersonId = _personId;
 
-            //    Popups.frmPopupAntecedentes frm = new Popups.frmPopupAntecedentes(pstrPersonId);
-            //    frm.ShowDialog();
-            //}
+                Popups.frmPopupAntecedentes frm = new Popups.frmPopupAntecedentes(pstrPersonId);
+                frm.ShowDialog();
+            }
 
         }
 
@@ -2828,7 +2044,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                         // Datos de servicecomponentfieldValues Ejem: 1.80 ; 95 KG
                         value1 = GetValueControl(keyTagControl.i_ControlId, fields[0]);
 
-                        if (keyTagControl.i_ControlId == (int)ControlType.UcOdontograma || keyTagControl.i_ControlId == (int)ControlType.UcAudiometria || keyTagControl.i_ControlId == (int)ControlType.UcSomnolencia || keyTagControl.i_ControlId == (int)ControlType.UcAcumetria || keyTagControl.i_ControlId == (int)ControlType.UcSintomaticoRespi || keyTagControl.i_ControlId == (int)ControlType.UcRxLumboSacra || keyTagControl.i_ControlId == (int)ControlType.UcOtoscopia || keyTagControl.i_ControlId == (int)ControlType.UcEvaluacionErgonomica || keyTagControl.i_ControlId == (int)ControlType.UcOjoSeco || keyTagControl.i_ControlId == (int)ControlType.UcOsteoMuscular || keyTagControl.i_ControlId == (int)ControlType.UcFototipo)
+                        if (keyTagControl.i_ControlId == (int)ControlType.UcOdontograma || keyTagControl.i_ControlId == (int)ControlType.UcAudiometria || keyTagControl.i_ControlId == (int)ControlType.UcSomnolencia || keyTagControl.i_ControlId == (int)ControlType.UcAcumetria || keyTagControl.i_ControlId == (int)ControlType.UcSintomaticoRespi || keyTagControl.i_ControlId == (int)ControlType.UcRxLumboSacra || keyTagControl.i_ControlId == (int)ControlType.UcOtoscopia || keyTagControl.i_ControlId == (int)ControlType.UcEvaluacionErgonomica || keyTagControl.i_ControlId == (int)ControlType.UcOjoSeco || keyTagControl.i_ControlId == (int)ControlType.UcOsteoMuscular)
                         {
                             foreach (var value in _tmpListValuesOdontograma)
                             {
@@ -2896,7 +2112,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
         }
 
         private void SaveExamBySelectedTab(Infragistics.Win.UltraWinTabControl.UltraTabPageControl selectedTab)
-        
         {
             // Desactivar el flag de hubo alguna modificacion
             _isChangeValue = false;
@@ -2940,7 +2155,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                             serviceComponentDto.i_ServiceComponentStatusId = (int)ServiceComponentStatus.Evaluado;
                             _EstadoComponente = (int)ServiceComponentStatus.Evaluado;
                         }
-                        else if (_profesionId == 31 || _profesionId == 32)//auditor
+                        else if (_profesionId == 31)//auditor
                         {
                             serviceComponentDto.i_ServiceComponentStatusId = (int)ServiceComponentStatus.Auditado;
                             _EstadoComponente = (int)ServiceComponentStatus.Auditado;
@@ -2969,17 +2184,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                             }
 
                         }
-
-                        if (cbEstadoComponente.SelectedValue.ToString() == "8")
-                        {
-                            var frm = new Operations.Popups.frmEspecialista();
-                            frm.ShowDialog();
-                            if (frm.DialogResult != System.Windows.Forms.DialogResult.Cancel)
-                            {
-                                serviceComponentDto.i_SystemUserEspecialistaId = frm.i_SystemUserEspecialistaId;
-                            }
-                        }
-
 
                         packageForSave.SelectedTab = selectedTab;
                         packageForSave.ExamDiagnosticComponentList = _tmpExamDiagnosticComponentList;
@@ -3036,7 +2240,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 {
 
 
-                   var DatosAntiguos = _oListValidacionAMC.AsEnumerable()
+                    var DatosAntiguos = _oListValidacionAMC.AsEnumerable()
                   .GroupBy(x => x.v_ServiceComponentFieldValuesId)
                   .Select(group => group.First()).ToList();
 
@@ -3091,7 +2295,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
 
                 #endregion
-                
+
                 #region GRABAR DATOS ADICIONALES COMO [Diagnósticos + restricciones + recomendaciones]
 
                 // Grabar Dx por examen componente mas sus restricciones
@@ -3108,7 +2312,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                                     packageForSave.ExamDiagnosticComponentList,
                                                     packageForSave.ServiceComponent,
                                                     Globals.ClientSession.GetAsList(),
-                                                    _chkApprovedEnabled, chkUtilizarFirma.Checked);
+                                                    _chkApprovedEnabled);
 
 
                 #endregion
@@ -3488,20 +2692,19 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                             //    || val.v_DiseasesId == "N009-DD000000661" || val.v_DiseasesId == "N009-DD000000505" || val.v_DiseasesId == "N009-DD000000484" || val.v_DiseasesId == "N009-DD000000483" || val.v_DiseasesId == "N009-DD000000771"
                             //    || val.v_DiseasesId == "N009-DD000000662" || val.v_DiseasesId == "N009-DD000000795" || val.v_DiseasesId == "N009-DD000000797" || val.v_DiseasesId == "N009-DD000000799")
                             //{
-                            //if (val.v_CIE10 == "Z000" || val.v_CIE10 == "Z001")
-                            //{
-                            //    diagnosticRepository.i_DiagnosticTypeId = (int)TipoDx.Normal;
-                            //    diagnosticRepository.i_FinalQualificationId = (int)FinalQualification.Descartado;
-                            //}
-                            //else
-                            //{
-                            //    diagnosticRepository.i_DiagnosticTypeId = (int)TipoDx.Enfermedad_Comun;
-                            //    diagnosticRepository.i_FinalQualificationId = (int)FinalQualification.Definitivo;
-                            //}
+                            if (val.v_CIE10 == "Z000" || val.v_CIE10 == "Z001")
+                            {
+                                diagnosticRepository.i_DiagnosticTypeId = (int)TipoDx.Normal;
+                                diagnosticRepository.i_FinalQualificationId = (int)FinalQualification.Descartado;
+                            }
+                            else
+                            {
+                                diagnosticRepository.i_DiagnosticTypeId = (int)TipoDx.Enfermedad_Comun;
+                                diagnosticRepository.i_FinalQualificationId = (int)FinalQualification.Definitivo;
+                            }
 
 
-                            diagnosticRepository.i_DiagnosticTypeId = (int)TipoDx.Enfermedad_Comun;
-                            diagnosticRepository.i_FinalQualificationId = (int)FinalQualification.Descartado;
+
 
                             diagnosticRepository.v_ServiceId = _serviceId;
                             diagnosticRepository.v_ComponentId = val.v_ComponentId;
@@ -3629,23 +2832,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     var ucAcumetria = (UserControls.ucAcumetria)FindControlInCurrentTab(acumetria.v_ComponentFieldId)[0];
 
                     if (ucAcumetria.IsChangeValueControl)
-                    {
-                        _isChangeValue = true;
-
-                    }
-                }
-
-
-
-                var fototipo = _tmpServiceComponentsForBuildMenuList
-                    .Find(p => p.v_ComponentId == _componentId)
-                    .Fields.Find(p => p.i_ControlId == (int)ControlType.UcFototipo);
-
-                if (fototipo != null)
-                {
-                    var ucFotoTipo = (UserControls.ucFotoTipo)FindControlInCurrentTab(fototipo.v_ComponentFieldId)[0];
-
-                    if (ucFotoTipo.IsChangeValueControl)
                     {
                         _isChangeValue = true;
 
@@ -3904,15 +3090,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                     rbSiNo.Enabled = false;
                                 }
                                 break;
-                            case ControlType.Radiobutton:
-                                RadioButton rb = (RadioButton)ctrl__[0];
-                                rb.CreateControl();
-                                rb.Enabled = isWriteOnly;
-                                if (_action == "View")
-                                {
-                                    rb.Enabled = false;
-                                }
-                                break;
                             case ControlType.SiNoCombo:
                                 ComboBox cbSiNo = (ComboBox)ctrl__[0];
                                 cbSiNo.CreateControl();
@@ -4049,15 +3226,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                     rbSiNo.Enabled = false;
                                 }
                                 break;
-                            case ControlType.Radiobutton:
-                                RadioButton rb = (RadioButton)ctrl__[0];
-                                rb.CreateControl();
-                                rb.Enabled = isWriteOnly;
-                                if (_action == "View")
-                                {
-                                    rb.Enabled = false;
-                                }
-                                break;
                             case ControlType.SiNoCombo:
                                 ComboBox cbSiNo = (ComboBox)ctrl__[0];
                                 cbSiNo.CreateControl();
@@ -4102,12 +3270,10 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             if (cbEstadoComponente.SelectedValue.ToString() == ((int)ServiceComponentStatus.Iniciado).ToString())
             {
                 btnGuardarExamen.Enabled = false;
-                btnVisorReporteExamen.Enabled = false;
             }
             else
             {
                 btnGuardarExamen.Enabled = true;
-                btnVisorReporteExamen.Enabled = true;
             }
 
 
@@ -4222,22 +3388,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                             dataSourceUserControls = dataSourceUserControls.FindAll(p => p.v_ComponentFieldId.Contains("ACU"));
                             ((UserControls.ucAcumetria)ctrl).DataSource = new List<ServiceComponentFieldValuesList>();
                             ((UserControls.ucAcumetria)ctrl).DataSource = dataSourceUserControls;
-                            breakHazChildrenUC = true;
-
-                            #endregion
-                        }
-                        else if (keyTagControl.i_ControlId == (int)ControlType.UcFototipo)
-                        {
-                            #region Setear valores en FotoTipo
-
-                            dataSourceUserControls = _serviceComponentsInfo.ServiceComponentFields.SelectMany(p => p.ServiceComponentFieldValues).ToList();
-                            dataSourceUserControls = dataSourceUserControls.FindAll(p => p.v_ComponentFieldId.Contains("FOT"));
-                            var multimediaFileId = dataSourceUserControls.Find(xp => xp.v_ComponentFieldId == Constants.txt_MULTIMEDIA_FILE_FOTO_TIPO).v_Value1;
-                            ServiceBL oServiceBl = new ServiceBL();
-                            var a = oServiceBl.ObtenerImageMultimedia(multimediaFileId);
-                            ((UserControls.ucFotoTipo)ctrl).DataSource = new List<ServiceComponentFieldValuesList>();
-                            dataSourceUserControls.Add(new ServiceComponentFieldValuesList(){fotoTipo = a});
-                            ((UserControls.ucFotoTipo)ctrl).DataSource = dataSourceUserControls;
                             breakHazChildrenUC = true;
 
                             #endregion
@@ -4367,9 +3517,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 case ControlType.SiNoRadioButton:
                     ctrlToCast = (RadioButton)ctrl;
                     break;
-                case ControlType.Radiobutton:
-                    ctrlToCast = (RadioButton)ctrl;
-                    break;
                 case ControlType.SiNoCombo:
                     ctrlToCast = (ComboBox)ctrl;
                     break;
@@ -4399,8 +3546,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     dataType = "int";
                     break;
                 case ControlType.SiNoRadioButton:
-                    break;
-                case ControlType.Radiobutton:
                     break;
                 case ControlType.SiNoCombo:
                     dataType = "int";
@@ -4443,14 +3588,11 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 case ControlType.SiNoRadioButton:
                     value1 = Convert.ToInt32(((RadioButton)ctrl).Checked).ToString();
                     break;
-                case ControlType.Radiobutton:
-                    value1 = Convert.ToInt32(((RadioButton)ctrl).Checked).ToString();
-                    break;
                 case ControlType.SiNoCombo:
                     value1 = ((ComboBox)ctrl).SelectedValue.ToString();
                     break;
                 case ControlType.Lista:
-                    value1 = ((ComboBox)ctrl).SelectedValue == null ? null : ((ComboBox)ctrl).SelectedValue.ToString();
+                    value1 = ((ComboBox)ctrl).SelectedValue.ToString();
                     break;
                 case ControlType.UcOdontograma:
                     _tmpListValuesOdontograma = ((UserControls.ucOdontograma)ctrl).DataSource;
@@ -4463,9 +3605,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     break;
                 case ControlType.UcAcumetria:
                     _tmpListValuesOdontograma = ((UserControls.ucAcumetria)ctrl).DataSource;
-                    break;
-                case ControlType.UcFototipo:
-                    _tmpListValuesOdontograma = ((UserControls.ucFotoTipo)ctrl).DataSource;
                     break;
                 case ControlType.UcSintomaticoRespi:
                     _tmpListValuesOdontograma = ((UserControls.ucSintomaticoResp)ctrl).DataSource;
@@ -4567,12 +3706,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                         ((RadioButton)ctrl).Checked = Convert.ToBoolean(int.Parse(Value1));
                     }
                     break;
-                case ControlType.Radiobutton:
-                    if (ComponentFieldsId == Tag_ComponentFieldsId)
-                    {
-                        ((RadioButton)ctrl).Checked = Convert.ToBoolean(int.Parse(Value1));
-                    }
-                    break;
                 case ControlType.SiNoCombo:
                     if (ComponentFieldsId == Tag_ComponentFieldsId)
                     {
@@ -4615,9 +3748,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     ((CheckBox)ctrl).Checked = false;
                     break;
                 case ControlType.SiNoRadioButton:
-                    ((RadioButton)ctrl).Checked = false;
-                    break;
-                case ControlType.Radiobutton:
                     ((RadioButton)ctrl).Checked = false;
                     break;
                 case ControlType.SiNoCombo:
@@ -4750,8 +3880,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     break;
                 case ControlType.SiNoRadioButton:
                     break;
-                case ControlType.Radiobutton:
-                    break;
                 case ControlType.SiNoCombo:
                     uv.GetValidationSettings(ctrl).Condition = new OperatorCondition(ConditionOperator.NotEquals, "--Seleccionar--", true, typeof(string));
                     uv.GetValidationSettings(ctrl).EmptyValueCriteria = EmptyValueCriteria.NullOrEmptyString;
@@ -4883,11 +4011,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                     rbSiNo.CreateControl();
                                     rbSiNo.Checked = string.IsNullOrEmpty(cf.v_DefaultText) ? false : Convert.ToBoolean(int.Parse(cf.v_DefaultText));
                                     break;
-                                case ControlType.Radiobutton:
-                                    RadioButton rb = (RadioButton)ctrl__[0];
-                                    rb.CreateControl();
-                                    rb.Checked = string.IsNullOrEmpty(cf.v_DefaultText) ? false : Convert.ToBoolean(int.Parse(cf.v_DefaultText));
-                                    break;
                                 case ControlType.SiNoCombo:
                                     ComboBox cbSiNo = (ComboBox)ctrl__[0];
                                     cbSiNo.CreateControl();
@@ -4911,9 +4034,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                     break;
                                 case ControlType.UcAcumetria:
                                     ((UserControls.ucAcumetria)ctrl__[0]).ClearValueControl();
-                                    break;
-                                case ControlType.UcFototipo:
-                                    ((UserControls.ucFotoTipo)ctrl__[0]).ClearValueControl();
                                     break;
                                 case ControlType.UcSintomaticoRespi:
                                     ((UserControls.ucSintomaticoResp)ctrl__[0]).ClearValueControl();
@@ -5015,11 +4135,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                 rbSiNo.CreateControl();
                                 rbSiNo.Checked = string.IsNullOrEmpty(cf.v_DefaultText) ? false : Convert.ToBoolean(int.Parse(cf.v_DefaultText));
                                 break;
-                            case ControlType.Radiobutton:
-                                RadioButton rb = (RadioButton)field[0];
-                                rb.CreateControl();
-                                rb.Checked = string.IsNullOrEmpty(cf.v_DefaultText) ? false : Convert.ToBoolean(int.Parse(cf.v_DefaultText));
-                                break;
                             case ControlType.SiNoCombo:
                                 ComboBox cbSiNo = (ComboBox)field[0];
                                 cbSiNo.CreateControl();
@@ -5043,9 +4158,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                 break;
                             case ControlType.UcAcumetria:
                                 ((UserControls.ucAcumetria)field[0]).ClearValueControl();
-                                break;
-                            case ControlType.UcFototipo:
-                                ((UserControls.ucFotoTipo)field[0]).ClearValueControl();
                                 break;
                             case ControlType.UcSintomaticoRespi:
                                 ((UserControls.ucSintomaticoResp)field[0]).ClearValueControl();
@@ -5189,8 +4301,8 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void grdTotalDiagnosticos_ClickCell(object sender, Infragistics.Win.UltraWinGrid.ClickCellEventArgs e)
         {
-            _rowIndex = e.Cell.Row.Index;
-            EditTotalDiagnosticos(_rowIndex);
+            //_rowIndex = e.Cell.Row.Index;
+            //EditTotalDiagnosticos(_rowIndex);
         }
 
         private void EditTotalDiagnosticos(int? rowIndex)
@@ -6036,87 +5148,9 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             }
         }
 
-
         private void btnGuardarConclusiones_Click(object sender, EventArgs e)
         {
             DialogResult Result = MessageBox.Show("¿Está seguro de grabar este registro?:", "CONFIRMACIÓN!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-
-            //#region API TRACKING
-
-            //Sigesoft.Api.Api API = new Sigesoft.Api.Api();
-
-            //Dictionary<string, string> arg = new Dictionary<string, string>()
-            //{
-            //    { "servicioId", _datosPersona.v_ServiceId }
-            //};
-
-            //var estaEnServicioTracking = API.Get<bool>("PlanDeVida/EstaEnServicio", arg);
-
-            //if (!estaEnServicioTracking)
-            //{
-            //    Dictionary<string, string> arg2 = new Dictionary<string, string>()
-            //{
-            //    { "organizationId", _v_CustomerOrganizationId }
-            //};
-            //    var planesVida = API.Get<List<PlanesDeVida>>("PlanDeVida/ObtenerPlanesVidaPorOrganizationId", arg2);
-
-            //    if (planesVida.ToList().Count > 0)
-            //    {
-            //        DialogResult ResultPlanVida = MessageBox.Show("La empresa tiene planes de vida ¿Desea enviar a SEGUIMIENTO?:", "CONFIRMACIÓN!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //        if (ResultPlanVida == DialogResult.Yes)
-            //        {
-            //            var oEnviarSeguimiento = new EnviarSeguimientoSigesoft();
-            //            oEnviarSeguimiento.v_ServiceId = _datosPersona.v_ServiceId;
-            //            oEnviarSeguimiento.v_CustomerOrganizationId = _datosPersona.v_CustomerOrganizationId;
-            //            oEnviarSeguimiento.v_PersonId = _datosPersona.v_PersonId;
-            //            oEnviarSeguimiento.Nombres = _datosPersona.v_FirstName;
-            //            oEnviarSeguimiento.ApellidoPaterno = _datosPersona.v_FirstLastName;
-            //            oEnviarSeguimiento.ApellidoMaterno = _datosPersona.v_SecondLastName;
-            //            oEnviarSeguimiento.TipoDocumentoId = _datosPersona.i_DocTypeId;
-            //            oEnviarSeguimiento.NroDocumento = _datosPersona.v_DocNumber;
-            //            oEnviarSeguimiento.GeneroId = _datosPersona.i_SexTypeId.Value;
-            //            oEnviarSeguimiento.FechaNacimiento = _datosPersona.d_BirthDate.Value;
-            //            oEnviarSeguimiento.Correo = _datosPersona.v_Mail;
-            //            oEnviarSeguimiento.Telefono = _datosPersona.v_TelephoneNumber;
-            //            oEnviarSeguimiento.Foto = _datosPersona.b_PersonImage;
-            //            oEnviarSeguimiento.LugarNacimiento = _datosPersona.v_AdressLocation;
-            //            oEnviarSeguimiento.EstadoCivilId = _datosPersona.i_MaritalStatusId;
-            //            oEnviarSeguimiento.PuestoLaboral = _datosPersona.v_CurrentOccupation;
-            //            oEnviarSeguimiento.GradoInstruccionId = _datosPersona.i_LevelOfId;
-            //            oEnviarSeguimiento.Direccion = _datosPersona.v_AdressLocation;
-
-            //            var listaDxs = new List<DiagnosticoSeguimientoSigesoft>();
-            //            var dxSeguimiento =
-            //                _tmpTotalConclusionesDxByServiceIdList.FindAll(
-            //                    p => p.i_FinalQualificationId != (int)FinalQualification.Descartado);
-            //            foreach (var dx in dxSeguimiento)
-            //            {
-            //                var oDiagnosticoSeguimiento = new DiagnosticoSeguimientoSigesoft();
-
-            //                oDiagnosticoSeguimiento.v_DiseaseId = dx.v_DiseasesId;
-            //                oDiagnosticoSeguimiento.v_CIE10 = dx.v_Cie10;
-            //                oDiagnosticoSeguimiento.v_ComponentId = dx.v_ComponentId;
-            //                listaDxs.Add(oDiagnosticoSeguimiento);
-            //            }
-            //            oEnviarSeguimiento.Dxs = listaDxs;
-
-            //            var json = new JavaScriptSerializer().Serialize(oEnviarSeguimiento);
-
-            //            Dictionary<string, string> arg1 = new Dictionary<string, string>()
-            //        {
-            //            { "String1", json }
-            //        };
-            //            var result = API.Post<bool>("EMO/EnviarSeguimiento", arg1);
-
-
-            //        }
-            //    }
-            //}
-
-
-
-            //#endregion
 
             if (Result == DialogResult.Yes)
             {
@@ -6444,22 +5478,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
         #endregion
 
         #region Custom Events
-        public void AntecedentesCheck(object sender, Infragistics.Win.UltraWinGrid.CellEventArgs e)
-        {
-            int ParentRow = e.Cell.Row.ParentRow.Index;
-            int ChildRow = e.Cell.Row.Index;
-            if(e.Cell.Column.Key == "SI")
-            {
-                if (bool.Parse(e.Cell.Text))
-                    ultraGrid2.DisplayLayout.Rows[ParentRow].ChildBands[0].Rows[ChildRow].Cells[2].Value = false;
-            }
-
-            if (e.Cell.Column.Key == "NO")
-            {
-                if (bool.Parse(e.Cell.Text))
-                    ultraGrid2.DisplayLayout.Rows[ParentRow].ChildBands[0].Rows[ChildRow].Cells[1].Value = false;
-            }
-        }
 
         public void GeneratedAutoDX(string valueToAnalyze, Control senderCtrl, KeyTagControl tagCtrl)
         {
@@ -6519,17 +5537,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 // Refrescar grilla                        
                 grdDiagnosticoPorExamenComponente.DataSource = dataList;
                 lblRecordCountDiagnosticoPorExamenCom.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
-            }
-        }
-
-        private void ultraGrid2_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
-        {
-            e.Layout.Bands[0].Columns[2].CellActivation = Activation.ActivateOnly;
-            //var frm = frm new;
-
-            if (e.Layout.Bands[1] != null)
-            {
-                e.Layout.Bands[1].Columns[0].CellActivation = Activation.ActivateOnly;
             }
         }
 
@@ -6855,150 +5862,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             var tagCtrl = (KeyTagControl)senderCtrl.Tag;
             // Capturar valor inicial
             _oldValue = GetValueControl(tagCtrl.i_ControlId, senderCtrl);
-            if (tagCtrl.v_ComponentId == "N009-ME000000062")
-            {
-                GroupBox gb = null;
-                gb = (GroupBox)FindControlInCurrentTab("gb_C 3. Forma y Tamaño: (Consulte las radiografías estandar, se requieres dos símbolos; marque un primario y un secundario)")[0];
-
-                if (tagCtrl.v_ComponentFieldsId == "N002-MF000000222")
-                {
-                    gb.Enabled = false;
-                }
-                else if (tagCtrl.v_ComponentFieldsId == "N002-MF000000220" || tagCtrl.v_ComponentFieldsId == "N002-MF000000221" || tagCtrl.v_ComponentFieldsId == "N002-MF000000223" || tagCtrl.v_ComponentFieldsId == "N009-MF000000720"
-                    || tagCtrl.v_ComponentFieldsId == "N009-MF000000721" || tagCtrl.v_ComponentFieldsId == "N009-MF000000722" || tagCtrl.v_ComponentFieldsId == "N009-MF000000723" ||tagCtrl.v_ComponentFieldsId == "N009-MF000000724"
-                    || tagCtrl.v_ComponentFieldsId == "N009-MF000000725" || tagCtrl.v_ComponentFieldsId == "N009-MF000000726"
-                    || tagCtrl.v_ComponentFieldsId == "N009-MF000000727" )
-                {
-                    gb.Enabled = true;
-                }
-
-                GroupBox gb41 = null;
-                GroupBox gb42 = null;
-                gb41 = (GroupBox)FindControlInCurrentTab("gb_C 4.1 Placa Pleurales")[0];
-                gb42 = (GroupBox)FindControlInCurrentTab("gb_C 4.2 Engrosamiento Difuso de la Pleura")[0];
-                if (tagCtrl.v_ComponentFieldsId == "N009-MF000003194")
-                {
-                    gb41.Enabled = true;
-                    gb42.Enabled = true;
-
-                }
-                else if (tagCtrl.v_ComponentFieldsId == "N009-MF000000761")
-                {
-                    gb41.Enabled = false;
-                    gb42.Enabled = false;
-                }
-
-                GroupBox gb6 = null;
-                gb6 = (GroupBox)FindControlInCurrentTab("gb_C 6. MARQUE  la respuesta adecuada; si marca \"od\", escriba a continuación un COMENTARIO")[0];
-
-                if (tagCtrl.v_ComponentFieldsId == "N009-MF000003195")
-                {
-                    gb6.Enabled = true;
-                    gb6.Enabled = true;
-
-                }
-                else if (tagCtrl.v_ComponentFieldsId == "N009-MF000000760")
-                {
-                    gb6.Enabled = false;
-                    gb6.Enabled = false;
-                }
-            }
-            else if (tagCtrl.v_ComponentId == "N009-ME000000444")
-            {
-                GroupBox gbE = null;
-                gbE = (GroupBox)FindControlInCurrentTab("gb_E. FUNCIONES COGNITIVAS")[0];
-                GroupBox gbF = null;
-                gbF = (GroupBox)FindControlInCurrentTab("gb_F. ASPECTOS INTRA E INTERPERSONALES")[0];
-                GroupBox gbG = null;
-                gbG = (GroupBox)FindControlInCurrentTab("gb_G. PERFIL DE PERSONALIDAD - TEST DE COLORES")[0];
-                GroupBox gbH = null;
-                gbH = (GroupBox)FindControlInCurrentTab("gb_H. ADAPTABILIDAD, CAPACIDAD DE AFRONTE - HOMBRE BAJO LA LLUVIA")[0];
-
-                GroupBox gbI = null;
-                gbI = (GroupBox)FindControlInCurrentTab("gb_I. FUNCIONES COGNITIVAS.")[0];
-                GroupBox gbJ= null;
-                gbJ = (GroupBox)FindControlInCurrentTab("gb_J. ASPECTOS INTRA E INTERPERSONALES")[0];
-                GroupBox gbK = null;
-                gbK = (GroupBox)FindControlInCurrentTab("gb_K. PERFIL DE PERSONALIDAD")[0];
-                GroupBox gbL = null;
-                gbL = (GroupBox)FindControlInCurrentTab("gb_L.  ADAPTABILIDAD - CLIMA SOCIAL, LABORAL")[0];
-
-                var value = GetValueControl(tagCtrl.i_ControlId, senderCtrl);
-
-
-                RadioButton valSC = (RadioButton)FindControlInCurrentTab("N009-MF000003531")[0];
-                RadioButton valSI = (RadioButton)FindControlInCurrentTab("N009-MF000003530")[0];
-                RadioButton valGA = (RadioButton)FindControlInCurrentTab("N009-MF000003532")[0];
-
-                if (tagCtrl.v_ComponentFieldsId == "N009-MF000003531")
-                {
-
-                    gbE.Enabled = true;
-                    gbF.Enabled = true;
-                    gbG.Enabled = true;
-                    gbH.Enabled = true;
-
-                    gbI.Enabled = true;
-                    gbJ.Enabled = true;
-                    gbK.Enabled = true;
-                    gbL.Enabled = true;
-
-                    if (valSC.Checked != true)
-                    {
-                        gbE.Enabled = false;
-                        gbF.Enabled = false;
-                        gbG.Enabled = false;
-                        gbH.Enabled = false;
-
-                        gbI.Enabled = true;
-                        gbJ.Enabled = true;
-                        gbK.Enabled = true;
-                        gbL.Enabled = true;
-                    }
-                    //else
-                    //{
-                    //    gbE.Enabled = true;
-                    //    gbF.Enabled = true;
-                    //    gbG.Enabled = true;
-                    //    gbH.Enabled = true;
-                    //}
-
-                }
-                else if (tagCtrl.v_ComponentFieldsId == "N009-MF000003530")
-                {
-                    gbE.Enabled = true;
-                    gbF.Enabled = true;
-                    gbG.Enabled = true;
-                    gbH.Enabled = true;
-
-                    gbI.Enabled = true;
-                    gbJ.Enabled = true;
-                    gbK.Enabled = true;
-                    gbL.Enabled = true;
-
-                    if (valSI.Checked != true)
-                    {
-                        gbI.Enabled = false;
-                        gbJ.Enabled = false;
-                        gbK.Enabled = false;
-                        gbL.Enabled = false;
-
-                        gbE.Enabled = true;
-                        gbF.Enabled = true;
-                        gbG.Enabled = true;
-                        gbH.Enabled = true;
-                    }
-                    //else
-                    //{
-                    //    gbI.Enabled = true;
-                    //    gbJ.Enabled = true;
-                    //    gbK.Enabled = true;
-                    //    gbL.Enabled = true;
-                    //}
-                }
-
-                
-            }
 
         }
 
@@ -7497,7 +6360,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 MessageBox.Show(Constants.GenericErrorMessage, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-         
+
         private void GetServicesConsolidateForService(string personId)
         {
             OperationResult objOperationResult = new OperationResult();
@@ -7527,7 +6390,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void mnuVerServicio_Click(object sender, EventArgs e)
         {
-            var frm = new Operations.frmEso(_serviceIdByWiewServiceHistory, null, "View", (int)MasterService.Eso);
+            var frm = new Operations.frmEso(_serviceIdByWiewServiceHistory, null, "View");
             frm.ShowDialog();
         }
 
@@ -7565,21 +6428,8 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void btnVerServicioAnterior_Click(object sender, EventArgs e)
         {
-            var datosP = _pacientBL.DevolverDatosPaciente(_serviceId);
-
-            var ServiceDate = grdServiciosAnteriores.Selected.Rows[0].Cells["d_ServiceDate"].Value.ToString();
-
-            if (ServiceDate.ToString().Split(' ')[0] == DateTime.Now.ToString().Split(' ')[0])
-            {
-                var frm = new Operations.frmEso(_serviceIdByWiewServiceHistory, null, "", (int)MasterService.Eso);
-                frm.ShowDialog();
-            }
-            else
-            {
-                var frm = new Operations.frmEso(_serviceIdByWiewServiceHistory, null, "View", (int)MasterService.Eso);
-                frm.ShowDialog();
-            }
-          
+            var frm = new Operations.frmEso(_serviceIdByWiewServiceHistory, null, "View");
+            frm.ShowDialog();
             /////
         }
 
@@ -7885,7 +6735,16 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             else // todos los examenes están con el estado evaluado
             {
 
-                if (_tipo == (int)MasterService.AtxMedicaParticular)
+                if (cbAptitudEso.SelectedValue.ToString() == ((int)AptitudeStatus.SinAptitud).ToString())
+                {
+                    MessageBox.Show("Todos los Examenes se encuentran concluidos.\nEl estado de la Atención es: En espera de Aptitud .", "INFORMACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    serviceDto objserviceDto = new serviceDto();
+                    objserviceDto = objServiceBL.GetService(ref objOperationResult, _serviceId);
+                    objserviceDto.i_ServiceStatusId = (int)ServiceStatus.EsperandoAptitud;
+                    objserviceDto.v_Motive = "Esperando Aptitud";
+                    objServiceBL.UpdateService(ref objOperationResult, objserviceDto, Globals.ClientSession.GetAsList());
+                }
+                else
                 {
                     MessageBox.Show("El servicio ha concluido correctamente.", "INFORMACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     serviceDto objserviceDto = new serviceDto();
@@ -7894,28 +6753,9 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     objserviceDto.v_Motive = "Culminado";
                     objServiceBL.UpdateService(ref objOperationResult, objserviceDto, Globals.ClientSession.GetAsList());
                 }
-                else if (_tipo == (int)MasterService.Eso)
-                {
-                    if (cbAptitudEso.SelectedValue.ToString() == ((int)AptitudeStatus.SinAptitud).ToString())
-                    {
-                        MessageBox.Show("Todos los Examenes se encuentran concluidos.\nEl estado de la Atención es: En espera de Aptitud .", "INFORMACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        serviceDto objserviceDto = new serviceDto();
-                        objserviceDto = objServiceBL.GetService(ref objOperationResult, _serviceId);
-                        objserviceDto.i_ServiceStatusId = (int)ServiceStatus.EsperandoAptitud;
-                        objserviceDto.v_Motive = "Esperando Aptitud";
-                        objServiceBL.UpdateService(ref objOperationResult, objserviceDto, Globals.ClientSession.GetAsList());
-                    }
-                    else
-                    {
-                        MessageBox.Show("El servicio ha concluido correctamente.", "INFORMACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        serviceDto objserviceDto = new serviceDto();
-                        objserviceDto = objServiceBL.GetService(ref objOperationResult, _serviceId);
-                        objserviceDto.i_ServiceStatusId = (int)ServiceStatus.Culminado;
-                        objserviceDto.v_Motive = "Culminado";
-                        objServiceBL.UpdateService(ref objOperationResult, objserviceDto, Globals.ClientSession.GetAsList());
-                    }
 
-                }
+
+
 
             }
 
@@ -7938,529 +6778,66 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void btnVisorReporteExamen_Click(object sender, EventArgs e)
         {
-            OperationResult objOperationResult = new OperationResult();
-
-            ServiceList personData = _serviceBL.GetServicePersonData(ref objOperationResult, _serviceId);
-
-            ServiceList _DataService = _serviceBL.GetServiceReport(_serviceId);
-
-
-            PacientList filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
-
-            idPerson = _objAtencionesIntegralesBl.GetService(_serviceId);
-            PacientId = idPerson.v_PersonId.ToString();
-            #region POR AHORA
-            //int esoo = 2;
-            //var frm = new Reports.frmManagementReports(_serviceId, PacientId, _DataService.EmpresaEmpleadora, personData.v_FirstLastName + " " + personData.v_SecondLastName + " " + personData.v_FirstName, 2, filiationData.EmpresaClienteId, esoo);
-            //frm.ShowDialog();
-            #endregion
-
-            frmManagementReports frmManagmentReport = new frmManagementReports();
-            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
-
-            List<ServiceComponentList> serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
+            Form frm = null;
 
             var arrComponentId = _componentId.Split('|');
-            #region audiometria
-            if (arrComponentId.Contains(Constants.AUDIOMETRIA_ID)
-                || arrComponentId.Contains("N009-ME000000337")
-                || arrComponentId.Contains(Constants.AUDIO_COIMOLACHE))
+
+            if (arrComponentId.Contains(Constants.AUDIOMETRIA_ID))
             {
-                List<string> componentIds = new List<string>();
-                ServiceComponentList audiometria = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.AUDIOMETRIA_ID);
-                ServiceComponentList cuestionarioEspCoimolache = serviceComponents.Find(p => p.v_ComponentId == "N009-ME000000337");
-                ServiceComponentList audioCoimolache = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.AUDIO_COIMOLACHE);
-
-                if (audiometria != null){
-                //    componentIds.Add(Constants.AUDIOMETRIA_ID);
-                    if (filiationData.EmpresaClienteId == "N009-OO000000587")
-                    {
-                        componentIds.Add(Constants.AUDIOMETRIA_ID + "|40");
-                    }
-                    else {
-                        componentIds.Add(Constants.AUDIOMETRIA_ID);
-                    }
-                }
-                if (cuestionarioEspCoimolache != null)
-                {
-                    //if (filiationData.EmpresaClienteId == "N009-OO000000591")
-                    //{
-                        componentIds.Add("N009-ME000000337");
-                    //}
-                }
-                if (audioCoimolache != null)
-                {
-                    //if (filiationData.EmpresaClienteId == "N009-OO000000589"
-                    //    || filiationData.EmpresaClienteId == "N009-OO000000590")
-                    //{
-                        componentIds.Add(Constants.AUDIO_COIMOLACHE);
-                    //}
-                }
-
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
+                frm = new Reports.frmAudiometria(_serviceId, Constants.AUDIOMETRIA_ID);
             }
-            #endregion
-            #region cardiologia
-            else if (arrComponentId.Contains(Constants.APENDICE_ID)//cardiologia
-                    || arrComponentId.Contains(Constants.ELECTROCARDIOGRAMA_ID)
-                    || arrComponentId.Contains(Constants.ELECTRO_GOLD)
-                    || arrComponentId.Contains(Constants.PRUEBA_ESFUERZO_ID))
+            else if (arrComponentId.Contains(Constants.OFTALMOLOGIA_ID))
             {
-                List<string> componentIds = new List<string>();
-                ServiceComponentList apendice = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.APENDICE_ID);
-                ServiceComponentList electrocardiograma = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ELECTROCARDIOGRAMA_ID);
-                ServiceComponentList electroGold = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ELECTRO_GOLD);
-                ServiceComponentList pruebaEsfuerzo = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.PRUEBA_ESFUERZO_ID);
-
-                if (apendice != null)
-                {
-                    //if (filiationData.EmpresaClienteId == "N009-OO000000587")
-                    //{
-                        componentIds.Add(Constants.APENDICE_ID+"|43");
-                    //}
-                }
-                if (electrocardiograma != null)
-                {
-                    componentIds.Add(Constants.ELECTROCARDIOGRAMA_ID);
-                }
-                if (electroGold != null)
-                {
-                    //if (filiationData.EmpresaClienteId == "N009-OO000000589"
-                    //    || filiationData.EmpresaClienteId == "N009-OO000000590"
-                    //    || filiationData.EmpresaClienteId == "N009-OO000000591")
-                    //{
-                        componentIds.Add(Constants.ELECTRO_GOLD);
-                    //}
-                }
-                if (pruebaEsfuerzo != null)
-                {
-                    componentIds.Add(Constants.PRUEBA_ESFUERZO_ID);
-                }
-
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
+                frm = new Reports.frmOftalmologia(_serviceId, Constants.OFTALMOLOGIA_ID);
             }
-            #endregion
-            #region espirometria
-            else if (arrComponentId.Contains(Constants.ESPIROMETRIA_ID))
+            else if (arrComponentId.Contains(Constants.PSICOLOGIA_ID))
             {
-                List<string> componentIds = new List<string>();
-                ServiceComponentList espirometria = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ESPIROMETRIA_ID);
-
-                if (espirometria != null)
-                {
-                    if (filiationData.EmpresaClienteId == "N009-OO000000587")
-                    {
-                        componentIds.Add(Constants.ESPIROMETRIA_ID + "|35");
-                    }
-                    else if (filiationData.EmpresaClienteId == "N009-OO000000589"
-                        || filiationData.EmpresaClienteId == "N009-OO000000590"
-                        || filiationData.EmpresaClienteId == "N002-OO000003575")
-                    {
-                        componentIds.Add(Constants.ESPIROMETRIA_ID + "|54");
-                    }
-                    else if (filiationData.EmpresaClienteId == "N009-OO000000591")
-                    {
-                        componentIds.Add(Constants.ESPIROMETRIA_ID + "|58");
-                    }
-                    else
-                    {
-                        componentIds.Add(Constants.INFORME_ESPIROMETRIA+ "|46");
-                    }
-                }
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
+                frm = new Reports.frmInformePsicologicoOcupacional(_serviceId);
             }
-            #endregion
-            #region laboratorio
-            else if (arrComponentId.Contains(Constants.INFORME_LABORATORIO_ID)//laboratorio
-                    || arrComponentId.Contains(Constants.TOXICOLOGICO_COCAINA_MARIHUANA_ID))
+            else if (arrComponentId.Contains(Constants.ELECTROCARDIOGRAMA_ID))
             {
-                List<string> componentIds = new List<string>();
-                ServiceComponentList informeLab = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.INFORME_LABORATORIO_ID);
-                ServiceComponentList toxCocaMarihuana = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.TOXICOLOGICO_COCAINA_MARIHUANA_ID);
-
-                if (informeLab != null)
-                {
-                    componentIds.Add(Constants.INFORME_LABORATORIO_CLINICO);
-                }
-                if (toxCocaMarihuana != null)
-                {
-                    if (filiationData.EmpresaClienteId == "N009-OO000000587")
-                    {
-                        componentIds.Add(Constants.TOXICOLOGICO_COCAINA_MARIHUANA_ID + "|48");
-                    }
-                    else if (filiationData.EmpresaClienteId == "N009-OO000000589")
-                    {
-                        componentIds.Add(Constants.TOXICOLOGICO_COCAINA_MARIHUANA_ID);
-                    }
-                }
-
-                
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
+                frm = new Reports.frmEstudioElectrocardiografico(_serviceId);
             }
-            #endregion
-            #region medicina
-            else if (arrComponentId.Contains(Constants.EXAMEN_FISICO_7C_ID)//medicina
-                    || arrComponentId.Contains(Constants.EXAMEN_FISICO_ID)
-                    || arrComponentId.Contains(Constants.ATENCION_INTEGRAL_ID)
-                    || arrComponentId.Contains(Constants.C_N_ID)//cuestionario nordico
-                    || arrComponentId.Contains(Constants.FICHA_SAS_ID)
-                    || arrComponentId.Contains(Constants.EVA_ERGONOMICA_ID)
-                    || arrComponentId.Contains(Constants.EVA_NEUROLOGICA_ID)
-                    || arrComponentId.Contains(Constants.ALTURA_7D_ID)
-                    || arrComponentId.Contains(Constants.ALTURA_ESTRUCTURAL_ID)
-                    || arrComponentId.Contains(Constants.EXAMEN_SUF_MED__OPERADORES_ID)
-                    || arrComponentId.Contains(Constants.OSTEO_MUSCULAR_ID_1)
-                    || arrComponentId.Contains(Constants.FOTO_TIPO_ID)
-                    || arrComponentId.Contains(Constants.OSTEO_COIMO)
-                    || arrComponentId.Contains(Constants.SINTOMATICO_ID)
-                    || arrComponentId.Contains(Constants.FICHA_SUFICIENCIA_MEDICA_ID)
-                    || arrComponentId.Contains(Constants.TAMIZAJE_DERMATOLOGIO_ID)
-                    || arrComponentId.Contains(Constants.TEST_VERTIGO_ID)
-                    || arrComponentId.Contains(Constants.EVA_OSTEO_ID))
-            {
-                List<string> componentIds = new List<string>();
-                ServiceComponentList anexo16 = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EXAMEN_FISICO_7C_ID);
-                ServiceComponentList anexo312 = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_ID);
-                ServiceComponentList atencionIntegral = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_ID);
-                ServiceComponentList cuestionarioNordico = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.C_N_ID);
-                ServiceComponentList sas = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.FICHA_SAS_ID);
-                ServiceComponentList evaluacionErgonomica = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EVA_ERGONOMICA_ID);
-                ServiceComponentList evaluacionNeurologica = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EVA_NEUROLOGICA_ID);
-                ServiceComponentList alturageografica = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ALTURA_7D_ID);
-                ServiceComponentList alturaestructural = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ALTURA_ESTRUCTURAL_ID);
-                ServiceComponentList suficienciamedica = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EXAMEN_SUF_MED__OPERADORES_ID);
-                ServiceComponentList osteoMuscular = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.OSTEO_MUSCULAR_ID_1);
-                ServiceComponentList fotoTipo = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.FOTO_TIPO_ID);
-                ServiceComponentList osteoCoimo = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.OSTEO_COIMO);
-                ServiceComponentList sintomatico = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.SINTOMATICO_ID);
-                ServiceComponentList fichaSufcMedica = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.FICHA_SUFICIENCIA_MEDICA_ID);
-                ServiceComponentList TamizajeDermat = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.TAMIZAJE_DERMATOLOGIO_ID);
-                ServiceComponentList testVertigo = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.TEST_VERTIGO_ID);
-                ServiceComponentList evaluacionOsteomuscular = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EVA_OSTEO_ID);
-
-                if (anexo16 != null)
-                {
-                    //componentIds.Add(Constants.EXAMEN_FISICO_7C_ID);
-                    if (filiationData.EmpresaClienteId == "N009-OO000000587")
-                    {
-                        componentIds.Add(Constants.INFORME_ANEXO_16_YANACOCHA);
-                    }
-                    else if (filiationData.EmpresaClienteId == "N009-OO000000589")
-                    {
-                        componentIds.Add(Constants.INFORME_ANEXO_16_GOLD_FIELD);
-                    }
-                    else if (filiationData.EmpresaClienteId == "N009-OO000000591")
-                    {
-                        componentIds.Add(Constants.INFORME_ANEXO_16_SHAHUINDO);
-                    }
-                    else if (filiationData.EmpresaClienteId == "N009-OO000000590" || filiationData.EmpresaClienteId == "N002-OO000003575")
-                    {
-                        componentIds.Add(Constants.INFORME_ANEXO_16_COIMOLACHE);
-                    }
-                    else
-                    {
-                        componentIds.Add(Constants.INFORME_ANEXO_7C);
-                    }
-                }
-                if (anexo312 != null)
-                {
-                    componentIds.Add(Constants.EXAMEN_FISICO_ID);
-                }
-                if (atencionIntegral != null)
-                {
-                    componentIds.Add(Constants.ATENCION_INTEGRAL_ID);
-                }
-                if (cuestionarioNordico != null)
-                {
-                    componentIds.Add(Constants.C_N_ID);
-                }
-                if (sas != null)
-                {
-                    componentIds.Add(Constants.FICHA_SAS_ID);
-                }
-                if (evaluacionErgonomica != null)
-                {
-                    componentIds.Add(Constants.EVA_ERGONOMICA_ID);
-                }
-                if (evaluacionNeurologica != null)
-                {
-                    componentIds.Add(Constants.EVA_NEUROLOGICA_ID);
-                }
-                if (alturageografica != null)
-                {
-                    componentIds.Add(Constants.ALTURA_7D_ID);
-                }
-                if (alturaestructural != null)
-                {
-                    componentIds.Add(Constants.ALTURA_ESTRUCTURAL_ID);
-                }
-                if (suficienciamedica != null)
-                {
-                    componentIds.Add(Constants.EXAMEN_SUF_MED__OPERADORES_ID);
-                }
-                if (osteoMuscular != null)
-                {
-                    componentIds.Add(Constants.OSTEO_MUSCULAR_ID_1);
-                }
-                if (fotoTipo != null)
-                {
-                    componentIds.Add(Constants.FOTO_TIPO_ID);
-                }
-                if (osteoCoimo != null)
-                {
-                    componentIds.Add(Constants.OSTEO_COIMO);
-                }
-                if (sintomatico != null)
-                {
-                    componentIds.Add(Constants.SINTOMATICO_ID);
-                }
-                if (fichaSufcMedica != null)
-                {
-                    componentIds.Add(Constants.FICHA_SUFICIENCIA_MEDICA_ID);
-                }
-                if (TamizajeDermat != null)
-                {
-                    componentIds.Add(Constants.TAMIZAJE_DERMATOLOGIO_ID);
-                }
-                if (testVertigo != null)
-                {
-                    componentIds.Add(Constants.TEST_VERTIGO_ID);
-                }
-                if (evaluacionOsteomuscular != null)
-                {
-                    componentIds.Add(Constants.EVA_OSTEO_ID);
-                }
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
-            }
-            #endregion
-            #region odontologia
             else if (arrComponentId.Contains(Constants.ODONTOGRAMA_ID))
             {
-                List<string> componentIds = new List<string>();
-                ServiceComponentList odontograma = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ODONTOGRAMA_ID);
-
-                if (odontograma != null)
-                {
-                    componentIds.Add(Constants.ODONTOGRAMA_ID);
-                }
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
+                frm = new Reports.frmOdontograma(_serviceId);
             }
-            #endregion
-            #region oftalmologia
-            else if (arrComponentId.Contains(Constants.OFTALMOLOGIA_ID)//oftalmologia
-                    || arrComponentId.Contains(Constants.EXAMEN_OFTALMOLOGICO_SIMPLE_ID)
-                    || arrComponentId.Contains(Constants.EXAMEN_OFTALMOLOGICO_COMPLETO_ID)
-                    || arrComponentId.Contains(Constants.APENDICE_N_2_EVALUACION_OFTALMOLOGICA_YANACOCHA_ID)
-                    || arrComponentId.Contains(Constants.INFORME_OFTALMOLOGICO_HUDBAY_ID)
-                    || arrComponentId.Contains(Constants.PETRINOVIC_ID)
-                    || arrComponentId.Contains(Constants.CERTIFICADO_PSICOSENSOMETRICO_DATOS_ID)
-                    || arrComponentId.Contains("N009-ME000000437"))
+            else if (arrComponentId.Contains(Constants.OIT_ID))
             {
-                List<string> componentIds = new List<string>();
-                ServiceComponentList agudezavisual = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.OFTALMOLOGIA_ID);
-                ServiceComponentList oftsimple = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EXAMEN_OFTALMOLOGICO_SIMPLE_ID);
-                ServiceComponentList oftcompleto = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EXAMEN_OFTALMOLOGICO_COMPLETO_ID);
-                ServiceComponentList oftYanacocha = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.APENDICE_N_2_EVALUACION_OFTALMOLOGICA_YANACOCHA_ID);
-                ServiceComponentList oftHudbay = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.INFORME_OFTALMOLOGICO_HUDBAY_ID);
-                ServiceComponentList petrinovic = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.PETRINOVIC_ID);
-                ServiceComponentList certificadoPsico = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.CERTIFICADO_PSICOSENSOMETRICO_DATOS_ID);
-                ServiceComponentList oftalmoPsico = serviceComponents.Find(p => p.v_ComponentId == "N009-ME000000437");
-
-                if (agudezavisual != null)
-                {
-                    componentIds.Add(Constants.OFTALMOLOGIA_ID);
-                }
-                if (oftsimple != null)
-                {
-                    componentIds.Add(Constants.EXAMEN_OFTALMOLOGICO_SIMPLE_ID);
-                }
-                if (oftcompleto != null)
-                {
-                    componentIds.Add(Constants.EXAMEN_OFTALMOLOGICO_COMPLETO_ID);
-                }
-                if (oftYanacocha != null)
-                {
-                    componentIds.Add(Constants.APENDICE_N_2_EVALUACION_OFTALMOLOGICA_YANACOCHA_ID);
-                }
-                if (oftHudbay != null)
-                {
-                    componentIds.Add(Constants.INFORME_OFTALMOLOGICO_HUDBAY_ID);
-                }
-                if (petrinovic != null)
-                {
-                    componentIds.Add(Constants.PETRINOVIC_ID);
-                }
-                if (certificadoPsico != null)
-                {
-                    componentIds.Add(Constants.CERTIFICADO_PSICOSENSOMETRICO_DATOS_ID);
-                }
-                if (oftalmoPsico != null)
-                {
-                    componentIds.Add("N009-ME000000437");
-                }
-
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
+                frm = new Reports.frmInformeRadiograficoOIT(_serviceId);
             }
-            #endregion
-            #region psicologia
-            else if (arrComponentId.Contains(Constants.PSICOLOGIA_ID)//psicologia
-                    || arrComponentId.Contains(Constants.HISTORIA_CLINICA_PSICOLOGICA_ID)
-                    || arrComponentId.Contains(Constants.FICHA_PSICOLOGICA_OCUPACIONAL_GOLDFIELDS)
-                    || arrComponentId.Contains(Constants.INFORME_PSICOLOGICO_OCUPACIONAL_GOLDFIELDS)
-                    || arrComponentId.Contains(Constants.SOMNOLENCIA_ID))
+            else if (arrComponentId.Contains(Constants.RX_TORAX_ID))
             {
-                List<string> componentIds = new List<string>();
-
-                ServiceComponentList psico = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.PSICOLOGIA_ID);
-                ServiceComponentList psicoHist = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.HISTORIA_CLINICA_PSICOLOGICA_ID);
-                ServiceComponentList psicoGoldHis = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.FICHA_PSICOLOGICA_OCUPACIONAL_GOLDFIELDS);
-                ServiceComponentList psicoGolFich = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.INFORME_PSICOLOGICO_OCUPACIONAL_GOLDFIELDS);
-                ServiceComponentList somnolencia = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.SOMNOLENCIA_ID);
-                
-
-                if (psico != null)
-                {
-                    componentIds.Add(Constants.PSICOLOGIA_ID);
-                }
-                if (psicoHist != null)
-                {
-                    if (filiationData.EmpresaClienteId == "N009-OO000000587")
-                    {
-                        componentIds.Add(Constants.HISTORIA_CLINICA_PSICOLOGICA_ID + "|42");
-                    }
-                    else
-                    {
-                        componentIds.Add(Constants.HISTORIA_CLINICA_PSICOLOGICA_ID);
-                    }
-                }
-                if (psicoGoldHis != null)
-                {
-                    componentIds.Add(Constants.FICHA_PSICOLOGICA_OCUPACIONAL_GOLDFIELDS);
-                }
-                if (psicoGolFich != null)
-                {
-                    componentIds.Add(Constants.INFORME_PSICOLOGICO_OCUPACIONAL_GOLDFIELDS);
-                }
-                if (somnolencia != null)
-                {
-                    componentIds.Add(Constants.SOMNOLENCIA_ID);
-                }
-
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
+                frm = new Reports.frmRadiologico(_serviceId);
             }
-            #endregion
-            #region rayosx
-            else if (arrComponentId.Contains(Constants.OIT_ID)//rayos x
-                    || arrComponentId.Contains(Constants.RX_TORAX_ID)
-                    || arrComponentId.Contains(Constants.EXCEPCIONES_RX_ID)
-                    || arrComponentId.Contains(Constants.EXCEPCIONES_RX_AUTORIZACION_ID))
+            else if (arrComponentId.Contains(Constants.EVA_OSTEO_ID))
             {
-                List<string> componentIds = new List<string>();
-                ServiceComponentList oit = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.OIT_ID);
-                ServiceComponentList torax = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.RX_TORAX_ID);
-                ServiceComponentList excepciones = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EXCEPCIONES_RX_ID);
-                ServiceComponentList autorizacion = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.EXCEPCIONES_RX_AUTORIZACION_ID);
 
-                if (oit != null)
-                {
-                    if (filiationData.EmpresaClienteId == "N009-OO000000587")
-                    {
-                        componentIds.Add(Constants.OIT_ID + "|45");
-                    }
-                    else
-                    {
-                        componentIds.Add(Constants.OIT_ID);
-                    }
-                }
-                if (torax != null)
-                {
-                    componentIds.Add(Constants.RX_TORAX_ID);
-                }
-                //if (excepciones != null)
-                //{
-                //    componentIds.Add(Constants.EXCEPCIONES_RX_ID);
-                //}
-                //if (autorizacion != null)
-                //{
-                //    componentIds.Add(Constants.EXCEPCIONES_RX_AUTORIZACION_ID);
-                //}
-
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
+                frm = new Reports.frmOsteo(_serviceId);
             }
-            #endregion
-            #region lumbar
-            else if (arrComponentId.Contains(Constants.LUMBOSACRA_ID)
-                    || arrComponentId.Contains(Constants.ELECTROENCEFALOGRAMA_ID)
-                    || arrComponentId.Contains("N009-ME000000302"))
+
+            else if (arrComponentId.Contains(Constants.INFORME_LABORATORIO_ID))
             {
-                List<string> componentIds = new List<string>();
-                ServiceComponentList lumbosacra = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.LUMBOSACRA_ID);
-                ServiceComponentList electroencefalograma = serviceComponents.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.ELECTROENCEFALOGRAMA_ID);
-                ServiceComponentList columnaCervicoDorso = serviceComponents.Find(p => p.v_ComponentId == "N009-ME000000302");
+                // Elegir la ruta para guardar el PDF combinado
+                saveFileDialog1.FileName = string.Format("{0} Ficha Médica", _personName);
 
-                if (lumbosacra != null)
-                {
-                    componentIds.Add(Constants.LUMBOSACRA_ID);
-                }
-                if (electroencefalograma != null)
-                {
-                    componentIds.Add(Constants.ELECTROENCEFALOGRAMA_ID);
-                }
-                
-                if (columnaCervicoDorso != null)
-                {
-                    componentIds.Add("N009-ME000000302");
-                }
+                saveFileDialog1.Filter = "Files (*.pdf;)|*.pdf;";
 
-                frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
+                GenerateLaboratorioReport(saveFileDialog1.FileName);
+
+                RunFile(saveFileDialog1.FileName);
+                return;
             }
-            #endregion
+            frm.ShowDialog();
 
         }
-
-        public void CrearReportesCrystal(string serviceId, string pPacienteId, List<string> reportesId, List<ServiceComponentList> ListaDosaje, bool Publicar)
-        {
-            OperationResult objOperationResult = new OperationResult();
-            MultimediaFileBL _multimediaFileBL = new MultimediaFileBL();
-            crConsolidatedReports rp = null;
-            ruta = Common.Utils.GetApplicationConfigValue("rutaReportes").ToString();
-            rp = new Reports.crConsolidatedReports();
-            _filesNameToMerge = new List<string>();
-
-
-            //reportesId.FindAll(p => p != Constants.HISTORIA_CLINICA_PSICOLOGICA_ID || p != Constants.PSICOLOGIA_ID || p != Constants.INFORME_LABORATORIO_ID);
-
-            foreach (var com in reportesId)
-            {
-                //string CompnenteId = "";
-                int IdCrystal = 0;
-                //Obtener el Id del componente 
-
-                var array = com.Split('|');
-
-                if (array.Count() == 1)
-                {
-                    IdCrystal = 0;
-                }
-                else if (array[1] == "")
-                {
-                    IdCrystal = 0;
-                }
-                else
-                {
-                    IdCrystal = int.Parse(array[1].ToString());
-                }
-
-                rep.ChooseReport(array[0], serviceId, pPacienteId, IdCrystal);
-            }
-        }
-
 
         public void RunFile(string fileName)
         {
             Process proceso = Process.Start(fileName);
             //proceso.WaitForExit();
             proceso.Close();
+
         }
 
         private void GenerateLaboratorioReport(string pathFile)
@@ -8492,12 +6869,10 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             if (cbEstadoComponente.SelectedValue.ToString() == "2")
             {
                 btnGuardarExamen.Enabled = false;
-                btnVisorReporteExamen.Enabled = false;
             }
             else
             {
                 btnGuardarExamen.Enabled = true;
-                btnVisorReporteExamen.Enabled = true;
             }
         }
 
@@ -8569,44 +6944,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void btnCertificadoAptitud_Click(object sender, EventArgs e)
         {
-            OperationResult objOperationResult = new OperationResult();
-
-            ServiceList personData = _serviceBL.GetServicePersonData(ref objOperationResult, _serviceId);
-
-            ServiceList _DataService = _serviceBL.GetServiceReport(_serviceId);
-
-
-            PacientList filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
-
-            idPerson = _objAtencionesIntegralesBl.GetService(_serviceId);
-            PacientId = idPerson.v_PersonId.ToString();
-
-            frmManagementReports frmManagmentReport = new frmManagementReports();
-            DiskFileDestinationOptions objDiskOpt = new DiskFileDestinationOptions();
-
-            List<ServiceComponentList> serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
-
-            var arrComponentId = _componentId.Split('|');
-            #region audiometria
-            //if (arrComponentId.Contains(Constants.AUDIOMETRIA_ID)
-            //    || arrComponentId.Contains("N009-ME000000337")
-            //    || arrComponentId.Contains(Constants.AUDIO_COIMOLACHE))
-            //{
-            //    List<string> componentIds = new List<string>();
-               
-            //        //    componentIds.Add(Constants.AUDIOMETRIA_ID);
-            //    if (filiationData.EmpresaClienteId == "N009-OO000000587")
-            //    {
-            //        componentIds.Add(Constants.AUDIOMETRIA_ID + "|40");
-            //    }
-            //    else
-            //    {
-            //        componentIds.Add(Constants.AUDIOMETRIA_ID);
-            //    }
-
-            //    frmManagmentReport.reportSolo(componentIds, PacientId, _serviceId);
-            //}
-            #endregion
             using (new LoadingClass.PleaseWait(this.Location, "Generando..."))
             {
                 Form frm = null;
@@ -8614,6 +6951,8 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 frm = new Reports.frmOccupationalMedicalAptitudeCertificate(_serviceId);
                 frm.ShowDialog();
             }
+
+
         }
 
         private void btn312_Click(object sender, EventArgs e)
@@ -8631,7 +6970,6 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 return;
             }
         }
-
         private void GenerateAnexo312(string pathFile)
         {
             using (new LoadingClass.PleaseWait(this.Location, "Generando..."))
@@ -8663,14 +7001,13 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
                 var TestIhihara = _serviceBL.ValoresComponente(_serviceId, Constants.TEST_ISHIHARA_ID);
                 var TestEstereopsis = _serviceBL.ValoresComponente(_serviceId, Constants.TEST_ESTEREOPSIS_ID);
-                var serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
 
                 FichaMedicaOcupacional312.CreateFichaMedicalOcupacional312Report(_DataService,
                             filiationData, _listAtecedentesOcupacionales, _listaPatologicosFamiliares,
                             _listMedicoPersonales, _listaHabitoNocivos, Antropometria, FuncionesVitales,
                             ExamenFisico, Oftalmologia, Psicologia, OIT, RX, Laboratorio, Audiometria, Espirometria,
                             _DiagnosticRepository, _Recomendation, _ExamenesServicio, ValoresDxLab, MedicalCenter, TestIhihara, TestEstereopsis,
-                            serviceComponents, pathFile);
+                            pathFile);
             }
         }
 
@@ -8723,853 +7060,22 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         }
 
+       
+
+
         private void btnReceta_Click(object sender, EventArgs e)
         {
             //grdTotalDiagnosticos.DataSource = _tmpTotalDiagnosticByServiceIdList;
-            frmRecetaMedica frm = new frmRecetaMedica(_tmpTotalDiagnosticByServiceIdList, _serviceId, _ProtocolId);
+            Operations.frmRecetaMedica frm = new frmRecetaMedica(_tmpTotalDiagnosticByServiceIdList);
             frm.ShowDialog();
         }
 
-        private void btnPerson_Click(object sender, EventArgs e)
-        {
-            var frm = new frmPacient(_personId);
-            frm.ShowDialog();
-            
-        }      
-
-        private void btnSubirInterconsulta_Click(object sender, EventArgs e)
-        {
-            frmSubirInterconsulta frm = new frmSubirInterconsulta(_serviceId, _personName);
-            frm.ShowDialog();
-        }
-
-        private void btnNuevoCronico_Click(object sender, EventArgs e)
-        {
-            Popups.frmPopupAtencionIntegral frm = new Popups.frmPopupAtencionIntegral("Cronico","New",_personId, "");
-            frm.ShowDialog();
-
-            CargarGrillaProblemas(_personId);
-        }
-
-        private void btnEditarCronico_Click(object sender, EventArgs e)
-        {
-            string id = grdCronicos.Selected.Rows[0].Cells["v_ProblemaId"].Value.ToString();
-
-            Popups.frmPopupAtencionIntegral frm = new Popups.frmPopupAtencionIntegral("Cronico", "Edit", _personId,id);
-            frm.ShowDialog();
-            CargarGrillaProblemas(_personId);
-        }
-
-        private void btnEliminarCronico_Click(object sender, EventArgs e)
-        {
-            OperationResult objOperationResult = new OperationResult();
-            DialogResult Result = MessageBox.Show("¿Está seguro de eliminar este registro?:" + System.Environment.NewLine + objOperationResult.ExceptionMessage, "¡ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (Result == System.Windows.Forms.DialogResult.Yes)
-            {
-                string id = grdCronicos.Selected.Rows[0].Cells["v_ProblemaId"].Value.ToString();
-                new ProblemaBL().DeleteProblema(ref objOperationResult, id, Globals.ClientSession.GetAsList());                
-                CargarGrillaProblemas(_personId);
-            }
-        }
-
-        private void btnNuevoAgudo_Click(object sender, EventArgs e)
-        {
-            Popups.frmPopupAtencionIntegral frm = new Popups.frmPopupAtencionIntegral("Agudo", "New", _personId,"");
-            frm.ShowDialog();
-            CargarGrillaProblemas(_personId);
-        }
-
-        private void btnEditarAgudo_Click(object sender, EventArgs e)
-        {
-            string id = grdAgudos.Selected.Rows[0].Cells["v_ProblemaId"].Value.ToString();
-            Popups.frmPopupAtencionIntegral frm = new Popups.frmPopupAtencionIntegral("Agudo", "Edit", _personId, id);
-            frm.ShowDialog();
-            CargarGrillaProblemas(_personId);
-        }
-
-        private void btnEliminarAgudo_Click(object sender, EventArgs e)
-        {
-            OperationResult objOperationResult = new OperationResult();
-            DialogResult Result = MessageBox.Show("¿Está seguro de eliminar este registro?:" + System.Environment.NewLine + objOperationResult.ExceptionMessage, "¡ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (Result == System.Windows.Forms.DialogResult.Yes)
-            {
-                string id = grdAgudos.Selected.Rows[0].Cells["v_ProblemaId"].Value.ToString();
-                new ProblemaBL().DeleteProblema(ref objOperationResult, id, Globals.ClientSession.GetAsList());
-                CargarGrillaProblemas(_personId);
-            }
-        }
-
-        private void btnNuevoPlan_Click(object sender, EventArgs e)
-        {
-            Popups.frmPopupAtencionIntegral frm = new Popups.frmPopupAtencionIntegral("Plan", "New", _personId,"");
-            frm.ShowDialog();
-            CargarGrillaPlanAtencionIntegral(_personId);
-        }
-
-        private void btnEditarPlan_Click(object sender, EventArgs e)
-        {
-            string id = grdPlanIntegral.Selected.Rows[0].Cells["v_PlanIntegral"].Value.ToString();
-            Popups.frmPopupAtencionIntegral frm = new Popups.frmPopupAtencionIntegral("Plan", "Edit", _personId,id);
-            frm.ShowDialog();
-            CargarGrillaPlanAtencionIntegral(_personId);
-        }
-
-        private void btnEliminarPlan_Click(object sender, EventArgs e)
-        {
-            OperationResult objOperationResult = new OperationResult();
-            DialogResult Result = MessageBox.Show("¿Está seguro de eliminar este registro?:" + System.Environment.NewLine + objOperationResult.ExceptionMessage, "¡ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (Result == System.Windows.Forms.DialogResult.Yes)
-            {
-                string id = grdPlanIntegral.Selected.Rows[0].Cells["v_PlanIntegral"].Value.ToString();
-                new PlanIntegralBL().DeletePlanIntegral(ref objOperationResult, id, Globals.ClientSession.GetAsList());
-                CargarGrillaPlanAtencionIntegral(_personId);
-            }
-        }
-
-        private void CargarGrillaPlanAtencionIntegral(string personId)
-        {
-            OperationResult objOperationResult = new OperationResult();
-            var objData = new PlanIntegralBL().GetPlanIntegralAndFiltered(ref objOperationResult, 0, null, "", "", personId);
-            grdPlanIntegral.DataSource = objData;
-        }
-
-        private void CargarGrillaProblemas(string personId)
-        {
-            OperationResult objOperationResult = new OperationResult();
-            var objData = new ProblemaBL().GetProblemaPagedAndFiltered(ref objOperationResult, 0, null, "", "", personId);
-            grdCronicos.DataSource = objData.FindAll(p => p.i_Tipo == (int)TipoProblema.Cronico);
-            grdAgudos.DataSource = objData.FindAll(p => p.i_Tipo == (int)TipoProblema.Agudo);
-        }
-
-        private void CargarGrillaEmbarazos(string personId)
-        {
-            OperationResult objOperationResult = new OperationResult();
-            var objData = _objEmbarazoBL.GetEmbarazoFiltered(ref objOperationResult, 0, null, "", "", personId);
-
-            grdEmbarazos.DataSource = objData;
-        }
-        private void btnGuardarAntecedentes_Click(object sender, EventArgs e)
-        {
-            List<frmEsoAntecedentesPadre> Listado = new List<frmEsoAntecedentesPadre>();
-
-            foreach (var G in ultraGrid2.Rows)
-            {
-                List<frmEsoAntecedentesHijo> ListadoHijos = new List<frmEsoAntecedentesHijo>();
-                foreach (var H in G.ChildBands[0].Rows)
-                {
-                    frmEsoAntecedentesHijo Hijo = new frmEsoAntecedentesHijo()
-                    {
-                        Nombre = H.Cells["Nombre"].Text,
-                        SI = bool.Parse(H.Cells[1].Text),
-                        NO = bool.Parse(H.Cells[2].Text),
-                        GrupoId = int.Parse(H.Cells["GrupoId"].Text),
-                        ParametroId = int.Parse(H.Cells["ParametroId"].Text)
-                    };
-
-                    ListadoHijos.Add(Hijo);
-                }
-
-                frmEsoAntecedentesPadre Padre = new frmEsoAntecedentesPadre()
-                {
-                    GrupoId = int.Parse(G.Cells["GrupoId"].Text),
-                    Nombre = G.Cells["Nombre"].Text,
-                    ParametroId = int.Parse(G.Cells["ParametroId"].Text),
-                    Hijos = ListadoHijos
-                };
-
-                Listado.Add(Padre);
-            }
-
-            bool response = false;
-
-       
-            using (new LoadingClass.PleaseWait(this.Location, "Generando..."))
-            {
-                OperationResult objOperationResult = new OperationResult();
-                personDto oDatosPersonales = new personDto();
-                idPerson = _objAtencionesIntegralesBl.GetService(_serviceId);
-                PacientId = idPerson.v_PersonId.ToString();
-                oDatosPersonales = _objPacienteBl.GetPerson(ref objOperationResult, PacientId);
-
-                
-                
-                oDatosPersonales.v_PersonId = PacientId;
-                oDatosPersonales.v_FirstName = txtNombres.Text.Trim();
-                oDatosPersonales.v_FirstLastName = txtApellidoPaterno.Text.Trim();
-                oDatosPersonales.v_SecondLastName = txtApellidoMaterno.Text.Trim();
-
-                    oDatosPersonales.i_SexTypeId = int.Parse(cboGenero.SelectedValue.ToString());
-                    //oDatosPersonales.Edad = int.Parse(txtEdad.Text());
-                    oDatosPersonales.v_BirthPlace = txtLugarNacimiento.Text.Trim();
-                    oDatosPersonales.v_Procedencia = txtProcedencia.Text.Trim();
-                    oDatosPersonales.i_LevelOfId = int.Parse(cboGradoInstruccion.SelectedValue.ToString());
-                    oDatosPersonales.i_MaritalStatusId = int.Parse(cboEstadoCivil.SelectedValue.ToString());
-                    oDatosPersonales.v_CurrentOccupation = txtOcupacion.Text.Trim();
-                    oDatosPersonales.v_AdressLocation = txtDomicilio.Text.Trim();
-                    oDatosPersonales.v_CentroEducativo = txtCentroEducativo.Text.Trim();
-                    oDatosPersonales.i_NumberLivingChildren = int.Parse(txtHijosVivos.Text);
-                    _Dni = lblDni.Text;
-                    //PacientId = _objPacienteBl.UpdatePacient(ref objOperationResult, oDatosPersonales, Globals.ClientSession.GetAsList(), _Dni, oDatosPersonales.v_DocNumber);
-                    PacientId = _objPacienteBl.UpdatePacient(ref objOperationResult, oDatosPersonales, Globals.ClientSession.GetAsList(), _Dni, lblDni.Text);
-                    
-                //}
-
-                
-                ServiceList personData = _serviceBL.GetServicePersonData(ref objOperationResult, _serviceId);
-
-                _sexType = (Gender)personData.i_SexTypeId;
-                _sexTypeId = personData.i_SexTypeId;
-
-                if (_age <= 12)
-                {
-                    if (objNinioDto == null)
-                    {
-                        objNinioDto = new ninioDto();
-                    }
-
-                    if (objNinioDto.v_NinioId == null)
-                    {
-                        objNinioDto.v_PersonId = idPerson.v_PersonId.ToString();
-
-                        objNinioDto.v_NombreCuidador = txtNombreMadrePadreResponsable.Text;
-                        objNinioDto.v_EdadCuidador = txtEdadMadrePadreResponsable.Text;
-                        objNinioDto.v_DniCuidador = txtDNIMadrePadreResponsable.Text;
-
-                        objNinioDto.v_NombrePadre =txtNombrePadreTutor.Text;
-                        objNinioDto.v_EdadPadre = txtEdadPadre.Text;
-                        objNinioDto.v_DniPadre = txtDNIPadre.Text;
-                        objNinioDto.i_TipoAfiliacionPadre = Convert.ToInt32(listTipoAfiliacionHombre.SelectedValue);
-                        objNinioDto.v_CodigoAfiliacionPadre = txtAfiliacionPadre.Text;
-                        objNinioDto.i_GradoInstruccionPadre = Convert.ToInt32(listaGradoInstruccionHombre.SelectedValue);
-                        objNinioDto.v_OcupacionPadre = txtOcupacionPadre.Text;
-                        objNinioDto.i_EstadoCivilIdPadre = Convert.ToInt32(listaEstadoCivilHombre.SelectedValue);
-                        objNinioDto.v_ReligionPadre = txtReligionPadre.Text;
-
-                        objNinioDto.v_NombreMadre = txtNombreMadreTutor.Text;
-                        objNinioDto.v_EdadMadre = txtEdadMadre.Text;
-                        objNinioDto.v_DniMadre = txtDNIMadre.Text;
-                        objNinioDto.i_TipoAfiliacionMadre = Convert.ToInt32(listTipoAfiliacionMujer.SelectedValue);
-                        objNinioDto.v_CodigoAfiliacionMadre = txtAfiliacionMadre.Text;
-                        objNinioDto.i_GradoInstruccionMadre = Convert.ToInt32(listaGradoInstruccionMujer.SelectedValue);
-                        objNinioDto.v_OcupacionMadre = txtOcupacionMadre.Text;
-                        objNinioDto.i_EstadoCivilIdMadre1 = Convert.ToInt32(listaEstadoCivilMujer.SelectedValue);
-                        objNinioDto.v_ReligionMadre = txtReligionMadre.Text;
-
-                        objNinioDto.v_PatologiasGestacion = textPatologiasGestacion.Text;
-                        objNinioDto.v_nEmbarazos = txtNEmbarazo.Text;
-                        objNinioDto.v_nAPN = txtAPN.Text;
-                        objNinioDto.v_LugarAPN = textLugarAPN.Text;
-                        objNinioDto.v_ComplicacionesParto = textComplicacionesParto.Text;
-                        objNinioDto.v_Atencion = textQuienAtendio.Text;
-
-                        objNinioDto.v_EdadGestacion = textEdadNacer.Text;
-                        objNinioDto.v_Peso = textPesoNacer.Text;
-                        objNinioDto.v_Talla = textTallaNacer.Text;
-                        objNinioDto.v_PerimetroCefalico = textPerimetroCefalico.Text;
-                        objNinioDto.v_TiempoHospitalizacion = textTiempoHospit.Text;
-                        objNinioDto.v_PerimetroToracico = textPerimetroToracico.Text;
-                        objNinioDto.v_EspecificacionesNac = textEspecificacionesNacer.Text;
-                        objNinioDto.v_InicioAlimentacionComp = txtInicioAlimentación.Text;
-                        objNinioDto.v_AlergiasMedicamentos = textAlergiaMedicamentos.Text;
-                        objNinioDto.v_OtrosAntecedentes = textOtrosAntecedentes.Text;
-
-                        objNinioDto.v_QuienTuberculosis = textQuienTuberculosis.Text;
-                        objNinioDto.i_QuienTuberculosis = rbSiTuberculosis.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienAsma = textQuienASMA.Text;
-                        objNinioDto.i_QuienAsma = rbSiAsma.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienVIH = textQuienVIH.Text;
-                        objNinioDto.i_QuienVIH = rbSiVih.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienDiabetes = textQuienDiabetes.Text;
-                        objNinioDto.i_QuienDiabetes = rbSiDiabetes.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienEpilepsia = textQuienEpilepsia.Text;
-                        objNinioDto.i_QuienEpilepsia = rbSiEpilepsia.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienAlergias = textQuienAlergias.Text;
-                        objNinioDto.i_QuienAlergias = rbSiAlergia.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienViolenciaFamiliar = textQuienViolenciaFamiliar.Text;
-                        objNinioDto.i_QuienViolenciaFamiliar = rbSiViolencia.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienAlcoholismo = textQuienAlcoholismo.Text;
-                        objNinioDto.i_QuienAlcoholismo = rbSiAlcoholismo.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienDrogadiccion = textQuienDrogadiccion.Text;
-                        objNinioDto.i_QuienDrogadiccion = rbSiDrogadiccion.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienHeptitisB = textQuienHepatitisB.Text;
-                        objNinioDto.i_QuienHeptitisB = rbSiHepatitis.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_EspecificacionesAgua = textAguaPotable.Text;
-                        objNinioDto.v_EspecificacionesDesague = textDesague.Text;
-
-                        ninioId = _objAtencionesIntegralesBl.AddNinio(ref objOperationResult, objNinioDto, Globals.ClientSession.GetAsList());
-                    }
-                    else
-                    {
-                        objNinioDto.v_NombreCuidador = txtNombreMadrePadreResponsable.Text;
-                        objNinioDto.v_EdadCuidador = txtEdadMadrePadreResponsable.Text;
-                        objNinioDto.v_DniCuidador = txtDNIMadrePadreResponsable.Text;
-
-                        objNinioDto.v_NombrePadre = txtNombrePadreTutor.Text;
-                        objNinioDto.v_EdadPadre = txtEdadPadre.Text;
-                        objNinioDto.v_DniPadre = txtDNIPadre.Text;
-                        objNinioDto.i_TipoAfiliacionPadre = Convert.ToInt32(listTipoAfiliacionHombre.SelectedValue);
-                        objNinioDto.v_CodigoAfiliacionPadre = txtAfiliacionPadre.Text;
-                        objNinioDto.i_GradoInstruccionPadre = Convert.ToInt32(listaGradoInstruccionHombre.SelectedValue);
-                        objNinioDto.v_OcupacionPadre = txtOcupacionPadre.Text;
-                        objNinioDto.i_EstadoCivilIdPadre = Convert.ToInt32(listaEstadoCivilHombre.SelectedValue);
-                        objNinioDto.v_ReligionPadre = txtReligionPadre.Text;
-
-                        objNinioDto.v_NombreMadre = txtNombreMadreTutor.Text;
-                        objNinioDto.v_EdadMadre = txtEdadMadre.Text;
-                        objNinioDto.v_DniMadre = txtDNIMadre.Text;
-                        objNinioDto.i_TipoAfiliacionMadre = Convert.ToInt32(listTipoAfiliacionMujer.SelectedValue);
-                        objNinioDto.v_CodigoAfiliacionMadre = txtAfiliacionMadre.Text;
-                        objNinioDto.i_GradoInstruccionMadre = Convert.ToInt32(listaGradoInstruccionMujer.SelectedValue);
-                        objNinioDto.v_OcupacionMadre = txtOcupacionMadre.Text;
-                        objNinioDto.i_EstadoCivilIdMadre1 = Convert.ToInt32(listaEstadoCivilMujer.SelectedValue);
-                        objNinioDto.v_ReligionMadre = txtReligionMadre.Text;
-
-                        objNinioDto.v_PatologiasGestacion = textPatologiasGestacion.Text;
-                        objNinioDto.v_nEmbarazos = txtNEmbarazo.Text;
-                        objNinioDto.v_nAPN = txtAPN.Text;
-                        objNinioDto.v_LugarAPN = textLugarAPN.Text;
-                        objNinioDto.v_ComplicacionesParto = textComplicacionesParto.Text;
-                        objNinioDto.v_Atencion = textQuienAtendio.Text;
-
-                        objNinioDto.v_EdadGestacion = textEdadNacer.Text;
-                        objNinioDto.v_Peso = textPesoNacer.Text;
-                        objNinioDto.v_Talla = textTallaNacer.Text;
-                        objNinioDto.v_PerimetroCefalico = textPerimetroCefalico.Text;
-                        objNinioDto.v_TiempoHospitalizacion = textTiempoHospit.Text;
-                        objNinioDto.v_PerimetroToracico = textPerimetroToracico.Text;
-                        objNinioDto.v_EspecificacionesNac = textEspecificacionesNacer.Text;
-                        objNinioDto.v_InicioAlimentacionComp = txtInicioAlimentación.Text;
-                        objNinioDto.v_AlergiasMedicamentos = textAlergiaMedicamentos.Text;
-                        objNinioDto.v_OtrosAntecedentes = textOtrosAntecedentes.Text;
-
-                        objNinioDto.v_QuienTuberculosis = textQuienTuberculosis.Text;
-                        objNinioDto.i_QuienTuberculosis = rbSiTuberculosis.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienAsma = textQuienASMA.Text;
-                        objNinioDto.i_QuienAsma = rbSiAsma.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienVIH = textQuienVIH.Text;
-                        objNinioDto.i_QuienVIH = rbSiVih.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienDiabetes = textQuienDiabetes.Text;
-                        objNinioDto.i_QuienDiabetes = rbSiDiabetes.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienEpilepsia = textQuienEpilepsia.Text;
-                        objNinioDto.i_QuienEpilepsia = rbSiEpilepsia.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienAlergias = textQuienAlergias.Text;
-                        objNinioDto.i_QuienAlergias = rbSiAlergia.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienViolenciaFamiliar = textQuienViolenciaFamiliar.Text;
-                        objNinioDto.i_QuienViolenciaFamiliar = rbSiViolencia.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienAlcoholismo = textQuienAlcoholismo.Text;
-                        objNinioDto.i_QuienAlcoholismo = rbSiAlcoholismo.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienDrogadiccion = textQuienDrogadiccion.Text;
-                        objNinioDto.i_QuienDrogadiccion = rbSiDrogadiccion.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_QuienHeptitisB = textQuienHepatitisB.Text;
-                        objNinioDto.i_QuienHeptitisB = rbSiHepatitis.Checked ? (int)Enfermedad.Si : (int)Enfermedad.No;
-
-                        objNinioDto.v_EspecificacionesAgua = textAguaPotable.Text;
-                        objNinioDto.v_EspecificacionesDesague = textDesague.Text;
-
-                        _objAtencionesIntegralesBl.UpdNinio(ref objOperationResult, objNinioDto, Globals.ClientSession.GetAsList());
-                    }
-                    Refresh();
-                }
-                else if (13 <= _age && _age <= 17)
-                {
-                    if (objAdolDto == null)
-                    {
-                        objAdolDto = new adolescenteDto();
-                    }
-
-                    if (objAdolDto.v_AdolescenteId == null)
-                    {
-                        objAdolDto.v_PersonId = idPerson.v_PersonId.ToString();
-                        objAdolDto.v_NombreCuidador = textNombreCuidadorAdol.Text;
-                        objAdolDto.v_DniCuidador = textDniCuidadorAdol.Text;
-                        objAdolDto.v_EdadCuidador = textEdadAdol.Text;
-                        objAdolDto.v_ViveCon = textViveConAdol.Text;
-                        objAdolDto.v_EdadInicioTrabajo = txtAdoEdadIniTrab.Text;
-                        objAdolDto.v_TipoTrabajo = txtAdoTipoTrab.Text;
-                        objAdolDto.v_NroHorasTv = txtAdoNroTv.Text;
-                        objAdolDto.v_NroHorasJuegos = txtAdoNroJuegos.Text;
-                        objAdolDto.v_MenarquiaEspermarquia = txtAdoMenarquia.Text;
-                        objAdolDto.v_EdadInicioRS = txtAdoEdadRS.Text;
-                        objAdolDto.v_Observaciones = textObservacionesSexualidadAdol.Text;
-
-                        adolId = _objAtencionesIntegralesBl.AddAdolescente(ref objOperationResult, objAdolDto, Globals.ClientSession.GetAsList());
-                    }
-                    else
-                    {
-                        objAdolDto.v_NombreCuidador = textNombreCuidadorAdol.Text;
-                        objAdolDto.v_DniCuidador = textDniCuidadorAdol.Text;
-                        objAdolDto.v_EdadCuidador = textEdadAdol.Text;
-                        objAdolDto.v_ViveCon = textViveConAdol.Text;
-                        objAdolDto.v_EdadInicioTrabajo = txtAdoEdadIniTrab.Text;
-                        objAdolDto.v_TipoTrabajo = txtAdoTipoTrab.Text;
-                        objAdolDto.v_NroHorasTv = txtAdoNroTv.Text;
-                        objAdolDto.v_NroHorasJuegos = txtAdoNroJuegos.Text;
-                        objAdolDto.v_MenarquiaEspermarquia = txtAdoMenarquia.Text;
-                        objAdolDto.v_EdadInicioRS = txtAdoEdadRS.Text;
-                        objAdolDto.v_Observaciones = textObservacionesSexualidadAdol.Text;
-
-                        _objAtencionesIntegralesBl.UpdAdolescente(ref objOperationResult, objAdolDto, Globals.ClientSession.GetAsList());
-                    }
-                }
-                else if (18 <= _age && _age <= 64)
-                {
-
-                    if (personData.i_SexTypeId == (int)Gender.MASCULINO)
-                    {
-                        if (objAdultoDto == null)
-                        {
-                            objAdultoDto = new adultoDto();
-                        }
-
-                        if (objAdultoDto.v_AdultoId == null)
-                        {
-                            objAdultoDto.v_PersonId = idPerson.v_PersonId.ToString();
-                            objAdultoDto.v_NombreCuidador = txtAmCuidador.Text;
-                            objAdultoDto.v_EdadCuidador = txtAmCuidadorEdad.Text;
-                            objAdultoDto.v_DniCuidador = txtAmCuidadorDni.Text;
-                            objAdultoDto.v_OtrosAntecedentes = textOtroAntecedentesFamiliares.Text;
-                            objAdultoDto.v_FlujoVaginal = textFlujoVaginalPatológico.Text;
-                            objAdultoDto.v_MedicamentoFrecuente = textMedicamentoFrecuenteDosis.Text;
-                            objAdultoDto.v_ReaccionAlergica = textReaccionAlergicaMedicamentos.Text;
-                            objAdultoDto.v_InicioRS = txtAmInicioRs.Text;
-                            objAdultoDto.v_NroPs = txtAmNroPs.Text;
-                            //objAdultoDto.v_FechaUR = txtAmFechaUR.Text;
-                            //objAdultoDto.v_RC = txtAmRC.Text;
-                            //objAdultoDto.v_Parto = txtAmNroParto.Text;
-                            //objAdultoDto.v_Prematuro = txtAmPrematuro.Text;
-                            //objAdultoDto.v_Aborto = txtAmAborto.Text;
-                            //objAdultoDto.v_ObservacionesEmbarazo = textObservacionesEmbarazo.Text;
-
-                            adulId = _objAtencionesIntegralesBl.AddAdulto(ref objOperationResult, objAdultoDto, Globals.ClientSession.GetAsList());
-                        }
-                        else
-                        {
-                            objAdultoDto.v_NombreCuidador = txtAmCuidador.Text;
-                            objAdultoDto.v_EdadCuidador = txtAmCuidadorEdad.Text;
-                            objAdultoDto.v_DniCuidador = txtAmCuidadorDni.Text;
-                            objAdultoDto.v_OtrosAntecedentes = textOtroAntecedentesFamiliares.Text;
-                            objAdultoDto.v_FlujoVaginal = textFlujoVaginalPatológico.Text;
-                            objAdultoDto.v_MedicamentoFrecuente = textMedicamentoFrecuenteDosis.Text;
-                            objAdultoDto.v_ReaccionAlergica = textReaccionAlergicaMedicamentos.Text;
-                            objAdultoDto.v_InicioRS = txtAmInicioRs.Text;
-                            objAdultoDto.v_NroPs = txtAmNroPs.Text;
-                            objAdultoDto.v_FechaUR = txtAmFechaUR.Text;
-                            //objAdultoDto.v_RC = txtAmRC.Text;
-                            //objAdultoDto.v_Parto = txtAmNroParto.Text;
-                            //objAdultoDto.v_Prematuro = txtAmPrematuro.Text;
-                            //objAdultoDto.v_Aborto = txtAmAborto.Text;
-                            //objAdultoDto.v_ObservacionesEmbarazo = textObservacionesEmbarazo.Text;
-
-                            _objAtencionesIntegralesBl.UpdAdulto(ref objOperationResult, objAdultoDto, Globals.ClientSession.GetAsList());
-                        }
-                    }
-                    else
-                    {
-                        if (objAdultoDto == null)
-                        {
-                            objAdultoDto = new adultoDto();
-                        }
-
-                        if (objAdultoDto.v_AdultoId == null)
-                        {
-                            objAdultoDto.v_PersonId = idPerson.v_PersonId.ToString();
-                            objAdultoDto.v_NombreCuidador = txtAmCuidador.Text;
-                            objAdultoDto.v_EdadCuidador = txtAmCuidadorEdad.Text;
-                            objAdultoDto.v_DniCuidador = txtAmCuidadorDni.Text;
-                            objAdultoDto.v_OtrosAntecedentes = textOtroAntecedentesFamiliares.Text;
-                            objAdultoDto.v_FlujoVaginal = textFlujoVaginalPatológico.Text;
-                            objAdultoDto.v_MedicamentoFrecuente = textMedicamentoFrecuenteDosis.Text;
-                            objAdultoDto.v_ReaccionAlergica = textReaccionAlergicaMedicamentos.Text;
-                            objAdultoDto.v_InicioRS = txtAmInicioRs.Text;
-                            objAdultoDto.v_NroPs = txtAmNroPs.Text;
-                            objAdultoDto.v_FechaUR = txtAmFechaUR.Text;
-                            objAdultoDto.v_RC = txtAmRC.Text;
-                            objAdultoDto.v_Parto = txtAmNroParto.Text;
-                            objAdultoDto.v_Prematuro = txtAmPrematuro.Text;
-                            objAdultoDto.v_Aborto = txtAmAborto.Text;
-                            objAdultoDto.v_ObservacionesEmbarazo = textObservacionesEmbarazo.Text;
-
-                            adulId = _objAtencionesIntegralesBl.AddAdulto(ref objOperationResult, objAdultoDto, Globals.ClientSession.GetAsList());
-                        }
-                        else
-                        {
-                            objAdultoDto.v_NombreCuidador = txtAmCuidador.Text;
-                            objAdultoDto.v_EdadCuidador = txtAmCuidadorEdad.Text;
-                            objAdultoDto.v_DniCuidador = txtAmCuidadorDni.Text;
-                            objAdultoDto.v_OtrosAntecedentes = textOtroAntecedentesFamiliares.Text;
-                            objAdultoDto.v_FlujoVaginal = textFlujoVaginalPatológico.Text;
-                            objAdultoDto.v_MedicamentoFrecuente = textMedicamentoFrecuenteDosis.Text;
-                            objAdultoDto.v_ReaccionAlergica = textReaccionAlergicaMedicamentos.Text;
-                            objAdultoDto.v_InicioRS = txtAmInicioRs.Text;
-                            objAdultoDto.v_NroPs = txtAmNroPs.Text;
-                            objAdultoDto.v_FechaUR = txtAmFechaUR.Text;
-                            objAdultoDto.v_RC = txtAmRC.Text;
-                            objAdultoDto.v_Parto = txtAmNroParto.Text;
-                            objAdultoDto.v_Prematuro = txtAmPrematuro.Text;
-                            objAdultoDto.v_Aborto = txtAmAborto.Text;
-                            objAdultoDto.v_ObservacionesEmbarazo = textObservacionesEmbarazo.Text;
-
-                            _objAtencionesIntegralesBl.UpdAdulto(ref objOperationResult, objAdultoDto, Globals.ClientSession.GetAsList());
-                        }
-
-                    }
-                }
-                else
-                {
-                    if (personData.i_SexTypeId == (int)Gender.MASCULINO)
-                    {
-                        if (objAdultoMAyorDto == null)
-                        {
-                            objAdultoMAyorDto = new adultomayorDto();
-                        }
-
-                        if (objAdultoMAyorDto.v_AdultoMayorId == null)
-                        {
-                            objAdultoMAyorDto.v_PersonId = idPerson.v_PersonId.ToString();
-                            objAdultoMAyorDto.v_NombreCuidador = txtAmCuidador.Text;
-                            objAdultoMAyorDto.v_EdadCuidador = txtAmCuidadorEdad.Text;
-                            objAdultoMAyorDto.v_DniCuidador = txtAmCuidadorDni.Text;
-                            //objAdultoMAyorDto.v_OtrosAntecedentes = textOtroAntecedentesFamiliares.Text;
-                            objAdultoMAyorDto.v_FlujoVaginal = textFlujoVaginalPatológico.Text;
-                            objAdultoMAyorDto.v_MedicamentoFrecuente = textMedicamentoFrecuenteDosis.Text;
-                            objAdultoMAyorDto.v_ReaccionAlergica = textReaccionAlergicaMedicamentos.Text;
-                            objAdultoMAyorDto.v_InicioRS = txtAmInicioRs.Text;
-                            objAdultoMAyorDto.v_NroPs = txtAmNroPs.Text;
-                            //objAdultoDto.v_FechaUR = txtAmFechaUR.Text;
-                            //objAdultoDto.v_RC = txtAmRC.Text;
-                            //objAdultoDto.v_Parto = txtAmNroParto.Text;
-                            //objAdultoDto.v_Prematuro = txtAmPrematuro.Text;
-                            //objAdultoDto.v_Aborto = txtAmAborto.Text;
-                            //objAdultoDto.v_ObservacionesEmbarazo = textObservacionesEmbarazo.Text;
-
-                            adulmayId = _objAtencionesIntegralesBl.AddAdultoMayor(ref objOperationResult, objAdultoMAyorDto, Globals.ClientSession.GetAsList());
-                        }
-                        else
-                        {
-                            objAdultoMAyorDto.v_NombreCuidador = txtAmCuidador.Text;
-                            objAdultoMAyorDto.v_EdadCuidador = txtAmCuidadorEdad.Text;
-                            objAdultoMAyorDto.v_DniCuidador = txtAmCuidadorDni.Text;
-                            //objAdultoMAyorDto.v_OtrosAntecedentes = textOtroAntecedentesFamiliares.Text;
-                            objAdultoMAyorDto.v_FlujoVaginal = textFlujoVaginalPatológico.Text;
-                            objAdultoMAyorDto.v_MedicamentoFrecuente = textMedicamentoFrecuenteDosis.Text;
-                            objAdultoMAyorDto.v_ReaccionAlergica = textReaccionAlergicaMedicamentos.Text;
-                            objAdultoMAyorDto.v_InicioRS = txtAmInicioRs.Text;
-                            objAdultoMAyorDto.v_NroPs = txtAmNroPs.Text;
-                            objAdultoMAyorDto.v_FechaUR = txtAmFechaUR.Text;
-                            //objAdultoDto.v_RC = txtAmRC.Text;
-                            //objAdultoDto.v_Parto = txtAmNroParto.Text;
-                            //objAdultoDto.v_Prematuro = txtAmPrematuro.Text;
-                            //objAdultoDto.v_Aborto = txtAmAborto.Text;
-                            //objAdultoDto.v_ObservacionesEmbarazo = textObservacionesEmbarazo.Text;
-
-                            _objAtencionesIntegralesBl.UpdAdultoMayor(ref objOperationResult, objAdultoMAyorDto, Globals.ClientSession.GetAsList());
-                        }
-                    }
-                    else
-                    {
-                        if (objAdultoMAyorDto == null)
-                        {
-                            objAdultoMAyorDto = new adultomayorDto();
-                        }
-
-                        if (objAdultoMAyorDto.v_AdultoMayorId == null)
-                        {
-                            objAdultoMAyorDto.v_PersonId = idPerson.v_PersonId.ToString();
-                            objAdultoMAyorDto.v_NombreCuidador = txtAmCuidador.Text;
-                            objAdultoMAyorDto.v_EdadCuidador = txtAmCuidadorEdad.Text;
-                            objAdultoMAyorDto.v_DniCuidador = txtAmCuidadorDni.Text;
-                            //objAdultoMAyorDto.v_OtrosAntecedentes = textOtroAntecedentesFamiliares.Text;
-                            objAdultoMAyorDto.v_FlujoVaginal = textFlujoVaginalPatológico.Text;
-                            objAdultoMAyorDto.v_MedicamentoFrecuente = textMedicamentoFrecuenteDosis.Text;
-                            objAdultoMAyorDto.v_ReaccionAlergica = textReaccionAlergicaMedicamentos.Text;
-                            objAdultoMAyorDto.v_InicioRS = txtAmInicioRs.Text;
-                            objAdultoMAyorDto.v_NroPs = txtAmNroPs.Text;
-                            objAdultoMAyorDto.v_FechaUR = txtAmFechaUR.Text;
-                            objAdultoMAyorDto.v_RC = txtAmRC.Text;
-                            objAdultoMAyorDto.v_Parto = txtAmNroParto.Text;
-                            objAdultoMAyorDto.v_Prematuro = txtAmPrematuro.Text;
-                            objAdultoMAyorDto.v_Aborto = txtAmAborto.Text;
-                            objAdultoMAyorDto.v_ObservacionesEmbarazo = textObservacionesEmbarazo.Text;
-
-                            adulmayId = _objAtencionesIntegralesBl.AddAdultoMayor(ref objOperationResult, objAdultoMAyorDto, Globals.ClientSession.GetAsList());
-                        }
-                        else
-                        {
-                            objAdultoMAyorDto.v_NombreCuidador = txtAmCuidador.Text;
-                            objAdultoMAyorDto.v_EdadCuidador = txtAmCuidadorEdad.Text;
-                            objAdultoMAyorDto.v_DniCuidador = txtAmCuidadorDni.Text;
-                            //objAdultoMAyorDto.v_OtrosAntecedentes = textOtroAntecedentesFamiliares.Text;
-                            objAdultoMAyorDto.v_FlujoVaginal = textFlujoVaginalPatológico.Text;
-                            objAdultoMAyorDto.v_MedicamentoFrecuente = textMedicamentoFrecuenteDosis.Text;
-                            objAdultoMAyorDto.v_ReaccionAlergica = textReaccionAlergicaMedicamentos.Text;
-                            objAdultoMAyorDto.v_InicioRS = txtAmInicioRs.Text;
-                            objAdultoMAyorDto.v_NroPs = txtAmNroPs.Text;
-                            objAdultoMAyorDto.v_FechaUR = txtAmFechaUR.Text;
-                            objAdultoMAyorDto.v_RC = txtAmRC.Text;
-                            objAdultoMAyorDto.v_Parto = txtAmNroParto.Text;
-                            objAdultoMAyorDto.v_Prematuro = txtAmPrematuro.Text;
-                            objAdultoMAyorDto.v_Aborto = txtAmAborto.Text;
-                            objAdultoMAyorDto.v_ObservacionesEmbarazo = textObservacionesEmbarazo.Text;
-
-                            _objAtencionesIntegralesBl.UpdAdultoMayor(ref objOperationResult, objAdultoMAyorDto, Globals.ClientSession.GetAsList());
-                        }
-
-                    }
-                }
-
-
-                response = _serviceBL.GuardarAntecedenteAsistencial(Listado, Globals.ClientSession.i_SystemUserId,_personId,GrupoEtario,Globals.ClientSession.i_CurrentExecutionNodeId);
-            }
-
-            if (response)
-            {
-                MessageBox.Show("Registro guardado satisfactoriamente!.", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                MessageBox.Show("Sucedió un error al intentar guardar la información .... intente más tarde.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        private void btnGuardarCuidadosPreventivos_Click(object sender, EventArgs e)
-        {
-            frmEsoCuidadosPreventivosFechas data = new frmEsoCuidadosPreventivosFechas();
-            data.FechaServicio = _FechaServico.Value;
-
-            List<frmEsoCuidadosPreventivos> Hijos = new List<frmEsoCuidadosPreventivos>();
-            List<frmEsoCuidadosPreventivosComentarios> Comentarios = new List<frmEsoCuidadosPreventivosComentarios>();
-
-            foreach (DataGridViewRow D in dataGridView1.Rows)
-            {
-                int CelIndex = D.Cells.Count - 2;
-
-                DataGridViewCheckBoxCell cell = D.Cells[CelIndex] as DataGridViewCheckBoxCell;
-
-                if (cell != null)
-                {
-                    frmEsoCuidadosPreventivos H = new frmEsoCuidadosPreventivos()
-                    {
-                        GrupoId = int.Parse(D.Cells["GrupoID"].Value.ToString()),
-                        ParameterId = int.Parse(D.Cells["ParameterId"].Value.ToString()),
-                        Valor = bool.Parse(cell.Value.ToString())
-                    };
-
-                    Hijos.Add(H);
-
-                    frmEsoCuidadosPreventivosComentarios C = new frmEsoCuidadosPreventivosComentarios()
-                    {
-                        GrupoId = int.Parse(D.Cells["GrupoID"].Value.ToString()),
-                        ParametroId = int.Parse(D.Cells["ParameterId"].Value.ToString()),
-                        Comentario = D.Cells["Comentarios"].Value.ToString()
-                    };
-
-                    Comentarios.Add(C);
-                }
-            }
-
-            data.Listado = Hijos;
-
-            bool response = false;
-
-            using (new LoadingClass.PleaseWait(this.Location, "Generando..."))
-            {
-                response = _serviceBL.GuardarCuidadosPreventivos(data, _personId, Globals.ClientSession.i_SystemUserId, Globals.ClientSession.i_CurrentExecutionNodeId, Comentarios);
-            }
-
-            if (response)
-            {
-                MessageBox.Show("Registro guardado satisfactoriamente!.", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                MessageBox.Show("Sucedió un error al intentar guardar la información .... intente más tarde.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void grdPlanIntegral_InitializeLayout(object sender, InitializeLayoutEventArgs e)
+        private void grdTotalDiagnosticos_InitializeLayout(object sender, InitializeLayoutEventArgs e)
         {
 
         }
 
-        private void btnNuevoEmbarazo_Click(object sender, EventArgs e)
-        {
-            idPerson = _objAtencionesIntegralesBl.GetService(_serviceId);
-            PacientId = idPerson.v_PersonId.ToString();
-            frmEmbarazo frm = new frmEmbarazo("New", PacientId, "");
 
-            frm.ShowDialog();
-            CargarGrillaEmbarazos(idPerson.v_PersonId);
-        }
-
-        private void btnEliminarEmbarazo_Click(object sender, EventArgs e)
-        {
-            idPerson = _objAtencionesIntegralesBl.GetService(_serviceId);
-            PacientId = idPerson.v_PersonId.ToString();
-            OperationResult objOperationResult = new OperationResult();
-            string id = grdEmbarazos.Selected.Rows[0].Cells["v_EmbarazoId"].Value.ToString();
-            DialogResult Result = MessageBox.Show("¿Está seguro de eliminar este registro?:" + System.Environment.NewLine + objOperationResult.ExceptionMessage, "¡ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (Result == System.Windows.Forms.DialogResult.Yes)
-            {
-                _objEmbarazoBL.DeleteEmbarazo(ref objOperationResult, id, Globals.ClientSession.GetAsList());
-                CargarGrillaEmbarazos(idPerson.v_PersonId);
-            }
-            else
-            {
-                this.Close();
-            }
-        }
-        private void label105_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEditarEmbarazo_Click(object sender, EventArgs e)
-        {
-            idPerson = _objAtencionesIntegralesBl.GetService(_serviceId);
-            PacientId = idPerson.v_PersonId.ToString();
-            string id = grdEmbarazos.Selected.Rows[0].Cells["v_EmbarazoId"].Value.ToString();
-
-            frmEmbarazo frm = new frmEmbarazo("Edit", PacientId, id);
-            frm.ShowDialog();
-            CargarGrillaEmbarazos(idPerson.v_PersonId);
-        }
-
-        private void rbSiTuberculosis_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienTuberculosis.Enabled = true;
-        }
-
-        private void rbNoTuberculosis_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienTuberculosis.Enabled = false;
-            textQuienTuberculosis.Text = "";
-        }
-
-        private void rbSiAsma_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienASMA.Enabled = true;
-        }
-
-        private void rbNoAsma_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienASMA.Enabled = false;
-            textQuienASMA.Text = "";
-        }
-
-        private void rbSiVih_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienVIH.Enabled = true;
-        }
-
-        private void rbNoVih_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienVIH.Enabled = false;
-            textQuienVIH.Text = "";
-        }
-
-        private void rbSiDiabetes_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienDiabetes.Enabled = true;
-        }
-
-        private void rbNoDiabetes_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienDiabetes.Enabled = false;
-            textQuienDiabetes.Text = "";
-        }
-
-        private void rbSiEpilepsia_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienEpilepsia.Enabled = true;
-        }
-
-        private void rbNoEpilepsia_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienEpilepsia.Enabled = false;
-            textQuienEpilepsia.Text = "";
-        }
-
-        private void rbSiAlergia_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienAlergias.Enabled = true;
-        }
-
-        private void rbNoAlergia_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienAlergias.Enabled = false;
-            textQuienAlergias.Text = "";
-        }
-
-        private void rbSiViolencia_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienViolenciaFamiliar.Enabled = true;
-        }
-
-        private void rbNoViolencia_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienViolenciaFamiliar.Enabled = false;
-            textQuienViolenciaFamiliar.Text = "";
-        }
-
-        private void textQuienAlcoholismo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbSiAlcoholismo_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienAlcoholismo.Enabled = true;
-        }
-
-        private void rbNoAlcoholismo_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienAlcoholismo.Enabled = false;
-            textQuienAlcoholismo.Text = "";
-        }
-
-        private void rbSiDrogadiccion_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienDrogadiccion.Enabled = true;
-        }
-
-        private void rbNoDrogadiccion_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienDrogadiccion.Enabled = false;
-            textQuienDrogadiccion.Text = "";
-        }
-
-        private void rbSiHepatitis_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienHepatitisB.Enabled = true;
-        }
-
-        private void rbNoHepatitis_CheckedChanged(object sender, EventArgs e)
-        {
-            textQuienHepatitisB.Enabled = false;
-            textQuienHepatitisB.Text = "";
-        }
-               
     }
 
 }

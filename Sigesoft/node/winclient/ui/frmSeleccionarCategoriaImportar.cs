@@ -193,11 +193,12 @@ namespace Sigesoft.Node.WinClient.UI
 
                                     filaDxOftalmologia += 1;
                                 }
+
                                 _serviceBL.AddDiagnosticRepository(ref objOperationResult,
-                                                   ListaDxByComponent,
-                                                   serviceComponentDto,
-                                                   Globals.ClientSession.GetAsList(),
-                                                   true, false);
+                                                     ListaDxByComponent,
+                                                     serviceComponentDto,
+                                                     Globals.ClientSession.GetAsList(),
+                                                     true);
 
                             }
 
@@ -341,7 +342,7 @@ namespace Sigesoft.Node.WinClient.UI
                                                             ListaDxByComponent,
                                                             serviceComponentDto,
                                                             Globals.ClientSession.GetAsList(),
-                                                            true, false);
+                                                            true);
 
 
 
@@ -792,7 +793,7 @@ namespace Sigesoft.Node.WinClient.UI
                                                      ListaDxByComponent,
                                                      serviceComponentDto,
                                                      Globals.ClientSession.GetAsList(),
-                                                     true, false);
+                                                     true);
                             }
                         }
 
@@ -1660,10 +1661,10 @@ namespace Sigesoft.Node.WinClient.UI
 
 
                                 _serviceBL.AddDiagnosticRepository(ref objOperationResult,
-                                      ListaDxByComponent,
-                                      serviceComponentDto,
-                                      Globals.ClientSession.GetAsList(),
-                                      true, false);
+                                                     ListaDxByComponent,
+                                                     serviceComponentDto,
+                                                     Globals.ClientSession.GetAsList(),
+                                                     true);
 
                                
                             }
@@ -1817,10 +1818,10 @@ namespace Sigesoft.Node.WinClient.UI
                                 }
 
                                 _serviceBL.AddDiagnosticRepository(ref objOperationResult,
-                                                      ListaDxByComponent,
-                                                      serviceComponentDto,
-                                                      Globals.ClientSession.GetAsList(),
-                                                      true, false);
+                                                     ListaDxByComponent,
+                                                     serviceComponentDto,
+                                                     Globals.ClientSession.GetAsList(),
+                                                     true);
 
                             }
                         }
@@ -2014,7 +2015,7 @@ namespace Sigesoft.Node.WinClient.UI
                                                      ListaDxByComponent,
                                                      serviceComponentDto,
                                                      Globals.ClientSession.GetAsList(),
-                                                     true, false);
+                                                     true);
 
                             }
                         }

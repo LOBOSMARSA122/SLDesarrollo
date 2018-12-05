@@ -9,11 +9,6 @@ namespace Sigesoft.Node.WinClient.BE
     [DataContract]
     public class PacientList
     {
-        public string EmpresaClienteId { get; set; }
-
-        public string GradoInstruccion { get; set; }
-        //public string EstadoCivil { get; set; }
-        public string v_CentroEducativo { get; set; }
         [DataMember]
         public string v_PersonId { get; set; }
         [DataMember]
@@ -141,7 +136,6 @@ namespace Sigesoft.Node.WinClient.BE
         public string v_TypeOfInsuranceName { get; set; }
 
         public string v_WorkingOrganizationName { get; set; }
-        public string v_Employer { get; set; }
         public string v_WorkingOrganizationId { get; set; }
         public string v_WorkingLocationId { get; set; }
 
@@ -227,12 +221,6 @@ namespace Sigesoft.Node.WinClient.BE
         public DateTime? FechaServicio { get; set; }
         public DateTime? FechaCaducidad { get; set; }
 
-        public DateTime? FechaActualizacion { get; set; }
-        public string N_Informe { get; set; }
-        public String v_Religion { get; set; }
-        public String v_Nacionalidad { get; set; }
-        public String v_ResidenciaAnterior { get; set; }
-
         public string MedicoGrabaMedicina { get; set; }
         public int? Edad { get; set; }
         public string Genero { get; set; }
@@ -243,9 +231,5 @@ namespace Sigesoft.Node.WinClient.BE
         public byte[] b_FirmaAuditor { get; set; }
 
         public byte[] logoCliente { get; set; }
-        public string empresa_ { get; set; }
-        public string contrata { get; set; }
-        public string subcontrata { get; set; }
-
     }
 }

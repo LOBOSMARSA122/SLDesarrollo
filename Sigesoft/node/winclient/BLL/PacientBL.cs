@@ -1115,7 +1115,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                      GESO = F.v_Name,
                                      i_AptitudeStatusId = s.i_AptitudeStatusId,
                                      v_MaritalStatus = H.v_Value1,
-                                     EmpresaClienteId = ow.v_OrganizationId,
+                                     //EmpresaClienteId = ow.v_OrganizationId
                                      logoCliente = ow.b_Image
                                  });
 

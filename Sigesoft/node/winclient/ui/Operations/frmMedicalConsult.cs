@@ -1308,12 +1308,12 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 #region GRABAR DATOS ADICIONALES COMO [Diagnósticos + restricciones + recomendaciones]
 
                 // Grabar Dx por examen componente mas sus restricciones
-
+                
                 _serviceBL.AddDiagnosticRepository(ref objOperationResult,
-                                                   _tmpExamDiagnosticComponentList,
-                                                    null,
+                                                    packageForSave.ExamDiagnosticComponentList,
+                                                    packageForSave.ServiceComponent,
                                                     Globals.ClientSession.GetAsList(),
-                                                    true, null);
+                                                    null);
 
 
                 #endregion
@@ -3876,7 +3876,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void mnuVerServicio_Click(object sender, EventArgs e)
         {
-            var frm = new Operations.frmEso(_serviceIdByWiewServiceHistory, null, "View", (int)MasterService.Eso);
+            var frm = new Operations.frmEso(_serviceIdByWiewServiceHistory, null,"View");
             frm.ShowDialog();
         }
 

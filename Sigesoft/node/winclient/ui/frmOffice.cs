@@ -322,7 +322,7 @@ namespace Sigesoft.Node.WinClient.UI
                     grdDataServiceComponent.DataSource = ListServiceComponent;
 
                     this.Enabled = false;
-                    frm = new Operations.frmEso(_serviceId, string.Join("|", _componentIds.Select(p => p)), null, (int)MasterService.Eso);
+                    frm = new Operations.frmEso(_serviceId, string.Join("|", _componentIds.Select(p => p)), null);
                     frm.ShowDialog();
                     this.Enabled = true;
                     // Aviso automático de que se culminaron todos los examanes, se tendria que proceder
@@ -947,7 +947,7 @@ namespace Sigesoft.Node.WinClient.UI
         private void btnAgregarAdiconal_Click(object sender, EventArgs e)
         {
             ServiceBL oServiceBL = new ServiceBL();
-            var frm = new frmAddExam(ListaComponentes, "", _ProtocolId);
+            var frm = new frmAddExam(ListaComponentes);
             frm._serviceId = _serviceId;
             frm.ShowDialog();
 

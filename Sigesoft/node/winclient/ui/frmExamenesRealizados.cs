@@ -800,10 +800,10 @@ namespace Sigesoft.Node.WinClient.UI
             //}
             //else
             //{
-            this.Enabled = false;
-            frm = new Operations.frmEso(TserviceId, null, "View", (int)MasterService.Eso);
-            frm.ShowDialog();
-            this.Enabled = true;
+                this.Enabled = false;
+                frm = new Operations.frmEso(TserviceId, null, "View");
+                frm.ShowDialog();
+                this.Enabled = true;
             //}
         }
 
