@@ -81,14 +81,25 @@ namespace Sigesoft.Node.WinClient.BE
         public DateTime? d_UpdateDateMedicalAnalyst { get; set; }
         public DateTime? d_UpdateDateTechnicalDataRegister { get; set; }
 
+        public DateTime? d_InsertDate { get; set; }
 
         public int? i_ApprovedInsertUserId { get; set; }
         public int? i_ApprovedUpdateUserId { get; set; }
+        public string ApprovedUpdateUser { get; set; }
         public int? i_InsertUserMedicalAnalystId { get; set; }
         public int? i_InsertUserTechnicalDataRegisterId { get; set; }
         public int? i_Iscalling { get; set; }
         public int? i_Iscalling_1 { get; set; }
         public int? i_UpdateUserMedicalAnalystId { get; set; }
         public int? i_UpdateUserTechnicalDataRegisterId { get; set; }
+        public string MedicoTratante { get; set; }
+
+        public decimal? d_SaldoPaciente { get; set; }
+        public decimal? d_SaldoAseguradora { get; set; }
+
+        public int i_EsDeducible { get; set; }
+        public int i_EsCoaseguro { get; set; }
+
+        public decimal? d_Importe { get; set; }
     }
 }

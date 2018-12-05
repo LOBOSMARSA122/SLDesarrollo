@@ -31,6 +31,11 @@
             this.lblNombreComponente = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtFactor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNombreComponente
@@ -45,10 +50,12 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(115, 35);
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Location = new System.Drawing.Point(65, 35);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(61, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(49, 20);
             this.txtPrecio.TabIndex = 1;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // btnOK
             // 
@@ -60,7 +67,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Image = global::Sigesoft.Node.WinClient.UI.Resources.accept;
             this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(115, 60);
+            this.btnOK.Location = new System.Drawing.Point(115, 103);
             this.btnOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(61, 24);
@@ -70,12 +77,66 @@
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.Info;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 20);
+            this.label1.TabIndex = 102;
+            this.label1.Text = "Precio";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.Info;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(120, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 20);
+            this.label2.TabIndex = 104;
+            this.label2.Text = "Factor";
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.Info;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(120, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 20);
+            this.label3.TabIndex = 106;
+            this.label3.Text = "Total";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(168, 67);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(49, 20);
+            this.txtTotal.TabIndex = 105;
+            // 
+            // txtFactor
+            // 
+            this.txtFactor.Location = new System.Drawing.Point(168, 34);
+            this.txtFactor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFactor.MaxLength = 15;
+            this.txtFactor.Name = "txtFactor";
+            this.txtFactor.Size = new System.Drawing.Size(49, 20);
+            this.txtFactor.TabIndex = 149;
+            this.txtFactor.Text = "1.00";
+            this.txtFactor.TextChanged += new System.EventHandler(this.txtFactor_TextChanged);
+            // 
             // FormPrecioComponente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 93);
+            this.ClientSize = new System.Drawing.Size(302, 136);
             this.ControlBox = false;
+            this.Controls.Add(this.txtFactor);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.lblNombreComponente);
@@ -83,6 +144,7 @@
             this.Name = "FormPrecioComponente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Precio";
+            this.Load += new System.EventHandler(this.FormPrecioComponente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,5 +155,10 @@
         private System.Windows.Forms.Label lblNombreComponente;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtFactor;
     }
 }

@@ -11,6 +11,7 @@ namespace Sigesoft.Common
     {
         //[DataMember]
         public string Id { get; set; }
+        public int IdI { get; set; }
         //[DataMember]
         public string Value1 { get; set; }
         //[DataMember]
@@ -21,6 +22,8 @@ namespace Sigesoft.Common
         public Single Value4 { get; set; }
 
         public byte[] Value5 { get; set; }
+
+        public string Field { get; set; }
     }
 
    public class KeyValueDTOCheck

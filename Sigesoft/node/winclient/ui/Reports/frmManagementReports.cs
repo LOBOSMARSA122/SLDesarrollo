@@ -1125,14 +1125,14 @@ namespace Sigesoft.Node.WinClient.UI.Reports
             var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
             var TestIhihara = _serviceBL.ValoresComponente(_serviceId, Constants.TEST_ISHIHARA_ID);
             var TestEstereopsis = _serviceBL.ValoresComponente(_serviceId, Constants.TEST_ESTEREOPSIS_ID);
-
+            var serviceComponents = _serviceBL.GetServiceComponentsReport(_serviceId);
 
             FichaMedicaOcupacional312.CreateFichaMedicalOcupacional312Report(_DataService,
-                        filiationData, _listAtecedentesOcupacionales, _listaPatologicosFamiliares,
-                        _listMedicoPersonales, _listaHabitoNocivos, Antropometria, FuncionesVitales,
-                        ExamenFisico, Oftalmologia, Psicologia, OIT, RX, Laboratorio, Audiometria, Espirometria,
-                        _DiagnosticRepository, _Recomendation, _ExamenesServicio, ValoresDxLab, MedicalCenter,TestIhihara,TestEstereopsis,
-                        pathFile);
+                             filiationData, _listAtecedentesOcupacionales, _listaPatologicosFamiliares,
+                             _listMedicoPersonales, _listaHabitoNocivos, Antropometria, FuncionesVitales,
+                             ExamenFisico, Oftalmologia, Psicologia, OIT, RX, Laboratorio, Audiometria, Espirometria,
+                             _DiagnosticRepository, _Recomendation, _ExamenesServicio, ValoresDxLab, MedicalCenter, TestIhihara, TestEstereopsis,
+                             serviceComponents, pathFile);
         }
 
         private void CreateFichaMedicaTrabajador2(string pathFile)
@@ -1747,7 +1747,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
 
         }
 
-        private void ChooseReport(string componentId, string serviceId, string pPacienteId, int pintIdCrystal)
+        public void ChooseReport(string componentId, string serviceId, string pPacienteId, int pintIdCrystal)
         {
             ruta = Common.Utils.GetApplicationConfigValue("rutaReportes").ToString();
             _tempSourcePath = Path.Combine(Application.StartupPath, "TempMerge");
@@ -2749,8 +2749,8 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     break;
                 case Constants.RX_TORAX_ID:
 
-                    
-                    var RX_TORAX_ID = new ServiceBL().ReportRadiologico(_serviceId, Constants.RX_TORAX_ID);
+                  
+                     var    RX_TORAX_ID = new ServiceBL().ReportRadiologico(_serviceId, Constants.RX_TORAX_ID);
                     dsGetRepo = new DataSet();
 
                     DataTable dt_RX_TORAX_ID = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(RX_TORAX_ID);
@@ -2785,6 +2785,8 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     rp.Close();
                     break;
                 case Constants.OIT_ID:
+
+
                     var OIT_ID = new ServiceBL().ReportInformeRadiografico(_serviceId, Constants.OIT_ID);
 
                     dsGetRepo = new DataSet();
@@ -3527,7 +3529,14 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     {
                         Componente = Constants.RX_TORAX_ID;
                     }
-                    var LUMBOSACRA_ID = new ServiceBL().ReporteLumboSaca(_serviceId, Componente);
+
+                    var LUMBOSACRA_ID = new List<LumboSacracs>();
+                    LUMBOSACRA_ID = new ServiceBL().ReporteLumboSaca(_serviceId, Componente);
+                    if (LUMBOSACRA_ID[0].LUMBOSACRA_1 == "")
+                    {
+                        LUMBOSACRA_ID = new ServiceBL().ReporteLumboSaca(_serviceId, Constants.LUMBOSACRA_ID);
+                    }
+
 
                     dsGetRepo = new DataSet();
 
@@ -4013,5 +4022,47 @@ namespace Sigesoft.Node.WinClient.UI.Reports
         {
 
         }
+
+        public void reportSolo(List<string> componentIds, string idPacient, string serviceId)
+        {
+
+            DialogResult Result = MessageBox.Show("¿Desea visualizar reporte?", "ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            OperationResult objOperationResult = new OperationResult();
+
+            string ruta = Common.Utils.GetApplicationConfigValue("rutaReportesBasura").ToString();
+            string rutaBasura = Common.Utils.GetApplicationConfigValue("rutaReportesBasura").ToString();
+            string rutaConsolidado = Common.Utils.GetApplicationConfigValue("rutaReportesBasura").ToString();
+
+            if (Result == System.Windows.Forms.DialogResult.Yes)
+            {
+                using (new LoadingClass.PleaseWait(this.Location, "Generando..."))
+                {
+                    CrearReportesCrystal(serviceId, idPacient, componentIds, _listaDosaje, Result == System.Windows.Forms.DialogResult.Yes);
+                };
+                var x = _filesNameToMerge.ToList();
+                _mergeExPDF.FilesName = x;
+                _mergeExPDF.DestinationFile = Application.StartupPath + @"\TempMerge\" + _serviceId + ".pdf";
+                _mergeExPDF.DestinationFile = rutaBasura + _serviceId + ".pdf"; ;
+                _mergeExPDF.Execute();
+                _mergeExPDF.RunFile();
+
+                var oService = _serviceBL.GetServiceShort(_serviceId);
+                _mergeExPDF.FilesName = x;
+                _mergeExPDF.DestinationFile = Application.StartupPath + @"\TempMerge\" + oService.Empresa + " - " + oService.Paciente + " - " + oService.FechaServicio.Value.ToString("dd MMMM,  yyyy") + ".pdf";
+
+                _mergeExPDF.DestinationFile = rutaBasura + oService.Empresa + " - " + oService.Paciente + " - " + oService.FechaServicio.Value.ToString("dd MMMM,  yyyy") + ".pdf";
+                _mergeExPDF.Execute();
+
+
+                //Cambiar de estado a generado de reportes
+                //_serviceBL.UpdateStatusPreLiquidation(ref objOperationResult, 2, _serviceId, Globals.ClientSession.GetAsList());
+            }
+            else
+            {
+                //Result = System.Windows.Forms.DialogResult.Cancel;
+                this.Close();
+            }
+        }
+
     }
 }

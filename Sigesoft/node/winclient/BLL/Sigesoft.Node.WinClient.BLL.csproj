@@ -47,16 +47,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaBL.cs" />
+    <Compile Include="AseguradoraBL.cs" />
+    <Compile Include="AtencionesIntegralesBL.cs" />
     <Compile Include="AuthorizedPersonBL.cs" />
     <Compile Include="BlackListBL.cs" />
     <Compile Include="CalendarBL.cs" />
     <Compile Include="DataHierarchyBL.cs" />
     <Compile Include="DxFrecuenteBL.cs" />
     <Compile Include="EmailBL.cs" />
+    <Compile Include="EmbarazoBL.cs" />
     <Compile Include="FacturacionBL.cs" />
     <Compile Include="GesBL.cs" />
     <Compile Include="GroupOccupationBL.cs" />
     <Compile Include="HistoryBL.cs" />
+    <Compile Include="HospitalizacionBL.cs" />
+    <Compile Include="HospitalizacionHabitacionBL.cs" />
+    <Compile Include="LiquidacionBL.cs" />
     <Compile Include="LocationBL.cs" />
     <Compile Include="LogBL.cs" />
     <Compile Include="MasterRecommendationRestricctionBL.cs" />
@@ -70,6 +76,8 @@
     <Compile Include="OccupationBL.cs" />
     <Compile Include="OrganizationBL.cs" />
     <Compile Include="PacientBL.cs" />
+    <Compile Include="PlanIntegralBL.cs" />
+    <Compile Include="ProblemaBL.cs" />
     <Compile Include="ProductBL.cs" />
     <Compile Include="ProfessionalBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +89,7 @@
     <Compile Include="ServiceOrderBL.cs" />
     <Compile Include="SupplierBL.cs" />
     <Compile Include="SystemParameterBL.cs" />
+    <Compile Include="TicketBL.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="WarehouseBL.cs" />
   </ItemGroup>

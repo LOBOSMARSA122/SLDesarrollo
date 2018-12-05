@@ -365,6 +365,12 @@
     <Compile Include="frmAddExam.Designer.cs">
       <DependentUpon>frmAddExam.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdjuntarDeclaracionJurada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdjuntarDeclaracionJurada.Designer.cs">
+      <DependentUpon>frmAdjuntarDeclaracionJurada.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCargoFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -938,6 +944,12 @@
     <Compile Include="frmDiseases.Designer.cs">
       <DependentUpon>frmDiseases.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditarServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarServicio.Designer.cs">
+      <DependentUpon>frmEditarServicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEmail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1040,6 +1052,12 @@
     <Compile Include="frmLaboratorio.Designer.cs">
       <DependentUpon>frmLaboratorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLiquidacion.Designer.cs">
+      <DependentUpon>frmLiquidacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaAtenciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1130,6 +1148,12 @@
     <Compile Include="frmSeleccionarNombreCrystal.Designer.cs">
       <DependentUpon>frmSeleccionarNombreCrystal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSelectOrganization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectOrganization.Designer.cs">
+      <DependentUpon>frmSelectOrganization.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmServicioFacturado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1141,6 +1165,12 @@
     </Compile>
     <Compile Include="frmServicioFacturadoEditar.Designer.cs">
       <DependentUpon>frmServicioFacturadoEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubirInterconsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubirInterconsulta.Designer.cs">
+      <DependentUpon>frmSubirInterconsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTriaje.cs">
       <SubType>Form</SubType>
@@ -1172,6 +1202,66 @@
     <Compile Include="History\frmRuidoPopup.designer.cs">
       <DependentUpon>frmRuidoPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hospitalizacion\frmAddProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmAddProducto.Designer.cs">
+      <DependentUpon>frmAddProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmDarAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmDarAlta.Designer.cs">
+      <DependentUpon>frmDarAlta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmEditarProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmEditarProfesional.Designer.cs">
+      <DependentUpon>frmEditarProfesional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmHabitacion.Designer.cs">
+      <DependentUpon>frmHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmHospitalizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmHospitalizados.Designer.cs">
+      <DependentUpon>frmHospitalizados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmLiquidacionAseguradora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmLiquidacionAseguradora.Designer.cs">
+      <DependentUpon>frmLiquidacionAseguradora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmLiquidacionMedicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmLiquidacionMedicos.Designer.cs">
+      <DependentUpon>frmLiquidacionMedicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmLiquidacionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmLiquidacionReport.Designer.cs">
+      <DependentUpon>frmLiquidacionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmProfesionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmProfesionales.Designer.cs">
+      <DependentUpon>frmProfesionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmTicket.Designer.cs">
+      <DependentUpon>frmTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="MensajeAlerta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1196,17 +1286,23 @@
     <Compile Include="Operations\frmEso.Designer.cs">
       <DependentUpon>frmEso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Operations\frmRecetaMedica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Operations\frmRecetaMedica.Designer.cs">
-      <DependentUpon>frmRecetaMedica.cs</DependentUpon>
-    </Compile>
     <Compile Include="Operations\Popups\frmAtxResultadoExamenAuxiliar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Operations\Popups\frmAtxResultadoExamenAuxiliar.Designer.cs">
       <DependentUpon>frmAtxResultadoExamenAuxiliar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\Popups\frmEmbarazo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operations\Popups\frmEmbarazo.designer.cs">
+      <DependentUpon>frmEmbarazo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations\Popups\frmEspecialista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operations\Popups\frmEspecialista.designer.cs">
+      <DependentUpon>frmEspecialista.cs</DependentUpon>
     </Compile>
     <Compile Include="Operations\Popups\frmPopupAnamnesis.cs">
       <SubType>Form</SubType>
@@ -1220,6 +1316,12 @@
     <Compile Include="Operations\Popups\frmPopupAntecedentes.Designer.cs">
       <DependentUpon>frmPopupAntecedentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Operations\Popups\frmPopupAtencionIntegral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operations\Popups\frmPopupAtencionIntegral.Designer.cs">
+      <DependentUpon>frmPopupAtencionIntegral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operations\Popups\frmPopupServiciosAnteriores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1231,6 +1333,18 @@
     </Compile>
     <Compile Include="Operations\Popups\frmSelectSignature.Designer.cs">
       <DependentUpon>frmSelectSignature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDeclaracionDrogas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteDeclaracionDrogas.Designer.cs">
+      <DependentUpon>ReporteDeclaracionDrogas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\crApendice09_Drogas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crApendice09_Drogas.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\crCertificadoAptitud2.cs">
       <AutoGen>True</AutoGen>
@@ -2255,12 +2369,6 @@
     <Compile Include="History\frmOccupationalHistory.Designer.cs">
       <DependentUpon>frmOccupationalHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmOffice_.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmOffice_.Designer.cs">
-      <DependentUpon>frmOffice_.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPacient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2819,6 +2927,24 @@
     <Compile Include="UserControls\ucFileUpload.designer.cs">
       <DependentUpon>ucFileUpload.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucFotoTipo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucFotoTipo.Designer.cs">
+      <DependentUpon>ucFotoTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucHisorialTriaje.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucHisorialTriaje.Designer.cs">
+      <DependentUpon>ucHisorialTriaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucHistorialGrupoFactor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucHistorialGrupoFactor.Designer.cs">
+      <DependentUpon>ucHistorialGrupoFactor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucOdontograma.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2885,6 +3011,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddExam.resx">
       <DependentUpon>frmAddExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdjuntarDeclaracionJurada.resx">
+      <DependentUpon>frmAdjuntarDeclaracionJurada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCargoFactura.resx">
       <DependentUpon>frmCargoFactura.cs</DependentUpon>
@@ -2959,6 +3088,9 @@
     <EmbeddedResource Include="frmDiseases.resx">
       <DependentUpon>frmDiseases.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarServicio.resx">
+      <DependentUpon>frmEditarServicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmail.resx">
       <DependentUpon>frmEmail.cs</DependentUpon>
     </EmbeddedResource>
@@ -3010,6 +3142,9 @@
     <EmbeddedResource Include="frmLaboratorio.resx">
       <DependentUpon>frmLaboratorio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLiquidacion.resx">
+      <DependentUpon>frmLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListaAtenciones.resx">
       <DependentUpon>frmListaAtenciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -3055,11 +3190,17 @@
     <EmbeddedResource Include="frmSeleccionarNombreCrystal.resx">
       <DependentUpon>frmSeleccionarNombreCrystal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectOrganization.resx">
+      <DependentUpon>frmSelectOrganization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmServicioFacturado.resx">
       <DependentUpon>frmServicioFacturado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmServicioFacturadoEditar.resx">
       <DependentUpon>frmServicioFacturadoEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubirInterconsulta.resx">
+      <DependentUpon>frmSubirInterconsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTriaje.resx">
       <DependentUpon>frmTriaje.cs</DependentUpon>
@@ -3076,6 +3217,36 @@
     <EmbeddedResource Include="History\frmRuidoPopup.resx">
       <DependentUpon>frmRuidoPopup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmAddProducto.resx">
+      <DependentUpon>frmAddProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmDarAlta.resx">
+      <DependentUpon>frmDarAlta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmEditarProfesional.resx">
+      <DependentUpon>frmEditarProfesional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmHabitacion.resx">
+      <DependentUpon>frmHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmHospitalizados.resx">
+      <DependentUpon>frmHospitalizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmLiquidacionAseguradora.resx">
+      <DependentUpon>frmLiquidacionAseguradora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmLiquidacionMedicos.resx">
+      <DependentUpon>frmLiquidacionMedicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmLiquidacionReport.resx">
+      <DependentUpon>frmLiquidacionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmProfesionales.resx">
+      <DependentUpon>frmProfesionales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmTicket.resx">
+      <DependentUpon>frmTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MensajeAlerta.resx">
       <DependentUpon>MensajeAlerta.cs</DependentUpon>
     </EmbeddedResource>
@@ -3088,11 +3259,14 @@
     <EmbeddedResource Include="Operations\frmEso.resx">
       <DependentUpon>frmEso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Operations\frmRecetaMedica.resx">
-      <DependentUpon>frmRecetaMedica.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Operations\Popups\frmAtxResultadoExamenAuxiliar.resx">
       <DependentUpon>frmAtxResultadoExamenAuxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\Popups\frmEmbarazo.resx">
+      <DependentUpon>frmEmbarazo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\Popups\frmEspecialista.resx">
+      <DependentUpon>frmEspecialista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operations\Popups\frmPopupAnamnesis.resx">
       <DependentUpon>frmPopupAnamnesis.cs</DependentUpon>
@@ -3100,11 +3274,21 @@
     <EmbeddedResource Include="Operations\Popups\frmPopupAntecedentes.resx">
       <DependentUpon>frmPopupAntecedentes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Operations\Popups\frmPopupAtencionIntegral.resx">
+      <DependentUpon>frmPopupAtencionIntegral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Operations\Popups\frmPopupServiciosAnteriores.resx">
       <DependentUpon>frmPopupServiciosAnteriores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operations\Popups\frmSelectSignature.resx">
       <DependentUpon>frmSelectSignature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteDeclaracionDrogas.resx">
+      <DependentUpon>ReporteDeclaracionDrogas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crApendice09_Drogas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crApendice09_Drogas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\crCertificadoAptitud2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -3730,9 +3914,6 @@
     <EmbeddedResource Include="frmMovementStock.resx">
       <DependentUpon>frmMovementStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOffice_.resx">
-      <DependentUpon>frmOffice_.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPacient.resx">
       <DependentUpon>frmPacient.cs</DependentUpon>
     </EmbeddedResource>
@@ -4048,6 +4229,15 @@
     <EmbeddedResource Include="UserControls\ucFileUpload.resx">
       <DependentUpon>ucFileUpload.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucFotoTipo.resx">
+      <DependentUpon>ucFotoTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucHisorialTriaje.resx">
+      <DependentUpon>ucHisorialTriaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucHistorialGrupoFactor.resx">
+      <DependentUpon>ucHistorialGrupoFactor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucOdontograma.resx">
       <DependentUpon>ucOdontograma.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -4070,9 +4260,7 @@
     <EmbeddedResource Include="UserControls\ucSomnolencia.resx">
       <DependentUpon>ucSomnolencia.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="app.config" />
     <None Include="Dataset\Anexo7D.xsc">
       <DependentUpon>Anexo7D.xsd</DependentUpon>
     </None>
@@ -5013,6 +5201,10 @@
       <Project>{83b4875b-6b20-49f1-891d-b1f379760899}</Project>
       <Name>Sigesoft.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Sigesoft.Node.Contasol.Integration\Sigesoft.Node.Contasol.Integration.csproj">
+      <Project>{02cd938d-a8d0-4540-b50a-fec346261ce4}</Project>
+      <Name>Sigesoft.Node.Contasol.Integration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BE\Sigesoft.Node.WinClient.BE.csproj">
       <Project>{ff8e51f3-510e-4e90-9627-0ad3e9cb8f5c}</Project>
       <Name>Sigesoft.Node.WinClient.BE</Name>
@@ -5111,6 +5303,7 @@
     <Content Include="Backgrounds\FOTO-20.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\historiaclinica.png" />
     <Content Include="Resources\mallampati.png" />
     <None Include="Dataset\dsFichaDetencion.xsc">
       <DependentUpon>dsFichaDetencion.xsd</DependentUpon>
@@ -5839,7 +6032,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

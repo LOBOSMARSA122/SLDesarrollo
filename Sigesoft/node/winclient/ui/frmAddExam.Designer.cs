@@ -30,9 +30,9 @@
         {
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_CategoryName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_CategoryName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Componentes");
-            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Componentes", 0);
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Componentes", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponenteName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentId");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
@@ -43,15 +43,15 @@
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand3 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_CategoryName", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_CategoryName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_CategoryId");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentId");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Componentes");
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand4 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Componentes", 0);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn9 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ServiceComponentId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentName");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ComponentId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ServiceComponentId");
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
@@ -63,66 +63,28 @@
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
             this.gbExamenesSeleccionados = new System.Windows.Forms.GroupBox();
             this.lvExamenesSeleccionados = new System.Windows.Forms.ListView();
             this.chExamen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chMedicalExamId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chServiceComponentConcatId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnRemoverExamenAuxiliar = new System.Windows.Forms.Button();
-            this.btnAgregarExamenAuxiliar = new System.Windows.Forms.Button();
             this.grdDataServiceComponent = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.ultraGrid1 = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.btnRemoverExamenAuxiliar = new System.Windows.Forms.Button();
+            this.btnAgregarExamenAuxiliar = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.cboMedico = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbExamenesSeleccionados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDataServiceComponent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button7.BackColor = System.Drawing.SystemColors.Control;
-            this.button7.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_close;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(553, 348);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 24);
-            this.button7.TabIndex = 101;
-            this.button7.Text = "Cancelar";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnOK.BackColor = System.Drawing.SystemColors.Control;
-            this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnOK.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnOK.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_save;
-            this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOK.Location = new System.Drawing.Point(474, 348);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(2);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 24);
-            this.btnOK.TabIndex = 100;
-            this.btnOK.Text = "      Guardar";
-            this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
             // gbExamenesSeleccionados
             // 
             this.gbExamenesSeleccionados.Controls.Add(this.lvExamenesSeleccionados);
-            this.gbExamenesSeleccionados.Location = new System.Drawing.Point(340, 12);
+            this.gbExamenesSeleccionados.Location = new System.Drawing.Point(339, 12);
             this.gbExamenesSeleccionados.Name = "gbExamenesSeleccionados";
             this.gbExamenesSeleccionados.Size = new System.Drawing.Size(289, 331);
             this.gbExamenesSeleccionados.TabIndex = 104;
@@ -158,30 +120,6 @@
             // 
             this.chServiceComponentConcatId.Text = "ServiceComponentConcatId";
             this.chServiceComponentConcatId.Width = 0;
-            // 
-            // btnRemoverExamenAuxiliar
-            // 
-            this.btnRemoverExamenAuxiliar.Enabled = false;
-            this.btnRemoverExamenAuxiliar.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_close;
-            this.btnRemoverExamenAuxiliar.Location = new System.Drawing.Point(315, 154);
-            this.btnRemoverExamenAuxiliar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRemoverExamenAuxiliar.Name = "btnRemoverExamenAuxiliar";
-            this.btnRemoverExamenAuxiliar.Size = new System.Drawing.Size(25, 22);
-            this.btnRemoverExamenAuxiliar.TabIndex = 103;
-            this.btnRemoverExamenAuxiliar.UseVisualStyleBackColor = true;
-            this.btnRemoverExamenAuxiliar.Click += new System.EventHandler(this.btnRemoverExamenAuxiliar_Click);
-            // 
-            // btnAgregarExamenAuxiliar
-            // 
-            this.btnAgregarExamenAuxiliar.Enabled = false;
-            this.btnAgregarExamenAuxiliar.Image = global::Sigesoft.Node.WinClient.UI.Resources.play_green;
-            this.btnAgregarExamenAuxiliar.Location = new System.Drawing.Point(315, 113);
-            this.btnAgregarExamenAuxiliar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAgregarExamenAuxiliar.Name = "btnAgregarExamenAuxiliar";
-            this.btnAgregarExamenAuxiliar.Size = new System.Drawing.Size(25, 22);
-            this.btnAgregarExamenAuxiliar.TabIndex = 102;
-            this.btnAgregarExamenAuxiliar.UseVisualStyleBackColor = true;
-            this.btnAgregarExamenAuxiliar.Click += new System.EventHandler(this.btnAgregarExamenAuxiliar_Click);
             // 
             // grdDataServiceComponent
             // 
@@ -294,17 +232,14 @@
             ultraGridColumn4,
             ultraGridColumn5,
             ultraGridColumn6});
-            ultraGridBand4.ColHeadersVisible = false;
-            ultraGridColumn7.Header.Caption = "Componente";
-            ultraGridColumn7.Header.VisiblePosition = 0;
-            ultraGridColumn7.Width = 230;
-            ultraGridColumn9.Header.VisiblePosition = 1;
-            ultraGridColumn9.Hidden = true;
-            ultraGridColumn13.Header.VisiblePosition = 2;
+            ultraGridColumn2.Header.VisiblePosition = 0;
+            ultraGridColumn14.Header.VisiblePosition = 1;
+            ultraGridColumn14.Hidden = true;
+            ultraGridColumn15.Header.VisiblePosition = 2;
             ultraGridBand4.Columns.AddRange(new object[] {
-            ultraGridColumn7,
-            ultraGridColumn9,
-            ultraGridColumn13});
+            ultraGridColumn2,
+            ultraGridColumn14,
+            ultraGridColumn15});
             this.ultraGrid1.DisplayLayout.BandsSerializer.Add(ultraGridBand3);
             this.ultraGrid1.DisplayLayout.BandsSerializer.Add(ultraGridBand4);
             this.ultraGrid1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
@@ -367,16 +302,106 @@
             this.ultraGrid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraGrid1.Location = new System.Drawing.Point(3, 12);
             this.ultraGrid1.Name = "ultraGrid1";
-            this.ultraGrid1.Size = new System.Drawing.Size(308, 331);
+            this.ultraGrid1.Size = new System.Drawing.Size(308, 291);
             this.ultraGrid1.TabIndex = 106;
             this.ultraGrid1.Text = "ultraGrid1";
             this.ultraGrid1.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.ultraGrid1_AfterSelectChange);
             // 
-            // frmAddlExam
+            // btnRemoverExamenAuxiliar
+            // 
+            this.btnRemoverExamenAuxiliar.Enabled = false;
+            this.btnRemoverExamenAuxiliar.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_close;
+            this.btnRemoverExamenAuxiliar.Location = new System.Drawing.Point(315, 154);
+            this.btnRemoverExamenAuxiliar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoverExamenAuxiliar.Name = "btnRemoverExamenAuxiliar";
+            this.btnRemoverExamenAuxiliar.Size = new System.Drawing.Size(25, 22);
+            this.btnRemoverExamenAuxiliar.TabIndex = 103;
+            this.btnRemoverExamenAuxiliar.UseVisualStyleBackColor = true;
+            this.btnRemoverExamenAuxiliar.Click += new System.EventHandler(this.btnRemoverExamenAuxiliar_Click);
+            // 
+            // btnAgregarExamenAuxiliar
+            // 
+            this.btnAgregarExamenAuxiliar.Enabled = false;
+            this.btnAgregarExamenAuxiliar.Image = global::Sigesoft.Node.WinClient.UI.Resources.play_green;
+            this.btnAgregarExamenAuxiliar.Location = new System.Drawing.Point(315, 113);
+            this.btnAgregarExamenAuxiliar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregarExamenAuxiliar.Name = "btnAgregarExamenAuxiliar";
+            this.btnAgregarExamenAuxiliar.Size = new System.Drawing.Size(25, 22);
+            this.btnAgregarExamenAuxiliar.TabIndex = 102;
+            this.btnAgregarExamenAuxiliar.UseVisualStyleBackColor = true;
+            this.btnAgregarExamenAuxiliar.Click += new System.EventHandler(this.btnAgregarExamenAuxiliar_Click);
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button7.BackColor = System.Drawing.SystemColors.Control;
+            this.button7.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_close;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(553, 348);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 24);
+            this.button7.TabIndex = 101;
+            this.button7.Text = "Cancelar";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // btnOK
+            // 
+            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnOK.BackColor = System.Drawing.SystemColors.Control;
+            this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnOK.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnOK.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_save;
+            this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOK.Location = new System.Drawing.Point(474, 348);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 24);
+            this.btnOK.TabIndex = 100;
+            this.btnOK.Text = "      Guardar";
+            this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // cboMedico
+            // 
+            this.cboMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMedico.Enabled = false;
+            this.cboMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMedico.FormattingEnabled = true;
+            this.cboMedico.Location = new System.Drawing.Point(3, 327);
+            this.cboMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.cboMedico.Name = "cboMedico";
+            this.cboMedico.Size = new System.Drawing.Size(308, 21);
+            this.cboMedico.TabIndex = 110;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(11, 312);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.TabIndex = 109;
+            this.label3.Text = "Médico Tratante";
+            // 
+            // frmAddExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 375);
+            this.Controls.Add(this.cboMedico);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.ultraGrid1);
             this.Controls.Add(this.grdDataServiceComponent);
             this.Controls.Add(this.gbExamenesSeleccionados);
@@ -387,7 +412,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmAddlExam";
+            this.Name = "frmAddExam";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Examen";
@@ -396,6 +421,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdDataServiceComponent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -412,5 +438,7 @@
         private Infragistics.Win.UltraWinGrid.UltraGrid grdDataServiceComponent;
         private System.Windows.Forms.ColumnHeader chServiceComponentConcatId;
         private Infragistics.Win.UltraWinGrid.UltraGrid ultraGrid1;
+        private System.Windows.Forms.ComboBox cboMedico;
+        private System.Windows.Forms.Label label3;
     }
 }

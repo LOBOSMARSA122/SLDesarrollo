@@ -673,5 +673,21 @@ namespace Sigesoft.Node.WinClient.BLL
 
 
         #endregion
+
+       public bool OrganizacionExisteByName(string name)
+       {
+           try
+           {
+               var nameOrganization = name.Split('/').ToArray()[0].Trim();
+               using (var dbContext = new SigesoftEntitiesModel())
+               {
+                   return dbContext.organization.Any(p => p.v_Name.Equals(nameOrganization) && p.i_IsDeleted == 0);
+               }
+           }
+           catch
+           {
+               return false;
+           }
+       }
     }
 }
