@@ -3527,7 +3527,7 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     {
                         Componente = Constants.RX_TORAX_ID;
                     }
-                    var LUMBOSACRA_ID = new ServiceBL().ReporteLumboSaca(_serviceId, Componente);
+                    var LUMBOSACRA_ID = new ServiceBL().ReporteLumboSaca(_serviceId, Constants.LUMBOSACRA_ID);
 
                     dsGetRepo = new DataSet();
 
