@@ -17,6 +17,9 @@ namespace Sigesoft.Common
         #region ENTREGA DE EXAMEN MEDICO OCUPACIONAL
         public const string ENTREGA_DE_XAMEN_MEDICO_OCUPACIONAL = "ENTREGA-EMO";
         #endregion
+        #region marcobre
+        public const string MARCOBRE_PASE_MEDICO = "MARCOBRE-PASE-MEDICO";
+        #endregion
         #region DECLARACIÓN JURADA ANTECEDENTES PERSONALES
 
         public const string DECLARACION_JURADA_ANTECEDENTES_PERSONALES_ID = "N009-ME000000440";

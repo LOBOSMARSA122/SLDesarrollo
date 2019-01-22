@@ -93,6 +93,7 @@
     <Compile Include="LoadingForm.designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Marcobre_Pase_Medico.cs" />
     <Compile Include="MergeExPDF.cs" />
     <Compile Include="OrdenServicio.cs" />
     <Compile Include="OrdenServicioPromocion.cs" />
