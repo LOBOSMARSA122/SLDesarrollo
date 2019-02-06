@@ -93,63 +93,13 @@ namespace NetPdf
         //override the OnPageEnd event handler to add our footer
         public override void OnEndPage(PdfWriter writer, Document doc)
         {
-            //I use a PdfPtable with 2 columns to position my footer where I want it
-            PdfPTable footerTbl = new PdfPTable(2);
-
-            //set the width of the table to be the same as the document
+            var rutaImg = Sigesoft.Common.Utils.GetApplicationConfigValue("imgFooter2");
+            var footerTbl = new PdfPTable(1);
             footerTbl.TotalWidth = doc.PageSize.Width;
+            var imageCell = new PdfPCell(HandlingItextSharp.GetImage(rutaImg, null, null, 520, 41)) { Border = PdfPCell.NO_BORDER };
 
-            float[] widths = new float[] { 30f, 70f };
-            footerTbl.SetWidths(widths);
-
-            //Center the table on the page
-            footerTbl.HorizontalAlignment = Element.ALIGN_CENTER;
-
-            var FontColour = new BaseColor(35, 31, 32);
-            var Calibri6 = FontFactory.GetFont("Calibri", 6, FontColour);
-
-            //create new instance of Paragraph for 2nd cell text
-            Paragraph para = new Paragraph(Dato, Calibri6);
-
-            //create new instance of cell to hold the text
-            PdfPCell cell = new PdfPCell(para);
-
-            //align the text to the right of the cell
-            cell.HorizontalAlignment = Element.ALIGN_LEFT;
-            //set border to 0
-            cell.Border = PdfPCell.NO_BORDER;
-
-            // add some padding to take away from the edge of the page
-            cell.PaddingLeft = 10;
-
-            //add the cell to the table
-            footerTbl.AddCell(cell);
-
-            // Page Datos Empresa         
-            string linea1 = Sigesoft.Common.Utils.GetApplicationConfigValue("linea1").ToString();
-            String Direccion = linea1;
-           
-            //Create a paragraph that contains the footer text
-             para = new Paragraph(Direccion, footer);
-
-            //add a carriage return
-            para.Add(Environment.NewLine);
-            string WebSite = Sigesoft.Common.Utils.GetApplicationConfigValue("linea2").ToString();
-            para.Add(WebSite);
-                     
-            //create a cell instance to hold the text
-            cell = new PdfPCell(para);
-            cell.HorizontalAlignment = Element.ALIGN_CENTER;
-            cell.PaddingRight = 100;
-            //set cell border to 0           
-            cell.BorderWidth = 0;
-            //add some padding to bring away from the edge           
-
-            //add cell to table
-            footerTbl.AddCell(cell);
-
-            //write the rows out to the PDF output stream.
-            footerTbl.WriteSelectedRows(0, -1, 0, (doc.BottomMargin + 10), writer.DirectContent);
+            footerTbl.AddCell(imageCell);
+            footerTbl.WriteSelectedRows(0, -1, doc.LeftMargin, (doc.BottomMargin + 0), writer.DirectContent);
            
         }
 

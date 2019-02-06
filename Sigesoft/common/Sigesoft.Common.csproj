@@ -61,6 +61,7 @@
     <Compile Include="CertificadoAptitudCompleto.cs" />
     <Compile Include="CertificadoAptitudMedico_Cosapi.cs" />
     <Compile Include="CERTIFICADO_SUFICIENCIA_MEDICA_TC.cs" />
+    <Compile Include="Cuestionario_ISTAS.cs" />
     <Compile Include="CreateEspiroPrueba.cs" />
     <Compile Include="CustomDtos\ClientSession.cs" />
     <Compile Include="Constants.cs" />

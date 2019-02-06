@@ -7,6 +7,7 @@ namespace Sigesoft.Common
 {
     public static class Constants
     {
+       
         public const string Select = "--Seleccionar--"; 
         public const string SelectValue = "-1";
         public const string All = "--Todos--";
@@ -14,6 +15,54 @@ namespace Sigesoft.Common
         public const int WIDTH_MAX_SIZE_IMAGE = 4000;
         public const int HEIGHT_MAX_SIZE_IMAGE = 7000;
         public const int COLUMNAS_POR_CONTROL = 3;
+        #region Cuestionario Istas
+        public const string CUESTIONARIO_ISTAS_MVMD = "N009-ME000000307";
+        public const string _1_TIENES_QUE_TRABAJAR = "N009-MF000002504";
+        public const string _5_SINO = "N009-MF000002505";
+        public const string _2_LA_DISTRIBUCION_DE = "N006-MF000002505";
+        public const string _3_TIENES_TIEMPO_DE_LL = "N006-MF000002506";
+        public const string _4_TE_CUESTA_OLVIDAR_L = "N006-MF000002507";
+        public const string _5_TU_TRABAJO_EN_GENER = "N006-MF000002508";
+        public const string _6_TU_TRABAJO_REQUIERE = "N006-MF000002509";
+        public const string _7_TIENES_INFLUENCIA_S = "N006-MF000002510";
+        public const string _8_SE_TIENE_EN_CUENTA = "N006-MF000002511";
+        public const string _9_TIENES_INFLUENCIA_S = "N006-MF000002512";
+        public const string _10_PUEDES_DECIDIR_CUA = "N006-MF000002513";
+        public const string _11_SI_TIENES_ALGUN_AS = "N006-MF000002514";
+        public const string _12_TU_TRABAJO_REQUIER = "N006-MF000002515";
+        public const string _13_TU_TRABAJO_TE_PERM = "N006-MF000002516";
+        public const string _14_TE_SIENTES_COMPROM = "N006-MF000002517";
+        public const string _15_TIENEN_SENTIDO_TUS = "N006-MF000002518";
+        public const string _16_HABLAS_CON_ENTUSIA = "N006-MF000002519";
+        public const string _17_ESTAS_PREOCUPADO_P = "N006-MF000002520";
+        public const string _18_ESTAS_PREOCUPADO_P = "N006-MF000002521";
+        public const string _19_ESTAS_PREOCUPADO_P = "N006-MF000002522";
+        public const string _20_ESTAS_PREOCUPADO_P = "N006-MF000002523";
+        public const string _21_SABES_EXACTAMENTE = "N006-MF000002524";
+        public const string _22_SABES_EXACTAMENTE = "N006-MF000002525";
+        public const string _23_EN_TU_EMPRESA_SE_T = "N006-MF000002526";
+        public const string _24_RECIBES_TODA_LA_IN = "N006-MF000002527";
+        public const string _25_RECIBES_AYUDA_Y_AP = "N006-MF000002528";
+        public const string _26_RECIBES_AYUDA_DE_T = "N006-MF000002529";
+        public const string _27_TU_PUESTO_DE_TRABA = "N006-MF000002530";
+        public const string _28_EN_EL_TRABAJO_SIEN = "N006-MF000002531";
+        public const string _29_TUS_ACTUALES_JEFES = "N006-MF000002532";
+        public const string _30_TUS_ACTUALES_JEFES = "N006-MF000002533";
+        public const string _31_A_SOY_EL_PRINCIPAL = "N006-MF000002534";
+        public const string _31_B_HAGO_APROXIMADAM = "N006-MF000002535";
+        public const string _31_C_HAGO_MAS_O_MENOS = "N006-MF000002536";
+        public const string _31_D_SOLO_HAGO_TAREAS = "N006-MF000002537";
+        public const string _31_E_NO_HAGO_NINGUNA = "N006-MF000002538";
+        public const string _32_SI_FALTAS_ALGUN_DI = "N006-MF000002539";
+        public const string _33_CUANDO_ESTAS_EN_LA = "N006-MF000002540";
+        public const string _34_HAY_MOMENTOS_EN_LO = "N006-MF000002541";
+        public const string _35_MIS_SUPERIORES_ME = "N006-MF000002542";
+        public const string _36_EN_LAS_SITUACIONES = "N006-MF000002543";
+        public const string _37_EN_MI_TRABAJO_ME_T = "N006-MF000002544";
+        public const string _38_SI_PIENSO_EN_TODO = "N006-MF000002545";
+        #endregion
+
+
         #region ENTREGA DE EXAMEN MEDICO OCUPACIONAL
         public const string ENTREGA_DE_XAMEN_MEDICO_OCUPACIONAL = "ENTREGA-EMO";
         #endregion
@@ -3879,7 +3928,7 @@ namespace Sigesoft.Common
         public const string Cuestionariogradodeafectividad_ID = "N009-ME000000304";
         public const string Fobiasocial01_ID = "N009-ME000000305";
         public const string Fobiasocial02_ID = "N009-ME000000306";
-        public const string Testdepersonalldad_ID = "N009-ME000000307";
+        //public const string Testdepersonalldad_ID = "N009-ME000000307";
         public const string FobiasocialAdmin_ID = "N009-ME000000308";
         public const string Testdefatiga_ID = "N002-ME000000034";
         public const string Maslachestres_ID = "N002-ME000000036";
