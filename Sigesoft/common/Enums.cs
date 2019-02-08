@@ -291,6 +291,7 @@ namespace Sigesoft.Common
         Fecha = 12,
         UcSomnolencia =13,
         UcAcumetria = 14,
+        UcCuestionarioIstas = 30,
         UcSintomaticoRespi= 15,
         UcRxLumboSacra = 16,
         UcOtoscopia =17,

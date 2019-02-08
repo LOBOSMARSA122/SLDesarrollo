@@ -2807,6 +2807,12 @@
     <Compile Include="UserControls\ucBoton.Designer.cs">
       <DependentUpon>ucBoton.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ucCuestionarioIstas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucCuestionarioIstas.Designer.cs">
+      <DependentUpon>ucCuestionarioIstas.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucEvaluacionErgonomica.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -4041,6 +4047,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucBoton.resx">
       <DependentUpon>ucBoton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucCuestionarioIstas.resx">
+      <DependentUpon>ucCuestionarioIstas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucEvaluacionErgonomica.resx">
       <DependentUpon>ucEvaluacionErgonomica.cs</DependentUpon>

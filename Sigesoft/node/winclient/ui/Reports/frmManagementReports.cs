@@ -3675,25 +3675,25 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     rp.Close();
                     break;
 
-                case Constants.Testdepersonalldad_ID:
-                    var Testdepersonalldad = new ServiceBL().ReporteTestdepersonalldad(_serviceId, Constants.Testdepersonalldad_ID);
+                //case Constants.Testdepersonalldad_ID:
+                //    var Testdepersonalldad = new ServiceBL().ReporteTestdepersonalldad(_serviceId, Constants.Testdepersonalldad_ID);
 
-                    dsGetRepo = new DataSet();
-                    DataTable dt_Testdepersonalldad = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(Testdepersonalldad);
-                    dt_Testdepersonalldad.TableName = "dtTestdepersonalldad";
-                    dsGetRepo.Tables.Add(dt_Testdepersonalldad);
+                //    dsGetRepo = new DataSet();
+                //    DataTable dt_Testdepersonalldad = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(Testdepersonalldad);
+                //    dt_Testdepersonalldad.TableName = "dtTestdepersonalldad";
+                //    dsGetRepo.Tables.Add(dt_Testdepersonalldad);
 
-                    rp = new Reports.crTestdepersonalldad();
-                    rp.SetDataSource(dsGetRepo);
-                    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                    objDiskOpt = new DiskFileDestinationOptions();
-                    objDiskOpt.DiskFileName = ruta + serviceId + "-" + Constants.Testdepersonalldad_ID + ".pdf";
-                    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
-                    rp.ExportOptions.DestinationOptions = objDiskOpt;
-                    rp.Export();
-                    rp.Close();
-                    break;
+                //    rp = new Reports.crTestdepersonalldad();
+                //    rp.SetDataSource(dsGetRepo);
+                //    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                //    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                //    objDiskOpt = new DiskFileDestinationOptions();
+                //    objDiskOpt.DiskFileName = ruta + serviceId + "-" + Constants.Testdepersonalldad_ID + ".pdf";
+                //    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
+                //    rp.ExportOptions.DestinationOptions = objDiskOpt;
+                //    rp.Export();
+                //    rp.Close();
+                //    break;
 
                 case Constants.FobiasocialAdmin_ID:
                     var FobiasocialAdmin = new ServiceBL().ReporteFobiasocialAdmin(_serviceId, Constants.FobiasocialAdmin_ID);

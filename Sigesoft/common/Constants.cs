@@ -4332,6 +4332,57 @@ namespace Sigesoft.Common
         public const string FICHA_DETENCION = "N009-ME000000395";
         public const string ESPACIOS_CONFINADO = "N009-ME000000394";
 
+
+        #region Istas 02
+        public const string CUESTIONARIO_ISTAS_2 = "N009-ME000000308";
+        public const string PREGUNTA_1 = "N009-IST00000001";
+        public const string PREGUNTA_2 = "N009-IST00000002";
+        public const string PREGUNTA_3 = "N009-IST00000003";
+        public const string PREGUNTA_4 = "N009-IST00000004";
+        public const string PREGUNTA_5 = "N009-IST00000005";
+        public const string PREGUNTA_6 = "N009-IST00000006";
+        public const string PREGUNTA_7 = "N009-IST00000007";
+        public const string PREGUNTA_8 = "N009-IST00000008";
+        public const string PREGUNTA_9 = "N009-IST00000009";
+        public const string PREGUNTA_10 = "N009-IST00000010";
+        public const string PREGUNTA_11 = "N009-IST00000011";
+        public const string PREGUNTA_12 = "N009-IST00000012";
+        public const string PREGUNTA_13 = "N009-IST00000013";
+        public const string PREGUNTA_14 = "N009-IST00000014";
+        public const string PREGUNTA_15 = "N009-IST00000015";
+        public const string PREGUNTA_16 = "N009-IST00000016";
+        public const string PREGUNTA_17 = "N009-IST00000017";
+        public const string PREGUNTA_18 = "N009-IST00000018";
+        public const string PREGUNTA_19 = "N009-IST00000019";
+        public const string PREGUNTA_20 = "N009-IST00000020";
+        public const string PREGUNTA_21 = "N009-IST00000021";
+        public const string PREGUNTA_22 = "N009-IST00000022";
+        public const string PREGUNTA_23 = "N009-IST00000023";
+        public const string PREGUNTA_24 = "N009-IST00000024";
+        public const string PREGUNTA_25 = "N009-IST00000025";
+        public const string PREGUNTA_26 = "N009-IST00000026";
+        public const string PREGUNTA_27 = "N009-IST00000027";
+        public const string PREGUNTA_28 = "N009-IST00000028";
+        public const string PREGUNTA_29 = "N009-IST00000029";
+        public const string PREGUNTA_30 = "N009-IST00000030";
+        public const string PREGUNTA_31 = "N009-IST00000031";
+        public const string PREGUNTA_32 = "N009-IST00000032";
+        public const string PREGUNTA_33 = "N009-IST00000033";
+        public const string PREGUNTA_34 = "N009-IST00000034";
+        public const string PREGUNTA_35 = "N009-IST00000035";
+        public const string PREGUNTA_36 = "N009-IST00000036";
+        public const string PREGUNTA_37 = "N009-IST00000037";
+        public const string PREGUNTA_38 = "N009-IST00000038";
+        public const string ValorApartado1 = "N009-IST00000039";
+        public const string ValorApartado2 = "N009-IST00000040";
+        public const string ValorApartado3 = "N009-IST00000041";
+        public const string ValorApartado4 = "N009-IST00000042";
+        public const string ValorApartado5 = "N009-IST00000043";
+        public const string ValorApartado6 = "N009-IST00000044";
+        public const string Apartado5_SINO = "N009-IST00000045";
+        
+            
+        #endregion
     }
 
   

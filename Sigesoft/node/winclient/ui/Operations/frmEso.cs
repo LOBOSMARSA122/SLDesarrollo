@@ -888,6 +888,12 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                             // Establecer evento
                                             ctl = ucAcumetria;
                                             break;
+                                        case ControlType.UcCuestionarioIstas:
+                                            var ucCuestionarioistas = new Sigesoft.Node.WinClient.UI.UserControls.ucCuestionarioIstas();
+                                            ucCuestionarioistas.Name = f.v_ComponentFieldId;
+                                            // Establecer evento
+                                            ctl = ucCuestionarioistas;
+                                            break;
                                         case ControlType.UcSintomaticoRespi:
                                             var ucSintomaticoRespi = new Sigesoft.Node.WinClient.UI.UserControls.ucSintomaticoResp();
                                             ucSintomaticoRespi.Name = f.v_ComponentFieldId;
@@ -1355,6 +1361,12 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                         ucAcumetria.Name = f.v_ComponentFieldId;
                                         // Establecer evento
                                         ctl = ucAcumetria;
+                                        break;
+                                    case ControlType.UcCuestionarioIstas:
+                                        var ucCuestionarioistas = new Sigesoft.Node.WinClient.UI.UserControls.ucCuestionarioIstas();
+                                        ucCuestionarioistas.Name = f.v_ComponentFieldId;
+                                        // Establecer evento
+                                        ctl = ucCuestionarioistas;
                                         break;
 
                                     case ControlType.UcSintomaticoRespi:
@@ -2044,7 +2056,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                         // Datos de servicecomponentfieldValues Ejem: 1.80 ; 95 KG
                         value1 = GetValueControl(keyTagControl.i_ControlId, fields[0]);
 
-                        if (keyTagControl.i_ControlId == (int)ControlType.UcOdontograma || keyTagControl.i_ControlId == (int)ControlType.UcAudiometria || keyTagControl.i_ControlId == (int)ControlType.UcSomnolencia || keyTagControl.i_ControlId == (int)ControlType.UcAcumetria || keyTagControl.i_ControlId == (int)ControlType.UcSintomaticoRespi || keyTagControl.i_ControlId == (int)ControlType.UcRxLumboSacra || keyTagControl.i_ControlId == (int)ControlType.UcOtoscopia || keyTagControl.i_ControlId == (int)ControlType.UcEvaluacionErgonomica || keyTagControl.i_ControlId == (int)ControlType.UcOjoSeco || keyTagControl.i_ControlId == (int)ControlType.UcOsteoMuscular)
+                        if (keyTagControl.i_ControlId == (int)ControlType.UcOdontograma || keyTagControl.i_ControlId == (int)ControlType.UcAudiometria || keyTagControl.i_ControlId == (int)ControlType.UcSomnolencia || keyTagControl.i_ControlId == (int)ControlType.UcAcumetria || keyTagControl.i_ControlId == (int)ControlType.UcCuestionarioIstas || keyTagControl.i_ControlId == (int)ControlType.UcSintomaticoRespi || keyTagControl.i_ControlId == (int)ControlType.UcRxLumboSacra || keyTagControl.i_ControlId == (int)ControlType.UcOtoscopia || keyTagControl.i_ControlId == (int)ControlType.UcEvaluacionErgonomica || keyTagControl.i_ControlId == (int)ControlType.UcOjoSeco || keyTagControl.i_ControlId == (int)ControlType.UcOsteoMuscular)
                         {
                             foreach (var value in _tmpListValuesOdontograma)
                             {
@@ -2838,6 +2850,21 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     }
                 }
 
+                var cuestionarioIstas = _tmpServiceComponentsForBuildMenuList
+                    .Find(p => p.v_ComponentId == _componentId)
+                    .Fields.Find(p => p.i_ControlId == (int)ControlType.UcCuestionarioIstas);
+
+                if (cuestionarioIstas != null)
+                {
+                    var ucCuestionarioistas = (UserControls.ucCuestionarioIstas)FindControlInCurrentTab(cuestionarioIstas.v_ComponentFieldId)[0];
+
+                    if (ucCuestionarioistas.IsChangeValueControl)
+                    {
+                        _isChangeValue = true;
+
+                    }
+                }
+
                 var SintomaticoRespi = _tmpServiceComponentsForBuildMenuList
                                  .Find(p => p.v_ComponentId == _componentId)
                                  .Fields.Find(p => p.i_ControlId == (int)ControlType.UcSintomaticoRespi);
@@ -3392,6 +3419,18 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
                             #endregion
                         }
+                        else if (keyTagControl.i_ControlId == (int)ControlType.UcCuestionarioIstas)
+                        {
+                            #region Setear valores en Istas
+
+                            dataSourceUserControls = _serviceComponentsInfo.ServiceComponentFields.SelectMany(p => p.ServiceComponentFieldValues).ToList();
+                            dataSourceUserControls = dataSourceUserControls.FindAll(p => p.v_ComponentFieldId.Contains("IST"));
+                            ((UserControls.ucCuestionarioIstas)ctrl).DataSource = new List<ServiceComponentFieldValuesList>();
+                            ((UserControls.ucCuestionarioIstas)ctrl).DataSource = dataSourceUserControls;
+                            breakHazChildrenUC = true;
+
+                            #endregion
+                        }
                         else if (keyTagControl.i_ControlId == (int)ControlType.UcSintomaticoRespi)
                         {
                             #region Setear valores en udiometria
@@ -3605,6 +3644,9 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     break;
                 case ControlType.UcAcumetria:
                     _tmpListValuesOdontograma = ((UserControls.ucAcumetria)ctrl).DataSource;
+                    break;
+                case ControlType.UcCuestionarioIstas:
+                    _tmpListValuesOdontograma = ((UserControls.ucCuestionarioIstas)ctrl).DataSource;
                     break;
                 case ControlType.UcSintomaticoRespi:
                     _tmpListValuesOdontograma = ((UserControls.ucSintomaticoResp)ctrl).DataSource;
@@ -4035,6 +4077,9 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                 case ControlType.UcAcumetria:
                                     ((UserControls.ucAcumetria)ctrl__[0]).ClearValueControl();
                                     break;
+                                case ControlType.UcCuestionarioIstas:
+                                    ((UserControls.ucCuestionarioIstas)ctrl__[0]).ClearValueControl();
+                                    break;
                                 case ControlType.UcSintomaticoRespi:
                                     ((UserControls.ucSintomaticoResp)ctrl__[0]).ClearValueControl();
                                     break;
@@ -4158,6 +4203,9 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                                 break;
                             case ControlType.UcAcumetria:
                                 ((UserControls.ucAcumetria)field[0]).ClearValueControl();
+                                break;
+                            case ControlType.UcCuestionarioIstas:
+                                ((UserControls.ucCuestionarioIstas)field[0]).ClearValueControl();
                                 break;
                             case ControlType.UcSintomaticoRespi:
                                 ((UserControls.ucSintomaticoResp)field[0]).ClearValueControl();
