@@ -517,12 +517,10 @@
             // rb_6_0
             // 
             this.rb_6_0.AutoSize = true;
-            this.rb_6_0.Checked = true;
             this.rb_6_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_6_0.Name = "rb_6_0";
             this.rb_6_0.Size = new System.Drawing.Size(14, 13);
             this.rb_6_0.TabIndex = 2;
-            this.rb_6_0.TabStop = true;
             this.rb_6_0.UseVisualStyleBackColor = true;
             this.rb_6_0.CheckedChanged += new System.EventHandler(this.rb_6_0_CheckedChanged);
             // 
@@ -593,12 +591,10 @@
             // rb_5_0
             // 
             this.rb_5_0.AutoSize = true;
-            this.rb_5_0.Checked = true;
             this.rb_5_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_5_0.Name = "rb_5_0";
             this.rb_5_0.Size = new System.Drawing.Size(14, 13);
             this.rb_5_0.TabIndex = 2;
-            this.rb_5_0.TabStop = true;
             this.rb_5_0.UseVisualStyleBackColor = true;
             this.rb_5_0.CheckedChanged += new System.EventHandler(this.rb_5_0_CheckedChanged);
             // 
@@ -669,12 +665,10 @@
             // rb_4_0
             // 
             this.rb_4_0.AutoSize = true;
-            this.rb_4_0.Checked = true;
             this.rb_4_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_4_0.Name = "rb_4_0";
             this.rb_4_0.Size = new System.Drawing.Size(14, 13);
             this.rb_4_0.TabIndex = 2;
-            this.rb_4_0.TabStop = true;
             this.rb_4_0.UseVisualStyleBackColor = true;
             this.rb_4_0.CheckedChanged += new System.EventHandler(this.rb_4_0_CheckedChanged);
             // 
@@ -745,12 +739,10 @@
             // rb_3_0
             // 
             this.rb_3_0.AutoSize = true;
-            this.rb_3_0.Checked = true;
             this.rb_3_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_3_0.Name = "rb_3_0";
             this.rb_3_0.Size = new System.Drawing.Size(14, 13);
             this.rb_3_0.TabIndex = 2;
-            this.rb_3_0.TabStop = true;
             this.rb_3_0.UseVisualStyleBackColor = true;
             this.rb_3_0.CheckedChanged += new System.EventHandler(this.rb_3_0_CheckedChanged);
             // 
@@ -821,12 +813,10 @@
             // rb_2_0
             // 
             this.rb_2_0.AutoSize = true;
-            this.rb_2_0.Checked = true;
             this.rb_2_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_2_0.Name = "rb_2_0";
             this.rb_2_0.Size = new System.Drawing.Size(14, 13);
             this.rb_2_0.TabIndex = 2;
-            this.rb_2_0.TabStop = true;
             this.rb_2_0.UseVisualStyleBackColor = true;
             this.rb_2_0.CheckedChanged += new System.EventHandler(this.rb_2_0_CheckedChanged);
             // 
@@ -898,12 +888,10 @@
             // rb_1_0
             // 
             this.rb_1_0.AutoSize = true;
-            this.rb_1_0.Checked = true;
             this.rb_1_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_1_0.Name = "rb_1_0";
             this.rb_1_0.Size = new System.Drawing.Size(14, 13);
             this.rb_1_0.TabIndex = 2;
-            this.rb_1_0.TabStop = true;
             this.rb_1_0.UseVisualStyleBackColor = true;
             this.rb_1_0.CheckedChanged += new System.EventHandler(this.rb_1_0_CheckedChanged);
             // 
@@ -1058,12 +1046,10 @@
             // rb_16_0
             // 
             this.rb_16_0.AutoSize = true;
-            this.rb_16_0.Checked = true;
             this.rb_16_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_16_0.Name = "rb_16_0";
             this.rb_16_0.Size = new System.Drawing.Size(14, 13);
             this.rb_16_0.TabIndex = 2;
-            this.rb_16_0.TabStop = true;
             this.rb_16_0.UseVisualStyleBackColor = true;
             this.rb_16_0.CheckedChanged += new System.EventHandler(this.rb_16_0_CheckedChanged);
             // 
@@ -1134,12 +1120,10 @@
             // rb_12_0
             // 
             this.rb_12_0.AutoSize = true;
-            this.rb_12_0.Checked = true;
             this.rb_12_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_12_0.Name = "rb_12_0";
             this.rb_12_0.Size = new System.Drawing.Size(14, 13);
             this.rb_12_0.TabIndex = 2;
-            this.rb_12_0.TabStop = true;
             this.rb_12_0.UseVisualStyleBackColor = true;
             this.rb_12_0.CheckedChanged += new System.EventHandler(this.rb_12_0_CheckedChanged);
             // 
@@ -1210,12 +1194,10 @@
             // rb_15_0
             // 
             this.rb_15_0.AutoSize = true;
-            this.rb_15_0.Checked = true;
             this.rb_15_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_15_0.Name = "rb_15_0";
             this.rb_15_0.Size = new System.Drawing.Size(14, 13);
             this.rb_15_0.TabIndex = 2;
-            this.rb_15_0.TabStop = true;
             this.rb_15_0.UseVisualStyleBackColor = true;
             this.rb_15_0.CheckedChanged += new System.EventHandler(this.rb_15_0_CheckedChanged);
             // 
@@ -1286,12 +1268,10 @@
             // rb_11_0
             // 
             this.rb_11_0.AutoSize = true;
-            this.rb_11_0.Checked = true;
             this.rb_11_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_11_0.Name = "rb_11_0";
             this.rb_11_0.Size = new System.Drawing.Size(14, 13);
             this.rb_11_0.TabIndex = 2;
-            this.rb_11_0.TabStop = true;
             this.rb_11_0.UseVisualStyleBackColor = true;
             this.rb_11_0.CheckedChanged += new System.EventHandler(this.rb_11_0_CheckedChanged);
             // 
@@ -1363,12 +1343,10 @@
             // rb_14_0
             // 
             this.rb_14_0.AutoSize = true;
-            this.rb_14_0.Checked = true;
             this.rb_14_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_14_0.Name = "rb_14_0";
             this.rb_14_0.Size = new System.Drawing.Size(14, 13);
             this.rb_14_0.TabIndex = 2;
-            this.rb_14_0.TabStop = true;
             this.rb_14_0.UseVisualStyleBackColor = true;
             this.rb_14_0.CheckedChanged += new System.EventHandler(this.rb_14_0_CheckedChanged);
             // 
@@ -1439,12 +1417,10 @@
             // rb_10_0
             // 
             this.rb_10_0.AutoSize = true;
-            this.rb_10_0.Checked = true;
             this.rb_10_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_10_0.Name = "rb_10_0";
             this.rb_10_0.Size = new System.Drawing.Size(14, 13);
             this.rb_10_0.TabIndex = 2;
-            this.rb_10_0.TabStop = true;
             this.rb_10_0.UseVisualStyleBackColor = true;
             this.rb_10_0.CheckedChanged += new System.EventHandler(this.rb_10_0_CheckedChanged);
             // 
@@ -1515,12 +1491,10 @@
             // rb_13_0
             // 
             this.rb_13_0.AutoSize = true;
-            this.rb_13_0.Checked = true;
             this.rb_13_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_13_0.Name = "rb_13_0";
             this.rb_13_0.Size = new System.Drawing.Size(14, 13);
             this.rb_13_0.TabIndex = 2;
-            this.rb_13_0.TabStop = true;
             this.rb_13_0.UseVisualStyleBackColor = true;
             this.rb_13_0.CheckedChanged += new System.EventHandler(this.rb_13_0_CheckedChanged);
             // 
@@ -1591,12 +1565,10 @@
             // rb_9_0
             // 
             this.rb_9_0.AutoSize = true;
-            this.rb_9_0.Checked = true;
             this.rb_9_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_9_0.Name = "rb_9_0";
             this.rb_9_0.Size = new System.Drawing.Size(14, 13);
             this.rb_9_0.TabIndex = 2;
-            this.rb_9_0.TabStop = true;
             this.rb_9_0.UseVisualStyleBackColor = true;
             this.rb_9_0.CheckedChanged += new System.EventHandler(this.rb_9_0_CheckedChanged);
             // 
@@ -1667,12 +1639,10 @@
             // rb_8_0
             // 
             this.rb_8_0.AutoSize = true;
-            this.rb_8_0.Checked = true;
             this.rb_8_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_8_0.Name = "rb_8_0";
             this.rb_8_0.Size = new System.Drawing.Size(14, 13);
             this.rb_8_0.TabIndex = 2;
-            this.rb_8_0.TabStop = true;
             this.rb_8_0.UseVisualStyleBackColor = true;
             this.rb_8_0.CheckedChanged += new System.EventHandler(this.rb_8_0_CheckedChanged);
             // 
@@ -1743,12 +1713,10 @@
             // rb_7_0
             // 
             this.rb_7_0.AutoSize = true;
-            this.rb_7_0.Checked = true;
             this.rb_7_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_7_0.Name = "rb_7_0";
             this.rb_7_0.Size = new System.Drawing.Size(14, 13);
             this.rb_7_0.TabIndex = 2;
-            this.rb_7_0.TabStop = true;
             this.rb_7_0.UseVisualStyleBackColor = true;
             this.rb_7_0.CheckedChanged += new System.EventHandler(this.rb_7_0_CheckedChanged);
             // 
@@ -1924,12 +1892,10 @@
             // rb_20_0
             // 
             this.rb_20_0.AutoSize = true;
-            this.rb_20_0.Checked = true;
             this.rb_20_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_20_0.Name = "rb_20_0";
             this.rb_20_0.Size = new System.Drawing.Size(14, 13);
             this.rb_20_0.TabIndex = 2;
-            this.rb_20_0.TabStop = true;
             this.rb_20_0.UseVisualStyleBackColor = true;
             this.rb_20_0.CheckedChanged += new System.EventHandler(this.rb_20_0_CheckedChanged);
             // 
@@ -2001,12 +1967,10 @@
             // rb_19_0
             // 
             this.rb_19_0.AutoSize = true;
-            this.rb_19_0.Checked = true;
             this.rb_19_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_19_0.Name = "rb_19_0";
             this.rb_19_0.Size = new System.Drawing.Size(14, 13);
             this.rb_19_0.TabIndex = 2;
-            this.rb_19_0.TabStop = true;
             this.rb_19_0.UseVisualStyleBackColor = true;
             this.rb_19_0.CheckedChanged += new System.EventHandler(this.rb_19_0_CheckedChanged);
             // 
@@ -2078,12 +2042,10 @@
             // rb_18_0
             // 
             this.rb_18_0.AutoSize = true;
-            this.rb_18_0.Checked = true;
             this.rb_18_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_18_0.Name = "rb_18_0";
             this.rb_18_0.Size = new System.Drawing.Size(14, 13);
             this.rb_18_0.TabIndex = 2;
-            this.rb_18_0.TabStop = true;
             this.rb_18_0.UseVisualStyleBackColor = true;
             this.rb_18_0.CheckedChanged += new System.EventHandler(this.rb_18_0_CheckedChanged);
             // 
@@ -2154,12 +2116,10 @@
             // rb_17_0
             // 
             this.rb_17_0.AutoSize = true;
-            this.rb_17_0.Checked = true;
             this.rb_17_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_17_0.Name = "rb_17_0";
             this.rb_17_0.Size = new System.Drawing.Size(14, 13);
             this.rb_17_0.TabIndex = 2;
-            this.rb_17_0.TabStop = true;
             this.rb_17_0.UseVisualStyleBackColor = true;
             this.rb_17_0.CheckedChanged += new System.EventHandler(this.rb_17_0_CheckedChanged);
             // 
@@ -2324,12 +2284,10 @@
             // rb_30_0
             // 
             this.rb_30_0.AutoSize = true;
-            this.rb_30_0.Checked = true;
             this.rb_30_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_30_0.Name = "rb_30_0";
             this.rb_30_0.Size = new System.Drawing.Size(14, 13);
             this.rb_30_0.TabIndex = 2;
-            this.rb_30_0.TabStop = true;
             this.rb_30_0.UseVisualStyleBackColor = true;
             this.rb_30_0.CheckedChanged += new System.EventHandler(this.rb_30_0_CheckedChanged);
             // 
@@ -2400,12 +2358,10 @@
             // rb_26_0
             // 
             this.rb_26_0.AutoSize = true;
-            this.rb_26_0.Checked = true;
             this.rb_26_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_26_0.Name = "rb_26_0";
             this.rb_26_0.Size = new System.Drawing.Size(14, 13);
             this.rb_26_0.TabIndex = 2;
-            this.rb_26_0.TabStop = true;
             this.rb_26_0.UseVisualStyleBackColor = true;
             this.rb_26_0.CheckedChanged += new System.EventHandler(this.rb_26_0_CheckedChanged);
             // 
@@ -2476,12 +2432,10 @@
             // rb_29_0
             // 
             this.rb_29_0.AutoSize = true;
-            this.rb_29_0.Checked = true;
             this.rb_29_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_29_0.Name = "rb_29_0";
             this.rb_29_0.Size = new System.Drawing.Size(14, 13);
             this.rb_29_0.TabIndex = 2;
-            this.rb_29_0.TabStop = true;
             this.rb_29_0.UseVisualStyleBackColor = true;
             this.rb_29_0.CheckedChanged += new System.EventHandler(this.rb_29_0_CheckedChanged);
             // 
@@ -2552,12 +2506,10 @@
             // rb_25_0
             // 
             this.rb_25_0.AutoSize = true;
-            this.rb_25_0.Checked = true;
             this.rb_25_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_25_0.Name = "rb_25_0";
             this.rb_25_0.Size = new System.Drawing.Size(14, 13);
             this.rb_25_0.TabIndex = 2;
-            this.rb_25_0.TabStop = true;
             this.rb_25_0.UseVisualStyleBackColor = true;
             this.rb_25_0.CheckedChanged += new System.EventHandler(this.rb_25_0_CheckedChanged);
             // 
@@ -2628,12 +2580,10 @@
             // rb_28_0
             // 
             this.rb_28_0.AutoSize = true;
-            this.rb_28_0.Checked = true;
             this.rb_28_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_28_0.Name = "rb_28_0";
             this.rb_28_0.Size = new System.Drawing.Size(14, 13);
             this.rb_28_0.TabIndex = 2;
-            this.rb_28_0.TabStop = true;
             this.rb_28_0.UseVisualStyleBackColor = true;
             this.rb_28_0.CheckedChanged += new System.EventHandler(this.rb_28_0_CheckedChanged);
             // 
@@ -2704,12 +2654,10 @@
             // rb_24_0
             // 
             this.rb_24_0.AutoSize = true;
-            this.rb_24_0.Checked = true;
             this.rb_24_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_24_0.Name = "rb_24_0";
             this.rb_24_0.Size = new System.Drawing.Size(14, 13);
             this.rb_24_0.TabIndex = 2;
-            this.rb_24_0.TabStop = true;
             this.rb_24_0.UseVisualStyleBackColor = true;
             this.rb_24_0.CheckedChanged += new System.EventHandler(this.rb_24_0_CheckedChanged);
             // 
@@ -2780,12 +2728,10 @@
             // rb_27_0
             // 
             this.rb_27_0.AutoSize = true;
-            this.rb_27_0.Checked = true;
             this.rb_27_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_27_0.Name = "rb_27_0";
             this.rb_27_0.Size = new System.Drawing.Size(14, 13);
             this.rb_27_0.TabIndex = 2;
-            this.rb_27_0.TabStop = true;
             this.rb_27_0.UseVisualStyleBackColor = true;
             this.rb_27_0.CheckedChanged += new System.EventHandler(this.rb_27_0_CheckedChanged);
             // 
@@ -2856,12 +2802,10 @@
             // rb_23_0
             // 
             this.rb_23_0.AutoSize = true;
-            this.rb_23_0.Checked = true;
             this.rb_23_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_23_0.Name = "rb_23_0";
             this.rb_23_0.Size = new System.Drawing.Size(14, 13);
             this.rb_23_0.TabIndex = 2;
-            this.rb_23_0.TabStop = true;
             this.rb_23_0.UseVisualStyleBackColor = true;
             this.rb_23_0.CheckedChanged += new System.EventHandler(this.rb_23_0_CheckedChanged);
             // 
@@ -2933,12 +2877,10 @@
             // rb_22_0
             // 
             this.rb_22_0.AutoSize = true;
-            this.rb_22_0.Checked = true;
             this.rb_22_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_22_0.Name = "rb_22_0";
             this.rb_22_0.Size = new System.Drawing.Size(14, 13);
             this.rb_22_0.TabIndex = 2;
-            this.rb_22_0.TabStop = true;
             this.rb_22_0.UseVisualStyleBackColor = true;
             this.rb_22_0.CheckedChanged += new System.EventHandler(this.rb_22_0_CheckedChanged);
             // 
@@ -3009,12 +2951,10 @@
             // rb_21_0
             // 
             this.rb_21_0.AutoSize = true;
-            this.rb_21_0.Checked = true;
             this.rb_21_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_21_0.Name = "rb_21_0";
             this.rb_21_0.Size = new System.Drawing.Size(14, 13);
             this.rb_21_0.TabIndex = 2;
-            this.rb_21_0.TabStop = true;
             this.rb_21_0.UseVisualStyleBackColor = true;
             this.rb_21_0.CheckedChanged += new System.EventHandler(this.rb_21_0_CheckedChanged);
             // 
@@ -3161,12 +3101,10 @@
             // rb_5_NO
             // 
             this.rb_5_NO.AutoSize = true;
-            this.rb_5_NO.Checked = true;
             this.rb_5_NO.Location = new System.Drawing.Point(145, 16);
             this.rb_5_NO.Name = "rb_5_NO";
             this.rb_5_NO.Size = new System.Drawing.Size(41, 17);
             this.rb_5_NO.TabIndex = 2;
-            this.rb_5_NO.TabStop = true;
             this.rb_5_NO.Text = "NO";
             this.rb_5_NO.UseVisualStyleBackColor = true;
             this.rb_5_NO.CheckedChanged += new System.EventHandler(this.rb_5_NO_CheckedChanged);
@@ -3211,13 +3149,11 @@
             // 
             this.rb_31_0.AutoSize = true;
             this.rb_31_0.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rb_31_0.Checked = true;
             this.rb_31_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_31_0.Location = new System.Drawing.Point(471, 39);
             this.rb_31_0.Name = "rb_31_0";
             this.rb_31_0.Size = new System.Drawing.Size(242, 17);
             this.rb_31_0.TabIndex = 2;
-            this.rb_31_0.TabStop = true;
             this.rb_31_0.Text = "No hago ninguna o casi ninguna de las tareas";
             this.rb_31_0.UseVisualStyleBackColor = true;
             this.rb_31_0.CheckedChanged += new System.EventHandler(this.rb_31_0_CheckedChanged);
@@ -3309,12 +3245,10 @@
             // rb_34_0
             // 
             this.rb_34_0.AutoSize = true;
-            this.rb_34_0.Checked = true;
             this.rb_34_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_34_0.Name = "rb_34_0";
             this.rb_34_0.Size = new System.Drawing.Size(14, 13);
             this.rb_34_0.TabIndex = 2;
-            this.rb_34_0.TabStop = true;
             this.rb_34_0.UseVisualStyleBackColor = true;
             this.rb_34_0.CheckedChanged += new System.EventHandler(this.rb_34_0_CheckedChanged);
             // 
@@ -3385,12 +3319,10 @@
             // rb_33_0
             // 
             this.rb_33_0.AutoSize = true;
-            this.rb_33_0.Checked = true;
             this.rb_33_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_33_0.Name = "rb_33_0";
             this.rb_33_0.Size = new System.Drawing.Size(14, 13);
             this.rb_33_0.TabIndex = 2;
-            this.rb_33_0.TabStop = true;
             this.rb_33_0.UseVisualStyleBackColor = true;
             this.rb_33_0.CheckedChanged += new System.EventHandler(this.rb_33_0_CheckedChanged);
             // 
@@ -3461,12 +3393,10 @@
             // rb_32_0
             // 
             this.rb_32_0.AutoSize = true;
-            this.rb_32_0.Checked = true;
             this.rb_32_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_32_0.Name = "rb_32_0";
             this.rb_32_0.Size = new System.Drawing.Size(14, 13);
             this.rb_32_0.TabIndex = 2;
-            this.rb_32_0.TabStop = true;
             this.rb_32_0.UseVisualStyleBackColor = true;
             this.rb_32_0.CheckedChanged += new System.EventHandler(this.rb_32_0_CheckedChanged);
             // 
@@ -3624,12 +3554,10 @@
             // rb_38_0
             // 
             this.rb_38_0.AutoSize = true;
-            this.rb_38_0.Checked = true;
             this.rb_38_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_38_0.Name = "rb_38_0";
             this.rb_38_0.Size = new System.Drawing.Size(14, 13);
             this.rb_38_0.TabIndex = 2;
-            this.rb_38_0.TabStop = true;
             this.rb_38_0.UseVisualStyleBackColor = true;
             this.rb_38_0.CheckedChanged += new System.EventHandler(this.rb_38_0_CheckedChanged);
             // 
@@ -3701,12 +3629,10 @@
             // rb_37_0
             // 
             this.rb_37_0.AutoSize = true;
-            this.rb_37_0.Checked = true;
             this.rb_37_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_37_0.Name = "rb_37_0";
             this.rb_37_0.Size = new System.Drawing.Size(14, 13);
             this.rb_37_0.TabIndex = 2;
-            this.rb_37_0.TabStop = true;
             this.rb_37_0.UseVisualStyleBackColor = true;
             this.rb_37_0.CheckedChanged += new System.EventHandler(this.rb_37_0_CheckedChanged);
             // 
@@ -3777,12 +3703,10 @@
             // rb_36_0
             // 
             this.rb_36_0.AutoSize = true;
-            this.rb_36_0.Checked = true;
             this.rb_36_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_36_0.Name = "rb_36_0";
             this.rb_36_0.Size = new System.Drawing.Size(14, 13);
             this.rb_36_0.TabIndex = 2;
-            this.rb_36_0.TabStop = true;
             this.rb_36_0.UseVisualStyleBackColor = true;
             this.rb_36_0.CheckedChanged += new System.EventHandler(this.rb_36_0_CheckedChanged);
             // 
@@ -3853,12 +3777,10 @@
             // rb_35_0
             // 
             this.rb_35_0.AutoSize = true;
-            this.rb_35_0.Checked = true;
             this.rb_35_0.Location = new System.Drawing.Point(1000, 17);
             this.rb_35_0.Name = "rb_35_0";
             this.rb_35_0.Size = new System.Drawing.Size(14, 13);
             this.rb_35_0.TabIndex = 2;
-            this.rb_35_0.TabStop = true;
             this.rb_35_0.UseVisualStyleBackColor = true;
             this.rb_35_0.CheckedChanged += new System.EventHandler(this.rb_35_0_CheckedChanged);
             // 

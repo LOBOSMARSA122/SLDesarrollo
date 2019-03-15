@@ -154,6 +154,6 @@ namespace Sigesoft.Node.WinClient.BE
         public string v_Name { get; set; }
 
         public string v_RecomendacionesConcatenadasDx { get; set; }
-        
+        public string aptitudaltura { get; set; }
     }
 }

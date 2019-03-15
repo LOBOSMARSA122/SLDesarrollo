@@ -12,6 +12,7 @@ using Sigesoft.Node.WinClient.BE;
 using System.IO;
 using NetPdf;
 using Infragistics.Win.UltraWinGrid;
+using LoadingClass;
 
 
 namespace Sigesoft.Node.WinClient.UI.Reports
@@ -35,7 +36,6 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                 List<string> Filters = new List<string>();
                 DateTime? pdatBeginDate = dtpDateTimeStar.Value.Date;
                 DateTime? pdatEndDate = dptDateTimeEnd.Value.Date.AddDays(1);
-
                 if (ddlCustomerOrganization.SelectedValue.ToString() != "-1")
                 {
                     var id3 = ddlCustomerOrganization.SelectedValue.ToString().Split('|');

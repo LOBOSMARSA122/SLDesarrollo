@@ -21,8 +21,8 @@ namespace NetPdf
         }
         
         #region CUESTONARIO_ISTAS
-        public static void CreateReportIstas(PacientList filiationData, ServiceList DataService,
-            List<ServiceComponentList> serviceComponent,
+        public static void CreateReportIstas_2(PacientList filiationData, ServiceList DataService,
+            List<ServiceComponentFieldValuesList> serviceComponent,
             organizationDto infoEmpresa,
             PacientList datosPac,
             string filePDF)
@@ -130,30 +130,39 @@ namespace NetPdf
             #endregion
 
             #region VARIABLES
-            ServiceComponentList IstasQ = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.CUESTIONARIO_ISTAS_2);
+
+            //var serviceComponentList = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.CUESTIONARIO_ISTAS_2);
+            //string Prueba_1 = serviceComponentList.ServiceComponentFields.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_1) == null ? "" : serviceComponentList.ServiceComponentFields.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_1).v_Value1;
+            //var serviceComponentList_2 = serviceComponent.Find(p => p.v_ComponentId == Sigesoft.Common.Constants.PSICOLOGIA_ID);
+            //ServiceComponentList IstasQ = serviceComponentList;
+            //if (Prueba_1 == "")
+            //{
+            //    IstasQ = serviceComponentList_2;
+            //}
+             
 
                 #region Campos 1
-                var PREGUNTA_1 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_1) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_1).v_Value1;
+                var PREGUNTA_1 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_1) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_1).v_Value1;
                 string _1_MUCHAS = "", _1_UNPOCO = "", _1_ALGUNAS = "", _1_SOLO = "", _1_NUNCA = "";
                 if (PREGUNTA_1 == "4") _1_MUCHAS = "( X )"; else if (PREGUNTA_1 == "3") _1_UNPOCO = "( X )"; else if (PREGUNTA_1 == "2") _1_ALGUNAS = "( X )"; else if (PREGUNTA_1 == "1") _1_SOLO = "( X )"; else if (PREGUNTA_1 == "0") _1_NUNCA = "( X )";
 
-                var PREGUNTA_2 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_2) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_2).v_Value1;
+                var PREGUNTA_2 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_2) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_2).v_Value1;
                 string _2_MUCHAS = "", _2_UNPOCO = "", _2_ALGUNAS = "", _2_SOLO = "", _2_NUNCA = "";
                 if (PREGUNTA_2 == "4") _2_MUCHAS = "( X )"; else if (PREGUNTA_2 == "3") _2_UNPOCO = "( X )"; else if (PREGUNTA_2 == "2") _2_ALGUNAS = "( X )"; else if (PREGUNTA_2 == "1") _2_SOLO = "( X )"; else if (PREGUNTA_2 == "0") _2_NUNCA = "( X )";
 
-                var PREGUNTA_3 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_3) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_3).v_Value1;
+                var PREGUNTA_3 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_3) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_3).v_Value1;
                 string _3_MUCHAS = "", _3_UNPOCO = "", _3_ALGUNAS = "", _3_SOLO = "", _3_NUNCA = "";
                 if (PREGUNTA_3 == "4") _3_MUCHAS = "( X )"; else if (PREGUNTA_3 == "3") _3_UNPOCO = "( X )"; else if (PREGUNTA_3 == "2") _3_ALGUNAS = "( X )"; else if (PREGUNTA_3 == "1") _3_SOLO = "( X )"; else if (PREGUNTA_3 == "0") _3_NUNCA = "( X )";
 
-                var PREGUNTA_4 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_4) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_4).v_Value1;
+                var PREGUNTA_4 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_4) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_4).v_Value1;
                 string _4_MUCHAS = "", _4_UNPOCO = "", _4_ALGUNAS = "", _4_SOLO = "", _4_NUNCA = "";
                 if (PREGUNTA_4 == "4") _4_MUCHAS = "( X )"; else if (PREGUNTA_4 == "3") _4_UNPOCO = "( X )"; else if (PREGUNTA_4 == "2") _4_ALGUNAS = "( X )"; else if (PREGUNTA_4 == "1") _4_SOLO = "( X )"; else if (PREGUNTA_4 == "0") _4_NUNCA = "( X )";
 
-                var PREGUNTA_5 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_5) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_5).v_Value1;
+                var PREGUNTA_5 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_5) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_5).v_Value1;
                 string _5_MUCHAS = "", _5_UNPOCO = "", _5_ALGUNAS = "", _5_SOLO = "", _5_NUNCA = "";
                 if (PREGUNTA_5 == "4") _5_MUCHAS = "( X )"; else if (PREGUNTA_5 == "3") _5_UNPOCO = "( X )"; else if (PREGUNTA_5 == "2") _5_ALGUNAS = "( X )"; else if (PREGUNTA_5 == "1") _5_SOLO = "( X )"; else if (PREGUNTA_5 == "0") _5_NUNCA = "( X )";
 
-                var PREGUNTA_6 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_6) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_6).v_Value1;
+                var PREGUNTA_6 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_6) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_6).v_Value1;
                 string _6_MUCHAS = "", _6_UNPOCO = "", _6_ALGUNAS = "", _6_SOLO = "", _6_NUNCA = "";
                 if (PREGUNTA_6 == "4") _6_MUCHAS = "( X )"; else if (PREGUNTA_6 == "3") _6_UNPOCO = "( X )"; else if (PREGUNTA_6 == "2") _6_ALGUNAS = "( X )"; else if (PREGUNTA_6 == "1") _6_SOLO = "( X )"; else if (PREGUNTA_6 == "0") _6_NUNCA = "( X )";
 
@@ -161,53 +170,53 @@ namespace NetPdf
                 #endregion
 
                 #region Campos 2
-                var PREGUNTA_7 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_7) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_7).v_Value1;
+                var PREGUNTA_7 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_7) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_7).v_Value1;
                 string _7_MUCHAS = "", _7_UNPOCO = "", _7_ALGUNAS = "", _7_SOLO = "", _7_NUNCA = "";
                 if (PREGUNTA_7 == "4") _7_MUCHAS = "( X )"; else if (PREGUNTA_7 == "3") _7_UNPOCO = "( X )"; else if (PREGUNTA_7 == "2") _7_ALGUNAS = "( X )"; else if (PREGUNTA_7 == "1") _7_SOLO = "( X )"; else if (PREGUNTA_7 == "0") _7_NUNCA = "( X )";
-                var PREGUNTA_8 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_8) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_8).v_Value1;
+                var PREGUNTA_8 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_8) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_8).v_Value1;
                 string _8_MUCHAS = "", _8_UNPOCO = "", _8_ALGUNAS = "", _8_SOLO = "", _8_NUNCA = "";
                 if (PREGUNTA_8 == "4") _8_MUCHAS = "( X )"; else if (PREGUNTA_8 == "3") _8_UNPOCO = "( X )"; else if (PREGUNTA_8 == "2") _8_ALGUNAS = "( X )"; else if (PREGUNTA_8 == "1") _8_SOLO = "( X )"; else if (PREGUNTA_8 == "0") _8_NUNCA = "( X )";
-                var PREGUNTA_9 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_9) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_9).v_Value1;
+                var PREGUNTA_9 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_9) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_9).v_Value1;
                 string _9_MUCHAS = "", _9_UNPOCO = "", _9_ALGUNAS = "", _9_SOLO = "", _9_NUNCA = "";
                 if (PREGUNTA_9 == "4") _9_MUCHAS = "( X )"; else if (PREGUNTA_9 == "3") _9_UNPOCO = "( X )"; else if (PREGUNTA_9 == "2") _9_ALGUNAS = "( X )"; else if (PREGUNTA_9 == "1") _9_SOLO = "( X )"; else if (PREGUNTA_9 == "0") _9_NUNCA = "( X )";
-                var PREGUNTA_10 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_10) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_10).v_Value1;
+                var PREGUNTA_10 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_10) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_10).v_Value1;
                 string _10_MUCHAS = "", _10_UNPOCO = "", _10_ALGUNAS = "", _10_SOLO = "", _10_NUNCA = "";
                 if (PREGUNTA_10 == "4") _10_MUCHAS = "( X )"; else if (PREGUNTA_10 == "3") _10_UNPOCO = "( X )"; else if (PREGUNTA_10 == "2") _10_ALGUNAS = "( X )"; else if (PREGUNTA_10 == "1") _10_SOLO = "( X )"; else if (PREGUNTA_10 == "0") _10_NUNCA = "( X )";
-                var PREGUNTA_11 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_11) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_11).v_Value1;
+                var PREGUNTA_11 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_11) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_11).v_Value1;
                 string _11_MUCHAS = "", _11_UNPOCO = "", _11_ALGUNAS = "", _11_SOLO = "", _11_NUNCA = "";
                 if (PREGUNTA_11 == "4") _11_MUCHAS = "( X )"; else if (PREGUNTA_11 == "3") _11_UNPOCO = "( X )"; else if (PREGUNTA_11 == "2") _11_ALGUNAS = "( X )"; else if (PREGUNTA_11 == "1") _11_SOLO = "( X )"; else if (PREGUNTA_11 == "0") _11_NUNCA = "( X )";
-                var PREGUNTA_12 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_12) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_12).v_Value1;
+                var PREGUNTA_12 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_12) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_12).v_Value1;
                 string _12_MUCHAS = "", _12_UNPOCO = "", _12_ALGUNAS = "", _12_SOLO = "", _12_NUNCA = "";
                 if (PREGUNTA_12 == "4") _12_MUCHAS = "( X )"; else if (PREGUNTA_12 == "3") _12_UNPOCO = "( X )"; else if (PREGUNTA_12 == "2") _12_ALGUNAS = "( X )"; else if (PREGUNTA_12 == "1") _12_SOLO = "( X )"; else if (PREGUNTA_12 == "0") _12_NUNCA = "( X )";
-                var PREGUNTA_13 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_13) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_13).v_Value1;
+                var PREGUNTA_13 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_13) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_13).v_Value1;
                 string _13_MUCHAS = "", _13_UNPOCO = "", _13_ALGUNAS = "", _13_SOLO = "", _13_NUNCA = "";
                 if (PREGUNTA_13 == "4") _13_MUCHAS = "( X )"; else if (PREGUNTA_13 == "3") _13_UNPOCO = "( X )"; else if (PREGUNTA_13 == "2") _13_ALGUNAS = "( X )"; else if (PREGUNTA_13 == "1") _13_SOLO = "( X )"; else if (PREGUNTA_13 == "0") _13_NUNCA = "( X )";
-                var PREGUNTA_14 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_14) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_14).v_Value1;
+                var PREGUNTA_14 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_14) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_14).v_Value1;
                 string _14_MUCHAS = "", _14_UNPOCO = "", _14_ALGUNAS = "", _14_SOLO = "", _14_NUNCA = "";
                 if (PREGUNTA_14 == "4") _14_MUCHAS = "( X )"; else if (PREGUNTA_14 == "3") _14_UNPOCO = "( X )"; else if (PREGUNTA_14 == "2") _14_ALGUNAS = "( X )"; else if (PREGUNTA_14 == "1") _14_SOLO = "( X )"; else if (PREGUNTA_14 == "0") _14_NUNCA = "( X )";
-                var PREGUNTA_15 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_15) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_15).v_Value1;
+                var PREGUNTA_15 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_15) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_15).v_Value1;
                 string _15_MUCHAS = "", _15_UNPOCO = "", _15_ALGUNAS = "", _15_SOLO = "", _15_NUNCA = "";
                 if (PREGUNTA_15 == "4") _15_MUCHAS = "( X )"; else if (PREGUNTA_15 == "3") _15_UNPOCO = "( X )"; else if (PREGUNTA_15 == "2") _15_ALGUNAS = "( X )"; else if (PREGUNTA_15 == "1") _15_SOLO = "( X )"; else if (PREGUNTA_15 == "0") _15_NUNCA = "( X )";
-                var PREGUNTA_16 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_16) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_16).v_Value1;
+                var PREGUNTA_16 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_16) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_16).v_Value1;
                 string _16_MUCHAS = "", _16_UNPOCO = "", _16_ALGUNAS = "", _16_SOLO = "", _16_NUNCA = "";
                 if (PREGUNTA_16 == "4") _16_MUCHAS = "( X )"; else if (PREGUNTA_16 == "3") _16_UNPOCO = "( X )"; else if (PREGUNTA_16 == "2") _16_ALGUNAS = "( X )"; else if (PREGUNTA_16 == "1") _16_SOLO = "( X )"; else if (PREGUNTA_16 == "0") _16_NUNCA = "( X )";
                 int valorApartado2 = int.Parse(PREGUNTA_7) + int.Parse(PREGUNTA_8) + int.Parse(PREGUNTA_9) + int.Parse(PREGUNTA_10) + int.Parse(PREGUNTA_11) + int.Parse(PREGUNTA_12) + int.Parse(PREGUNTA_13) + int.Parse(PREGUNTA_14) + int.Parse(PREGUNTA_15) + int.Parse(PREGUNTA_16);
                 #endregion
 
                 #region Campos 3
-                var PREGUNTA_17 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_17) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_17).v_Value1;
+                var PREGUNTA_17 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_17) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_17).v_Value1;
                 string _17_MUCHAS = "", _17_UNPOCO = "", _17_ALGUNAS = "", _17_SOLO = "", _17_NUNCA = "";
                 if (PREGUNTA_17 == "4") _17_MUCHAS = "( X )"; else if (PREGUNTA_17 == "3") _17_UNPOCO = "( X )"; else if (PREGUNTA_17 == "2") _17_ALGUNAS = "( X )"; else if (PREGUNTA_17 == "1") _17_SOLO = "( X )"; else if (PREGUNTA_17 == "0") _17_NUNCA = "( X )";
 
-                var PREGUNTA_18 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_18) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_18).v_Value1;
+                var PREGUNTA_18 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_18) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_18).v_Value1;
                 string _18_MUCHAS = "", _18_UNPOCO = "", _18_ALGUNAS = "", _18_SOLO = "", _18_NUNCA = "";
                 if (PREGUNTA_18 == "4") _18_MUCHAS = "( X )"; else if (PREGUNTA_18 == "3") _18_UNPOCO = "( X )"; else if (PREGUNTA_18 == "2") _18_ALGUNAS = "( X )"; else if (PREGUNTA_18 == "1") _18_SOLO = "( X )"; else if (PREGUNTA_18 == "0") _18_NUNCA = "( X )";
 
-                var PREGUNTA_19 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_19) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_19).v_Value1;
+                var PREGUNTA_19 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_19) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_19).v_Value1;
                 string _19_MUCHAS = "", _19_UNPOCO = "", _19_ALGUNAS = "", _19_SOLO = "", _19_NUNCA = "";
                 if (PREGUNTA_19 == "4") _19_MUCHAS = "( X )"; else if (PREGUNTA_19 == "3") _19_UNPOCO = "( X )"; else if (PREGUNTA_19 == "2") _19_ALGUNAS = "( X )"; else if (PREGUNTA_19 == "1") _19_SOLO = "( X )"; else if (PREGUNTA_19 == "0") _19_NUNCA = "( X )";
 
-                var PREGUNTA_20 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_20) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_20).v_Value1;
+                var PREGUNTA_20 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_20) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_20).v_Value1;
                 string _20_MUCHAS = "", _20_UNPOCO = "", _20_ALGUNAS = "", _20_SOLO = "", _20_NUNCA = "";
                 if (PREGUNTA_20 == "4") _20_MUCHAS = "( X )"; else if (PREGUNTA_20 == "3") _20_UNPOCO = "( X )"; else if (PREGUNTA_20 == "2") _20_ALGUNAS = "( X )"; else if (PREGUNTA_20 == "1") _20_SOLO = "( X )"; else if (PREGUNTA_20 == "0") _20_NUNCA = "( X )";
 
@@ -216,43 +225,43 @@ namespace NetPdf
                 #endregion
 
                 #region Campos 4
-                var PREGUNTA_21 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_21) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_21).v_Value1;
+                var PREGUNTA_21 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_21) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_21).v_Value1;
                 string _21_MUCHAS = "", _21_UNPOCO = "", _21_ALGUNAS = "", _21_SOLO = "", _21_NUNCA = "";
                 if (PREGUNTA_21 == "4") _21_MUCHAS = "( X )"; else if (PREGUNTA_21 == "3") _21_UNPOCO = "( X )"; else if (PREGUNTA_21 == "2") _21_ALGUNAS = "( X )"; else if (PREGUNTA_21 == "1") _21_SOLO = "( X )"; else if (PREGUNTA_21 == "0") _21_NUNCA = "( X )";
 
-                var PREGUNTA_22 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_22) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_22).v_Value1;
+                var PREGUNTA_22 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_22) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_22).v_Value1;
                 string _22_MUCHAS = "", _22_UNPOCO = "", _22_ALGUNAS = "", _22_SOLO = "", _22_NUNCA = "";
                 if (PREGUNTA_22 == "4") _22_MUCHAS = "( X )"; else if (PREGUNTA_22 == "3") _22_UNPOCO = "( X )"; else if (PREGUNTA_22 == "2") _22_ALGUNAS = "( X )"; else if (PREGUNTA_22 == "1") _22_SOLO = "( X )"; else if (PREGUNTA_22 == "0") _22_NUNCA = "( X )";
 
-                var PREGUNTA_23 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_23) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_23).v_Value1;
+                var PREGUNTA_23 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_23) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_23).v_Value1;
                 string _23_MUCHAS = "", _23_UNPOCO = "", _23_ALGUNAS = "", _23_SOLO = "", _23_NUNCA = "";
                 if (PREGUNTA_23 == "4") _23_MUCHAS = "( X )"; else if (PREGUNTA_23 == "3") _23_UNPOCO = "( X )"; else if (PREGUNTA_23 == "2") _23_ALGUNAS = "( X )"; else if (PREGUNTA_23 == "1") _23_SOLO = "( X )"; else if (PREGUNTA_23 == "0") _23_NUNCA = "( X )";
 
-                var PREGUNTA_24 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_24) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_24).v_Value1;
+                var PREGUNTA_24 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_24) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_24).v_Value1;
                 string _24_MUCHAS = "", _24_UNPOCO = "", _24_ALGUNAS = "", _24_SOLO = "", _24_NUNCA = "";
                 if (PREGUNTA_24 == "4") _24_MUCHAS = "( X )"; else if (PREGUNTA_24 == "3") _24_UNPOCO = "( X )"; else if (PREGUNTA_24 == "2") _24_ALGUNAS = "( X )"; else if (PREGUNTA_24 == "1") _24_SOLO = "( X )"; else if (PREGUNTA_24 == "0") _24_NUNCA = "( X )";
 
-                var PREGUNTA_25 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_25) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_25).v_Value1;
+                var PREGUNTA_25 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_25) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_25).v_Value1;
                 string _25_MUCHAS = "", _25_UNPOCO = "", _25_ALGUNAS = "", _25_SOLO = "", _25_NUNCA = "";
                 if (PREGUNTA_25 == "4") _25_MUCHAS = "( X )"; else if (PREGUNTA_25 == "3") _25_UNPOCO = "( X )"; else if (PREGUNTA_25 == "2") _25_ALGUNAS = "( X )"; else if (PREGUNTA_25 == "1") _25_SOLO = "( X )"; else if (PREGUNTA_25 == "0") _25_NUNCA = "( X )";
 
-                var PREGUNTA_26 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_26) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_26).v_Value1;
+                var PREGUNTA_26 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_26) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_26).v_Value1;
                 string _26_MUCHAS = "", _26_UNPOCO = "", _26_ALGUNAS = "", _26_SOLO = "", _26_NUNCA = "";
                 if (PREGUNTA_26 == "4") _26_MUCHAS = "( X )"; else if (PREGUNTA_26 == "3") _26_UNPOCO = "( X )"; else if (PREGUNTA_26 == "2") _26_ALGUNAS = "( X )"; else if (PREGUNTA_26 == "1") _26_SOLO = "( X )"; else if (PREGUNTA_26 == "0") _26_NUNCA = "( X )";
 
-                var PREGUNTA_27 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_27) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_27).v_Value1;
+                var PREGUNTA_27 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_27) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_27).v_Value1;
                 string _27_MUCHAS = "", _27_UNPOCO = "", _27_ALGUNAS = "", _27_SOLO = "", _27_NUNCA = "";
                 if (PREGUNTA_27 == "4") _27_MUCHAS = "( X )"; else if (PREGUNTA_27 == "3") _27_UNPOCO = "( X )"; else if (PREGUNTA_27 == "2") _27_ALGUNAS = "( X )"; else if (PREGUNTA_27 == "1") _27_SOLO = "( X )"; else if (PREGUNTA_27 == "0") _27_NUNCA = "( X )";
 
-                var PREGUNTA_28 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_28) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_28).v_Value1;
+                var PREGUNTA_28 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_28) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_28).v_Value1;
                 string _28_MUCHAS = "", _28_UNPOCO = "", _28_ALGUNAS = "", _28_SOLO = "", _28_NUNCA = "";
                 if (PREGUNTA_28 == "4") _28_MUCHAS = "( X )"; else if (PREGUNTA_28 == "3") _28_UNPOCO = "( X )"; else if (PREGUNTA_28 == "2") _28_ALGUNAS = "( X )"; else if (PREGUNTA_28 == "1") _28_SOLO = "( X )"; else if (PREGUNTA_28 == "0") _28_NUNCA = "( X )";
 
-                var PREGUNTA_29 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_29) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_29).v_Value1;
+                var PREGUNTA_29 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_29) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_29).v_Value1;
                 string _29_MUCHAS = "", _29_UNPOCO = "", _29_ALGUNAS = "", _29_SOLO = "", _29_NUNCA = "";
                 if (PREGUNTA_29 == "4") _29_MUCHAS = "( X )"; else if (PREGUNTA_29 == "3") _29_UNPOCO = "( X )"; else if (PREGUNTA_29 == "2") _29_ALGUNAS = "( X )"; else if (PREGUNTA_29 == "1") _29_SOLO = "( X )"; else if (PREGUNTA_29 == "0") _29_NUNCA = "( X )";
 
-                var PREGUNTA_30 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_30) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_30).v_Value1;
+                var PREGUNTA_30 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_30) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_30).v_Value1;
                 string _30_MUCHAS = "", _30_UNPOCO = "", _30_ALGUNAS = "", _30_SOLO = "", _30_NUNCA = "";
                 if (PREGUNTA_30 == "4") _30_MUCHAS = "( X )"; else if (PREGUNTA_30 == "3") _30_UNPOCO = "( X )"; else if (PREGUNTA_30 == "2") _30_ALGUNAS = "( X )"; else if (PREGUNTA_30 == "1") _30_SOLO = "( X )"; else if (PREGUNTA_30 == "0") _30_NUNCA = "( X )";
 
@@ -262,24 +271,24 @@ namespace NetPdf
 
                 #region Campos 5
 
-                var PREGUNTA_31 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_31) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_31).v_Value1;
+                var PREGUNTA_31 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_31) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_31).v_Value1;
                 string _31_A_ = ""; string _31_B_ = ""; string _31_C_ = "";string _31_D_ = ""; string _31_E_ = ""; 
 
-                var PREGUNTA_32 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_32) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_32).v_Value1;
+                var PREGUNTA_32 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_32) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_32).v_Value1;
                 string _32_MUCHAS = "", _32_UNPOCO = "", _32_ALGUNAS = "", _32_SOLO = "", _32_NUNCA = "";
                 
 
-                var PREGUNTA_33 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_33) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_33).v_Value1;
+                var PREGUNTA_33 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_33) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_33).v_Value1;
                 string _33_MUCHAS = "", _33_UNPOCO = "", _33_ALGUNAS = "", _33_SOLO = "", _33_NUNCA = "";
                 
 
-                var PREGUNTA_34 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_34) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_34).v_Value1;
+                var PREGUNTA_34 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_34) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_34).v_Value1;
                 string _34_MUCHAS = "", _34_UNPOCO = "", _34_ALGUNAS = "", _34_SOLO = "", _34_NUNCA = "";
                 
 
                 string valorApartado5="VIVE SOLO";
-                var _5_SINO = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants._5_SINO) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants._5_SINO).v_Value1;
-                if (_5_SINO == "1")
+                var Apartado5_SINO = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.Apartado5_SINO) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.Apartado5_SINO).v_Value1;
+                if (Apartado5_SINO == "0")
                 {
                     if (PREGUNTA_31 == "4") _31_A_ = "( X )";
                     if (PREGUNTA_31 == "3") _31_B_ = "( X )";
@@ -295,19 +304,19 @@ namespace NetPdf
                 #endregion
 
                 #region Campos 6
-                var PREGUNTA_35 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_35) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_35).v_Value1;
+                var PREGUNTA_35 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_35) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_35).v_Value1;
                 string _35_MUCHAS = "", _35_UNPOCO = "", _35_ALGUNAS = "", _35_SOLO = "", _35_NUNCA = "";
                 if (PREGUNTA_35 == "4") _35_MUCHAS = "( X )"; else if (PREGUNTA_35 == "3") _35_UNPOCO = "( X )"; else if (PREGUNTA_35 == "2") _35_ALGUNAS = "( X )"; else if (PREGUNTA_35 == "1") _35_SOLO = "( X )"; else if (PREGUNTA_35 == "0") _35_NUNCA = "( X )";
 
-                var PREGUNTA_36 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_36) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_36).v_Value1;
+                var PREGUNTA_36 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_36) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_36).v_Value1;
                 string _36_MUCHAS = "", _36_UNPOCO = "", _36_ALGUNAS = "", _36_SOLO = "", _36_NUNCA = "";
                 if (PREGUNTA_36 == "4") _36_MUCHAS = "( X )"; else if (PREGUNTA_36 == "3") _36_UNPOCO = "( X )"; else if (PREGUNTA_36 == "2") _36_ALGUNAS = "( X )"; else if (PREGUNTA_36 == "1") _36_SOLO = "( X )"; else if (PREGUNTA_36 == "0") _36_NUNCA = "( X )";
 
-                var PREGUNTA_37 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_37) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_37).v_Value1;
+                var PREGUNTA_37 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_37) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_37).v_Value1;
                 string _37_MUCHAS = "", _37_UNPOCO = "", _37_ALGUNAS = "", _37_SOLO = "", _37_NUNCA = "";
                 if (PREGUNTA_37 == "4") _37_MUCHAS = "( X )"; else if (PREGUNTA_37 == "3") _37_UNPOCO = "( X )"; else if (PREGUNTA_37 == "2") _37_ALGUNAS = "( X )"; else if (PREGUNTA_37 == "1") _37_SOLO = "( X )"; else if (PREGUNTA_37 == "0") _37_NUNCA = "( X )";
 
-                var PREGUNTA_38 = IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_38) == null ? "" : IstasQ.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.PREGUNTA_38).v_Value1;
+                var PREGUNTA_38 = serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_38) == null ? "" : serviceComponent.Find(p => p.v_ComponentFieldId == Sigesoft.Common.Constants.PREGUNTA_38).v_Value1;
                 string _38_MUCHAS = "", _38_UNPOCO = "", _38_ALGUNAS = "", _38_SOLO = "", _38_NUNCA = "";
                 if (PREGUNTA_38 == "4") _38_MUCHAS = "( X )"; else if (PREGUNTA_38 == "3") _38_UNPOCO = "( X )"; else if (PREGUNTA_38 == "2") _38_ALGUNAS = "( X )"; else if (PREGUNTA_38 == "1") _38_SOLO = "( X )"; else if (PREGUNTA_38 == "0") _38_NUNCA = "( X )";
 
@@ -338,7 +347,7 @@ namespace NetPdf
 
                 string verde5 = "", amarillo5 = "", rojo5 = "";
 
-                if (_5_SINO == "1")
+                if (Apartado5_SINO == "0")
                 {
                  verde5 =
                     int.Parse(valorApartado5) >= 0 && int.Parse(valorApartado5) <= 3
@@ -828,7 +837,7 @@ namespace NetPdf
             cells = new List<PdfPCell>()
             {
                 new PdfPCell(new Phrase(" ", fontColumnValue)) { Colspan = 20, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.WHITE,  BorderColorRight=BaseColor.WHITE,  BorderColorBottom=BaseColor.WHITE, BorderColorTop=BaseColor.WHITE},
-                new PdfPCell(new Phrase(_5_SINO=="0"?"  APARTADO 5 (VIVE SOLO)":"APARTADO 5", fontColumnValue)) { Colspan = 10, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda2, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.WHITE,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase(Apartado5_SINO=="1"?"  APARTADO 5 (VIVE SOLO)":"APARTADO 5", fontColumnValue)) { Colspan = 10, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda2, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.WHITE,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase(" ", fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.WHITE,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase(" ", fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.WHITE,  BorderColorRight=BaseColor.WHITE,  BorderColorBottom=BaseColor.WHITE, BorderColorTop=BaseColor.WHITE},
                 new PdfPCell(new Phrase(" ", fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.WHITE,  BorderColorRight=BaseColor.WHITE,  BorderColorBottom=BaseColor.WHITE, BorderColorTop=BaseColor.WHITE},
@@ -897,7 +906,7 @@ namespace NetPdf
             cells = new List<PdfPCell>()
             {
                 new PdfPCell(new Phrase(" ", fontColumnValue)) { Colspan = 20, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.WHITE,  BorderColorRight=BaseColor.WHITE,  BorderColorBottom=BaseColor.WHITE, BorderColorTop=BaseColor.WHITE},
-                new PdfPCell(new Phrase(_5_SINO=="0"?"  APARTADO 5 (VIVE SOLO)":"APARTADO 5", fontColumnValue)) { Colspan = 10, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda2, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase(Apartado5_SINO=="1"?"  APARTADO 5 (VIVE SOLO)":"APARTADO 5", fontColumnValue)) { Colspan = 10, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda2, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase("Muchas"+"\r veces", fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda2, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase("Un poco", fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda2,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase("Algunas"+"\r veces", fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda2,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
@@ -970,11 +979,11 @@ namespace NetPdf
 
                 new PdfPCell(new Phrase("37.-", fontSubTitle)) { Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase("En mi trabajo me tratan injustamente ", fontColumnValue)) { Colspan = 9, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("4 "+_37_MUCHAS, fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("3 "+_37_UNPOCO, fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("2 "+_37_ALGUNAS, fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("1 "+_37_SOLO, fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase("0 "+_37_NUNCA, fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("1 "+_37_SOLO, fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("2 "+_37_ALGUNAS, fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("3 "+_37_UNPOCO, fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("4 "+_37_MUCHAS, fontColumnValue)) { Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
 
                 new PdfPCell(new Phrase("38.-", fontSubTitle)) { Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase("Si pienso en todo el trabajo y esfuerzo que he realizado, el reconocimiento que recibo en mi trabajo es el adecuado", fontColumnValue)) { Colspan = 9, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
@@ -1003,15 +1012,15 @@ namespace NetPdf
                 new PdfPCell(new Phrase(" ", fontColumnValue)) { Colspan = 20, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.WHITE,  BorderColorRight=BaseColor.WHITE,  BorderColorBottom=BaseColor.WHITE, BorderColorTop=BaseColor.WHITE},
                 new PdfPCell(new Phrase("INTERPRETACION", fontColumnValue)) { Colspan = 20, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda2, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
      
-                new PdfPCell(new Phrase("Apartado", fontColumnValue)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("Exigencias psicosológicas", fontColumnValue)) { Colspan = 5, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("Puntaje  ", fontColumnValue)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("Verde", fontColumnValue)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("Amarillo ", fontColumnValue)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("Rojo", fontColumnValue)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("Apartado", fontColumnValueBold)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("Dimensiones psicosociales", fontColumnValueBold)) { Colspan = 5, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("Puntaje  ", fontColumnValueBold)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("Verde", fontColumnValueBold)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("Amarillo ", fontColumnValueBold)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("Rojo", fontColumnValueBold)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 
                 new PdfPCell(new Phrase("1", fontColumnValue)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
-                new PdfPCell(new Phrase("Dimensiones psicosociales", fontColumnValue)) { Colspan = 5, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
+                new PdfPCell(new Phrase("Exigencias psicosológicas", fontColumnValue)) { Colspan = 5, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase(valorApartado1.ToString(), fontColumnValue)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase("0 - 7 "+verde1, fontColumnValue)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},
                 new PdfPCell(new Phrase("8 - 10 "+amarillo1, fontColumnValue)) { Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda,  MinimumHeight = tamaño_celda, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.BLACK, BorderColorTop=BaseColor.BLACK},

@@ -309,6 +309,7 @@ namespace Sigesoft.Node.WinClient.UI.UserControls
             txtValorApartado4.Name = "N009-IST00000042";
             txtValorApartado5.Name = "N009-IST00000043";
             txtValorApartado6.Name = "N009-IST00000044";
+           
 
         }
 
@@ -557,6 +558,48 @@ namespace Sigesoft.Node.WinClient.UI.UserControls
                         if (field.Name == item.v_ComponentFieldId)
                         {
                             ((TextBox)field).Text = item.v_Value1;
+                        }
+                        if (item.v_ComponentFieldId == Constants.ValorApartado1)
+                        {
+                            if (item.v_Value1 != "" || item.v_Value1 != null)
+                            {
+                                lbl_ptje1.Text = item.v_Value1;
+                            }
+                        }
+                        if (item.v_ComponentFieldId == Constants.ValorApartado2)
+                        {
+                            if (item.v_Value1 != "" || item.v_Value1 != null)
+                            {
+                                lbl_ptje2.Text = item.v_Value1;
+                            }
+                        }
+                        if (item.v_ComponentFieldId == Constants.ValorApartado3)
+                        {
+                            if (item.v_Value1 != "" || item.v_Value1 != null)
+                            {
+                                lbl_ptje3.Text = item.v_Value1;
+                            }
+                        }
+                        if (item.v_ComponentFieldId == Constants.ValorApartado4)
+                        {
+                            if (item.v_Value1 != "" || item.v_Value1 != null)
+                            {
+                                lbl_ptje4.Text = item.v_Value1;
+                            }
+                        }
+                        if (item.v_ComponentFieldId == Constants.ValorApartado5)
+                        {
+                            if (item.v_Value1 != "" || item.v_Value1 != null)
+                            {
+                                lbl_ptje5.Text = item.v_Value1;
+                            }
+                        }
+                        if (item.v_ComponentFieldId == Constants.ValorApartado6)
+                        {
+                            if (item.v_Value1 != "" || item.v_Value1 != null)
+                            {
+                                lbl_ptje6.Text = item.v_Value1;
+                            }
                         }
                     }
 
@@ -1454,6 +1497,8 @@ namespace Sigesoft.Node.WinClient.UI.UserControls
                                 }
                                 
                             }
+                           
+                           
                         }
                     }
                 }

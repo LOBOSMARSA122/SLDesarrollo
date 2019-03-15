@@ -790,6 +790,18 @@ namespace Sigesoft.Node.WinClient.UI.Reports
 
             INFORME_SAS_REPORT.CreateReportSAS(filiationData,_DataService, serviceComponents, MedicalCenter, datosP, pathFile);
         }
+
+        private void GenerateInformeIstas(string pathFile)
+        {
+            var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
+            var filiationData = _pacientBL.GetPacientReportEPS(_serviceId);
+            var serviceComponents = _serviceBL.ValoresComponentesUserControl(_serviceId, Constants.PSICOLOGIA_ID).ToList();//_serviceBL.GetServiceComponentsReport(_serviceId);
+            var datosP = _pacientBL.DevolverDatosPaciente(_serviceId);
+            var _DataService = _serviceBL.GetServiceReport(_serviceId);
+
+            INFORME_CUESTIONARIO_ISTAS_2.CreateReportIstas_2(filiationData, _DataService, serviceComponents, MedicalCenter, datosP, pathFile);
+        }
+
         private void GenerateCertificadoSuficienciaMedicaTC(string pathFile)
         {
             var MedicalCenter = _serviceBL.GetInfoMedicalCenter();
@@ -993,6 +1005,10 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     GenerateInformeSAS(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.FICHA_SAS_ID)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
                     break;
+                case Constants.CUESTIONARIO_ISTAS_2:
+                    GenerateInformeIstas(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.CUESTIONARIO_ISTAS_2)));
+                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
+                    break;
                 case Constants.INFORME_MEDICO_OCUPACIONAL_COSAPI:
                     GenerateInformeMedicoOcupacional_Cosapi(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.INFORME_MEDICO_OCUPACIONAL_COSAPI)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
@@ -1063,6 +1079,10 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     break;
                 case Constants.FICHA_SAS_ID:
                     GenerateInformeSAS(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.FICHA_SAS_ID)));
+                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
+                    break;
+                case Constants.CUESTIONARIO_ISTAS_2:
+                    GenerateInformeIstas(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.CUESTIONARIO_ISTAS_2)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
                     break;
                 case Constants.INFORME_MEDICO_OCUPACIONAL_COSAPI:
@@ -3695,25 +3715,25 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                 //    rp.Close();
                 //    break;
 
-                case Constants.FobiasocialAdmin_ID:
-                    var FobiasocialAdmin = new ServiceBL().ReporteFobiasocialAdmin(_serviceId, Constants.FobiasocialAdmin_ID);
+                //case Constants.FobiasocialAdmin_ID:
+                //    var FobiasocialAdmin = new ServiceBL().ReporteFobiasocialAdmin(_serviceId, Constants.FobiasocialAdmin_ID);
 
-                    dsGetRepo = new DataSet();
-                    DataTable dt_FobiasocialAdmin = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(FobiasocialAdmin);
-                    dt_FobiasocialAdmin.TableName = "dtFobiasocialAdmin";
-                    dsGetRepo.Tables.Add(dt_FobiasocialAdmin);
+                //    dsGetRepo = new DataSet();
+                //    DataTable dt_FobiasocialAdmin = Sigesoft.Node.WinClient.BLL.Utils.ConvertToDatatable(FobiasocialAdmin);
+                //    dt_FobiasocialAdmin.TableName = "dtFobiasocialAdmin";
+                //    dsGetRepo.Tables.Add(dt_FobiasocialAdmin);
 
-                    rp = new Reports.crFobiasocialAdmin();
-                    rp.SetDataSource(dsGetRepo);
-                    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
-                    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
-                    objDiskOpt = new DiskFileDestinationOptions();
-                    objDiskOpt.DiskFileName = ruta + serviceId + "-" + Constants.FobiasocialAdmin_ID + ".pdf";
-                    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
-                    rp.ExportOptions.DestinationOptions = objDiskOpt;
-                    rp.Export();
-                    rp.Close();
-                    break;
+                //    rp = new Reports.crFobiasocialAdmin();
+                //    rp.SetDataSource(dsGetRepo);
+                //    rp.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                //    rp.ExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                //    objDiskOpt = new DiskFileDestinationOptions();
+                //    objDiskOpt.DiskFileName = ruta + serviceId + "-" + Constants.FobiasocialAdmin_ID + ".pdf";
+                //    _filesNameToMerge.Add(objDiskOpt.DiskFileName);
+                //    rp.ExportOptions.DestinationOptions = objDiskOpt;
+                //    rp.Export();
+                //    rp.Close();
+                //    break;
 
                 case Constants.Testdefatiga_ID:
                     var Testdefatiga = new ServiceBL().ReporteTestdefatiga(_serviceId, Constants.Testdefatiga_ID);
@@ -3964,6 +3984,10 @@ namespace Sigesoft.Node.WinClient.UI.Reports
                     break;
                 case Constants.FICHA_SAS_ID:
                     GenerateInformeSAS(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.FICHA_SAS_ID)));
+                    _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
+                    break;
+                case Constants.CUESTIONARIO_ISTAS_2:
+                    GenerateInformeIstas(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + Constants.CUESTIONARIO_ISTAS_2)));
                     _filesNameToMerge.Add(string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + componentId)));
                     break;
                 case Constants.INFORME_MEDICO_OCUPACIONAL_COSAPI:

@@ -3929,7 +3929,7 @@ namespace Sigesoft.Common
         public const string Fobiasocial01_ID = "N009-ME000000305";
         public const string Fobiasocial02_ID = "N009-ME000000306";
         //public const string Testdepersonalldad_ID = "N009-ME000000307";
-        public const string FobiasocialAdmin_ID = "N009-ME000000308";
+        //public const string FobiasocialAdmin_ID = "N009-ME000000308";
         public const string Testdefatiga_ID = "N002-ME000000034";
         public const string Maslachestres_ID = "N002-ME000000036";
         public const string Testdeansiedad_ID = "N002-ME000000039";

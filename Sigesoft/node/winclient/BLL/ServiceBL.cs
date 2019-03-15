@@ -12698,7 +12698,8 @@ namespace Sigesoft.Node.WinClient.BLL
                              v_ObsStatusService = a.v_ObsStatusService,
                              b_Photo = a.b_Photo,
                              GrupoFactorSanguineo = a.GrupoFactorSanguineo == null ? "NOAPLICA" : a.GrupoFactorSanguineo,
-                             d_FechaExpiracionServicio = a.d_FechaExpiracionServicio
+                             d_FechaExpiracionServicio = a.d_FechaExpiracionServicio,
+                             aptitudaltura = a.v_DiseasesName == "PACIENTE APTO PARA TRABAJOS A SOBRENIVEL (1.80)" ? "APTO" : a.v_DiseasesName == "PACIENTE NO APTO PARA TRABAJOS A SOBRENIVEL (1.80)"?"NO APTO":""
                          }).ToList();
 
                 pobjOperationResult.Success = 1;
