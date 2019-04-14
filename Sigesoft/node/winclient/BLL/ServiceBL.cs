@@ -12699,8 +12699,13 @@ namespace Sigesoft.Node.WinClient.BLL
                              b_Photo = a.b_Photo,
                              GrupoFactorSanguineo = a.GrupoFactorSanguineo == null ? "NOAPLICA" : a.GrupoFactorSanguineo,
                              d_FechaExpiracionServicio = a.d_FechaExpiracionServicio,
-                             aptitudaltura = a.v_DiseasesName == "PACIENTE APTO PARA TRABAJOS A SOBRENIVEL (1.80)" ? "APTO" : a.v_DiseasesName == "PACIENTE NO APTO PARA TRABAJOS A SOBRENIVEL (1.80)"?"NO APTO":""
+                             //aptitudaltura = a.v_DiseasesName == "PACIENTE APTO PARA TRABAJOS A SOBRENIVEL (1.80)" ? "APTO" : a.v_DiseasesName == "PACIENTE NO APTO PARA TRABAJOS A SOBRENIVEL (1.80)"?"NO APTO":""
+                             aptitudaltura = obtenerDxMedicinaAltura(a.v_ServiceId)
                          }).ToList();
+
+                q = q.FindAll(p =>
+                    p.v_DiseasesName != "PACIENTE APTO PARA TRABAJOS A SOBRENIVEL (1.80)" &&
+                    p.v_DiseasesName != "PACIENTE NO APTO PARA TRABAJOS A SOBRENIVEL (1.80)");
 
                 pobjOperationResult.Success = 1;
 
@@ -12712,6 +12717,40 @@ namespace Sigesoft.Node.WinClient.BLL
                 pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
                 return null;
             }
+        }
+
+        private string obtenerDxMedicinaAltura(string pstrServiceId)
+        {
+            SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+            var query = (from ccc in dbContext.diagnosticrepository
+                join ddd in dbContext.diseases on ccc.v_DiseasesId equals ddd.v_DiseasesId  // Diagnosticos      
+                where ccc.v_ServiceId == pstrServiceId &&
+                      ccc.i_IsDeleted == 0
+                select new DiagnosticRepositoryList
+                {
+                    v_DiagnosticRepositoryId = ccc.v_DiagnosticRepositoryId,
+                    v_DiseasesName = ddd.v_Name,
+                    d_ExpirationDateDiagnostic = ccc.d_ExpirationDateDiagnostic
+
+                }).ToList();
+
+            var result = "";
+            if (query.Find(p => p.v_DiseasesName == "PACIENTE APTO PARA TRABAJOS A SOBRENIVEL (1.80)") != null)
+            {
+                return "APTO";
+            }
+            else if (query.Find(p => p.v_DiseasesName == "PACIENTE NO APTO PARA TRABAJOS A SOBRENIVEL (1.80)") != null)
+            {
+                return "NO APTO";
+            }
+            else
+            {
+                return "";
+            }
+           
+
+
         }
 
         public List<ServiceList> GetServicesPagedAndFilteredReport(ref OperationResult pobjOperationResult, int? pintPageIndex, int? pintResultsPerPage, string pstrSortExpression, string pstrFilterExpression, DateTime? pdatBeginDate, DateTime? pdatEndDate)
